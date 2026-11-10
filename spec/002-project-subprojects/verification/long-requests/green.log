@@ -1,0 +1,9 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:13488) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15212) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/model-config-file.test.ts (16 tests | 1 failed) 4738ms
+   × imports and upgrades text connections to a five-minute timeout without rewriting older snapshots 311ms

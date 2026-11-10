@@ -1,0 +1,8 @@
+import {read,write,replace} from './edit.mjs';
+write('tests/integration/subproject-migration-fixture.ts',"import type {DatabaseSync} from 'node:sqlite';\n/** Build an actual pre-26 fixture; don't leave newer tables behind after setting user_version. */\nexport function removeSubprojectSchema(db:DatabaseSync){\n const fk=Number(db.prepare('PRAGMA foreign_keys').get()?.foreign_keys??0);\n db.exec('PRAGMA foreign_keys=OFF');\n for(const t of ['project_memory_head','project_memory','subproject_completion','subproject_continuity','subproject_deliverable','project_memory_settings','asset_usage','project_asset','canvas_descriptor','content_scope','subproject'])db.exec('DROP TABLE IF EXISTS '+t);\n db.exec('DROP INDEX IF EXISTS canvas_project;CREATE UNIQUE INDEX IF NOT EXISTS legacy_canvas_project_unique ON canvas(project_id)');\n db.exec('PRAGMA foreign_keys='+fk);\n}\n");
+
+replace('tests/integration/local-media-migration-fixture.ts',"import type { DatabaseSync }","import {removeSubprojectSchema} from './subproject-migration-fixture.ts';\nimport type { DatabaseSync }");
+replace('tests/integration/local-media-migration-fixture.ts',"export function removeLocalMediaSchema(db: DatabaseSync) {","export function removeLocalMediaSchema(db: DatabaseSync) {\n    removeSubprojectSchema(db);");
+replace('tests/integration/voice-legacy-binding.test.ts',"import {expect,it}","import {removeSubprojectSchema} from './subproject-migration-fixture.ts';\nimport {expect,it}");
+replace('tests/integration/voice-legacy-binding.test.ts',"db.exec('DROP TABLE character_voice_binding;","removeSubprojectSchema(db);db.exec('DROP TABLE character_voice_binding;");
+

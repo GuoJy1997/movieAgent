@@ -1,0 +1,41 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:24560) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/electron/subprojects.test.ts (1 test | 1 failed) 9038ms
+   × uses the real Electron UI and IPC to make two episodes, separate scripts, multiple canvases and pending automatic memory 9036ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/electron/subprojects.test.ts > uses the real Electron UI and IPC to make two episodes, separate scripts, multiple canvases and pending automatic memory
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByRole('dialog', { name: '保存当前剪辑' })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" getByRole('dialog', { name: '保存当前剪辑' }) with timeout 5000ms
+  - waiting for getByRole('dialog', { name: '保存当前剪辑' })
+
+ ❯ captureRawStack node_modules/playwright-core/lib/coreBundle.js:9282:17
+ ❯ callMatcherAsStep node_modules/playwright/lib/matchers/expect.js:13316:57
+ ❯ Object.toBeVisible node_modules/playwright/lib/matchers/expect.js:13308:23
+ ❯ tests/electron/subprojects.test.ts:42:53
+     40|  await page.getByRole('button',{name:'编辑剧本与场景',exact:true}).click();aw…
+     41|  await page.getByLabel('当前子项目').selectOption(b.id);
+     42|  await ui(page.getByRole('dialog',{name:'保存当前剪辑'})).toBeVisible();awai…
+       |                                                     ^
+     43|  await ui(page.getByLabel('当前子项目')).toHaveValue(a.id);
+     44|  await page.getByLabel('当前子项目').selectOption(b.id);await page.getByRol…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  09:26:08
+   Duration  13.12s (transform 2.24s, setup 0ms, import 3.72s, tests 9.04s, environment 0ms)
+

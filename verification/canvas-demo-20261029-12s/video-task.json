@@ -1,0 +1,20 @@
+{
+  "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+  "taskId": "27112589-5f72-4a09-ab1a-999df631effc",
+  "attemptId": "08dcb7b8-5c2c-4594-a739-cbc114942472",
+  "state": "RUNNING",
+  "providerState": "accepted",
+  "collectionState": "pending",
+  "providerTaskId": "demo-1",
+  "clientRequestId": "6b66a4ec-8883-438c-ace1-de5f37d1bb17",
+  "cancelRequested": false,
+  "cancelStatus": "none",
+  "reconcileStatus": "pending",
+  "estimateMicros": null,
+  "reportedActualMicros": null,
+  "reservationMicros": 1000000,
+  "currency": "CNY",
+  "settlementStatus": "unknown",
+  "artifactRef": null,
+  "errorCode": null
+}

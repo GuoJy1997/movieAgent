@@ -1,0 +1,7 @@
+
+> libtv-studio-workspace@0.1.0 typecheck
+> tsc --noEmit -p tsconfig.base.json
+
+tests/integration/model-config-file.test.ts(240,234): error TS18046: 'r.value' is of type 'unknown'.
+tests/integration/model-config-file.test.ts(240,261): error TS7006: Parameter 'x' implicitly has an 'any' type.
+tests/integration/model-config-file.test.ts(245,73): error TS7006: Parameter 'x' implicitly has an 'any' type.

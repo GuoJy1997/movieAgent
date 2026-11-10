@@ -1,0 +1,61 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+[90mstdout[2m | tests/renderer/voice-identity.test.ts
+[22m[39mPort 5173 is in use, trying another one...
+
+[90mstderr[2m | tests/renderer/voice-identity.test.ts
+[22m[39m[31m(!) Failed to run dependency scan. Skipping dependency pre-bundling. Error: [31m  Failed to scan for dependencies from entries:
+  D:/movieAgent/libtv-studio/tests/fixtures/p4-renderer/main.tsx
+
+  [31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mExpected "}" but found ":"[0m
+
+    apps/desktop/src/renderer/features/creation/DialogueRepairPanel.tsx:49:852:
+[37m      49 │ ...· 原任务 {value.task.taskId}</option>)}</select></Field>[32m:[37mnull}
+         │                                                         [32m^[37m
+         ╵                                                         [32m}[0m
+
+
+    at failureErrorWithLog (D:\movieAgent\libtv-studio\node_modules\vite\node_modules\esbuild\lib\main.js:1752:15)
+    at D:\movieAgent\libtv-studio\node_modules\vite\node_modules\esbuild\lib\main.js:1211:25
+    at runOnEndCallbacks (D:\movieAgent\libtv-studio\node_modules\vite\node_modules\esbuild\lib\main.js:1592:45)
+    at buildResponseToResult (D:\movieAgent\libtv-studio\node_modules\vite\node_modules\esbuild\lib\main.js:1209:7)
+    at D:\movieAgent\libtv-studio\node_modules\vite\node_modules\esbuild\lib\main.js:1221:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (D:\movieAgent\libtv-studio\node_modules\vite\node_modules\esbuild\lib\main.js:1220:54)
+    at handleRequest (D:\movieAgent\libtv-studio\node_modules\vite\node_modules\esbuild\lib\main.js:911:17)
+    at handleIncomingPacket (D:\movieAgent\libtv-studio\node_modules\vite\node_modules\esbuild\lib\main.js:936:7)
+    at Socket.readFromStdout (D:\movieAgent\libtv-studio\node_modules\vite\node_modules\esbuild\lib\main.js:864:7)[39m
+
+ [31m❯[39m tests/renderer/voice-identity.test.ts [2m([22m[2m1 test[22m[2m | [22m[33m1 skipped[39m[2m)[22m[33m 11774[2mms[22m[39m
+   [2m[90m↓[39m[22m saves a provider voice without a sample or API call, preserving spaces and parentheses
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Suites 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/renderer/voice-identity.test.ts[2m [ tests/renderer/voice-identity.test.ts ][22m
+[31m[1mError[22m: browserType.launch: Executable doesn't exist at C:\Users\1266\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     npx playwright install                                 ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝[39m
+[36m [2m❯[22m harness tests/renderer/p4-harness.ts:[2m19:32[22m[39m
+    [90m 17|[39m   [35mawait[39m server[33m.[39m[34mwaitForRequestsIdle[39m()[33m;[39m
+    [90m 18|[39m   [35mconst[39m addr[33m=[39mserver[33m.[39mhttpServer[33m![39m[33m.[39m[34maddress[39m()[33m;[39m
+    [90m 19|[39m   const browser=await chromium.launch({headless:true,executablePath:pr…
+    [90m   |[39m                                [31m^[39m
+    [90m 20|[39m   const address=`http://127.0.0.1:${typeof addr==='object'&&addr?addr.…
+    [90m 21|[39m   // Warm the complete browser-imported graph before per-interaction d…
+[90m [2m❯[22m tests/renderer/voice-identity.test.ts:[2m3:65[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [33m1 skipped[39m[90m (1)[39m
+[2m   Start at [22m 11:54:06
+[2m   Duration [22m 13.48s[2m (transform 80ms, setup 0ms, import 1.27s, tests 11.77s, environment 0ms)[22m
+

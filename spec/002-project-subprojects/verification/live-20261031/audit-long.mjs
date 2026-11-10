@@ -1,0 +1,7 @@
+import fs from'node:fs';import{DatabaseSync}from'node:sqlite';
+const base='D:/movieAgent/spec/002-project-subprojects/verification/live-20261031',s=JSON.parse(fs.readFileSync(base+'/state.json','utf8'));
+const db=new DatabaseSync(s.libraryRoot+'/library.sqlite',{readOnly:true});
+const attempts=db.prepare("SELECT t.task_id,t.attempt_id,t.intent_json,t.view_json,p.plan_json FROM task_attempt t JOIN generation_task g USING(task_id) JOIN generation_prepared p USING(prepared_id)").all().map(r=>{const v=JSON.parse(r.view_json),p=JSON.parse(r.plan_json);return{taskId:r.task_id,attemptId:r.attempt_id,hasSubmitIntent:!!r.intent_json,state:v.state,providerState:v.providerState,errorCode:v.errorCode,runId:p.runId,timeoutMs:p.config.connection.timeoutMs,connectionId:p.config.connection.id,connectionRevision:p.config.connection.revision,concurrency:p.config.connection.concurrency,lease:db.prepare('SELECT token,owner,expires_at FROM task_lease WHERE attempt_id=?').get(r.attempt_id)}});
+const facts=db.prepare("SELECT attempt_id,source,received_at,applied,json_extract(outcome_json,'$.kind') kind FROM generation_fact").all();
+const result={at:new Date().toISOString(),attempts,facts,completions:db.prepare('SELECT id,state,task_id,error_code FROM subproject_completion').all()};
+fs.appendFileSync(base+'/long-request/audit.jsonl',JSON.stringify(result)+'\n');console.log(JSON.stringify(result,null,2));db.close();

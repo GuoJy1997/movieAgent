@@ -1,0 +1,124 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:21632) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12584) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/timeline-migration.test.ts (3 tests | 2 failed) 1274ms
+   × upgrades a real schema 14 library with a backup and no original scan 676ms
+   × upgrades a real schema 15 library with a backup and no original scan 591ms
+(node:19348) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10884) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/voice-migration.test.ts (1 test | 1 failed) 658ms
+   × appends schema20 immutably and upgrades real schema14 and19 libraries with backups 656ms
+(node:22040) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/migration-media.test.ts (2 tests | 1 failed) 672ms
+   × opens and backs up a real schema14 library without scanning a missing historical object 666ms
+ ❯ tests/integration/voice-legacy-binding.test.ts (1 test | 1 failed) 1793ms
+   × migrates a resolvable legacy TTS preset without changing voice identity or manufacturing quality approval 1792ms
+ ❯ tests/integration/shot-production.test.ts (17 tests | 1 failed) 9489ms
+   × upgrades a populated original schema 13 library before production diagnostics reads 723ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/migration-media.test.ts > opens and backs up a real schema14 library without scanning a missing historical object
+Error: {"code":"MIGRATION_FAILED","diagnosticId":"5e94787b-7cd4-4778-9650-547b6aab267f","fromSchema":14,"toSchema":26,"backup":"schema-14-5e94787b-7cd4-4778-9650-547b6aab267f.sqlite","compatibleBackupRequired":true}
+ ❯ tests/integration/migration-media.test.ts:35:13
+     33|       const { readFile } = await import('node:fs/promises');
+     34|       const files = (await readdir(join(root, 'logs'))).filter(name =>…
+     35|       throw Error(await readFile(join(root, 'logs', files[0]!), 'utf8'…
+       |             ^
+     36|     }
+     37|     expect(upgraded, JSON.stringify(upgraded)).toMatchObject({ ok: tru…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/integration/shot-production.test.ts > upgrades a populated original schema 13 library before production diagnostics reads
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
++   "ok": false,
+  }
+
+ ❯ value tests/fixtures/native-generation.ts:10:58
+
+ ❯ Object.open tests/fixtures/native-generation.ts:23:334
+ ❯ tests/integration/shot-production.test.ts:369:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/integration/timeline-migration.test.ts > upgrades a real schema 14 library with a backup and no original scan
+ FAIL  tests/integration/timeline-migration.test.ts > upgrades a real schema 15 library with a backup and no original scan
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true, …(1) }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
+-   "value": {
+-     "schemaVersion": 26,
+-   },
++   "ok": false,
+  }
+
+ ❯ tests/integration/timeline-migration.test.ts:13:1374
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/integration/voice-legacy-binding.test.ts > migrates a resolvable legacy TTS preset without changing voice identity or manufacturing quality approval
+Error: {"code":"LIBRARY_OPEN_FAILED","message":"无法打开资料库。请检查项目是否停用、被其他窗口占用或版本不兼容。"}
+ ❯ audioValue tests/fixtures/audio-generation.ts:15:25
+     13| import type { ProviderContext } from '../../packages/providers/src/ima…
+     14| export function audioValue(result: any): any {
+     15|   if (!result.ok) throw Error(JSON.stringify(result.error));
+       |                         ^
+     16|   expect(result).toMatchObject({ ok: true });
+     17|   return result.value?.result ?? result.value;
+ ❯ Object.open tests/fixtures/audio-generation.ts:42:14
+ ❯ tests/integration/voice-legacy-binding.test.ts:8:381
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  tests/integration/voice-migration.test.ts > appends schema20 immutably and upgrades real schema14 and19 libraries with backups
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true, …(1) }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
+-   "value": {
+-     "schemaVersion": 26,
+-   },
++   "ok": false,
+  }
+
+ ❯ tests/integration/voice-migration.test.ts:32:24
+     30|       db.close();
+     31|       const upgraded = await openLibrary({ root });
+     32|       expect(upgraded).toMatchObject({ ok: true, value: { schemaVersio…
+       |                        ^
+     33|       if (upgraded.ok) await upgraded.value.close();
+     34|       expect((await readdir(join(root, 'backups'))).some(name => name.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+
+ Test Files  5 failed (5)
+      Tests  6 failed | 18 passed (24)
+   Start at  09:02:14
+   Duration  12.98s (transform 4.66s, setup 0ms, import 7.21s, tests 13.89s, environment 1ms)
+

@@ -1,0 +1,13 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:9264) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/dialogue-audio-assembly.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 1552[2mms[22m[39m
+   [33m[2m✓[22m[39m renders verified PCM with silence between two exact audio slots without changing their speed [33m 1545[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m   Start at [22m 11:37:17
+[2m   Duration [22m 5.40s[2m (transform 2.45s, setup 0ms, import 3.53s, tests 1.55s, environment 0ms)[22m
+

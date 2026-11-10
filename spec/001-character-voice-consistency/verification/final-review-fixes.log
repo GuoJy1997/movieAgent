@@ -1,0 +1,33 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:7220) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/finish-agent.test.ts (7 tests) 5350ms
+   ✓ runs one approved voice-line turn and adopts only local revisions without audio or render jobs  2081ms
+   ✓ adopts subtitle edits with CAS and rejects manual changes without partial writes  624ms
+   ✓ adopts a fixed-media rough cut without enqueuing local media work  705ms
+   ✓ adopts Agent dialogue with the captured current appearance and an unchanged historical voice  1925ms
+(node:4728) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/finish-recovery.test.ts (4 tests) 5108ms
+   ✓ stops before approval, blocks generic admission and never posts on reopen  682ms
+   ✓ retains UNKNOWN without resubmission across restart  570ms
+   ✓ keeps a stopped late proposal read-only and replays one receipt after reopen  3203ms
+   ✓ persists a plain reply, rejects changed models and isolates invalid aliases  651ms
+(node:10244) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/shot-dialogue.test.ts (2 tests) 2243ms
+   ✓ changingVoicePreservesOldDialogue and never rewrites the legacy shot string  2235ms
+(node:5020) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/dialogue-assembly-workflow.test.ts (2 tests) 5923ms
+   ✓ assembles all reviewed turns, persists provenance and prevents a single take from confirming multiple turns  3862ms
+   ✓ rechecks a single reviewed take inside confirmation commit and before later alignment  2057ms
+
+ Test Files  4 passed (4)
+      Tests  15 passed (15)
+   Start at  19:22:21
+   Duration  27.20s (transform 3.47s, setup 0ms, import 6.67s, tests 18.62s, environment 1ms)
+
+JSON report written to D:/movieAgent/spec/001-character-voice-consistency/verification/final-review-fixes.json

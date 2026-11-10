@@ -1,0 +1,43 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:24080) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/electron/subprojects.test.ts (1 test | 1 failed) 10018ms
+   × uses the real Electron UI and IPC to make two episodes, separate scripts, multiple canvases and pending automatic memory 10015ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/electron/subprojects.test.ts > uses the real Electron UI and IPC to make two episodes, separate scripts, multiple canvases and pending automatic memory
+Error: expect(locator).toHaveCount(expected) failed
+
+Locator:  getByRole('button', { name: '保存剧本', exact: true })
+Expected: 0
+Received: 1
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveCount" getByRole('button', { name: '保存剧本', exact: true }) with timeout 5000ms
+  - waiting for getByRole('button', { name: '保存剧本', exact: true })
+    14 × locator resolved to 1 element
+       - unexpected value "1"
+
+ ❯ captureRawStack node_modules/playwright-core/lib/coreBundle.js:9282:17
+ ❯ callMatcherAsStep node_modules/playwright/lib/matchers/expect.js:13316:57
+ ❯ Object.toHaveCount node_modules/playwright/lib/matchers/expect.js:13308:23
+ ❯ tests/electron/subprojects.test.ts:32:126
+     30|  await page.getByRole('button',{name:'剧本分镜',exact:true}).click();await…
+     31|  await page.getByLabel('剧本标题',{exact:true}).fill('第一集专用剧本');await page…
+     32|  await page.getByRole('button',{name:'保存剧本',exact:true}).click();await…
+       |                                                                                                                              ^
+     33|  expect((await query(page,'creation.read',{projectId:p.id},sa)).script…
+     34|  await page.getByRole('button',{name:'分集与分期',exact:true}).click();awai…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  09:12:52
+   Duration  16.50s (transform 3.53s, setup 0ms, import 5.86s, tests 10.02s, environment 1ms)
+

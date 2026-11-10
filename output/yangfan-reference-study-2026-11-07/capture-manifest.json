@@ -1,0 +1,1057 @@
+{
+  "date": "2026-11-07",
+  "scope": "Capture first, then imitate component by component for 羊番TV",
+  "status": "Both platforms logged in. 58 page/state captures and 30 original-pixel component crops recorded for the listed short-drama workflows. Capture scope is not exhaustive. Reference screenshots are separate from any independently generated Yangfan UI drafts.",
+  "pages": [
+    {
+      "file": "jimeng/04-create-full-desktop.jpg",
+      "title": "即梦 · 创作首页（Agent）",
+      "focus": "顶部、导航、生成/画布、输入区",
+      "status": "partial",
+      "note": "登录促销浮层遮挡右侧；只用于可见区参考",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "jimeng/05-video-generation.jpg",
+      "title": "即梦 · 视频生成",
+      "focus": "输入区参数密度",
+      "status": "partial",
+      "note": "登录促销浮层遮挡右侧",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "jimeng/06-canvas-entry.jpg",
+      "title": "即梦 · 画布入口",
+      "focus": "新建/模板/对话入口",
+      "status": "partial",
+      "note": "入口页，不代表内部编辑画布；右侧受促销遮挡",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "jimeng/07-explore.jpg",
+      "title": "即梦 · 探索",
+      "focus": "媒体卡片、标签与导航选中",
+      "status": "captured",
+      "note": "",
+      "url": "https://jimeng.jianying.com/",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "jimeng/08-ai-tools.jpg",
+      "title": "即梦 · AI 工具目录",
+      "focus": "类型标签、封面、描述层级",
+      "status": "captured",
+      "note": "",
+      "url": "https://jimeng.jianying.com/ai-tool/tools",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "jimeng/09-assets-login-gate.jpg",
+      "title": "即梦 · 资产访问限制",
+      "focus": "登录模态",
+      "status": "historical",
+      "note": "资产库内容未进入；历史门槛截图，当前即梦已登录并补采对应内容",
+      "url": "https://jimeng.jianying.com/ai-tool/tools",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "jimeng/10-short-drama-studio.jpg",
+      "title": "即梦 · 短剧工作室",
+      "focus": "嵌入页签、输入与附件、图文入口",
+      "status": "captured",
+      "note": "",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "jimeng/11-generation-settings.jpg",
+      "title": "即梦 · 生成设置浮层",
+      "focus": "模型分组、选项、滑块与输入",
+      "status": "captured",
+      "note": "右上角有企业服务浮层重叠，按真实界面保留",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "jimeng/12-shared-canvas-login-gate.jpg",
+      "title": "即梦 · 公开作品画布访问限制",
+      "focus": "只读画布入口",
+      "status": "historical",
+      "note": "查看公开分享画布也需登录；未复制项目；历史门槛截图，当前即梦已登录并补采对应内容",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "jimeng/13-create-clean.jpg",
+      "title": "即梦 · 视频创作输入区",
+      "focus": "干净的导航、页签、输入区、工具栏",
+      "status": "captured",
+      "note": "底部轮播有未加载画面，不作为该模块证据",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/01-home.jpg",
+      "title": "小云雀 · 首屏",
+      "focus": "弧形画廊与输入区关系",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/02-skills-open.jpg",
+      "title": "小云雀 · 技能列表",
+      "focus": "柔和浮层、列表悬停、内滚动",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/03-model-preferences.jpg",
+      "title": "小云雀 · 模型偏好",
+      "focus": "分组页签、模型列表",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/04-short-drama.jpg",
+      "title": "小云雀 · 短剧模式",
+      "focus": "嵌入式子页签、附件、文本与工具组",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/05-style-library.jpg",
+      "title": "小云雀 · 风格库",
+      "focus": "短菜单与二级入口",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/06-script-upload.jpg",
+      "title": "小云雀 · 上传剧本",
+      "focus": "空状态与格式提示",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/07-marketing.jpg",
+      "title": "小云雀 · 营销模式",
+      "focus": "参考插槽与组合工具栏",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/09-skills-full-verified.jpg",
+      "title": "小云雀 · 技能浮层完整状态",
+      "focus": "两级文字、选中、内滚动、底部操作",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/10-preferences-full-verified.jpg",
+      "title": "小云雀 · 视频偏好浮层",
+      "focus": "背景随底图改变的真实模糊材质",
+      "status": "captured",
+      "note": "白色来自底图透出，不建议照抄成浅色大块",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/11-image-preference.jpg",
+      "title": "小云雀 · 图片偏好页签",
+      "focus": "切换选中、同一容器内更换列表",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "xiaoyunque/12-create-clean.jpg",
+      "title": "小云雀 · 创作输入区",
+      "focus": "模式、单一底面、工具组和主操作",
+      "status": "captured",
+      "note": "",
+      "url": "https://www.xiaoyunque.com/",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "authenticated/jimeng-02-assets-desktop.jpg",
+      "title": "即梦 · 资产库 · 登录后",
+      "focus": "媒体网格、两级筛选",
+      "status": "captured",
+      "note": "已登录；按日期分组的现有资产",
+      "url": "https://jimeng.jianying.com/ai-tool/asset",
+      "urlNote": "资产入口；详情为内部状态",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-03-asset-filter.jpg",
+      "title": "即梦 · 资产筛选展开",
+      "focus": "类型、收藏、尺寸筛选",
+      "status": "captured",
+      "note": "仅展开菜单",
+      "url": "https://jimeng.jianying.com/ai-tool/asset",
+      "urlNote": "资产入口；详情为内部状态",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-04-asset-detail.jpg",
+      "title": "即梦 · 资产详情",
+      "focus": "大预览、提示词、分组操作",
+      "status": "captured",
+      "note": "读取现有图片，未触发生成或编辑",
+      "url": "https://jimeng.jianying.com/ai-tool/asset",
+      "urlNote": "资产入口；详情为内部状态",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-05-agent-conversation.jpg",
+      "title": "即梦 · Agent 完成结果",
+      "focus": "正文、四图结果、轻操作栏、底部输入",
+      "status": "captured",
+      "note": "已有对话的完成状态，不是本轮执行结果",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-06-agent-preferences.jpg",
+      "title": "即梦 · Agent 创作设置",
+      "focus": "模型列表、比例、清晰度",
+      "status": "captured",
+      "note": "参数浮层展开，未发起生成",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-07-task-completion.jpg",
+      "title": "即梦 · 完成任务展开",
+      "focus": "已完成、步骤与结果层级",
+      "status": "captured",
+      "note": "平台已有任务详情；不代表运行中/失败状态",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-08-subject-library.jpg",
+      "title": "即梦 · 主体库空状态",
+      "focus": "创建入口、空状态",
+      "status": "captured",
+      "note": "账户暂无主体，未新建",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-09-readonly-canvas.jpg",
+      "title": "即梦 · 公开作品画布",
+      "focus": "节点关系、底部工具栏",
+      "status": "captured",
+      "note": "只读作品，未复制项目",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-10-canvas-zoom-menu.jpg",
+      "title": "即梦 · 画布缩放菜单",
+      "focus": "缩放、适应画布、快捷键",
+      "status": "captured",
+      "note": "只读画布菜单",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-11-canvas-close-view.jpg",
+      "title": "即梦 · 画布 50% 近景",
+      "focus": "图片节点、连线、工具栏",
+      "status": "captured",
+      "note": "只读缩放观察，不代表可编辑节点选中态",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-13-drama-characters-desktop.jpg",
+      "title": "即梦 · 短剧角色资产库",
+      "focus": "窄导航、类型页签、角色网格",
+      "status": "captured",
+      "note": "官方示例，含34角色；页面显示的后续提示保留",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-14-drama-canvas.jpg",
+      "title": "即梦 · 短剧角色画布",
+      "focus": "角色分组、画布工具、节点密度",
+      "status": "partial",
+      "note": "官方只读示例；左侧仍有生成历史引导提示",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-15-drama-script.jpg",
+      "title": "即梦 · 短剧剧本正文",
+      "focus": "分集正文、流程导航、右侧 Agent",
+      "status": "captured",
+      "note": "官方示例，只读剧本；未修改或发送",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-16-storyboard.jpg",
+      "title": "即梦 · 短剧分集列表",
+      "focus": "分集状态、镜头数、编辑入口",
+      "status": "captured",
+      "note": "官方示例；生成入口禁用",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-17-storyboard-detail.jpg",
+      "title": "即梦 · 分镜工作台",
+      "focus": "资产列、引用与描述、预览、镜头条",
+      "status": "captured",
+      "note": "官方只读示例，未编辑/生成/合成",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-19-shot-history-loaded.jpg",
+      "title": "即梦 · 分镜版本历史",
+      "focus": "版本预览、缩略图、提示词",
+      "status": "captured",
+      "note": "官方只读示例；替换当前片段禁用；未下载",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-01-home.jpg",
+      "title": "小云雀 · 登录后首页",
+      "focus": "导航、输入、快捷工具与推荐",
+      "status": "captured",
+      "note": "已登录；未发起生成",
+      "url": "https://www.xiaoyunque.com/home?from_page=xiaoyunque_landing_page&tab_name=home",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-02-conversation.jpg",
+      "title": "小云雀 · 历史对话与视频结果",
+      "focus": "长提示词、完成视频与结果动作",
+      "status": "captured",
+      "note": "账户已有历史结果；本轮未生成",
+      "url": "https://www.xiaoyunque.com/home?tab_name=integrated-agent&thread_id=6abc2925-4c21-401c-b6fa-47d86e37576c&agent_name=pippit_video_part_agent&entrance_from=history_entrance",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-03-result-detail.jpg",
+      "title": "小云雀 · 历史请求文本展开",
+      "focus": "用户长文本与结果的层级",
+      "status": "captured",
+      "note": "查看详情实际展开了请求文本；不是独立详情模态",
+      "url": "https://www.xiaoyunque.com/home?tab_name=integrated-agent&thread_id=6abc2925-4c21-401c-b6fa-47d86e37576c&agent_name=pippit_video_part_agent&entrance_from=history_entrance",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-05-projects.jpg",
+      "title": "小云雀 · 项目资源列表",
+      "focus": "项目卡片、类型标签、搜索与页签",
+      "status": "captured",
+      "note": "只读观察；未发起生成",
+      "url": "https://www.xiaoyunque.com/asset?tab=allProjects",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-06-media-library.jpg",
+      "title": "小云雀 · 素材库",
+      "focus": "媒体网格、项目视图切换与筛选",
+      "status": "captured",
+      "note": "已有素材；界面引导提示保留",
+      "url": "https://www.xiaoyunque.com/asset?tab=myMaterials",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-07-media-filter.jpg",
+      "title": "小云雀 · 素材筛选菜单",
+      "focus": "简短分类菜单与多选状态",
+      "status": "captured",
+      "note": "只读观察；未发起生成",
+      "url": "https://www.xiaoyunque.com/asset?tab=myMaterials",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-08-media-actions.jpg",
+      "title": "小云雀 · 素材操作菜单",
+      "focus": "下载、选择、入库、更多操作",
+      "status": "captured",
+      "note": "仅展开菜单；没有下载、入库或删除",
+      "url": "https://www.xiaoyunque.com/asset?tab=myMaterials",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-09-media-preview.jpg",
+      "title": "小云雀 · 素材详情预览",
+      "focus": "大预览、侧边元信息与底部动作",
+      "status": "captured",
+      "note": "现有素材详情；未重命名或下载",
+      "url": "https://www.xiaoyunque.com/asset?tab=myMaterials",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-10-character-library.jpg",
+      "title": "小云雀 · 角色资产库",
+      "focus": "分类页签、角色卡、添加与引用",
+      "status": "captured",
+      "note": "只读观察；未发起生成",
+      "url": "https://www.xiaoyunque.com/asset?tab=character",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-11-character-detail.jpg",
+      "title": "小云雀 · 角色详情面板",
+      "focus": "图片版本、描述、名称与音色",
+      "status": "captured",
+      "note": "仅查看已有角色；未更改可见范围、未保存",
+      "url": "https://www.xiaoyunque.com/asset?tab=character",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-12-short-drama.jpg",
+      "title": "小云雀 · 短剧 Agent 入口",
+      "focus": "剧本入口、工具与示例项目",
+      "status": "captured",
+      "note": "只读观察；未发起生成",
+      "url": "https://www.xiaoyunque.com/novel/list?enter_from=small_tool",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-13-episodes.jpg",
+      "title": "小云雀 · 短剧示例项目列表",
+      "focus": "示例项目卡片与精选作品",
+      "status": "captured",
+      "note": "入口页向下滚动状态；不是分集内部页",
+      "url": "https://www.xiaoyunque.com/novel/list?enter_from=small_tool",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-14-drama-script.jpg",
+      "title": "小云雀 · 短剧剧本",
+      "focus": "原始创意、摘要、分集正文与窄导航",
+      "status": "captured",
+      "note": "官方只读示例",
+      "url": "https://www.xiaoyunque.com/novel/detail/script?thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-15-drama-assets.jpg",
+      "title": "小云雀 · 短剧角色资源库",
+      "focus": "角色卡、视图切换、分集筛选",
+      "status": "captured",
+      "note": "官方只读示例",
+      "url": "https://www.xiaoyunque.com/novel/detail/scenes?thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-16-canvas.jpg",
+      "title": "小云雀 · 短剧画布",
+      "focus": "角色场景节点、连线与浮动工具",
+      "status": "partial",
+      "note": "官方示例画布；未拖动或修改节点；存在引导/悬浮预览遮挡，不证明完整编辑工具",
+      "url": "https://www.xiaoyunque.com/novel/detail/canvas?entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&canvasId=1424149881612&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-17-node-selected.jpg",
+      "title": "小云雀 · 画布节点选中",
+      "focus": "节点边界、上下文工具与提示词输入",
+      "status": "partial",
+      "note": "官方示例；仅选中节点，未修改或生成；存在引导/悬浮预览遮挡，不证明完整编辑工具",
+      "url": "https://www.xiaoyunque.com/novel/detail/canvas?entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&canvasId=1424149881612&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-18-episodes-verified.jpg",
+      "title": "小云雀 · 分集视频列表",
+      "focus": "已完成状态、时长、分镜数量和编辑入口",
+      "status": "captured",
+      "note": "官方只读示例；未导出",
+      "url": "https://www.xiaoyunque.com/novel/detail/video?entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&canvasId=1424149881612&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-19-storyboard-detail.jpg",
+      "title": "小云雀 · 分镜工作台",
+      "focus": "资产列、镜头文本、预览与镜头条",
+      "status": "captured",
+      "note": "官方只读示例，未修改、生成或导出",
+      "url": "https://www.xiaoyunque.com/novel/edit?entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&canvasId=1424149881612&storyboard_asset_id=1424531310092&thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-20-agent-canvas.jpg",
+      "title": "小云雀 · 画布与 Agent 同屏",
+      "focus": "窄导航、资产抽屉、画布和右侧对话",
+      "status": "captured",
+      "note": "打开账户已有未命名会话；空画布，未新增节点",
+      "url": "https://www.xiaoyunque.com/project?projectId=13764252665868&entrance_from=history_entrance&page_from=novel&canvasId=13767826721036&agent_thread_id=3ab47138-20ef-418b-aa12-d1da71c1da05",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-21-agent-preferences.jpg",
+      "title": "小云雀 · Agent 偏好面板",
+      "focus": "模型与比例、分辨率、时长的分组",
+      "status": "captured",
+      "note": "仅打开面板；未改变已选模型或生成模式",
+      "url": "https://www.xiaoyunque.com/project?projectId=13764252665868&entrance_from=history_entrance&page_from=novel&canvasId=13767826721036&agent_thread_id=3ab47138-20ef-418b-aa12-d1da71c1da05",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-22-agent-skills.jpg",
+      "title": "小云雀 · Agent 技能面板",
+      "focus": "搜索、类别、收藏与技能说明",
+      "status": "captured",
+      "note": "仅浏览技能选择器，未创建或调用技能",
+      "url": "https://www.xiaoyunque.com/project?projectId=13764252665868&entrance_from=history_entrance&page_from=novel&canvasId=13767826721036&agent_thread_id=3ab47138-20ef-418b-aa12-d1da71c1da05",
+      "site": "xyq",
+      "phase": "authenticated"
+    }
+  ],
+  "components": [
+    {
+      "file": "components/jimeng-navigation.png",
+      "title": "即梦导航：选中与未选中",
+      "source": "jimeng/13-create-clean.jpg",
+      "rect": {
+        "x": 12,
+        "y": 122,
+        "width": 216,
+        "height": 204
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "components/jimeng-brand.png",
+      "title": "即梦品牌标志比例",
+      "source": "jimeng/13-create-clean.jpg",
+      "rect": {
+        "x": 14,
+        "y": 52,
+        "width": 116,
+        "height": 40
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "components/jimeng-generation-canvas-tabs.png",
+      "title": "生成/画布：渐变选中",
+      "source": "jimeng/13-create-clean.jpg",
+      "rect": {
+        "x": 600,
+        "y": 166,
+        "width": 322,
+        "height": 44
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "components/jimeng-composer.png",
+      "title": "即梦视频输入区",
+      "source": "jimeng/13-create-clean.jpg",
+      "rect": {
+        "x": 316,
+        "y": 244,
+        "width": 890,
+        "height": 160
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "components/jimeng-parameter-toolbar.png",
+      "title": "紧凑参数工具栏",
+      "source": "jimeng/13-create-clean.jpg",
+      "rect": {
+        "x": 340,
+        "y": 348,
+        "width": 840,
+        "height": 45
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "components/jimeng-generation-settings.png",
+      "title": "生成设置：分组与集数",
+      "source": "jimeng/11-generation-settings.jpg",
+      "rect": {
+        "x": 598,
+        "y": 39,
+        "width": 403,
+        "height": 315
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "components/xyq-composer.png",
+      "title": "小云雀模式与输入区",
+      "source": "xiaoyunque/12-create-clean.jpg",
+      "rect": {
+        "x": 374,
+        "y": 382,
+        "width": 773,
+        "height": 153
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "components/xyq-skills-verified.png",
+      "title": "小云雀技能浮层",
+      "source": "xiaoyunque/09-skills-full-verified.jpg",
+      "rect": {
+        "x": 464,
+        "y": 215,
+        "width": 359,
+        "height": 248
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "components/xyq-preferences.png",
+      "title": "视频/图片/推理：分组浮层",
+      "source": "xiaoyunque/10-preferences-full-verified.jpg",
+      "rect": {
+        "x": 582,
+        "y": 162,
+        "width": 400,
+        "height": 319
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "components/xyq-style-library.png",
+      "title": "风格库小浮层",
+      "source": "xiaoyunque/05-style-library.jpg",
+      "rect": {
+        "x": 659,
+        "y": 325,
+        "width": 184,
+        "height": 144
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "components/xyq-script-upload.png",
+      "title": "短剧页签与上传状态",
+      "source": "xiaoyunque/06-script-upload.jpg",
+      "rect": {
+        "x": 373,
+        "y": 498,
+        "width": 774,
+        "height": 155
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "components/jimeng-creation-mode-menu.jpg",
+      "title": "即梦 · 创作类型菜单",
+      "source": "live browser component capture",
+      "method": "browser screenshot clip",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "components/jimeng-ratio-resolution.jpg",
+      "title": "即梦 · 比例与分辨率",
+      "source": "live browser component capture",
+      "method": "browser screenshot clip",
+      "site": "jimeng",
+      "phase": "public"
+    },
+    {
+      "file": "components/xyq-add-reference-verified.jpg",
+      "title": "小云雀 · 添加素材",
+      "source": "live browser component capture",
+      "method": "browser screenshot clip",
+      "site": "xyq",
+      "phase": "public"
+    },
+    {
+      "file": "components/jimeng-agent-composer.png",
+      "title": "Agent 连续输入面",
+      "source": "authenticated/jimeng-05-agent-conversation.jpg",
+      "rect": {
+        "x": 306,
+        "y": 538,
+        "width": 893,
+        "height": 159
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "components/jimeng-agent-result.png",
+      "title": "Agent 结果与轻操作栏",
+      "source": "authenticated/jimeng-05-agent-conversation.jpg",
+      "rect": {
+        "x": 305,
+        "y": 60,
+        "width": 896,
+        "height": 420
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "components/jimeng-agent-preferences.png",
+      "title": "Agent 两列偏好面板",
+      "source": "authenticated/jimeng-06-agent-preferences.jpg",
+      "rect": {
+        "x": 428,
+        "y": 323,
+        "width": 613,
+        "height": 316
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "components/jimeng-detail-action-groups.png",
+      "title": "资产详情动作组",
+      "source": "authenticated/jimeng-04-asset-detail.jpg",
+      "rect": {
+        "x": 878,
+        "y": 318,
+        "width": 351,
+        "height": 391
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "components/jimeng-asset-browser.png",
+      "title": "资产筛选与媒体网格",
+      "source": "authenticated/jimeng-02-assets-desktop.jpg",
+      "rect": {
+        "x": 279,
+        "y": 56,
+        "width": 962,
+        "height": 403
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "components/jimeng-workspace-navigation.png",
+      "title": "制作页窄导航",
+      "source": "authenticated/jimeng-15-drama-script.jpg",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 56,
+        "height": 233
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "components/jimeng-script-agent-composer.png",
+      "title": "剧本助手底部输入区",
+      "source": "authenticated/jimeng-15-drama-script.jpg",
+      "rect": {
+        "x": 874,
+        "y": 545,
+        "width": 393,
+        "height": 166
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "components/jimeng-shot-strip.png",
+      "title": "分镜选中、历史与状态",
+      "source": "authenticated/jimeng-17-storyboard-detail.jpg",
+      "rect": {
+        "x": 376,
+        "y": 550,
+        "width": 864,
+        "height": 155
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "components/xyq-auth-home-composer.png",
+      "title": "小云雀登录后首页输入区",
+      "source": "authenticated/xyq-01-home.jpg",
+      "rect": {
+        "x": 330,
+        "y": 164,
+        "width": 896,
+        "height": 176
+      },
+      "method": "Unscaled rectangular crop of decoded browser screenshot pixels, saved as PNG; no repaint or synthesized content",
+      "site": "xyq",
+      "phase": "authenticated",
+      "visualReview": "Crop inspected visually; no rectangle adjustment required."
+    },
+    {
+      "file": "components/xyq-auth-canvas-composer.png",
+      "title": "小云雀画布右侧 Agent 输入区",
+      "source": "authenticated/xyq-20-agent-canvas.jpg",
+      "rect": {
+        "x": 803,
+        "y": 566,
+        "width": 453,
+        "height": 135
+      },
+      "method": "Unscaled rectangular crop of decoded browser screenshot pixels, saved as PNG; no repaint or synthesized content",
+      "site": "xyq",
+      "phase": "authenticated",
+      "visualReview": "Crop inspected visually; no rectangle adjustment required."
+    },
+    {
+      "file": "components/xyq-auth-agent-preferences.png",
+      "title": "小云雀 Agent 两列参数面板",
+      "source": "authenticated/xyq-21-agent-preferences.jpg",
+      "rect": {
+        "x": 544,
+        "y": 241,
+        "width": 720,
+        "height": 404
+      },
+      "method": "Unscaled rectangular crop of decoded browser screenshot pixels, saved as PNG; no repaint or synthesized content",
+      "site": "xyq",
+      "phase": "authenticated",
+      "visualReview": "Crop inspected visually; no rectangle adjustment required.",
+      "note": "保留原面板的内部滚动可见范围，底部未展示内容不推断。"
+    },
+    {
+      "file": "components/xyq-auth-agent-skills.png",
+      "title": "小云雀 Agent 类别、技能与详情",
+      "source": "authenticated/xyq-22-agent-skills.jpg",
+      "rect": {
+        "x": 510,
+        "y": 246,
+        "width": 723,
+        "height": 399
+      },
+      "method": "Unscaled rectangular crop of decoded browser screenshot pixels, saved as PNG; no repaint or synthesized content",
+      "site": "xyq",
+      "phase": "authenticated",
+      "visualReview": "Crop inspected visually; no rectangle adjustment required."
+    },
+    {
+      "file": "components/xyq-auth-media-filter.png",
+      "title": "小云雀素材筛选菜单",
+      "source": "authenticated/xyq-07-media-filter.jpg",
+      "rect": {
+        "x": 866,
+        "y": 195,
+        "width": 181,
+        "height": 210
+      },
+      "method": "Unscaled rectangular crop of decoded browser screenshot pixels, saved as PNG; no repaint or synthesized content",
+      "site": "xyq",
+      "phase": "authenticated",
+      "visualReview": "Crop inspected visually; no rectangle adjustment required."
+    },
+    {
+      "file": "components/xyq-auth-media-metadata.png",
+      "title": "小云雀素材详情元信息",
+      "source": "authenticated/xyq-09-media-preview.jpg",
+      "rect": {
+        "x": 976,
+        "y": 32,
+        "width": 254,
+        "height": 656
+      },
+      "method": "Unscaled rectangular crop of decoded browser screenshot pixels, saved as PNG; no repaint or synthesized content",
+      "site": "xyq",
+      "phase": "authenticated",
+      "visualReview": "Crop inspected visually; no rectangle adjustment required."
+    },
+    {
+      "file": "components/xyq-auth-example-project.png",
+      "title": "小云雀短剧示例项目卡组",
+      "source": "authenticated/xyq-13-episodes.jpg",
+      "rect": {
+        "x": 273,
+        "y": 223,
+        "width": 480,
+        "height": 208
+      },
+      "method": "Unscaled rectangular crop of decoded browser screenshot pixels, saved as PNG; no repaint or synthesized content",
+      "site": "xyq",
+      "phase": "authenticated",
+      "visualReview": "Crop inspected visually; no rectangle adjustment required.",
+      "note": "两张示例项目卡；不是分集内部页面。"
+    },
+    {
+      "file": "components/xyq-auth-shot-strip.png",
+      "title": "小云雀分镜工作台镜头条",
+      "source": "authenticated/xyq-19-storyboard-detail.jpg",
+      "rect": {
+        "x": 402,
+        "y": 575,
+        "width": 878,
+        "height": 143
+      },
+      "method": "Unscaled rectangular crop of decoded browser screenshot pixels, saved as PNG; no repaint or synthesized content",
+      "site": "xyq",
+      "phase": "authenticated",
+      "visualReview": "Crop inspected visually; no rectangle adjustment required.",
+      "note": "保留原界面的横向溢出，最右侧镜头未完整显示。"
+    }
+  ],
+  "measurements": [
+    "jimeng/component-measurements.json",
+    "xiaoyunque/preference-measurements.json"
+  ],
+  "excluded": [
+    "jimeng/01-create-agent.jpg",
+    "jimeng/02-create-desktop.jpg",
+    "jimeng/03-mode-menu.jpg",
+    "xiaoyunque/08-skills-focused.jpg",
+    "components/xyq-add-reference.jpg",
+    "components/xyq-skills.jpg",
+    "authenticated/jimeng-01-assets.jpg",
+    "authenticated/jimeng-12-drama-character-library.jpg",
+    "authenticated/jimeng-18-shot-history.jpg",
+    "authenticated/xyq-04-conversation-assets.jpg"
+  ],
+  "pending": [
+    "两平台：真实运行中、失败和重试状态未采；已有完成结果不代表本轮执行。",
+    "画布：只读示例或空画布观察为主；完整编辑节点操作、保存和替换行为未验证。",
+    "剪辑：多轨剪辑详情未采。",
+    "历史：部分既有会话未逐一穷举；账号、付费、营销活动、移动端及全部响应式状态不在本轮覆盖声明内。"
+  ],
+  "captureNotes": "Original browser screenshots and unscaled component crops only. Both platforms authenticated. Existing account data and public read-only examples were inspected; no generation, purchase, copy, edit, upload or export was submitted. Partial/occluded views remain marked partial. Historical login gates are retained as historical evidence. Excluded diagnostics and earlier ZIP files are not included in the v3 package. Independently generated Yangfan UI drafts are not part of this reference package.",
+  "sources": [
+    {
+      "name": "即梦",
+      "url": "https://jimeng.jianying.com/ai-tool/home/"
+    },
+    {
+      "name": "小云雀",
+      "url": "https://www.xiaoyunque.com/"
+    }
+  ],
+  "counts": {
+    "pages": 58,
+    "components": 30,
+    "xiaoyunqueAuthenticatedPages": 21,
+    "newXiaoyunqueAuthenticatedComponents": 8
+  }
+}

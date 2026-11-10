@@ -1,0 +1,484 @@
+{
+  "spec": "SPEC-001",
+  "recordedAt": "2026-10-30T11:32:32.427Z",
+  "scope": "Windows local Electron; fixture-only provider calls",
+  "reports": {
+    "core-complete": {
+      "success": true,
+      "files": 103,
+      "tests": 807,
+      "passed": 807,
+      "failed": 0,
+      "pending": 0
+    },
+    "renderer-complete": {
+      "success": true,
+      "files": 2,
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "pending": 0
+    },
+    "media-complete": {
+      "success": true,
+      "files": 5,
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "pending": 0
+    },
+    "electron-verified": {
+      "success": true,
+      "files": 1,
+      "tests": 2,
+      "passed": 1,
+      "failed": 0,
+      "pending": 1
+    }
+  },
+  "rendererUnion": {
+    "files": 10,
+    "tests": 43,
+    "passed": 43
+  },
+  "typecheckExit": 0,
+  "buildExit": 0,
+  "packageVerification": {
+    "verified": true,
+    "directory": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release-spec001\\win-unpacked",
+    "executable": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release-spec001\\win-unpacked\\MovieAgent.exe",
+    "runtime": {
+      "electron": "45.0.0",
+      "modules": "150",
+      "node": "24.22.0",
+      "arch": "x64",
+      "platform": "win32"
+    },
+    "mediaRuntime": {
+      "verified": true,
+      "runtimeHash": "50c3f76c0610c5c4a97bd9e8e6620f39f548a45637b16de3733a5fde10ec6539",
+      "version": "9.0.2",
+      "publicDistributionReady": false
+    },
+    "native": {
+      "sqlite": {
+        "version": "3.53.4",
+        "value": 42
+      },
+      "sharp": {
+        "format": "png",
+        "width": 2,
+        "height": 3,
+        "bytes": 96,
+        "hash": "783cf58b9994058840e4c0ff7200389329302b6694e2392e3287fafa40655c26"
+      }
+    },
+    "entries": [
+      "package.json",
+      "out/main/index.js",
+      "out/main/engine-process.js",
+      "out/preload/index.js",
+      "out/preload/credentials.js",
+      "out/preload/launcher.js",
+      "out/preload/model-config.js",
+      "out/renderer/model-config/index.html",
+      "out/renderer/launcher/index.html",
+      "out/renderer/renderer/index.html",
+      "out/renderer/credentials/index.html"
+    ],
+    "boundaries": "four isolated preloads and CSP HTML entries; runtime IPC covered by test:electron"
+  },
+  "packageHashes": {
+    "executable": "64cf4b4510182544f174e900288c349f93aaedd3ddf561728a02b96244278648",
+    "asar": "850efe6dc2d9ff58375c1baaa392dca3bdc216d28fbb05137e7d79da7d3eba8d"
+  },
+  "builtEntriesMatch": true,
+  "realProviderRequests": 0,
+  "realGenerationCost": 0,
+  "realVoiceQuality": "not-tested",
+  "sourceFingerprints": [
+    {
+      "path": "apps/desktop/src/main/engine-host.ts",
+      "sha256": "040b66f675dac727a075ff15c8c814cd4d29b98d7c2a1310758563eb7652ef70"
+    },
+    {
+      "path": "apps/desktop/src/main/engine-process.ts",
+      "sha256": "cd06dca503ddaa62b53084fa890a653be9e2832c14418ce5c4900aa28346c511"
+    },
+    {
+      "path": "apps/desktop/src/main/provider-capability.ts",
+      "sha256": "8200ed21a63b30202a8662436d8d643769f8c16396593e29f4246e6143201c4a"
+    },
+    {
+      "path": "apps/desktop/src/main/voice-export.ts",
+      "sha256": "c1e2dd75fbc09a8f80a256a80c50b1a2a31e2078f4dc301746be258b211b07b4"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/agent/AgentWorkspace.tsx",
+      "sha256": "b0a78523d19ba59d2f034173aad7f6d515595431b850a353d2dc279b9f7078f5"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/assets/AssetLibrary.tsx",
+      "sha256": "be6ded15bb7d60c921c4b1fd2aca0af036c513b0b9d8f5afff65709016069472"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/assets/VoiceLibrary.tsx",
+      "sha256": "74bb77101602d7f37e73886c3ebe0dbf097bae15316ee18bb3cbe15a1f5c30c0"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/audio/VoiceoverPanel.tsx",
+      "sha256": "1f29989c9c5aa4e4d5eceb844a3a0d98bf656fdc93a81ba170b588613ad24eed"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/canvas/CanvasCard.tsx",
+      "sha256": "f75180d517ee9dfeb343a18a9f8a63877b28e76c051daddb4ddb61a0c466f337"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/canvas/CanvasWorkspace.tsx",
+      "sha256": "3413d906f01a7cf1f78966bea7f0f0412cae9e74d0d55533ccf5d4aaa83ece84"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/canvas/GraphConnections.tsx",
+      "sha256": "e1bcddefdd3f031921d4bed26723b51b810306d202eeac06aa5cc8e6edb875bf"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/canvas/WorkflowApproval.tsx",
+      "sha256": "2661a87cbc2106849ed1985a50697c2b95575205a65802cf95a9255c6d276df6"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/creation/DialogueAssemblyPanel.tsx",
+      "sha256": "c8338c18022303b3df12bcb1e4e63d7fd43d6d0e0cddfae741cdeac1804db5d2"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/creation/DialogueRepairPanel.tsx",
+      "sha256": "7b0911f010dbf993f8c2d18da0554687745126d4f3c7b0d92857b4148a13fdc1"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/creation/ShotDialoguePanel.tsx",
+      "sha256": "a91c81ed9eff2021db75423aac8d5113f506e4b06b09b689eaa3cce425199b2b"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/entities/CharacterVoicePanel.tsx",
+      "sha256": "671c0f16780db684fa072474b8c37b2c36fb9c4892c97d5d319e7eaacbe7df81"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/entities/VoiceClonePanel.tsx",
+      "sha256": "cfb984c872c7094f90aaaca96c12a068086db1689b224618a95fe5a901b8db98"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/entities/VoiceIdentityAuditions.tsx",
+      "sha256": "e6c88d9ccbccbf6c9071ec0fb4711fc1f86655fcdd0aeb3c56f7382650e6f834"
+    },
+    {
+      "path": "apps/desktop/src/renderer/features/entities/VoiceUsagePanel.tsx",
+      "sha256": "560b2eaedd5205a44054e34292e13bb59dc38f654e6f0cfd67b89c4a64435bf2"
+    },
+    {
+      "path": "packages/contracts/src/agent.ts",
+      "sha256": "4b080fd1dfb60983c956104f09cc7afeebce48f6f443ae8b356d20360fda146b"
+    },
+    {
+      "path": "packages/contracts/src/audio.ts",
+      "sha256": "c924df5c7d112dd93f4741f829eeb3255e9aa63ea83a40836c8512c1ad4bd9f8"
+    },
+    {
+      "path": "packages/contracts/src/canvas.ts",
+      "sha256": "ef20a97ff00fbf6c287fed8d9fee0af7fafd92f8aabcee22287b1a628674de72"
+    },
+    {
+      "path": "packages/contracts/src/character-voice.ts",
+      "sha256": "24c8e8147445368f2f1bc08d88ff520b43faeb26caf11d77f2e7e7ebfd88ef13"
+    },
+    {
+      "path": "packages/contracts/src/commands.ts",
+      "sha256": "ce1a0d53cfcf2b5916dde9735fbaceb68d477ce6f28a08595b8fdb74db68e355"
+    },
+    {
+      "path": "packages/contracts/src/dialogue-assembly.ts",
+      "sha256": "ce14054e2af808e65f1868ad564df41cc6778ca8b25cd0654cf3e5e4cf1a9aac"
+    },
+    {
+      "path": "packages/contracts/src/dialogue-production.ts",
+      "sha256": "a68476e0c33db19edb937efde0fe5c285d7dcd0f9e3a1fd9d58697ba39db8815"
+    },
+    {
+      "path": "packages/contracts/src/events.ts",
+      "sha256": "45bf7aa18fc5139ed7ea18aade29d1bef7254c9994eaa552f5af7eb28a75b06b"
+    },
+    {
+      "path": "packages/contracts/src/finish-agent.ts",
+      "sha256": "9fd50ed14528b60d664f7389e5ec9819a8890c5200de1e0e58f17fd0d71f26a0"
+    },
+    {
+      "path": "packages/contracts/src/generation.ts",
+      "sha256": "657dbecf3375a5039a31ecc52f5f869de5b9a04ccd0d38eca60123579847adf9"
+    },
+    {
+      "path": "packages/contracts/src/models.ts",
+      "sha256": "e27fb87207c0a12f9a2fec9824a1a808cfa857b62e8f505ef5fe2607bf12cb5d"
+    },
+    {
+      "path": "packages/contracts/src/queries.ts",
+      "sha256": "fdb8240572692694cbb515c75617ba49b81fb6463521a165f85f1d33697a4ff8"
+    },
+    {
+      "path": "packages/contracts/src/render.ts",
+      "sha256": "abc239cc83da70b5cd6c69023ce0ff3cd1185b2104259c5356eb255f6f69ebdd"
+    },
+    {
+      "path": "packages/contracts/src/schema.ts",
+      "sha256": "02668a25c64f2d42f8dff86c61902156399cf087cea2d965e046d232ded82655"
+    },
+    {
+      "path": "packages/contracts/src/voice-management.ts",
+      "sha256": "75dae19e5f6c7b9e961d25106706e182032c22bfd7d761b24fabee0e107501ab"
+    },
+    {
+      "path": "packages/contracts/src/workflows.ts",
+      "sha256": "1098632862b98b67520fade5d3507966ebbb9df13940e625f0cb64afaac4efb9"
+    },
+    {
+      "path": "packages/domain/src/character-voice.ts",
+      "sha256": "69b7868adf24771e86f080d396354592d9d0992dc712e3c31b86503c817f942d"
+    },
+    {
+      "path": "packages/domain/src/dialogue-audio-assembly.ts",
+      "sha256": "87c96c38514cf405974bc04895729aeead7a0ba7e01586ebd028c6c260feeff3"
+    },
+    {
+      "path": "packages/domain/src/finish-proposals.ts",
+      "sha256": "6c5226b80f6052407082f1e70269e13484ab0a11e1ff6ea38d3f814c695181ff"
+    },
+    {
+      "path": "packages/domain/src/graph-plan.ts",
+      "sha256": "4cc7a7236c1bc50bf4881cea7dc0048b993f513fb8b7d3ca317e341e88348acb"
+    },
+    {
+      "path": "packages/domain/src/voice-identity.ts",
+      "sha256": "db5021ba960a1e06ddd74e58b467d11c4b8d91a14bfa8ce020efeaaed3322600"
+    },
+    {
+      "path": "packages/engine/src/agent-context.ts",
+      "sha256": "244d3cc87d42874aa433a8b839d6db5df2b78a279eb6dbb5609c62674bbb6bbb"
+    },
+    {
+      "path": "packages/engine/src/agent-service.ts",
+      "sha256": "f1285c95ccc93e77a7c88acd1000d387ac6d2a06bd9d210e960c282de78eecf7"
+    },
+    {
+      "path": "packages/engine/src/audio-service.ts",
+      "sha256": "3e532d0873f3a50a8635d5fad6d15b4ee0756bf405550784afb7e98502d02088"
+    },
+    {
+      "path": "packages/engine/src/bootstrap.ts",
+      "sha256": "a5ea9755bbc6b4301ee9aa2fffdd0bd64ee99dfaa8bbe155938f027121b1fd21"
+    },
+    {
+      "path": "packages/engine/src/canvas-service.ts",
+      "sha256": "b3637afb35052d0876235bb7a481f1341f905c0a22a6d192ffe50675353e959b"
+    },
+    {
+      "path": "packages/engine/src/character-voice-service.ts",
+      "sha256": "2d14453469c06cf2794122aac61da0f1322500b60f925903659c3dd81e2137ed"
+    },
+    {
+      "path": "packages/engine/src/command-router.ts",
+      "sha256": "e18df0174c6f3ea42f8ae0ce8a98bda0c5bf6577a1d3d4e736fc130c028ee1a1"
+    },
+    {
+      "path": "packages/engine/src/dialogue-production-service.ts",
+      "sha256": "35519a0afdc4ddaadf18b0a9a5ae08f2c1d15d1f31fdcf8276d14d4891977b5f"
+    },
+    {
+      "path": "packages/engine/src/finish-agent-service.ts",
+      "sha256": "68ef322d26fde0952b5d6e6db8d85661d79fb6f738656788b36c3a0f4b64fa3b"
+    },
+    {
+      "path": "packages/engine/src/generation-service.ts",
+      "sha256": "93f0ce4e1fa956f1b527ca3d78a66732c4a165487871fd0bdb499134020adcb7"
+    },
+    {
+      "path": "packages/engine/src/media/dialogue-audio-assembly.ts",
+      "sha256": "992117173893648f07b4fdda07ab88c8820e0b0ba575c05900dab2bacafb3ba7"
+    },
+    {
+      "path": "packages/engine/src/render-service.ts",
+      "sha256": "82aa24e51c3d5d24fb8725785e5ac410130e8097cfca22ca39c07eff819e5975"
+    },
+    {
+      "path": "packages/engine/src/voice-input-resolver.ts",
+      "sha256": "b8b675765045a8f1bb08682c2ab193ce9262f1dfb1b65103a5692a7afbe1193b"
+    },
+    {
+      "path": "packages/engine/src/voice-management-service.ts",
+      "sha256": "282f9fb9bacf497d02874d4f826c8537b407e5541cb62550cd85fb287f1ee9f3"
+    },
+    {
+      "path": "packages/engine/src/voiceover-authority.ts",
+      "sha256": "72a4ff753c26e51fd2304cb7ead89acd132340da36baa07edc58c3e6dd1128a1"
+    },
+    {
+      "path": "packages/engine/src/workflow-service.ts",
+      "sha256": "0ebaf21e89abc05bc26ec0feff906bebf6d4f841f2ea21382380b72a1d081bd6"
+    },
+    {
+      "path": "packages/providers/src/audio-protocol.ts",
+      "sha256": "1a569f4752fdb26c26e045bd872a779d72b69e014a10f6bea11453087370f11a"
+    },
+    {
+      "path": "packages/providers/src/http-transport.ts",
+      "sha256": "0d3f6702d0db639bca1e7d129985ec26cc70a809c58b7034194c431ff5e47c5a"
+    },
+    {
+      "path": "packages/providers/src/image-provider.ts",
+      "sha256": "5237a32d05b348012519ee0c34e70e1c46dfc0ea245c65f37b74ecac50b0449c"
+    },
+    {
+      "path": "packages/providers/src/voice-management.ts",
+      "sha256": "a329d201dd92537ec9978f341b6ae9fa44f5e8009e2f461bd1edbbed8cb414e4"
+    },
+    {
+      "path": "packages/storage/src/database.ts",
+      "sha256": "04d41b0a1fa10f86a001825351000d2e7d4d9c5192fe7e096b91e991023b6459"
+    },
+    {
+      "path": "packages/storage/src/migrations/0024-voice-identity.ts",
+      "sha256": "a211352a680bf0fb44531829f1ca6244a32e109c7da6dace25b9f7c1be187b13"
+    },
+    {
+      "path": "packages/storage/src/migrations/0025-voice-workflow.ts",
+      "sha256": "e4fdcd94f63188bb0b98117c54e0f4ca48e8df0745130a4ec91e2c8112b8d20e"
+    },
+    {
+      "path": "tests/electron/ipc-policy.test.ts",
+      "sha256": "c14e81f1d52ad737de4b1ea640d9cd576fc813424c6e566dd32c2fbb76622718"
+    },
+    {
+      "path": "tests/fixtures/audio-generation.ts",
+      "sha256": "f7d1317d48a5b5f8fcd4b479528cc1680aecc37cb19f030eda444d50843a4392"
+    },
+    {
+      "path": "tests/fixtures/p4-renderer/main.tsx",
+      "sha256": "cdf9d8648082b3226d358daf818400f4d70a706fcb4f6f3ddec786164e971582"
+    },
+    {
+      "path": "tests/integration/agent-voice-context.test.ts",
+      "sha256": "114c35d263e8c6e0c6706cf3140d53f9b3c7fb1a0e85e036060699d4a824e36f"
+    },
+    {
+      "path": "tests/integration/canvas-voice.test.ts",
+      "sha256": "9ead22351a5066903e776782ad712b84586189b16ef181b0af05cb9d42d028fd"
+    },
+    {
+      "path": "tests/integration/dialogue-assembly-workflow.test.ts",
+      "sha256": "37805c3158eb968ced6088ad21fd86d976fbf86d27df5a9fda161c9d54c423ab"
+    },
+    {
+      "path": "tests/integration/dialogue-audio-assembly.test.ts",
+      "sha256": "ad49445b0ec733505fd8cbee23bf2b5bf78c684b14ea1a8904a8667490dcfb6c"
+    },
+    {
+      "path": "tests/integration/dialogue-lipsync.test.ts",
+      "sha256": "4df25b5aa5cc796500cd56136c7d0aa4e4f65b0b4ab3acf3524692ac127f6509"
+    },
+    {
+      "path": "tests/integration/dialogue-production.test.ts",
+      "sha256": "fafb2df86222c2a8855d0533d887ca9b09de1102f9668b820c922e475cb0377a"
+    },
+    {
+      "path": "tests/integration/dialogue-selection.test.ts",
+      "sha256": "4c0d47832e8996543ea46a1f70c195736e7573f549ae99231b79cec4a8b11111"
+    },
+    {
+      "path": "tests/integration/finish-agent.test.ts",
+      "sha256": "1c539d15c5005e3240e4bcc2fd6f607c43893b86607105adaca9f2c7cdf93b23"
+    },
+    {
+      "path": "tests/integration/local-media-migration-fixture.ts",
+      "sha256": "c854ea1999629beb930fc82e973f0899efe17218510c14397d27b444649f0e4f"
+    },
+    {
+      "path": "tests/integration/migration-media.test.ts",
+      "sha256": "88a12f3a896eb6ebe94661b464e94046a9fa1bbe409a348e47355eda0875c039"
+    },
+    {
+      "path": "tests/integration/p4-populated-migration.test.ts",
+      "sha256": "a2829f24289d4ed480ac4420934dea25f7dc17f4cb0dbe4d75e5cafe8fc88761"
+    },
+    {
+      "path": "tests/integration/project-backup.test.ts",
+      "sha256": "d95d187abfe9ad043a702359f4dd017a818f41e6251ce3488c355e4bee9a49d4"
+    },
+    {
+      "path": "tests/integration/shot-dialogue.test.ts",
+      "sha256": "9d5ed2f2a033c18949f61dd07f63e57838916916dd90f901c829b322a1690932"
+    },
+    {
+      "path": "tests/integration/shot-production.test.ts",
+      "sha256": "dbee6501bc9320c7b4b0b06fe6051e485718d7c69c29e1a8459f61c10abf856b"
+    },
+    {
+      "path": "tests/integration/timeline-migration.test.ts",
+      "sha256": "9c50b0b4b7cbcfe559765ced6d98a8346e9f3abb181792427478c2d9efa4a4e5"
+    },
+    {
+      "path": "tests/integration/voice-backup.test.ts",
+      "sha256": "e44d0484a2b310edb869b804ffe3b129ec27439e90fa0f05c7e24e3ed50a1885"
+    },
+    {
+      "path": "tests/integration/voice-delivery.test.ts",
+      "sha256": "5199ff7da02d3de0127728dacad4cd9dc4c793dea9d39de422813c9b564586ce"
+    },
+    {
+      "path": "tests/integration/voice-identity.test.ts",
+      "sha256": "ae34f66d51834aeca949df908668b1be08ca075f0819ab72226e79607eecbd03"
+    },
+    {
+      "path": "tests/integration/voice-legacy-binding.test.ts",
+      "sha256": "333716aa714c924feef08de8701763002f4503b7c2b17282835f6bbcfdc48d13"
+    },
+    {
+      "path": "tests/integration/voice-management-protocol.test.ts",
+      "sha256": "700daca8874d73071cbea2bfedfc53e9174738dbc6ad08a10e47e8eb5417efe1"
+    },
+    {
+      "path": "tests/integration/voice-management.test.ts",
+      "sha256": "cbb6d5bb3e4a265dcaf30aeb097f474e9d5ff1a2bc5902098f044c7d0f4d7376"
+    },
+    {
+      "path": "tests/integration/voice-migration.test.ts",
+      "sha256": "4081c8625adf518099b7b66a93d905f00957a0b14f5f8e46259897a96ec1750e"
+    },
+    {
+      "path": "tests/integration/voice-multirole.test.ts",
+      "sha256": "c9c9c82fecc30886466d74745a827636cc16a9b85f5dc2496d1bf379b47e7dba"
+    },
+    {
+      "path": "tests/integration/voice-qualification.test.ts",
+      "sha256": "9863d56cbd6f26f1cbd75e08ae11b30f7f8243c0ca946747555b95076ad28540"
+    },
+    {
+      "path": "tests/integration/voice-resolution.test.ts",
+      "sha256": "386114b14e5573e3d33c7e5e32b35bdfb84833db1103b6915ce3e7f5336e7ee1"
+    },
+    {
+      "path": "tests/integration/voice-spec-regressions.test.ts",
+      "sha256": "57d1a9b37437b42ddbc4420a06a7fa37d2917814403f2702da3c26c0e5563b80"
+    },
+    {
+      "path": "tests/renderer/voice-identity.test.ts",
+      "sha256": "74144dfb038e107d869b05742939a2ead5a752c5937622be3655650c107f565f"
+    },
+    {
+      "path": "tests/renderer/voiceover.test.ts",
+      "sha256": "61f3e224b4a8cd858cf78177d9eba84c4a3d85beadb34e45f621770a0c9ed322"
+    }
+  ],
+  "finalTypecheckExit": 0,
+  "scopedDiffCheckExit": 0,
+  "launcher": {
+    "path": "D:/movieAgent/启动MovieAgent.cmd",
+    "target": "D:/movieAgent/libtv-studio/apps/desktop/release-spec001/win-unpacked/MovieAgent.exe",
+    "before": "verification/launcher-before.cmd"
+  }
+}

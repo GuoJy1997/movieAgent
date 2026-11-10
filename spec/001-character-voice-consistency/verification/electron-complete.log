@@ -1,0 +1,40 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+ ❯ tests/electron/ipc-policy.test.ts (2 tests | 1 failed | 1 skipped) 2280ms
+   × rejects unauthorized windows, unknown channels, malformed envelopes, and exposes only narrow APIs in the packaged app 2278ms
+   ↓ rejects a real same-origin child frame even when its authorized parent can invoke the production policy
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/electron/ipc-policy.test.ts > rejects unauthorized windows, unknown channels, malformed envelopes, and exposes only narrow APIs in the packaged app
+AssertionError: expected { require: 'undefined', …(4) } to deeply equal { require: 'undefined', …(4) }
+
+- Expected
++ Received
+
+@@ -7,10 +7,11 @@
+      "derivedMediaUrl",
+      "describe",
+      "execute",
+      "exportCreation",
+      "exportTimeline",
++     "exportVoice",
+      "listProjects",
+      "mediaUrl",
+      "openCredentialEditor",
+      "openModelConfigEditor",
+      "openProjectFolder",
+
+ ❯ tests/electron/ipc-policy.test.ts:32:7
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 skipped (2)
+   Start at  19:30:48
+   Duration  3.30s (transform 50ms, setup 0ms, import 782ms, tests 2.28s, environment 0ms)
+
+JSON report written to D:/movieAgent/spec/001-character-voice-consistency/verification/electron-complete.json

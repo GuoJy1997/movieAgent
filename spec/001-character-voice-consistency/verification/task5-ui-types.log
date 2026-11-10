@@ -1,0 +1,2 @@
+apps/desktop/src/renderer/features/creation/DialogueRepairPanel.tsx(49,811): error TS1005: '}' expected.
+apps/desktop/src/renderer/features/creation/DialogueRepairPanel.tsx(49,816): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?

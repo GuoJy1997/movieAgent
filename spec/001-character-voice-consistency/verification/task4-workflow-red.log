@@ -1,0 +1,36 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:31476) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/dialogue-assembly-workflow.test.ts [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 2237[2mms[22m[39m
+[31m   [31m×[31m assembles all reviewed turns, persists provenance and prevents a single take from confirming multiple turns[39m[33m 2235[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/dialogue-assembly-workflow.test.ts[2m > [22massembles all reviewed turns, persists provenance and prevents a single take from confirming multiple turns
+[31m[1mAssertionError[22m: expected { ok: true, value: { …(5) } } to match object { ok: false, …(1) }
+(6 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[32m-   "error": {[39m
+[32m-     "code": "DIALOGUE_ASSEMBLY_REQUIRED",[39m
+[32m-   },[39m
+[32m-   "ok": false,[39m
+[31m+   "ok": true,[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/integration/dialogue-assembly-workflow.test.ts:[2m32:175[22m[39m
+
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m   Start at [22m 11:43:24
+[2m   Duration [22m 6.46s[2m (transform 2.75s, setup 0ms, import 3.83s, tests 2.24s, environment 0ms)[22m
+

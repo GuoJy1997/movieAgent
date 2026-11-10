@@ -1,0 +1,30 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:13152) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/subproject-assets.test.ts (2 tests | 1 failed | 1 skipped) 1380ms
+   × does not classify a known foreign generated asset version as an unowned historical import 1375ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/subproject-assets.test.ts > does not classify a known foreign generated asset version as an unowned historical import
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/integration/subproject-assets.test.ts:25:67
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 skipped (2)
+   Start at  09:32:35
+   Duration  8.27s (transform 4.35s, setup 0ms, import 6.30s, tests 1.38s, environment 0ms)
+

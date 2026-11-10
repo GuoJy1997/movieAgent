@@ -1,0 +1,7 @@
+packages/engine/src/dialogue-production-service.ts(18,10): error TS6133: 'computeAuditionFingerprint' is declared but its value is never read.
+packages/engine/src/dialogue-production-service.ts(88,13): error TS7034: Variable 'referenceAudio' implicitly has type 'any[]' in some locations where its type cannot be determined.
+packages/engine/src/dialogue-production-service.ts(93,191): error TS7005: Variable 'referenceAudio' implicitly has an 'any[]' type.
+packages/engine/src/dialogue-production-service.ts(93,311): error TS7005: Variable 'referenceAudio' implicitly has an 'any[]' type.
+tests/integration/voice-spec-regressions.test.ts(2,9): error TS6133: 'audioFixture' is declared but its value is never read.
+tests/integration/voice-spec-regressions.test.ts(3,1): error TS6133: 'validateDialogue' is declared but its value is never read.
+tests/integration/voice-spec-regressions.test.ts(4,1): error TS6133: 'voiceInputResolver' is declared but its value is never read.

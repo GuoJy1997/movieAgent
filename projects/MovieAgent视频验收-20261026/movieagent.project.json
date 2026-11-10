@@ -1,0 +1,12 @@
+{
+  "format": "movieagent.project",
+  "schemaVersion": 1,
+  "templateVersion": 1,
+  "workspaceId": "e84f24d4-6ec3-448e-b7c7-005a08399a41",
+  "name": "MovieAgent视频验收-20261026",
+  "createdAt": "2026-10-25T16:44:18.280Z",
+  "binding": {
+    "libraryId": "56807bc7-feb0-4608-85cc-f668f4b77d19",
+    "projectId": "70d0c034-2e1f-43a1-9bba-35009e72cb45"
+  }
+}

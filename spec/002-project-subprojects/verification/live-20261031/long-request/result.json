@@ -1,0 +1,109 @@
+{
+  "status": "real-text-memory-continuity-passed-with-known-unknown-task-blocker",
+  "at": "2026-10-31T10:29:30.406Z",
+  "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+  "projectRoot": "D:\\movieAgent\\projects\\连续创作真实验收-20261031-601872",
+  "package": "release-spec002-long-requests",
+  "realNewTextRequests": 3,
+  "additionalVideoRequests": 0,
+  "actualBilling": "unknown",
+  "memory": {
+    "completionId": "8163e674-04d0-4d4b-b648-8abc3f3e84f4",
+    "state": "ready",
+    "summaryId": "summary-1805640b2c63b4713995ecf120e65d6d",
+    "revision": 1,
+    "firstAttemptSeconds": 142,
+    "firstAttemptResult": "completed text, truncated JSON, INVALID_MEMORY_OUTPUT",
+    "retrySeconds": 129,
+    "retryOutputTokens": 8192
+  },
+  "agent": {
+    "runId": "b7749a72-7162-406c-8bbc-bd59e234b835",
+    "accepted": true,
+    "scripts": [
+      {
+        "id": "agent-5220476bc4a8b7fd845d45a450fc171ee43a85e9930c057c",
+        "revision": 1,
+        "title": "第二集 · 邸报"
+      }
+    ],
+    "shots": [
+      {
+        "id": "agent-14f5d6a821f5125dd65d6861e67de34605a1a771102c16a2",
+        "revision": 1,
+        "durationSeconds": 4,
+        "title": "低头看报"
+      }
+    ],
+    "fixedMemoryIncluded": true,
+    "preservedRightHandProp": true,
+    "elapsedSeconds": 52,
+    "additionalVideoRequests": 0
+  },
+  "settings": {
+    "textRequestTimeoutMs": 300000,
+    "concurrency": 1,
+    "maxCompletionTokens": 8192
+  },
+  "newTasks": [
+    {
+      "taskId": "4656bb05-25b4-43c8-85f6-880a1ed0ef35",
+      "attemptId": "d9d156c2-0d54-4ec2-a5c7-9ef6c3b58c52",
+      "state": "SUCCEEDED",
+      "artifactRef": {
+        "kind": "artifact",
+        "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+        "artifactId": "ef957c77-25d4-4943-b596-cd4eec253a10"
+      }
+    },
+    {
+      "taskId": "d9fce1eb-de5b-4026-97c8-2d76a509bb55",
+      "attemptId": "5ef5878c-4e31-4d19-9a09-21f31fcb9334",
+      "state": "SUCCEEDED",
+      "artifactRef": {
+        "kind": "artifact",
+        "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+        "artifactId": "54198fd0-4cb4-4d02-8a62-f15fa36b51a8"
+      }
+    },
+    {
+      "taskId": "02d5cc3d-7c9c-40ca-877f-089aaa2758a7",
+      "attemptId": "bad41937-a459-4f48-8181-143d8306cd87",
+      "state": "SUCCEEDED",
+      "artifactRef": {
+        "kind": "artifact",
+        "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+        "artifactId": "9113f831-6252-43de-ae2a-c4186f7bed8a"
+      }
+    }
+  ],
+  "originalUnknown": {
+    "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+    "taskId": "ddf98a18-42ef-4a42-9fd6-8cbd04b9ad6f",
+    "attemptId": "02084eae-1d2a-4d76-bc1e-8690ed64e8ec",
+    "state": "RECONCILE_REQUIRED",
+    "providerState": "unknown",
+    "collectionState": "pending",
+    "providerTaskId": null,
+    "clientRequestId": "ace77588-ed24-41df-b2a1-7d9ff2405528",
+    "cancelRequested": false,
+    "cancelStatus": "none",
+    "reconcileStatus": "unsupported",
+    "estimateMicros": null,
+    "reportedActualMicros": null,
+    "reservationMicros": 1000000,
+    "currency": "CNY",
+    "settlementStatus": "unknown",
+    "artifactRef": null,
+    "errorCode": "STALE_LEASE"
+  },
+  "limitations": [
+    "Unknown original Agent request remains and consumes the connection slot; this acceptance used one temporarily authorized extra slot, then restored concurrency=1. Further text requests in this acceptance library are still blocked pending original-request resolution.",
+    "Memory/Agent content continuity tested for one short-drama case only; no real historical-column case, voice identity, TTS, ASR or lip sync in this run.",
+    "Episode 2 is a saved script and 4-second shot, not an additionally generated video.",
+    "Original video was generated from the earlier explicitly manual acceptance script.",
+    "Episode 2 Agent created a same-name character; same shared character identity was not selected or verified in this run."
+  ],
+  "reopenVerified": true,
+  "reopenedAt": "2026-10-31T10:29:30.407Z"
+}

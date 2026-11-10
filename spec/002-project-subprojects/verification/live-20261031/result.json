@@ -1,0 +1,37 @@
+{
+  "status": "partial-pass-with-text-blocker",
+  "projectRoot": "D:\\movieAgent\\projects\\连续创作真实验收-20261031-601872",
+  "videoPath": "D:\\movieAgent\\projects\\连续创作真实验收-20261031-601872\\exports\\video\\episode1-cut-r1-b381d275-b12d-4f15-804a-b62bc4cec7d6.mp4",
+  "launcher": "D:\\movieAgent\\projects\\连续创作真实验收-20261031-601872\\打开本次验收项目.cmd",
+  "requestedVideoSeconds": 4,
+  "actualDurationSeconds": 3.733333,
+  "videoGenerationCount": 1,
+  "textGenerationCount": 1,
+  "submitIntents": 2,
+  "exportHash": "d46d52bc69f7d371c2aaa2a7e38f046b3951b2ccfde10c3ad6ed7738017b2060",
+  "videoBytes": 3749825,
+  "crossEpisodeReuse": {
+    "sameArtifactId": "aedc530c-ac42-4745-a43b-158b5d604713",
+    "sourceSubprojectId": "25396ab0-62e9-40f2-8a2c-a98939055e2f",
+    "targetSubprojectId": "b980f737-c050-4f52-baf6-65ac15dafeac",
+    "duplicatedOriginal": false
+  },
+  "automaticMemory": "not-verified-pending-no-model",
+  "tasks": [
+    {
+      "adapter": "openai-chat-v1",
+      "state": "RECONCILE_REQUIRED",
+      "errorCode": "STALE_LEASE",
+      "reportedActualMicros": null,
+      "settlementStatus": "unknown"
+    },
+    {
+      "adapter": "minimax-video-v2",
+      "state": "SUCCEEDED",
+      "errorCode": null,
+      "reportedActualMicros": null,
+      "settlementStatus": "unknown"
+    }
+  ],
+  "billing": "Video estimate CNY 1.60; actual billing unknown. Text request outcome/usage unknown."
+}

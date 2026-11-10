@@ -1,0 +1,15 @@
+
+> libtv-studio-workspace@0.1.0 test
+> vitest run tests/integration/unknown-task-release.test.ts --maxWorkers=1 --testTimeout=30000
+
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:4544) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  19:39:59
+   Duration  5.59s (transform 2.00s, setup 0ms, import 2.93s, tests 2.39s, environment 0ms)
+

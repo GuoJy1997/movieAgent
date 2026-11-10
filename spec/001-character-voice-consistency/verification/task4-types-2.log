@@ -1,0 +1,1 @@
+tests/integration/dialogue-assembly-workflow.test.ts(36,39): error TS2339: Property 'run' does not exist on type '{ start(): Result<undefined>; wake: () => void; pause(): Promise<void>; resume(): void; close(): Promise<void>; drain(): Promise<void>; }'.

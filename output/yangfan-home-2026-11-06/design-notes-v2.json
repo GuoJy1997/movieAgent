@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "status": "generated_and_visually_reviewed",
+  "scope": "羊番TV 首页视觉修订，未改动产品代码。",
+  "feedback": [
+    "界面控件颜色统一到顶部深蓝渐变",
+    "显眼标题增加艺术字形",
+    "分集选中不再使用浅色填充"
+  ],
+  "palette": {
+    "canvas": "#0B101A",
+    "surface": "#141C2A",
+    "primaryStart": "#163B87",
+    "primaryEnd": "#315FD6",
+    "progress": "同一钴蓝体系，以文字与完成比例区分任务"
+  },
+  "typography": "字标和主标题用前倾、适度切角的展示字形；片名保留手写字；导航、参数和正文使用清晰UI字体。",
+  "episodeNavigation": "图像优先的横向分集缩略图带；EP03封面轻微提升并加强文字，短钴蓝标记表示位置；卡底保持同一深色，不做整块浅色高亮。",
+  "componentReferences": [
+    {
+      "source": "D:/movieAgent/UI参考.md",
+      "role": "按用户指定文档选取React Bits、Aceternity两组相关组件"
+    },
+    {
+      "url": "https://reactbits.dev/components/circular-gallery",
+      "role": "上方3D画廊参考弧形排列、拖动和自动滚动；只阅读官方文档，实时页面预览未成功"
+    },
+    {
+      "url": "https://ui.aceternity.com/components/apple-cards-carousel",
+      "role": "下方分集导航参考封面排布；适配为稳定、紧凑的缩略图带，不照搬大幅展开；只阅读官方文档"
+    }
+  ],
+  "verification": "本次只交付静态设计图；组件未安装，未验证实际动效或许可适配。",
+  "generation": "Built-in image_gen",
+  "input": "D:/movieAgent/output/yangfan-home-2026-11-06/yangfan-home-v1.png",
+  "output": "D:/movieAgent/output/yangfan-home-2026-11-06/yangfan-home-v2-deep-blue.png",
+  "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-f8af09ca-04e8-4fc3-9bcc-938bb210b99d.png",
+  "review": "已目视确认按钮与进度条进入深蓝/钴蓝体系；主标题、品牌与主要区块标题加强字形；EP03使用封面层级和短蓝标记，未保留浅色整卡底。完整页面静态内容已显示。"
+}

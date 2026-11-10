@@ -1,0 +1,43 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:29668) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-spec-regressions.test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 61637[2mms[22m[39m
+[31m   [31m×[31m prepares current role appearance with an explicitly pinned historical voice and rejects mixed voices for that role[39m[33m 31715[2mms[22m[39m
+   [33m[2m✓[22m[39m blocks a prepared native request after the voice is archived while retaining historical reads [33m 29918[2mms[22m[39m
+ [32m✓[39m tests/integration/voice-management-protocol.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+(node:31040) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/dialogue-assembly-workflow.test.ts [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 68868[2mms[22m[39m
+[31m   [31m×[31m assembles all reviewed turns, persists provenance and prevents a single take from confirming multiple turns[39m[33m 68864[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/dialogue-assembly-workflow.test.ts[2m > [22massembles all reviewed turns, persists provenance and prevents a single take from confirming multiple turns
+[31m[1mError[22m: Test timed out in 60000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m tests/integration/dialogue-assembly-workflow.test.ts:[2m20:1[22m[39m
+
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-spec-regressions.test.ts[2m > [22mprepares current role appearance with an explicitly pinned historical voice and rejects mixed voices for that role
+[31m[1mError[22m: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m tests/integration/voice-spec-regressions.test.ts:[2m17:1[22m[39m
+    [90m 15|[39m it('prepares current role appearance with an explicitly pinned histori…
+    [90m 16|[39m  [35mconst[39m s[33m=[39m[35mawait[39m [34mnativeSetup[39m()[33m;[39m
+    [90m 17|[39m  value(await execute(s.engine,'creation.saveEntity',{projectId:s.proje…
+    [90m   |[39m [31m^[39m
+    [90m 18|[39m  value(await execute(s.engine,'voice.save',{projectId:s.projectId,id:'…
+    [90m 19|[39m  const turn={turnId:'a',characterRef:{id:'a',revision:2},voiceRef:{id:…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m7 passed[39m[22m[90m (9)[39m
+[2m   Start at [22m 16:03:28
+[2m   Duration [22m 555.18s[2m (transform 411.94s, setup 0ms, import 418.13s, tests 130.52s, environment 1ms)[22m
+

@@ -1,0 +1,14 @@
+[
+  {
+    "source": "D:/movieAgent/spec/001-character-voice-consistency/verification/pending/tests/fixtures/p4-renderer/main.tsx",
+    "target": "D:/movieAgent/libtv-studio/tests/fixtures/p4-renderer/main.tsx"
+  },
+  {
+    "source": "D:/movieAgent/spec/001-character-voice-consistency/verification/pending/1793350818961/tests/integration/p4-populated-migration.test.ts",
+    "target": "D:/movieAgent/libtv-studio/tests/integration/p4-populated-migration.test.ts"
+  },
+  {
+    "source": "D:/movieAgent/spec/001-character-voice-consistency/verification/pending/1793350818962/tests/integration/project-backup.test.ts",
+    "target": "D:/movieAgent/libtv-studio/tests/integration/project-backup.test.ts"
+  }
+]

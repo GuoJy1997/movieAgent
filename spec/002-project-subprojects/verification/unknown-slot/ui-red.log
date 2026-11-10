@@ -1,0 +1,31 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+ ❯ tests/renderer/unknown-task-release.test.ts (2 tests | 1 failed) 23001ms
+   × requires risk acknowledgement before releasing the exact original attempt and then shows that billing remains unknown 5299ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/renderer/unknown-task-release.test.ts > requires risk acknowledgement before releasing the exact original attempt and then shows that billing remains unknown
+TimeoutError: locator.click: Timeout 3000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: '解除并发占用', exact: true })
+
+ ❯ tests/renderer/unknown-task-release.test.ts:8:61
+      6| it('requires risk acknowledgement before releasing the exact original …
+      7|  await mounted(h,async page=>{
+      8|   await page.getByRole('button',{name:'解除并发占用',exact:true}).click();
+       |                                                             ^
+      9|   const confirm=page.getByRole('button',{name:'确认解除占用',exact:true});ex…
+     10|   await page.getByRole('checkbox',{name:'我了解原请求可能继续执行并产生费用'}).check();…
+ ❯ mounted tests/renderer/p4-harness.ts:31:153
+ ❯ tests/renderer/unknown-task-release.test.ts:7:2
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  19:40:40
+   Duration  24.11s (transform 69ms, setup 0ms, import 812ms, tests 23.00s, environment 0ms)
+

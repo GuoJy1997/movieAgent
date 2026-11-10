@@ -1,0 +1,33 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:20096) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/subproject-hardening.test.ts (1 test | 1 failed) 716ms
+   × binds workflow-generated preparation to its actual canvas and rejects foreign scoped metadata and direct completion 711ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/subproject-hardening.test.ts > binds workflow-generated preparation to its actual canvas and rejects foreign scoped metadata and direct completion
+AssertionError: expected { …(2) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "projectId": "293e87fa-2a29-4484-ad0c-2beed7824f2c",
+-   "subprojectId": "d9e3a91f-ab3d-4aad-afe9-37a361348701",
++   "subprojectId": "default-7c830bf18995b9e085d269358a1e44f7",
+  }
+
+ ❯ tests/integration/subproject-hardening.test.ts:16:16
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  09:00:02
+   Duration  8.02s (transform 4.66s, setup 0ms, import 6.70s, tests 716ms, environment 0ms)
+

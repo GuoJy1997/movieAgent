@@ -1,0 +1,30 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:29496) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-legacy-binding.test.ts [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 6442[2mms[22m[39m
+[31m   [31m×[31m migrates a resolvable legacy TTS preset without changing voice identity or manufacturing quality approval[39m[33m 6435[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-legacy-binding.test.ts[2m > [22mmigrates a resolvable legacy TTS preset without changing voice identity or manufacturing quality approval
+[31m[1mError[22m: {"code":"INVALID_PARAMETERS","message":"配音需要音色及受限格式/速度参数。"}[39m
+[36m [2m❯[22m audioValue tests/fixtures/audio-generation.ts:[2m15:25[22m[39m
+    [90m 13|[39m import type { ProviderContext } from '../../packages/providers/src/ima…
+    [90m 14|[39m [35mexport[39m [35mfunction[39m [34maudioValue[39m(result[33m:[39m any)[33m:[39m any {
+    [90m 15|[39m   [35mif[39m ([33m![39mresult[33m.[39mok) [35mthrow[39m [33mError[39m([33mJSON[39m[33m.[39m[34mstringify[39m(result[33m.[39merror))[33m;[39m
+    [90m   |[39m                         [31m^[39m
+    [90m 16|[39m   [34mexpect[39m(result)[33m.[39m[34mtoMatchObject[39m({ ok[33m:[39m [35mtrue[39m })[33m;[39m
+    [90m 17|[39m   [35mreturn[39m result[33m.[39mvalue[33m?.[39mresult [33m??[39m result[33m.[39mvalue[33m;[39m
+[90m [2m❯[22m audioFixture tests/fixtures/audio-generation.ts:[2m55:20[22m[39m
+[90m [2m❯[22m tests/integration/voice-legacy-binding.test.ts:[2m5:10[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m   Start at [22m 12:15:45
+[2m   Duration [22m 38.08s[2m (transform 23.18s, setup 0ms, import 27.65s, tests 6.44s, environment 1ms)[22m
+

@@ -1,0 +1,62 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:14412) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-spec-regressions.test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 62917[2mms[22m[39m
+[31m   [31m×[31m prepares current role appearance with an explicitly pinned historical voice and rejects mixed voices for that role[39m[33m 33472[2mms[22m[39m
+   [33m[2m✓[22m[39m blocks a prepared native request after the voice is archived while retaining historical reads [33m 29442[2mms[22m[39m
+ [31m❯[39m tests/integration/voice-management-protocol.test.ts [2m([22m[2m6 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 38[2mms[22m[39m
+   [32m✓[39m keeps an int64 upload file ID exact without rounding through Number[32m 6[2mms[22m[39m
+   [32m✓[39m encodes the original numeric file ID and candidate voice exactly[32m 1[2mms[22m[39m
+   [32m✓[39m does not accept nonzero provider codes or malformed IDs as success[32m 1[2mms[22m[39m
+   [32m✓[39m lists system and cloned IDs without conflating voices from different categories[32m 3[2mms[22m[39m
+   [32m✓[39m applies clone sample limits separately from short video references[32m 1[2mms[22m[39m
+[31m   [31m×[31m keeps ambiguous clone JSON separate from explicit provider rejection[39m[32m 22[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-management-protocol.test.ts[2m > [22mkeeps ambiguous clone JSON separate from explicit provider rejection
+[31m[1mAssertionError[22m: expected { ok: false, error: { …(2) } } to match object { ok: false, …(1) }
+(1 matching property omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[2m    "error": {[22m
+[32m-     "code": "INVALID_VOICE_RESPONSE",[39m
+[31m+     "code": "VOICE_PROVIDER_REJECTED",[39m
+[2m    },[22m
+[2m    "ok": false,[22m
+[2m  }[22m
+
+[36m [2m❯[22m tests/integration/voice-management-protocol.test.ts:[2m26:133[22m[39m
+    [90m 24|[39m
+    [90m 25|[39m it('keeps ambiguous clone JSON separate from explicit provider rejecti…
+    [90m 26|[39m  for(const body of [{},{base_resp:{}},{base_resp:{status_code:'0'}},[]…
+    [90m   |[39m                                                                                                                                     [31m^[39m
+    [90m 27|[39m  expect(decodeVoiceClone(Buffer.from('{"base_resp":{"status_code":1004…
+    [90m 28|[39m })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-spec-regressions.test.ts[2m > [22mprepares current role appearance with an explicitly pinned historical voice and rejects mixed voices for that role
+[31m[1mError[22m: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m tests/integration/voice-spec-regressions.test.ts:[2m17:1[22m[39m
+    [90m 15|[39m  [35mreturn[39m {[33m...[39ms[33m,[39mprojectId[33m,[39mprofileRef[33m,[39mdraft}[33m;[39m
+    [90m 16|[39m }
+    [90m 17|[39m it('prepares current role appearance with an explicitly pinned histori…
+    [90m   |[39m [31m^[39m
+    [90m 18|[39m  [35mconst[39m s[33m=[39m[35mawait[39m [34mnativeSetup[39m()[33m;[39m
+    [90m 19|[39m  value(await execute(s.engine,'creation.saveEntity',{projectId:s.proje…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m6 passed[39m[22m[90m (8)[39m
+[2m   Start at [22m 15:47:58
+[2m   Duration [22m 460.16s[2m (transform 386.68s, setup 0ms, import 391.37s, tests 62.96s, environment 1ms)[22m
+

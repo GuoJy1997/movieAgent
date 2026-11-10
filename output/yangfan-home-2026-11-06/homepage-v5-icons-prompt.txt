@@ -1,0 +1,25 @@
+Use case: precise-object-edit / UI icon refinement.
+Edit image 1, the full 羊番TV homepage mockup. Image 2 is the user's provided Jimeng vertical icon strip and is ONLY an icon visual-language reference.
+The user likes the current layout and blue-violet-to-black sidebar gradient but dislikes thin hollow wireframe icons. Redesign only the LEFT SIDEBAR navigation icons and lower task/settings icons into a consistent SOFT SOLID / FILLED icon family inspired by the friendly compact silhouettes of the reference. The reference itself mixes filled and rounded-outline icons; the user's explicit request takes precedence: favor FILLED shapes, not hollow outline drawings.
+
+OUTPUT: One full desktop homepage screenshot, same 1536x1024 framing and arrangement as image 1. No icon sheet, inset, device mockup, before-after comparison or explanation labels.
+
+EXACT LOCAL CHANGE:
+The only icons to replace are the ones next to 项目, 创作, 制作, 资产, 成片, 任务 and 设置 in the left sidebar.
+Keep their centers, labels, spacing, approximate 21–23px size, active-row size and badge placement. Do not enlarge the sidebar or icons.
+Use soft off-white flat filled silhouettes, subtly rounded corners, deliberate negative-space details, consistent optical weight, clean readable pixel-like edges. The active icon may be full white, inactive icons slightly softer #D9DEE9. No color inside individual glyphs, no gradients on the glyphs, no glow or shadows, no metallic or 3D icon rendering. No circular background badge around every icon.
+
+Use these clear semantic silhouettes:
+- 项目: two compact overlapping SOLID rounded project/film frames; use one small negative-space notch or slit to distinguish the layers, NOT a three-tier hollow outline stack.
+- 创作: a single SOLID four-point rounded sparkle like the filled creative symbol in reference image 2, clean organic concave curves. This must not be an outline star.
+- 制作: a SOLID compact clapperboard silhouette with a slightly angled top; two or three tiny dark stripe cutouts in the clap section, lower body a filled white mass. Do not draw an empty rectangle.
+- 资产: a SOLID rounded folder with a small stepped tab, simple distinctive silhouette, tiny dark inset only if necessary. Not a hollow folder.
+- 成片: a SOLID rounded film-frame or video tile with a small dark play-triangle cutout and minimal small sprocket apertures. Keep it visually distinct from 制作 and 项目.
+- 任务: a SOLID rounded clipboard/checklist icon with a small dark check or two inset short lines. Do not use the old hollow bell. Preserve the adjacent number 2 badge.
+- 设置: a SOLID soft rounded gear with six to eight compact lobes and one small dark center hole. It must have a strong white filled mass, not a thin outlined flower/cog.
+
+Shape quality: small professional consumer-product pictograms, friendly and precise like Jimeng, not emoji, not clipart, not excessively bold blobs. Negative space should serve recognition; the external silhouette should carry the icon. Avoid excessively detailed film sprockets or checklists that become noise at 22px.
+
+STRICT PRESERVATION:
+Keep the blue-violet fading-to-black sidebar background, original pearl-white sheep robot head and exact 羊番TV wordmark, sidebar labels, top gradient ribbon, header typography, current project coverflow artwork, composer and its tool icons, episode strip and task progress section as close to image 1 as possible. The user requested the navigation and settings icon language, not a whole page restyle. Do not touch main-content icons in this edit.
+No watermark. Return the single complete edited homepage.

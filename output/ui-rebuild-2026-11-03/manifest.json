@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-03",
+  "count": 18,
+  "images": [
+    {
+      "id": "01-launcher",
+      "title": "项目启动器与维护",
+      "file": "01-launcher.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-921cdc86-72db-4968-90de-8a07b76a7f9f.png"
+    },
+    {
+      "id": "02-projects",
+      "title": "项目资料库",
+      "file": "02-projects.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-f88a18b6-017d-4007-8a66-29bf4106966e.png"
+    },
+    {
+      "id": "03-episodes",
+      "title": "分集与连续创作",
+      "file": "03-episodes.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-5ce41152-03b8-4d0e-80a5-918d6444c35f.png"
+    },
+    {
+      "id": "04-canvas",
+      "title": "自由制作画布",
+      "file": "04-canvas.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-17e1eea5-4dcc-4fb5-a24e-8b966a9a4242.png"
+    },
+    {
+      "id": "05-agent",
+      "title": "创作 Agent 与提案",
+      "file": "05-agent.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-0f7bf577-dd0c-402a-8989-5ba6dff00355.png"
+    },
+    {
+      "id": "06-storyboard",
+      "title": "剧本与分镜",
+      "file": "06-storyboard.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-75a9bad9-a4df-4611-8226-16cc6794f953.png"
+    },
+    {
+      "id": "07-production",
+      "title": "镜头生产与结果",
+      "file": "07-production.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-796cce25-8a36-44d8-84c3-f3c5554d3920.png"
+    },
+    {
+      "id": "08-dialogue",
+      "title": "对白与口型审核",
+      "file": "08-dialogue.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-2737929e-eba9-4ced-adbf-b4de985cea4d.png"
+    },
+    {
+      "id": "09-entities",
+      "title": "角色场景资料",
+      "file": "09-entities.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-6184bde7-ba8a-437c-93f3-62096e867bbe.png"
+    },
+    {
+      "id": "10-voice",
+      "title": "角色声音工作室",
+      "file": "10-voice.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-f0e9407b-ebce-4747-b219-f19617232e4d.png"
+    },
+    {
+      "id": "11-assets",
+      "title": "项目资产库",
+      "file": "11-assets.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-2e681f64-1b46-400b-a3dc-59a939cd2112.png"
+    },
+    {
+      "id": "12-timeline",
+      "title": "剪辑成片工作台",
+      "file": "12-timeline.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-44d2222d-0b8a-4e44-8719-c6034d0e903a.png"
+    },
+    {
+      "id": "13-audio-subtitles",
+      "title": "声音与字幕编辑",
+      "file": "13-audio-subtitles.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-5b32ad23-b6e6-446e-a340-324ff0565e43.png"
+    },
+    {
+      "id": "14-export",
+      "title": "导出与制品交付",
+      "file": "14-export.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-0b30a83b-6b67-418b-87a8-d7b4dc0015f0.png"
+    },
+    {
+      "id": "15-tasks",
+      "title": "项目任务中心",
+      "file": "15-tasks.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-be7ad315-c3bc-4deb-9fba-263bae6a5959.png"
+    },
+    {
+      "id": "16-models",
+      "title": "模型设置与凭据窗口",
+      "file": "16-models.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-ea237b3c-f91b-4140-b0b9-eb8e6127615c.png"
+    },
+    {
+      "id": "17-mcp",
+      "title": "外部 Agent 接入",
+      "file": "17-mcp.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-c3b73b30-ceb2-4ea6-b75b-4674300792d4.png"
+    },
+    {
+      "id": "18-global-config",
+      "title": "独立软件模型配置",
+      "file": "18-global-config.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-9a1582b5-385c-4eb3-90f5-bb006fed3514.png"
+    }
+  ]
+}

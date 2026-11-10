@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-31",
+  "engine": {
+    "passed": 825,
+    "files": 113
+  },
+  "renderer": {
+    "passed": 91,
+    "files": 19
+  },
+  "electron": {
+    "passed": 3,
+    "files": 2
+  },
+  "packageVerified": true,
+  "packagedBuildFilesMatched": 21,
+  "realModelCalls": 0,
+  "userProjectsMigratedDuringTests": 0
+}

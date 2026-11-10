@@ -1,0 +1,30 @@
+[
+  {
+    "entry": "out/main/chunks/dialogue-provider-routing-Cl7aLlL4.js",
+    "match": true
+  },
+  {
+    "entry": "out/main/engine-process.js",
+    "match": true
+  },
+  {
+    "entry": "out/main/index.js",
+    "match": true
+  },
+  {
+    "entry": "out/preload/credentials.js",
+    "match": true
+  },
+  {
+    "entry": "out/preload/index.js",
+    "match": true
+  },
+  {
+    "entry": "out/preload/launcher.js",
+    "match": true
+  },
+  {
+    "entry": "out/preload/model-config.js",
+    "match": true
+  }
+]

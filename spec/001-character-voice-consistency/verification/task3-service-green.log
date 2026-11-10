@@ -1,0 +1,25 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:19068) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:26640) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-resolution.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 5048[2mms[22m[39m
+   [33m[2m✓[22m[39m uses the fixed role voice in a real TTS request for dialogue requiring later lip sync [33m 2600[2mms[22m[39m
+   [33m[2m✓[22m[39m compiles voice instructions into the real video prompt and permits an explicitly pinned older voice [33m 2440[2mms[22m[39m
+(node:14684) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-management.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 7651[2mms[22m[39m
+   [33m[2m✓[22m[39m fetches the real configured service catalog and retains cache without calling synthesis [33m 2715[2mms[22m[39m
+   [33m[2m✓[22m[39m persists upload and clone once with the original int64, leaving voice quality unverified [33m 2446[2mms[22m[39m
+   [33m[2m✓[22m[39m does not resubmit unknown clone steps after reopen [33m 2486[2mms[22m[39m
+ [32m✓[39m tests/integration/voice-migration.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1869[2mms[22m[39m
+   [33m[2m✓[22m[39m appends schema20 immutably and upgrades real schema14 and19 libraries with backups [33m 1865[2mms[22m[39m
+ [32m✓[39m tests/integration/voice-management-protocol.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+[2m      Tests [22m [1m[32m13 passed[39m[22m[90m (13)[39m
+[2m   Start at [22m 11:32:21
+[2m   Duration [22m 14.67s[2m (transform 7.71s, setup 0ms, import 11.71s, tests 14.58s, environment 1ms)[22m
+

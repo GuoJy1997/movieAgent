@@ -1,0 +1,28 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:25292) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-resolution-debug.test.ts [2m([22m[2m4 tests[22m[2m | [22m[31m1 failed[39m[2m | [22m[33m3 skipped[39m[2m)[22m[33m 1281[2mms[22m[39m
+   [2m[90m↓[39m[22m preserves provider voice IDs and dialogue text for minimax-speech-v1
+   [2m[90m↓[39m[22m preserves provider voice IDs and dialogue text for openai-speech-v1
+[31m   [31m×[31m uses the fixed role voice in a real TTS request for dialogue requiring later lip sync[39m[33m 1279[2mms[22m[39m
+   [2m[90m↓[39m[22m compiles voice instructions into the real video prompt and permits an explicitly pinned older voice
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-resolution-debug.test.ts[2m > [22muses the fixed role voice in a real TTS request for dialogue requiring later lip sync
+[31m[1mTypeError[22m: Cannot assign to read only property 'parameters' of object '#<Object>'[39m
+[36m [2m❯[22m Object.prepare packages/engine/src/generation-service.ts:[2m139:206[22m[39m
+
+[90m [2m❯[22m Object.prepareSpeech packages/engine/src/audio-service.ts:[2m44:35[22m[39m
+[90m [2m❯[22m tests/integration/voice-resolution-debug.test.ts:[2m21:40[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[33m3 skipped[39m[90m (4)[39m
+[2m   Start at [22m 11:20:43
+[2m   Duration [22m 5.71s[2m (transform 2.80s, setup 0ms, import 4.12s, tests 1.28s, environment 0ms)[22m
+

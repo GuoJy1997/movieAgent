@@ -1,0 +1,23 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+ ✓ tests/media/dialogue-mix.test.ts (3 tests) 5902ms
+   ✓ keeps native and dubbed sources mutually exclusive at 24 fps  1938ms
+   ✓ keeps native and dubbed sources mutually exclusive at 25 fps  1866ms
+   ✓ keeps native and dubbed sources mutually exclusive at 30 fps  2093ms
+ ✓ tests/media/dialogue-repair.test.ts (2 tests) 2794ms
+   ✓ fully decodes repaired video, ignores embedded audio and enforces one-frame duration tolerance  1508ms
+   ✓ uses exact rational output frame facts for native verification and fails closed on invalid facts  1284ms
+ ✓ tests/media/render-audio.test.ts (1 test) 2112ms
+   ✓ renders exact 48k WAV, keeps mix levels constant when a track ends, verifies bytes and rejects corruption  1044ms
+ ✓ tests/media/voice-input.test.ts (1 test) 1680ms
+   ✓ prepares a 48kHz mono PCM-s16 WAV with a stable hash and rejects out-of-range cuts  1677ms
+ ✓ tests/media/dialogue-align.test.ts (1 test) 1861ms
+   ✓ pads short dialogue at the explicit start without trimming, looping or changing speed  1857ms
+
+ Test Files  5 passed (5)
+      Tests  8 passed (8)
+   Start at  19:27:33
+   Duration  17.81s (transform 727ms, setup 0ms, import 1.25s, tests 14.35s, environment 2ms)
+
+JSON report written to D:/movieAgent/spec/001-character-voice-consistency/verification/media-complete.json

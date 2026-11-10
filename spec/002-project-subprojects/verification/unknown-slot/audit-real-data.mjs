@@ -1,0 +1,11 @@
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import{DatabaseSync}from'node:sqlite';
+const state=JSON.parse(fs.readFileSync(new URL('../live-20261031/state.json',import.meta.url),'utf8'));const result=JSON.parse(fs.readFileSync(new URL('./live-result.json',import.meta.url),'utf8'));
+const db=new DatabaseSync(path.join(state.libraryRoot,'library.sqlite'),{readOnly:true});
+try{
+const artifact=db.prepare('SELECT b.* FROM artifact a JOIN blob_object b ON b.object_id=a.object_id WHERE a.id=?').get(result.newTask.artifactRef.artifactId);if(!artifact)throw Error('RESPONSE_ARTIFACT_MISSING');
+const body=fs.readFileSync(path.join(state.libraryRoot,artifact.storage_key));const hash=crypto.createHash('sha256').update(body).digest('hex');if(hash!==artifact.hash)throw Error('RESPONSE_HASH_MISMATCH');fs.writeFileSync(new URL('./real-response.txt',import.meta.url),body);
+const old=db.prepare('SELECT a.*,g.reservation_micros FROM task_attempt a JOIN generation_task g ON g.task_id=a.task_id WHERE a.task_id=?').get(result.oldTask.taskId);const release=db.prepare('SELECT * FROM unknown_task_release WHERE task_id=?').get(result.oldTask.taskId);const view=JSON.parse(old.view_json);
+const newTasks=db.prepare('SELECT task_id FROM generation_task').all().filter(x=>!state.slotRecovery.priorTasks.some(y=>y.taskId===x.task_id));
+if(!release||release.attempt_id!==result.oldTask.attemptId||view.providerState!=='unknown'||old.reservation_micros!==1000000||newTasks.length!==1||newTasks[0].task_id!==result.newTask.taskId)throw Error('REAL_STATE_MISMATCH');
+const audit={verified:true,schemaVersion:db.prepare('PRAGMA user_version').get().user_version,release,oldProviderState:view.providerState,reservationMicros:old.reservation_micros,oldSubmissionIntentRetained:old.intent_json!==null,additionalTasks:newTasks.length,totalSubmissionIntents:db.prepare('SELECT COUNT(*) AS n FROM task_attempt WHERE intent_json IS NOT NULL').get().n,artifact:{artifactId:result.newTask.artifactRef.artifactId,sha256:hash,bytes:body.length,mime:artifact.mime},response:body.toString('utf8')};fs.writeFileSync(new URL('./real-data-audit.json',import.meta.url),JSON.stringify(audit,null,2));console.log(JSON.stringify(audit));
+}finally{db.close()}

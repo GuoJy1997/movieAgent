@@ -1,0 +1,32 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:22516) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+x
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/subproject-routing.test.ts > routes independently scoped script/timeline work and rejects another episode targets and approvals
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
++   "ok": false,
+  }
+
+ ❯ tests/integration/subproject-routing.test.ts:7:81
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  08:45:23
+   Duration  3.41s (transform 1.89s, setup 0ms, import 2.78s, tests 370ms, environment 0ms)
+

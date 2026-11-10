@@ -1,0 +1,49 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:2260) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-resolution.test.ts [2m([22m[2m4 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[33m 6246[2mms[22m[39m
+   [32m✓[39m preserves provider voice IDs and dialogue text for minimax-speech-v1[32m 6[2mms[22m[39m
+   [32m✓[39m preserves provider voice IDs and dialogue text for openai-speech-v1[32m 1[2mms[22m[39m
+[31m   [31m×[31m uses the fixed role voice in a real TTS request for dialogue requiring later lip sync[39m[33m 2897[2mms[22m[39m
+[31m   [31m×[31m compiles voice instructions into the real video prompt and permits an explicitly pinned older voice[39m[33m 3338[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-resolution.test.ts[2m > [22muses the fixed role voice in a real TTS request for dialogue requiring later lip sync
+[31m[1mError[22m: {"code":"COMMAND_COMMIT_FAILED","message":"命令未能提交，请检查资料库与磁盘空间。"}[39m
+[36m [2m❯[22m audioValue tests/fixtures/audio-generation.ts:[2m15:25[22m[39m
+    [90m 13|[39m import type { ProviderContext } from '../../packages/providers/src/ima…
+    [90m 14|[39m [35mexport[39m [35mfunction[39m [34maudioValue[39m(result[33m:[39m any)[33m:[39m any {
+    [90m 15|[39m   [35mif[39m ([33m![39mresult[33m.[39mok) [35mthrow[39m [33mError[39m([33mJSON[39m[33m.[39m[34mstringify[39m(result[33m.[39merror))[33m;[39m
+    [90m   |[39m                         [31m^[39m
+    [90m 16|[39m   [34mexpect[39m(result)[33m.[39m[34mtoMatchObject[39m({ ok[33m:[39m [35mtrue[39m })[33m;[39m
+    [90m 17|[39m   [35mreturn[39m result[33m.[39mvalue[33m?.[39mresult [33m??[39m result[33m.[39mvalue[33m;[39m
+[90m [2m❯[22m tests/integration/voice-resolution.test.ts:[2m21:14[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-resolution.test.ts[2m > [22mcompiles voice instructions into the real video prompt and permits an explicitly pinned older voice
+[31m[1mAssertionError[22m: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[32m-   "ok": true,[39m
+[31m+   "ok": false,[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/integration/voice-resolution.test.ts:[2m41:20[22m[39m
+
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (4)[39m
+[2m   Start at [22m 11:19:59
+[2m   Duration [22m 14.30s[2m (transform 5.38s, setup 0ms, import 7.18s, tests 6.25s, environment 0ms)[22m
+

@@ -1,0 +1,14 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:19044) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:13136) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+··
+
+ Test Files  2 passed (2)
+      Tests  2 passed (2)
+   Start at  08:48:41
+   Duration  3.59s (transform 3.76s, setup 0ms, import 5.61s, tests 898ms, environment 0ms)
+

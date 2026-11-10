@@ -1,0 +1,43 @@
+Use case: precise-object-edit / ui-mockup.
+Edit the attached completed 羊番TV homepage screenshot. Produce ONE full high-fidelity desktop screenshot, landscape around 1728 x 1152, no device frame or presentation captions. This is a focused art-direction revision requested by the user. Preserve the existing left navigation, sheep robot identity, complete functional content, cinematic 3D coverflow hero, Agent composer, episode navigation and lower work/task sections. Make the following THREE changes decisively.
+
+CHANGE 1 — COHERENT DEEP BLUE COLOR SYSTEM:
+The original top ribbon establishes a dark indigo/cobalt identity, but the pastel cream-cyan-peach buttons, purple/teal progress bars and light-blue episode selection clash. Rebuild all INTERFACE accents around sophisticated ink blue → deep royal blue → restrained cobalt, with slight blue-violet only within blue gradients.
+Canvas is almost-black ink #0B101A; sidebar #10151E; quiet surfaces #141C2A. It must still read as a black app, not a bright blue website. The top ribbon uses an irregular soft multi-point gradient of midnight blue, indigo and cobalt, with a small desaturated blue-violet bloom. Keep the exact text “让你的故事，从这里起航”, use white. Remove the large warm peach end of the ribbon for this coherent blue edition.
+Replace the pale almost-white “开始规划” button with a compact refined deep blue-to-cobalt subtle planar gradient (#163B87 → #315FD6), off-white label and fine arrow. NO light background, white center, aqua, pink, peach, mint or cream gradient inside this button. No bevel, metal highlight, chrome rim, neon glow or glossy 3D effect.
+Replace the pale almost-white “Agent 创作” selected segment with a dark ink-blue selected surface, a subtle soft blue gradient and clear white label. It stays predominantly dark, just slightly brighter than the inactive tab. A short clean cobalt indicator at its bottom is enough, never a neon outline. The inactive “打开画布” tab remains muted on near-black. Do not wrap this segmented control in an inflated shiny pill.
+Both task progress bars use the same blue family: deep blue track and medium cobalt fill, with gentle blue brightness variation. Eliminate lavender/mint progress colors. Retain the two real demonstration progress values “62%” and “41%”. Status text remains clear white/gray; progress is not distinguished only by color.
+Small active/context accents elsewhere should harmonize: cobalt or muted steel-blue only. Preserve bright NATURAL movie photographs and their varied colors. Do not blue-tint the photographs. The pearl-white sheep stays the same character, with horns tending to icy blue/quiet periwinkle; do not replace it or make the entire character cobalt.
+
+CHANGE 2 — MORE DESIGNED TYPOGRAPHY AT THE FOCAL POINTS:
+Keep exact brand “羊番TV”. Retain and refine its forward-leaning custom artistic logotype, readable Chinese, confident slightly condensed strokes, subtle angular terminals. Not generic bold sans, not a glowing text effect.
+Make the main heading “继续你的故事” an intentional custom display title: energetic forward motion, slightly italic Chinese display lettering, compact bold strokes with tasteful angled cuts and controlled variation, contemporary film-poster/editorial typography. Smooth clean solid off-white lettering, no outlines, extrusion, bevel, chrome or neon effects. Around 36px equivalent, only modestly larger than the original. A small cobalt accent slash or short line can support its composition without becoming decoration everywhere.
+The existing poster movie titles keep their distinctive handwritten lettering inside the artwork. The project title “周末出逃” immediately under the hero can use a quieter compact italic display style. The “分集” section heading may have a small editorial condensed “EPISODES” kicker if it fits, but do not add extra captions elsewhere.
+Bottom major section headings “接着完成这一集” and “正在进行 · 2” may use a semibold slightly condensed display face with tiny angled details, not handwritten body text. All controls, prompts, metadata, timestamps, task text and navigation use a clean highly legible regular Chinese UI sans-serif. This is precise hierarchy, not artistic lettering on every label.
+Do not add large marketing copy, thick decorative underline strokes, excessive typographic flourishes or floating shapes.
+
+CHANGE 3 — REPLACE THE LIGHT ACTIVE EPISODE CARD WITH A REFINED FILMSTRIP:
+Completely redesign ONLY the episode selector’s visual treatment. It should be a compact image-led horizontal thumbnail gallery / filmstrip, inspired by the restrained image rhythm of Apple Cards Carousel, adapted to a working film app. This is a navigator, not another giant hero.
+Keep all four labels exactly:
+EP01 初遇海岸
+EP02 临时计划
+EP03 出发前夜
+EP04 海边公路
+Use four consistently aligned image-first items with small widescreen cinematic thumbnails and titles below or beside them. Images relate to the same bright coastal project. The item containers have NO filled enclosing rectangle, NO pill backplate, NO pale-blue block, NO visible outer active border, NO glowing outline. All four rest directly on the same near-black page.
+Express selected EP03 through its slightly more prominent thumbnail (about 8 percent larger within a stable slot, or a 3px visual lift), crisp full-brightness imagery, semibold off-white EP03 and title, and a SHORT 24px cobalt position marker immediately below its text. The other thumbnails remain naturally colored but a touch quieter, with neutral gray labels. The selected EP03 BACKGROUND STAYS EXACTLY THE SAME DARK as its neighbors. Do not make it a light card. Do not add a full-width blue active underline across a card. The small marker is enough.
+Provide small restrained horizontal navigation affordances if necessary; preserve all four items visibly in this screenshot. It must look deliberate, cinematic and lightweight, not a row of chunky dashboard pills.
+Slightly adjust vertical spacing to accommodate this strip while keeping lower task content entirely visible; keep the hero’s size and importance as close as possible.
+
+KEEP THESE INVARIANTS:
+- Entire screenshot shows one full functional homepage, no truncation of work rows.
+- Left sidebar with sheep head + exact brand 羊番TV, five entries 项目 / 创作 / 制作 / 资产 / 成片, lower 任务 2 / 设置 / 本机工作区. Project selected quietly.
+- Main hero: central 周末出逃 poster with bright sunlit East Asian friends, turquoise scooter, sea, blue sky, red vending machine; inward-tilting 向晚的海 and 城市留声 on left, 逆风而行 on right. No extra repeated posters. Retain curved depth, small arrows, dots and pause icon. No clapperboard, heavy display tray, metallic rim or exaggerated floor reflection.
+- Breadcrumb 周末出逃 / EP03 出发前夜 / 主画布, plus small 新建短剧 action.
+- Hero information row: 周末出逃 / 18个镜头 · 6待审核 · 2进行中 / 继续制作 / EP03 · 镜头07.
+- Broad dark Agent composer, integrated reference thumbnail, placeholder “描述你的想法，和羊羊一起把故事拍出来…”, contextual @镜头07 and 海滨公路 chips. Footer controls +, 全能创作, 技能, 默认文本模型, 创作偏好, 开始规划. Its surface stays dark, slightly desaturated navy, subdued border; do not turn it into a bright blue block.
+- Skill suggestions 短片分镜 / 产品广告 / 角色设定 / 镜头续写, small quiet surfaces.
+- Lower sections contain 镜头07 · 调整镜头运动, 对白 · 6条待审核, 成片 · 打开剪辑 and two running tasks EP03 · 镜头05, EP03 · 海滨公路.
+- No old MovieAgent brand, no invented features, payments, plans, membership, third-party names, annotations, reference thumbnails or watermark.
+- Keep the original sheep robot mark recognizable.
+
+QUALITY: The finished screenshot should have the beautiful restrained deep-blue identity of the ribbon extended into a coherent system, more expressive focal typography, and a filmstrip whose active state is expressed by hierarchy rather than bright card fill. Elegant and airy dark creative software. Keep UI surfaces flat and thin; reserve spatial depth for film artwork and the small original mascot. Return only the single completed revised homepage image.

@@ -1,0 +1,76 @@
+{
+  "result": "pass",
+  "checks": 17,
+  "results": [
+    {
+      "name": "empty input cannot send",
+      "result": "pass"
+    },
+    {
+      "name": "starter becomes editable input",
+      "result": "pass"
+    },
+    {
+      "name": "template menu selects a real template",
+      "result": "pass"
+    },
+    {
+      "name": "context picker adds and removes items",
+      "result": "pass"
+    },
+    {
+      "name": "mode selectable before first message",
+      "result": "pass"
+    },
+    {
+      "name": "send prepares only, does not start a model task",
+      "result": "pass"
+    },
+    {
+      "name": "explicit approval starts and stop cancels",
+      "result": "pass"
+    },
+    {
+      "name": "new turn locks historical restart during execution",
+      "result": "pass"
+    },
+    {
+      "name": "completed task produces selectable proposal",
+      "result": "pass"
+    },
+    {
+      "name": "proposal details persist while changing choices",
+      "result": "pass"
+    },
+    {
+      "name": "selective adoption records exact count",
+      "result": "pass"
+    },
+    {
+      "name": "Shift+Enter and IME confirmation do not submit",
+      "result": "pass"
+    },
+    {
+      "name": "Enter sends a follow-up",
+      "result": "pass"
+    },
+    {
+      "name": "new conversation cancels stale progress and unlocks modes",
+      "result": "pass"
+    },
+    {
+      "name": "preset selection and explicit budget work",
+      "result": "pass"
+    },
+    {
+      "name": "invalid budget blocks send, new conversation restores inheritance",
+      "result": "pass"
+    },
+    {
+      "name": "document fragment is self-contained and neutral",
+      "result": "pass"
+    }
+  ],
+  "scope": "DOM event/state verification only; no browser layout, real model or product integration verification",
+  "bytes": 31440
+}

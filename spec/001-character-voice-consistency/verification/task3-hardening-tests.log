@@ -1,0 +1,28 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:23772) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:21652) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/character-voice.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 15178[2mms[22m[39m
+   [33m[2m✓[22m[39m twoCharactersKeepDistinctVoiceRefs and stale saves write nothing [33m 5579[2mms[22m[39m
+   [33m[2m✓[22m[39m rejectCrossProjectVoice and protectReferencedVoiceMedia while retaining fixed history [33m 4669[2mms[22m[39m
+   [33m[2m✓[22m[39m legacyDialogueIsNotAutoAssigned and unprobed references remain non-production drafts [33m 4925[2mms[22m[39m
+(node:30488) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-management.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 20552[2mms[22m[39m
+   [33m[2m✓[22m[39m fetches the real configured service catalog and retains cache without calling synthesis [33m 5233[2mms[22m[39m
+   [33m[2m✓[22m[39m persists upload and clone once with the original int64, leaving voice quality unverified [33m 4797[2mms[22m[39m
+   [33m[2m✓[22m[39m does not resubmit unknown clone steps after reopen [33m 4988[2mms[22m[39m
+   [33m[2m✓[22m[39m verifies a clone with one real speech request and leaves perceptual quality for manual review [33m 5529[2mms[22m[39m
+ [32m✓[39m tests/integration/voice-identity.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 3193[2mms[22m[39m
+   [33m[2m✓[22m[39m saves a provider voice without an uploaded sample and keeps technical and quality states distinct [33m 1228[2mms[22m[39m
+   [33m[2m✓[22m[39m pins a default to an exact revision, guards CAS, and retains all voice history [33m 1041[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects a default voice belonging to another character without writing a binding [33m 919[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m10 passed[39m[22m[90m (10)[39m
+[2m   Start at [22m 11:50:22
+[2m   Duration [22m 32.34s[2m (transform 14.45s, setup 0ms, import 21.30s, tests 38.92s, environment 4ms)[22m
+

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "movieagent": {
+      "command": "cmd.exe",
+      "args": [
+        "/d",
+        "/c",
+        "D:\\movieAgent\\MovieAgent-MCP.cmd"
+      ]
+    }
+  }
+}

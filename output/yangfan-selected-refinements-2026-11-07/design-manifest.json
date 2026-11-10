@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-07",
+  "status": "three_refinements_generated_and_visually_reviewed",
+  "product": "羊番TV",
+  "scope": "沿用用户重新附上的石墨电蓝首页，按每轮三张约定做局部精修；未改产品源码。",
+  "selectedInput": "C:/Users/1266/AppData/Local/Temp/codex-clipboard-c23b0296-9036-420f-8a52-0192d31cbbef.png",
+  "savedInput": "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/selected-base.png",
+  "selectedPriorImage": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/03-graphite.png",
+  "sourceIndex": "D:/movieAgent/UI参考.md",
+  "directions": {
+    "spacing": {
+      "name": "松弛留白",
+      "url": "https://ui.aceternity.com/components/sidebar",
+      "screenshot": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/references/aceternity-sidebar.png",
+      "promptFile": "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/spacing-prompt.txt"
+    },
+    "conversation": {
+      "name": "对话优先",
+      "url": "https://reactbits.dev/components/glass-surface",
+      "screenshot": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/references/reactbits-glass-surface.png",
+      "promptFile": "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/conversation-prompt.txt"
+    },
+    "precision": {
+      "name": "精致秩序",
+      "url": "https://ui.aceternity.com/components/tabs",
+      "screenshot": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/references/aceternity-tabs.png",
+      "promptFile": "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/precision-prompt.txt"
+    }
+  },
+  "sourceEvidence": "复用上一轮实际查看、保存并核验的组件截图，没有重复网页调研。",
+  "generation": "Built-in image_gen, three independent calls dispatched without waiting for previous image completion.",
+  "constraints": [
+    "石墨黑/蓝色体系",
+    "主体布局与立体画廊",
+    "原羊羊机器人品牌",
+    "实心导航图标",
+    "分集不使用浅色整卡选中"
+  ],
+  "differences": {
+    "spacing": "留白、文字层级与工具栏减重",
+    "conversation": "示意用户输入、真实附件形态、先规划后确认",
+    "precision": "选中态、标签、分集缩略图对齐与任务行"
+  },
+  "iconEvidence": "图像中的图标为概念表达，尚未逐枚绑定真实SVG。",
+  "selectionRule": "按本轮三张图在对话中的实际显示顺序编号。",
+  "displayOrder": [
+    {
+      "option": 1,
+      "key": "spacing",
+      "file": "01-spacing.png",
+      "output": "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/01-spacing.png",
+      "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-4abc63dd-01e0-4a3a-8c4c-b8b0de416df1.png"
+    },
+    {
+      "option": 2,
+      "key": "conversation",
+      "file": "02-conversation.png",
+      "output": "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/02-conversation.png",
+      "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-ff1c171e-4a94-4c06-915a-b531aec7b14f.png"
+    },
+    {
+      "option": 3,
+      "key": "precision",
+      "file": "03-precision.png",
+      "output": "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/03-precision.png",
+      "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-a53bad9f-2563-454a-ac9b-def1faaff445.png"
+    }
+  ],
+  "review": "已目视确认三张图均沿用用户选定的主体构图和黑蓝风格；第一张减少输入工具底色与部分分隔，第二张展示创作指令和引用素材，第三张弱化侧栏选中底块并调整分集位置标记。均为静态效果图，未实施产品交互。",
+  "selectedOption": 3,
+  "selectedImage": "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/03-precision.png",
+  "selectionStatus": "User selected the third displayed refinement as the homepage visual baseline; implementation is not started.",
+  "selectedOn": "2026-11-07"
+}

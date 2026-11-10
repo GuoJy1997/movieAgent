@@ -1,0 +1,13 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:9232) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-legacy-binding.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 11351[2mms[22m[39m
+   [33m[2m✓[22m[39m migrates a resolvable legacy TTS preset without changing voice identity or manufacturing quality approval [33m 11335[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m   Start at [22m 12:21:10
+[2m   Duration [22m 45.20s[2m (transform 25.81s, setup 0ms, import 29.62s, tests 11.35s, environment 0ms)[22m
+

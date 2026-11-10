@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "schemaVersion": 27,
+  "release": {
+    "task_id": "ddf98a18-42ef-4a42-9fd6-8cbd04b9ad6f",
+    "attempt_id": "02084eae-1d2a-4d76-bc1e-8690ed64e8ec",
+    "released_at": 1793447314091
+  },
+  "oldProviderState": "unknown",
+  "reservationMicros": 1000000,
+  "oldSubmissionIntentRetained": true,
+  "additionalTasks": 1,
+  "totalSubmissionIntents": 6,
+  "artifact": {
+    "artifactId": "dfe8aac7-7d83-43af-baf0-db233043a0c7",
+    "sha256": "42a7c3b685881bce1a48ef22c23d028dff220895dc79772b79d64b9a75737665",
+    "bytes": 36,
+    "mime": "text/plain"
+  },
+  "response": "新的文本任务已正常执行。"
+}

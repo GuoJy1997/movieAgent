@@ -1,0 +1,32 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:18780) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+x
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/subproject-assets.test.ts > shows registered parent assets to sibling episodes without a sharing gate and rejects another parent
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
++   "ok": false,
+  }
+
+ ❯ tests/integration/subproject-assets.test.ts:7:44
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  08:47:56
+   Duration  3.55s (transform 1.89s, setup 0ms, import 2.78s, tests 529ms, environment 0ms)
+

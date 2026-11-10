@@ -1,0 +1,23 @@
+import {expect,it} from 'vitest';
+import {nativeFixture,value,execute} from '../fixtures/native-generation.ts';
+it('completes without a model as pending, is idempotent, then automatically shares fixed summary with the next episode',async()=>{
+ const s=await nativeFixture(),e=s.engine,p=s.prepareInput().projectId;
+ const a=value(await execute(e,'subproject.create',{projectId:p,title:'第一集'}));
+ const input={projectId:p,subprojectId:a.id,expectedRevision:a.revision,note:'朱清受伤，邸报仍在手中。'};
+ const completed=await execute(e,'subproject.complete',input);expect(completed).toMatchObject({ok:true});if(!completed.ok)return;
+ const first=value(completed);expect(first.state).toBe('pending');
+ expect(value(await execute(e,'subproject.complete',input)).id).toBe(first.id);
+ s.response({choices:[{message:{role:'assistant',content:JSON.stringify({summary:'朱清受伤，邸报仍在手中；下集应保持这一状态。'})},finish_reason:'stop'}]});
+ value(await execute(e,'project.memoryConfigure',{projectId:p,profileRef:{libraryId:e.identity.libraryId,id:'native',revision:1}}));
+ await (e as any).projectMemory.tick();
+ const memory=value(e.commands.query({schemaVersion:1,libraryId:e.identity.libraryId,connectionEpoch:'test',queryId:crypto.randomUUID(),kind:'project.memory',payload:{projectId:p}}));
+ expect(memory.completions[0].taskId).toBeTruthy();
+ const task=e.generation.read(memory.completions[0].taskId);expect(task).toMatchObject({ok:true});
+ const claim=value(await e.scheduler.claim());if(claim)await e.scheduler.run(claim);
+ await (e as any).projectMemory.tick();
+ const updated=value(e.commands.query({schemaVersion:1,libraryId:e.identity.libraryId,connectionEpoch:'test',queryId:crypto.randomUUID(),kind:'project.memory',payload:{projectId:p}}));
+ expect(updated.entries).toEqual(expect.arrayContaining([expect.objectContaining({body:expect.stringContaining('朱清受伤')})]));
+ const b=value(await execute(e,'subproject.create',{projectId:p,title:'第二集'}));
+ const context=(e as any).projectMemory.context({projectId:p,subprojectId:b.id});expect(value(context).entries[0].body).toContain('邸报');
+ const prior=s.requests.length;await (e as any).projectMemory.tick();expect(s.requests).toHaveLength(prior);
+},30000);

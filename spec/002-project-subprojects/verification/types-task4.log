@@ -1,0 +1,5 @@
+
+> libtv-studio-workspace@0.1.0 typecheck
+> tsc --noEmit -p tsconfig.base.json
+
+tests/integration/subproject-memory.test.ts(16,38): error TS2554: Expected 1 arguments, but got 0.

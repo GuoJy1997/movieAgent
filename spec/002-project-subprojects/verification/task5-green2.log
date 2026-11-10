@@ -1,0 +1,10 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+·
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  08:54:51
+   Duration  16.82s (transform 63ms, setup 0ms, import 790ms, tests 15.68s, environment 0ms)
+

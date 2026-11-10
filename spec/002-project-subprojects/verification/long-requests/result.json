@@ -1,0 +1,12 @@
+{
+  "status": "engineering-verified",
+  "textRequestTimeoutMs": 300000,
+  "generationLeaseMs": 600000,
+  "leaseRenewIntervalMs": 30000,
+  "enginePassed": 830,
+  "electronPassed": 3,
+  "packageVerified": true,
+  "paidCallsThisPatch": 0,
+  "liveKimiRetest": false,
+  "restartRequired": true
+}

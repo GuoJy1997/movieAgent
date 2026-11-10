@@ -1,0 +1,59 @@
+{
+  "product": "羊番TV",
+  "createdOn": "2026-11-07",
+  "status": "UI reference images generated; no product implementation changed",
+  "tool": "built-in image_gen.imagegen",
+  "approvedBaseline": "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/03-precision.png",
+  "requestedScope": "Remaining four main tabs using approved homepage style",
+  "images": [
+    {
+      "tab": "creation",
+      "file": "01-creation-agent-canvas.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-f930047d-657e-49f1-823c-436241234c72.png",
+      "prompt": "creation-prompt.txt"
+    },
+    {
+      "tab": "production",
+      "file": "02-production-shots.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-51dfd095-6342-418b-b524-b31097a2917d.png",
+      "prompt": "production-prompt.txt"
+    },
+    {
+      "tab": "assets",
+      "file": "03-assets-library.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-8d22bf57-0cdb-4100-8231-5b5b5efd9eb3.png",
+      "prompt": "assets-prompt.txt"
+    },
+    {
+      "tab": "finish",
+      "file": "04-finish-timeline.png",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-b370dba8-ad17-44fb-b13e-b8988c6d6e24.png",
+      "prompt": "finish-prompt.txt"
+    }
+  ],
+  "designNotes": {
+    "style": "Graphite/cobalt; blue-violet sidebar fading to black; filled navigation icons; restrained active markers; italic display headings",
+    "creation": "Agent dock integrated with canvas is proposed layout; real planning, approval, proposal review and selected adoption are preserved. This frame shows a completed plan awaiting adoption.",
+    "production": "Selected shot, reference presets, adopted v2 vs candidate v3 and running v4, approval before generation.",
+    "assets": "Media filters, character/scene tags, fixed asset versions and place onto current canvas.",
+    "finish": "Video, voice, music, subtitles; saved revision before export. Timing labels and clip widths are illustrative image-generated mock data, not an exact editing timeline."
+  },
+  "sourceReferences": {
+    "reusedVisualSources": [
+      "https://ui.aceternity.com/components/sidebar",
+      "https://ui.aceternity.com/components/tabs",
+      "https://reactbits.dev/components/glass-surface",
+      "https://tabler.io/icons"
+    ],
+    "referenceCatalog": "D:/movieAgent/UI参考.md",
+    "notes": "Continues the selected visually verified homepage and its prior component references; icons are raster concept illustrations, no icon package installed.",
+    "verifiedSourceFiles": [
+      "libtv-studio/apps/desktop/src/renderer/features/agent/AgentWorkspace.tsx",
+      "libtv-studio/apps/desktop/src/renderer/features/canvas/CanvasWorkspace.tsx",
+      "libtv-studio/apps/desktop/src/renderer/features/creation/ShotProductionPanel.tsx",
+      "libtv-studio/apps/desktop/src/renderer/features/assets/AssetLibrary.tsx",
+      "libtv-studio/apps/desktop/src/renderer/features/timeline/TimelineWorkspace.tsx",
+      "libtv-studio/apps/desktop/src/renderer/features/timeline/TimelineTracks.tsx"
+    ]
+  }
+}

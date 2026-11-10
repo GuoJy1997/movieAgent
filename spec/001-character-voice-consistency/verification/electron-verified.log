@@ -1,0 +1,12 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+ ✓ tests/electron/ipc-policy.test.ts (2 tests | 1 skipped) 2535ms
+   ✓ rejects unauthorized windows, unknown channels, malformed envelopes, and exposes only narrow APIs in the packaged app  2533ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 1 skipped (2)
+   Start at  19:31:25
+   Duration  3.53s (transform 49ms, setup 0ms, import 734ms, tests 2.53s, environment 0ms)
+
+JSON report written to D:/movieAgent/spec/001-character-voice-consistency/verification/electron-verified.json

@@ -1,0 +1,111 @@
+{
+  "verified": true,
+  "count": 21,
+  "files": [
+    {
+      "entry": "out/main/chunks/dialogue-provider-routing-BsOSlcul.js",
+      "sha256": "7a0d31ab80ccee9ad18e5f7bbc8a10d4683a944fa432b780f5e93099e1adadee",
+      "match": true
+    },
+    {
+      "entry": "out/main/engine-process.js",
+      "sha256": "957255212526a4e9bff9cb06f9bb92186390b73fc964c2aea84c5c326d79a257",
+      "match": true
+    },
+    {
+      "entry": "out/main/index.js",
+      "sha256": "cb1d1c4f290dd5027c3fe58ad60f37f671cc5ba2c18d961165e06f260f786b6e",
+      "match": true
+    },
+    {
+      "entry": "out/preload/credentials.js",
+      "sha256": "031a53856d7e27b736cb85ca115237fb264033d906df39def60c5308bf373229",
+      "match": true
+    },
+    {
+      "entry": "out/preload/index.js",
+      "sha256": "7325dd35f14addd9d555dcb53d893cbe0175be7141ea3d0581c5fd9554b8bdac",
+      "match": true
+    },
+    {
+      "entry": "out/preload/launcher.js",
+      "sha256": "6ddaf863a0b46675fff6ffaa9fe05b693cec411b372c27397e3716c7a7be6466",
+      "match": true
+    },
+    {
+      "entry": "out/preload/model-config.js",
+      "sha256": "8c60faa032dbe25640326de8abd4c575d99088cd47bc25076a168d61f2cca619",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/credentials-CMI9Z90l.js",
+      "sha256": "8d733ed72d7b33dd596ed424d71c6ee474e0b62a37bc94af3d0077deaa8a66f5",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/credentials-i1XZGmup.css",
+      "sha256": "1833777aa2fee8af65176c1b24d96f8d6e5d3e62759e3e535a12dc9453d90b9e",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/index-DGxrdxDb.js",
+      "sha256": "bc797b857988e19497d11f59dce1ada6cbafbd328f0daec7c26e0e3df8c6b492",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/index-SxuD-EZ_.css",
+      "sha256": "7ed5ae87a6c9bd664fce1802ce33fbe84faaefe33e21c82be35529df06e0c686",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/launcher-BZGop98k.js",
+      "sha256": "19de04aeff477f1116f7ce01956b9a76732c45f1d344d4038a538fb16e832cf2",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/model-config-CabdJrnM.js",
+      "sha256": "27858bbfe075ed08d4fd54f9942f7993fd8e0453975820284987e373dc25837d",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/model-config-Dny2cEyP.css",
+      "sha256": "7e2cf9fede7ea1358e50391563f0a91aaba73b8d43815e1342b7b54bb783722f",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/model-config-uPWqkA1Z.js",
+      "sha256": "e98e1c6d4be6f24e9d9c0a5b1a3ff65c96cea7212982959e0bed51ab334603a6",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/style-1ooeY4F4.css",
+      "sha256": "5739ca45cc6b53e5caf6cf3897e7bb788c8e4ccace4b05bf35bd5b9f40a8edde",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/assets/style-CswGuMez.js",
+      "sha256": "e7b25766d201ee9ae2555ca0e463b2a12ba03bb449858966b927e34807a40e4c",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/credentials/index.html",
+      "sha256": "44f3f0fca4e06addf0842fb2268619fc978ad0ba221b099dab3ae223dfe74e02",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/launcher/index.html",
+      "sha256": "fb0accac635bdd7fe4214b9d58c1887372b6d7b5f171214386e78dc2731c7a04",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/model-config/index.html",
+      "sha256": "e7f8fef3a8a6c0288e38dd89b5e4d16f5fee3b670a0c940b07e3a70d47beb3a1",
+      "match": true
+    },
+    {
+      "entry": "out/renderer/renderer/index.html",
+      "sha256": "b21b94d570e5aba645055b33784f10f8bff277f29b1bc8da670e274c6ef0fa73",
+      "match": true
+    }
+  ]
+}

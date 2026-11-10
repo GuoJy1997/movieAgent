@@ -1,0 +1,23 @@
+{
+  "runId": "b7749a72-7162-406c-8bbc-bd59e234b835",
+  "accepted": true,
+  "scripts": [
+    {
+      "id": "agent-5220476bc4a8b7fd845d45a450fc171ee43a85e9930c057c",
+      "revision": 1,
+      "title": "第二集 · 邸报"
+    }
+  ],
+  "shots": [
+    {
+      "id": "agent-14f5d6a821f5125dd65d6861e67de34605a1a771102c16a2",
+      "revision": 1,
+      "durationSeconds": 4,
+      "title": "低头看报"
+    }
+  ],
+  "fixedMemoryIncluded": true,
+  "preservedRightHandProp": true,
+  "elapsedSeconds": 52,
+  "additionalVideoRequests": 0
+}

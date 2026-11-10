@@ -1,0 +1,44 @@
+
+> libtv-studio-workspace@0.1.0 build
+> npm run build --workspace @libtv/desktop
+
+
+> @libtv/desktop@0.2.0 build
+> electron-vite build
+
+vite v7.3.7 building ssr environment for production...
+transforming...
+✓ 199 modules transformed.
+rendering chunks...
+out/main/index.js                                      270.92 kB
+out/main/chunks/dialogue-provider-routing-D7H8xKhf.js  405.56 kB
+out/main/engine-process.js                             712.51 kB
+✓ built in 4.10s
+vite v7.3.7 building ssr environment for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+out/preload/credentials.js   0.36 kB
+out/preload/model-config.js  0.63 kB
+out/preload/launcher.js      1.29 kB
+out/preload/index.js         2.13 kB
+✓ built in 62ms
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 344 modules transformed.
+rendering chunks...
+../out/renderer/launcher/index.html                   0.69 kB
+../out/renderer/renderer/index.html                   0.96 kB
+../out/renderer/credentials/index.html                1.23 kB
+../out/renderer/model-config/index.html               5.60 kB
+../out/renderer/assets/credentials-i1XZGmup.css       0.58 kB
+../out/renderer/assets/model-config-Dny2cEyP.css      1.31 kB
+../out/renderer/assets/index-SxuD-EZ_.css            18.60 kB
+../out/renderer/assets/style-C2tpMm__.css            36.37 kB
+../out/renderer/assets/credentials-CMI9Z90l.js        1.72 kB
+../out/renderer/assets/model-config-uPWqkA1Z.js       3.22 kB
+../out/renderer/assets/launcher-BbxvLmY4.js          11.93 kB
+../out/renderer/assets/model-config-CabdJrnM.js      18.03 kB
+../out/renderer/assets/style-vyVq0HfV.js            643.25 kB
+../out/renderer/assets/index-ksh3nAQn.js          1,220.31 kB
+✓ built in 6.89s

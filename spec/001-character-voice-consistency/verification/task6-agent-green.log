@@ -1,0 +1,61 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:13860) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29328) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/agent-voice-context.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 5821[2mms[22m[39m
+   [33m[2m✓[22m[39m gives the Agent only the selected role fixed voice and instructions without calling a media service [33m 5816[2mms[22m[39m
+(node:30972) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/finish-agent.test.ts [2m([22m[2m6 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 8344[2mms[22m[39m
+   [32m✓[39m parses only the three bounded finish protocols and rejects extra authority[32m 14[2mms[22m[39m
+   [32m✓[39m rejects unselected voice and subtitle aliases before producing writes[32m 3[2mms[22m[39m
+   [32m✓[39m builds CAS-protected voice-line, subtitle and rough-cut applications without media jobs[32m 9[2mms[22m[39m
+[31m   [31m×[31m runs one approved voice-line turn and adopts only local revisions without audio or render jobs[39m[33m 4082[2mms[22m[39m
+   [33m[2m✓[22m[39m adopts subtitle edits with CAS and rejects manual changes without partial writes [33m 2142[2mms[22m[39m
+   [33m[2m✓[22m[39m adopts a fixed-media rough cut without enqueuing local media work [33m 2089[2mms[22m[39m
+ [32m✓[39m tests/integration/agent-planning.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 22804[2mms[22m[39m
+   [33m[2m✓[22m[39m prepares frozen bounded context and explicit token budget without POST or content writes; adoption applies selected dependencies once [33m 3796[2mms[22m[39m
+   [33m[2m✓[22m[39m harvests anthropic-messages-v1 reply with no proposal and no hidden reasoning [33m 1309[2mms[22m[39m
+   [33m[2m✓[22m[39m harvests openai-chat-v1 reply with no proposal and no hidden reasoning [33m 1229[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects prose model output without modifying content [33m 1008[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects multiple model output without modifying content [33m 1280[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects truncated model output without modifying content [33m 1092[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects commands model output without modifying content [33m 1020[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects revision model output without modifying content [33m 1128[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects project model output without modifying content [33m 1387[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects bounds model output without modifying content [33m 1963[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects unknownKey model output without modifying content [33m 1980[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects tampered scope and parent script edits while preserving draft [33m 1624[2mms[22m[39m
+   [33m[2m✓[22m[39m adopts needed scene changes without adopting unrelated script prose or unrelated entity edits [33m 1767[2mms[22m[39m
+   [33m[2m✓[22m[39m exposes accepted shot and parent script revisions for production binding [33m 2214[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/finish-agent.test.ts[2m > [22mruns one approved voice-line turn and adopts only local revisions without audio or render jobs
+[31m[1mAssertionError[22m: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[32m-   "ok": true,[39m
+[31m+   "ok": false,[39m
+[2m  }[22m
+
+[36m [2m❯[22m value tests/fixtures/native-generation.ts:[2m10:58[22m[39m
+
+[90m [2m❯[22m scriptAndShot tests/integration/finish-agent.test.ts:[2m86:5[22m[39m
+[90m [2m❯[22m tests/integration/finish-agent.test.ts:[2m93:21[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m20 passed[39m[22m[90m (21)[39m
+[2m   Start at [22m 12:06:42
+[2m   Duration [22m 43.23s[2m (transform 26.77s, setup 0ms, import 36.08s, tests 36.97s, environment 3ms)[22m
+

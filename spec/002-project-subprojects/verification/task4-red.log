@@ -1,0 +1,37 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:9876) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+x
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/subproject-memory.test.ts > completes without a model as pending, is idempotent, then automatically shares fixed summary with the next episode
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
++   "ok": false,
+  }
+
+ ❯ tests/integration/subproject-memory.test.ts:7:81
+      5|  const a=value(await execute(e,'subproject.create',{projectId:p,title:…
+      6|  const input={projectId:p,subprojectId:a.id,expectedRevision:a.revisio…
+      7|  const completed=await execute(e,'subproject.complete',input);expect(c…
+       |                                                                                 ^
+      8|  const first=value(completed);expect(first.state).toBe('pending');
+      9|  expect(value(await execute(e,'subproject.complete',input)).id).toBe(f…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  08:49:54
+   Duration  3.42s (transform 1.88s, setup 0ms, import 2.79s, tests 388ms, environment 0ms)
+

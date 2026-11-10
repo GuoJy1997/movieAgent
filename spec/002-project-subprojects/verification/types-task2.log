@@ -1,0 +1,32 @@
+
+> libtv-studio-workspace@0.1.0 typecheck
+> tsc --noEmit -p tsconfig.base.json
+
+packages/contracts/src/events.ts(1,9): error TS6133: 'isSubproject' is declared but its value is never read.
+packages/contracts/src/events.ts(1,22): error TS6133: 'isCanvasInfo' is declared but its value is never read.
+packages/engine/src/subproject-service.ts(10,593): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type 'SQLOutputValue | undefined' is not assignable to parameter of type 'SQLInputValue'.
+      Type 'undefined' is not assignable to type 'SQLInputValue'.
+  Overload 2 of 2, '(namedParameters: Record<string, SQLInputValue>, ...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type 'SQLOutputValue | undefined' is not assignable to parameter of type 'Record<string, SQLInputValue>'.
+      Type 'undefined' is not assignable to type 'Record<string, SQLInputValue>'.
+packages/engine/src/subproject-service.ts(17,958): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type 'SQLOutputValue | undefined' is not assignable to parameter of type 'SQLInputValue'.
+      Type 'undefined' is not assignable to type 'SQLInputValue'.
+  Overload 2 of 2, '(namedParameters: Record<string, SQLInputValue>, ...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type '`${string}-${string}-${string}-${string}-${string}`' is not assignable to parameter of type 'Record<string, SQLInputValue>'.
+packages/storage/src/migrations/0026-subprojects.ts(32,170): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type 'SQLOutputValue | undefined' is not assignable to parameter of type 'SQLInputValue'.
+      Type 'undefined' is not assignable to type 'SQLInputValue'.
+  Overload 2 of 2, '(namedParameters: Record<string, SQLInputValue>, ...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type 'SQLOutputValue | undefined' is not assignable to parameter of type 'Record<string, SQLInputValue>'.
+      Type 'undefined' is not assignable to type 'Record<string, SQLInputValue>'.
+packages/storage/src/migrations/0026-subprojects.ts(38,233): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type 'SQLOutputValue | undefined' is not assignable to parameter of type 'SQLInputValue'.
+      Type 'undefined' is not assignable to type 'SQLInputValue'.
+  Overload 2 of 2, '(namedParameters: Record<string, SQLInputValue>, ...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'Record<string, SQLInputValue>'.

@@ -1,0 +1,57 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+stderr | tests/renderer/subprojects.test.ts
+08:52:58 [vite] (client) Pre-transform error: Failed to resolve import "../../../apps/desktop/src/renderer/features/subprojects/SubprojectWorkspace.tsx" from "tests/fixtures/p4-renderer/main.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: D:/movieAgent/libtv-studio/tests/fixtures/p4-renderer/main.tsx:61:68
+  97 |      }
+  98 |      if (data.__subprojects) {
+  99 |        const { SubprojectWorkspace } = await import("../../../apps/desktop/src/renderer/features/subprojects/Subprojec...
+     |                                                     ^
+  100|        root.render(createElement(QueryClientProvider, { client: new QueryClient() }, createElement(SubprojectWorkspace...
+  101|        } })));
+
+-
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/renderer/subprojects.test.ts [ tests/renderer/subprojects.test.ts ]
+Error: browserType.launch: Executable doesn't exist at C:\Users\1266\AppData\Local\ms-playwright\chromium_headless_shell-1248\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     npx playwright install                                 ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+ ❯ harness tests/renderer/p4-harness.ts:19:32
+     17|   await server.waitForRequestsIdle();
+     18|   const addr=server.httpServer!.address();
+     19|   const browser=await chromium.launch({headless:true,executablePath:pr…
+       |                                ^
+     20|   const address=`http://127.0.0.1:${typeof addr==='object'&&addr?addr.…
+     21|   // Warm the complete browser-imported graph before per-interaction d…
+ ❯ tests/renderer/subprojects.test.ts:3:65
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/renderer/subprojects.test.ts [ tests/renderer/subprojects.test.ts ]
+TypeError: Cannot read properties of undefined (reading 'browser')
+ ❯ tests/renderer/subprojects.test.ts:3:117
+      1| import {afterAll,beforeAll,expect,it} from 'vitest';
+      2| import {harness,mounted,calls,queries} from './p4-harness.ts';
+      3| let h:Awaited<ReturnType<typeof harness>>;beforeAll(async()=>{h=await …
+       |                                                                                                                     ^
+      4| it('creates a named episode in the parent project instead of opening a…
+      5|  await mounted(h,async page=>{
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 skipped (1)
+   Start at  08:52:56
+   Duration  7.59s (transform 60ms, setup 0ms, import 954ms, tests 5.38s, environment 0ms)
+

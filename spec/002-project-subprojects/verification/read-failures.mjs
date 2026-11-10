@@ -1,0 +1,1 @@
+import fs from'node:fs';const p=JSON.parse(fs.readFileSync('D:/movieAgent/spec/002-project-subprojects/verification/frozen-engine.json'));for(const f of p.testResults)for(const a of f.assertionResults??[])if(a.status==='failed')console.log(JSON.stringify({file:f.name,test:a.fullName,messages:a.failureMessages},null,2));

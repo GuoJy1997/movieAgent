@@ -1,0 +1,196 @@
+{
+  "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+  "canvasId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+  "projectId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+  "revision": 3,
+  "nodes": [
+    {
+      "nodeId": "character",
+      "incarnation": "a2c380db-8349-4b48-bf22-28cffbbac468",
+      "semanticRevision": 1,
+      "layoutRevision": 2,
+      "selectionRevision": 1,
+      "content": {
+        "type": "text",
+        "text": "角色资产设定｜朱清\n清瘦少年，黑发束起，灰青交领长袍。\n人物身份与衣着跨镜头保持。\n本演示参考图取自用户提供的视频抽帧。"
+      },
+      "layout": {
+        "x": 0,
+        "y": 0
+      },
+      "selectedOutput": null,
+      "activeRunBindingId": null,
+      "shotBinding": null,
+      "freshness": null,
+      "activeTask": null
+    },
+    {
+      "nodeId": "scene",
+      "incarnation": "2c74d32b-42cf-4b88-aa87-36c6c12c385b",
+      "semanticRevision": 1,
+      "layoutRevision": 2,
+      "selectionRevision": 1,
+      "content": {
+        "type": "text",
+        "text": "场景资产设定｜宫墙梧桐道\n旧朱红墙、树影、自然日光，保留墙面磨损。\n本演示参考图取自用户提供的视频抽帧。"
+      },
+      "layout": {
+        "x": 0,
+        "y": 330
+      },
+      "selectedOutput": null,
+      "activeRunBindingId": null,
+      "shotBinding": null,
+      "freshness": null,
+      "activeTask": null
+    },
+    {
+      "nodeId": "director",
+      "incarnation": "e8ab6b65-34c2-41d9-8e70-27cc754ff2d1",
+      "semanticRevision": 1,
+      "layoutRevision": 2,
+      "selectionRevision": 1,
+      "content": {
+        "type": "text",
+        "text": "G01｜宫墙候讯｜12秒｜四个内部镜头\n用途：展示实际画布的依赖执行和产物收存。\n0–3秒：少年背靠梧桐，人物近景，抬眼望向墙外。\n3–6秒：切宫墙旁携物人物，侧身经过，机位稳定。\n6–8秒：切回少年近景，维持服装、发式和光线。\n8–12秒：切手中纸张特写，保留折痕与手部接触。\n参考：角色图负责面容服装，场景图负责宫墙与光线。\n声音：保留样例自带音轨；本次不测试配音或口型。\n本地模拟说明：图片是用户提供视频的抽帧；最终返回已有12.064秒样例视频。没有调用真实模型，不能证明提示词遵从度。"
+      },
+      "layout": {
+        "x": 0,
+        "y": 660
+      },
+      "selectedOutput": null,
+      "activeRunBindingId": null,
+      "shotBinding": null,
+      "freshness": null,
+      "activeTask": null
+    },
+    {
+      "nodeId": "character-image",
+      "incarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+      "semanticRevision": 2,
+      "layoutRevision": 2,
+      "selectionRevision": 1,
+      "content": {
+        "type": "generation",
+        "prompt": "朱清角色参考图：确认面容、发式和灰青服装。【本地模拟：返回已有样例抽帧】",
+        "profileRef": {
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "id": "demo-character",
+          "revision": 1
+        },
+        "inputs": []
+      },
+      "layout": {
+        "x": 400,
+        "y": 0
+      },
+      "selectedOutput": null,
+      "activeRunBindingId": null,
+      "shotBinding": null,
+      "freshness": "none",
+      "activeTask": null
+    },
+    {
+      "nodeId": "scene-image",
+      "incarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+      "semanticRevision": 2,
+      "layoutRevision": 2,
+      "selectionRevision": 1,
+      "content": {
+        "type": "generation",
+        "prompt": "宫墙梧桐道场景参考：确认旧朱红墙、树影、自然光。【本地模拟：返回已有样例抽帧】",
+        "profileRef": {
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "id": "demo-scene",
+          "revision": 1
+        },
+        "inputs": []
+      },
+      "layout": {
+        "x": 400,
+        "y": 390
+      },
+      "selectedOutput": null,
+      "activeRunBindingId": null,
+      "shotBinding": null,
+      "freshness": "none",
+      "activeTask": null
+    },
+    {
+      "nodeId": "video",
+      "incarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+      "semanticRevision": 2,
+      "layoutRevision": 2,
+      "selectionRevision": 1,
+      "content": {
+        "type": "generation",
+        "prompt": "G01｜12秒｜四个内部镜头。严格按连接的导演稿和角色、场景参考组织。【本地模拟：返回用户已有样例，不验证模型画质】",
+        "profileRef": {
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "id": "demo-video",
+          "revision": 1
+        },
+        "inputs": []
+      },
+      "layout": {
+        "x": 850,
+        "y": 200
+      },
+      "selectedOutput": null,
+      "activeRunBindingId": null,
+      "shotBinding": null,
+      "freshness": "none",
+      "activeTask": null
+    }
+  ],
+  "outputs": [],
+  "edges": [
+    {
+      "id": "demo-edge-0",
+      "sourceNodeId": "character",
+      "sourceIncarnation": "a2c380db-8349-4b48-bf22-28cffbbac468",
+      "targetNodeId": "character-image",
+      "targetIncarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+      "sourcePort": "output",
+      "targetPort": "prompt"
+    },
+    {
+      "id": "demo-edge-1",
+      "sourceNodeId": "scene",
+      "sourceIncarnation": "2c74d32b-42cf-4b88-aa87-36c6c12c385b",
+      "targetNodeId": "scene-image",
+      "targetIncarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+      "sourcePort": "output",
+      "targetPort": "prompt"
+    },
+    {
+      "id": "demo-edge-2",
+      "sourceNodeId": "director",
+      "sourceIncarnation": "e8ab6b65-34c2-41d9-8e70-27cc754ff2d1",
+      "targetNodeId": "video",
+      "targetIncarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+      "sourcePort": "output",
+      "targetPort": "prompt"
+    },
+    {
+      "id": "demo-edge-3",
+      "sourceNodeId": "character-image",
+      "sourceIncarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+      "targetNodeId": "video",
+      "targetIncarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+      "sourcePort": "output",
+      "targetPort": "reference"
+    },
+    {
+      "id": "demo-edge-4",
+      "sourceNodeId": "scene-image",
+      "sourceIncarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+      "targetNodeId": "video",
+      "targetIncarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+      "sourcePort": "output",
+      "targetPort": "reference"
+    }
+  ],
+  "snapshotSeq": 13,
+  "streamId": "0675b451-0250-4880-b982-ea3b668f75a7"
+}

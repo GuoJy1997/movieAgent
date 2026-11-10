@@ -1,0 +1,66 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:17192) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/voice-management.test.ts (6 tests) 10836ms
+   ✓ fetches the real configured service catalog and retains cache without calling synthesis  1751ms
+   ✓ persists upload and clone once with the original int64, leaving voice quality unverified  1245ms
+   ✓ does not resubmit unknown clone steps after reopen  1545ms
+   ✓ verifies a clone with one real speech request and leaves perceptual quality for manual review  3417ms
+   ✓ retains an ambiguous accepted clone and refreshes approval after explicit reconciliation without reuploading  1563ms
+   ✓ retains a late successful clone under the original character snapshot without changing its default  1313ms
+(node:16088) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/voice-resolution.test.ts (4 tests) 2989ms
+   ✓ uses the fixed role voice in a real TTS request for dialogue requiring later lip sync  1242ms
+   ✓ compiles voice instructions into the real video prompt and permits an explicitly pinned older voice  1743ms
+(node:18008) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/dialogue-assembly-workflow.test.ts (1 test) 3466ms
+   ✓ assembles all reviewed turns, persists provenance and prevents a single take from confirming multiple turns  3464ms
+(node:18704) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/voice-spec-regressions.test.ts (2 tests) 2914ms
+   ✓ prepares current role appearance with an explicitly pinned historical voice and rejects mixed voices for that role  1549ms
+   ✓ blocks a prepared native request after the voice is archived while retaining historical reads  1364ms
+(node:12392) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/voice-qualification.test.ts (1 test) 1857ms
+   ✓ qualifies three emotions using only audio, preserving binding and revoking a rejected sample  1856ms
+(node:10768) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/voice-export.test.ts (1 test) 4311ms
+   ✓ publishes a fixed voice snapshot without paths or credentials and never overwrites it  4309ms
+(node:18580) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/voice-delivery.test.ts (2 tests) 11805ms
+   ✓ protects source, short reference and baseline in the snapshot and exports all media with exact identities  11429ms
+   ✓ exports a provider-only voice as an offline identity manifest without inventing reference audio  374ms
+(node:18488) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/canvas-voice.test.ts (1 test) 1440ms
+   ✓ compiles an explicit canvas voice reference through the shared native resolver and guards wrong identity  1438ms
+(node:18972) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/agent-voice-context.test.ts (1 test) 1324ms
+   ✓ gives the Agent only the selected role fixed voice and instructions without calling a media service  1323ms
+(node:18860) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/voice-legacy-binding.test.ts (1 test) 1444ms
+   ✓ migrates a resolvable legacy TTS preset without changing voice identity or manufacturing quality approval  1443ms
+(node:19100) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/voice-identity.test.ts (4 tests) 1533ms
+   ✓ saves a provider voice without an uploaded sample and keeps technical and quality states distinct  402ms
+   ✓ pins a default to an exact revision, guards CAS, and retains all voice history  389ms
+   ✓ rejects a default voice belonging to another character without writing a binding  365ms
+   ✓ replaces only explicitly selected current dialogues with CAS and keeps previous dialogue revisions  375ms
+ ✓ tests/integration/voice-management-protocol.test.ts (6 tests) 6ms
+
+ Test Files  12 passed (12)
+      Tests  30 passed (30)
+   Start at  19:17:12
+   Duration  53.71s (transform 2.24s, setup 0ms, import 6.00s, tests 43.93s, environment 2ms)
+
+JSON report written to D:/movieAgent/spec/001-character-voice-consistency/verification/review-verified-2.json

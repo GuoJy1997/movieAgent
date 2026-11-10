@@ -1,0 +1,86 @@
+{
+  "status": "verified",
+  "submittedCount": 1,
+  "startedAt": "2026-10-25T16:44:21.200Z",
+  "projectRoot": "D:\\movieAgent\\projects\\MovieAgent视频验收-20261026",
+  "libraryId": "56807bc7-feb0-4608-85cc-f668f4b77d19",
+  "preparedId": "82c909c9-1574-42cc-9567-f2e16817e7e4",
+  "estimateMicros": 1600000,
+  "currency": "CNY",
+  "parameters": {
+    "duration": 4,
+    "resolution": "768P",
+    "ratio": "9:16"
+  },
+  "taskId": "eff971d4-4b99-4da1-b225-d08a3ee55422",
+  "attemptId": "0200e051-2ca0-4adf-b21a-3836c87b2cba",
+  "providerTaskId": "456268409471408",
+  "state": "SUCCEEDED",
+  "collectionState": "durable",
+  "errorCode": null,
+  "updatedAt": "2026-10-25T16:44:40.808Z",
+  "player": {
+    "width": 768,
+    "height": 1344,
+    "duration": 3.75,
+    "currentTime": 0.816551,
+    "readyState": 4,
+    "controls": true
+  },
+  "assetRef": {
+    "kind": "assetVersion",
+    "libraryId": "56807bc7-feb0-4608-85cc-f668f4b77d19",
+    "assetId": "5cd824f6-5ee3-4f23-a03a-eda4503be7d5",
+    "version": 1
+  },
+  "artifactRef": {
+    "kind": "artifact",
+    "libraryId": "56807bc7-feb0-4608-85cc-f668f4b77d19",
+    "artifactId": "9bec20ee-72fc-4a4f-84ba-fa6786798931"
+  },
+  "reopened": true,
+  "reopenedPlayer": {
+    "width": 768,
+    "height": 1344,
+    "duration": 3.75,
+    "currentTime": 0.899277,
+    "readyState": 4,
+    "controls": true
+  },
+  "original": "D:\\movieAgent\\projects\\MovieAgent视频验收-20261026\\.movieagent\\library\\objects\\04\\0415d8d08a6f08619eb7050b9ca06901f06b4dde9003c52a01fafd6903c4bcad",
+  "preview": "D:\\movieAgent\\projects\\MovieAgent视频验收-20261026\\shots\\episode-001\\sample.mp4",
+  "sha256": "0415d8d08a6f08619eb7050b9ca06901f06b4dde9003c52a01fafd6903c4bcad",
+  "bytes": 1707766,
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 768,
+        "height": 1344,
+        "duration": "3.750000"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "duration": "3.750000"
+      }
+    ],
+    "format": {
+      "duration": "3.750000",
+      "size": "1707766"
+    }
+  },
+  "ffmpegFullDecodeExit": 0,
+  "counts": {
+    "tasks": 1,
+    "attempts": 1,
+    "assets": 1,
+    "artifacts": 1
+  },
+  "reportedActualMicros": null,
+  "finishedAt": "2026-10-25T16:46:20.296Z",
+  "verificationRecovery": "Reopened original registered directory via packaged workspace-child; read queries only; no additional generation."
+}

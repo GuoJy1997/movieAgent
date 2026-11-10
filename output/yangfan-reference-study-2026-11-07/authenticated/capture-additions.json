@@ -1,0 +1,278 @@
+{
+  "pages": [
+    {
+      "file": "authenticated/jimeng-02-assets-desktop.jpg",
+      "title": "即梦 · 资产库 · 登录后",
+      "focus": "媒体网格、两级筛选",
+      "status": "captured",
+      "note": "已登录；按日期分组的现有资产",
+      "url": "https://jimeng.jianying.com/ai-tool/asset",
+      "urlNote": "资产入口；详情为内部状态",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-03-asset-filter.jpg",
+      "title": "即梦 · 资产筛选展开",
+      "focus": "类型、收藏、尺寸筛选",
+      "status": "captured",
+      "note": "仅展开菜单",
+      "url": "https://jimeng.jianying.com/ai-tool/asset",
+      "urlNote": "资产入口；详情为内部状态",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-04-asset-detail.jpg",
+      "title": "即梦 · 资产详情",
+      "focus": "大预览、提示词、分组操作",
+      "status": "captured",
+      "note": "读取现有图片，未触发生成或编辑",
+      "url": "https://jimeng.jianying.com/ai-tool/asset",
+      "urlNote": "资产入口；详情为内部状态",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-05-agent-conversation.jpg",
+      "title": "即梦 · Agent 完成结果",
+      "focus": "正文、四图结果、轻操作栏、底部输入",
+      "status": "captured",
+      "note": "已有对话的完成状态，不是本轮执行结果",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-06-agent-preferences.jpg",
+      "title": "即梦 · Agent 创作设置",
+      "focus": "模型列表、比例、清晰度",
+      "status": "captured",
+      "note": "参数浮层展开，未发起生成",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-07-task-completion.jpg",
+      "title": "即梦 · 完成任务展开",
+      "focus": "已完成、步骤与结果层级",
+      "status": "captured",
+      "note": "平台已有任务详情；不代表运行中/失败状态",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-08-subject-library.jpg",
+      "title": "即梦 · 主体库空状态",
+      "focus": "创建入口、空状态",
+      "status": "captured",
+      "note": "账户暂无主体，未新建",
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-09-readonly-canvas.jpg",
+      "title": "即梦 · 公开作品画布",
+      "focus": "节点关系、底部工具栏",
+      "status": "captured",
+      "note": "只读作品，未复制项目",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-10-canvas-zoom-menu.jpg",
+      "title": "即梦 · 画布缩放菜单",
+      "focus": "缩放、适应画布、快捷键",
+      "status": "captured",
+      "note": "只读画布菜单",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-11-canvas-close-view.jpg",
+      "title": "即梦 · 画布 50% 近景",
+      "focus": "图片节点、连线、工具栏",
+      "status": "captured",
+      "note": "只读缩放观察，不代表可编辑节点选中态",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-13-drama-characters-desktop.jpg",
+      "title": "即梦 · 短剧角色资产库",
+      "focus": "窄导航、类型页签、角色网格",
+      "status": "captured",
+      "note": "官方示例，含34角色；页面显示的后续提示保留",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-14-drama-canvas.jpg",
+      "title": "即梦 · 短剧角色画布",
+      "focus": "角色分组、画布工具、节点密度",
+      "status": "partial",
+      "note": "官方只读示例；左侧仍有生成历史引导提示",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-15-drama-script.jpg",
+      "title": "即梦 · 短剧剧本正文",
+      "focus": "分集正文、流程导航、右侧 Agent",
+      "status": "captured",
+      "note": "官方示例，只读剧本；未修改或发送",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-16-storyboard.jpg",
+      "title": "即梦 · 短剧分集列表",
+      "focus": "分集状态、镜头数、编辑入口",
+      "status": "captured",
+      "note": "官方示例；生成入口禁用",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-17-storyboard-detail.jpg",
+      "title": "即梦 · 分镜工作台",
+      "focus": "资产列、引用与描述、预览、镜头条",
+      "status": "captured",
+      "note": "官方只读示例，未编辑/生成/合成",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/jimeng-19-shot-history-loaded.jpg",
+      "title": "即梦 · 分镜版本历史",
+      "focus": "版本预览、缩略图、提示词",
+      "status": "captured",
+      "note": "官方只读示例；替换当前片段禁用；未下载",
+      "url": "https://jimeng.jianying.com/ai-tool/novel",
+      "urlNote": "已访问的页面入口；截图内深层路由未逐张单独记录",
+      "site": "jimeng",
+      "phase": "authenticated"
+    }
+  ],
+  "components": [
+    {
+      "file": "components/jimeng-agent-composer.png",
+      "title": "Agent 连续输入面",
+      "source": "authenticated/jimeng-05-agent-conversation.jpg",
+      "rect": {
+        "x": 306,
+        "y": 538,
+        "width": 893,
+        "height": 159
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels"
+    },
+    {
+      "file": "components/jimeng-agent-result.png",
+      "title": "Agent 结果与轻操作栏",
+      "source": "authenticated/jimeng-05-agent-conversation.jpg",
+      "rect": {
+        "x": 305,
+        "y": 60,
+        "width": 896,
+        "height": 420
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels"
+    },
+    {
+      "file": "components/jimeng-agent-preferences.png",
+      "title": "Agent 两列偏好面板",
+      "source": "authenticated/jimeng-06-agent-preferences.jpg",
+      "rect": {
+        "x": 428,
+        "y": 323,
+        "width": 613,
+        "height": 316
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels"
+    },
+    {
+      "file": "components/jimeng-detail-action-groups.png",
+      "title": "资产详情动作组",
+      "source": "authenticated/jimeng-04-asset-detail.jpg",
+      "rect": {
+        "x": 878,
+        "y": 318,
+        "width": 351,
+        "height": 391
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels"
+    },
+    {
+      "file": "components/jimeng-asset-browser.png",
+      "title": "资产筛选与媒体网格",
+      "source": "authenticated/jimeng-02-assets-desktop.jpg",
+      "rect": {
+        "x": 279,
+        "y": 56,
+        "width": 962,
+        "height": 403
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels"
+    },
+    {
+      "file": "components/jimeng-workspace-navigation.png",
+      "title": "制作页窄导航",
+      "source": "authenticated/jimeng-15-drama-script.jpg",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 56,
+        "height": 233
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels"
+    },
+    {
+      "file": "components/jimeng-script-agent-composer.png",
+      "title": "剧本助手底部输入区",
+      "source": "authenticated/jimeng-15-drama-script.jpg",
+      "rect": {
+        "x": 874,
+        "y": 545,
+        "width": 393,
+        "height": 166
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels"
+    },
+    {
+      "file": "components/jimeng-shot-strip.png",
+      "title": "分镜选中、历史与状态",
+      "source": "authenticated/jimeng-17-storyboard-detail.jpg",
+      "rect": {
+        "x": 376,
+        "y": 550,
+        "width": 864,
+        "height": 155
+      },
+      "method": "Lossless rectangular crop from saved browser screenshot; no UI repaint or synthesized pixels"
+    }
+  ]
+}

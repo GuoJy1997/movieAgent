@@ -1,0 +1,45 @@
+{
+  "initial": {
+    "nodes": 6,
+    "edges": 5,
+    "outputs": 0
+  },
+  "running": {
+    "steps": [
+      "succeeded",
+      "succeeded",
+      "running"
+    ],
+    "videoState": "RUNNING"
+  },
+  "completed": {
+    "workflow": "succeeded",
+    "steps": [
+      "succeeded",
+      "succeeded",
+      "succeeded"
+    ],
+    "outputs": 3,
+    "playback": {
+      "duration": 12.064,
+      "width": 854,
+      "height": 480,
+      "source": true,
+      "paused": false
+    }
+  },
+  "requests": [
+    {
+      "kind": "image"
+    },
+    {
+      "kind": "image"
+    },
+    {
+      "kind": "video",
+      "duration": 12
+    }
+  ],
+  "mediaProvenance": "existing-user-supplied-sample",
+  "realModelCalls": 0
+}

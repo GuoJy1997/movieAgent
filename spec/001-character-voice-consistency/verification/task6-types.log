@@ -1,0 +1,5 @@
+apps/desktop/src/renderer/features/canvas/CanvasWorkspace.tsx(238,159): error TS2339: Property 'voice_reference' does not exist on type '{ readonly prompt: "提示词"; readonly reference: "参考图"; readonly first_frame: "首帧"; readonly last_frame: "尾帧"; }'.
+apps/desktop/src/renderer/features/canvas/GraphConnections.tsx(6,946): error TS2339: Property 'voice_reference' does not exist on type '{ readonly prompt: "提示词"; readonly reference: "参考图"; readonly first_frame: "首帧"; readonly last_frame: "尾帧"; }'.
+packages/engine/src/workflow-service.ts(173,57): error TS2345: Argument of type '("reference" | "first_frame" | "last_frame" | "voice_reference")[]' is not assignable to parameter of type '("reference" | "first_frame" | "last_frame")[]'.
+  Type '"reference" | "first_frame" | "last_frame" | "voice_reference"' is not assignable to type '"reference" | "first_frame" | "last_frame"'.
+    Type '"voice_reference"' is not assignable to type '"reference" | "first_frame" | "last_frame"'.

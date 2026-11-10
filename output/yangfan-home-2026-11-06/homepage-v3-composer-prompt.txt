@@ -1,0 +1,46 @@
+Use case: precise-object-edit / UI mockup.
+Edit image 1, the current complete 羊番TV deep-blue homepage. The user APPROVES the overall layout, brand, cinematic coverflow gallery, deep-blue color system, artistic headings and the open episode strip. The user ONLY wants the Agent conversation composer to look less like a generic AI-generated arrangement of components, and more like the actual sophisticated creative inputs in image 2 (Jimeng) and image 3 (Xiaoyunque).
+
+INPUT ROLES:
+1 = EDIT TARGET. Preserve the page outside the conversation-entry area as faithfully as possible.
+2 = Jimeng composer reference. Ignore red annotations and all brand/payment/video-model content. Learn the large continuous writing surface, open bottom toolbar, quiet boundary, small reference-add affordance and space between groups.
+3 = Xiaoyunque composer reference. Learn the generous continuous surface, soft large outer radius, isolated plus at left, small grouped tool controls and lots of actual writing space. Do NOT copy its pale selected mode or purple CTA; our already-approved colors stay deep blue and cobalt.
+
+OUTPUT: ONE complete desktop UI screenshot, exact same framing/aspect as image 1 (1536x1024). No diagram, before-after collage, zoom inset, captions, device frame or browser chrome. Not a code mockup. Render Chinese accurately.
+
+STRICT EDIT REGION:
+Only redesign the Agent mode row, the large composer and the small suggestion row underneath them — approximately x=294 to 1504 and y=450 to 736 in the supplied screenshot. All content ABOVE and BELOW, and the entire left sidebar, should remain visually unchanged: do not regenerate the hero artwork, shuffle the episode strip, change the mascot, restyle the global header or rewrite the lower task sections. Keep the region's total vertical footprint so the rest of the page stays put.
+
+NEW COMPOSER DESIGN:
+This is the EMPTY / READY-TO-TYPE state of a capable creative conversation tool, not a settings form. The user should immediately see a large uninterrupted place to write. Its richness is communicated by well-grouped, believable interactive controls, not many bordered boxes.
+
+A. Mode/context row:
+Refine the large heavy segmented mode control into a smaller quiet rounded selector, occupying about 290px rather than 400px: “Agent 创作” active, “打开画布” inactive. Active background stays dark ink-blue, label off-white, small blue positional cue, no pale fill or glowing bottom edge. It should not compete with the writing field. Same top-left location. At far right replace the separate chunky context pill with a plain muted context label and chevron: “周末出逃 · EP03 ⌄”. No extra badges.
+
+B. Main writing surface:
+Full-width broad input slab at about y=505 to 687, with a soft ~32px outer radius. Surface a desaturated dark graphite/navy #202730, just brighter than the page, almost solid with an exceptionally subtle soft tonal shift. Very subtle thin neutral boundary only, not luminous, not a giant glass effect, no chrome or inset bevel. Match the visual continuity and softness of Xiaoyunque, with our deeper blue-tinted neutrals.
+REMOVE the internal horizontal separator completely. REMOVE all vertical separators between toolbar options. REMOVE the default tilted scenic reference card, “添加参考” label, the prefilled @镜头07 and 海滨公路 pills. This is a blank drafting state; do not pretend assets are attached before the user adds them. No reference thumbnail placeholder at rest.
+Text starts naturally at the upper-left inner padding (~30px): “描述你的想法，或添加已有素材作为参考…” in a normal modern sans-serif, medium muted gray, not bold. Generous empty writing space beneath it. A subtle short insertion caret is acceptable, no blue focus dot, no fake typed message or chat bubbles. The entire upper portion belongs to user text, no embedded panels.
+
+C. Integrated bottom toolbar, aligned to one baseline, only the necessary groups:
+- Far left: simple 22px PLUS icon with a generous invisible hit area, NOT inside a circle or boxed button.
+- Immediately after, separated by clear breathing room: small subtle creation icon and “全能创作 ⌄” as plain text on the same surface, with a muted blue accent on the mode icon only.
+- Toward the center-left: one small low-contrast softly rounded charcoal control “技能 ⌄”, simple thin bracket-like or four-dot icon. This visually opens a menu; no grid of templates inside the field.
+- Next to it: one slightly wider low-contrast rounded tool group with a tiny model icon and “默认模型” followed by a small “偏好 ⌄” control. The model and preference actions feel related in one soft group. Keep their text distinct and readable; do not add strong vertical rules. Width from actual text, not equal-sized buttons.
+- At the far right: a compact round 40px send control with a thin white upward arrow. Use quiet deep cobalt blue, subtle planar gradient, no glow. Because the draft is empty, make it slightly subdued rather than brilliant. REMOVE the large “开始规划 →” promotional pill. The arrow is a conversation send action. Keep enough space from the grouped controls; do not place toolbar items on a full-width evenly distributed grid.
+- No other bottom icons, money/credits, aspect ratios, resolution, video duration, unconfigured model brands, collaboration avatars or unnecessary badges.
+
+D. Suggested entry points below input:
+Remove the FOUR chunky filled skill capsules currently below the composer. Replace them with one quiet, short, text-led starter row: tiny muted “试试” then two optional text suggestions “续写镜头” and “生成分镜” with subtle small directional arrows, no backgrounds, no outlined containers, very low visual weight. Their purpose is to suggest a starting sentence. Full four-template capability remains behind the 技能 menu, not displayed twice. Keep this row well above the unchanged 分集 heading.
+
+INTERACTION INTENT, for visual plausibility only:
+Plus opens existing/imported reference material, shows true attachment thumbnails only AFTER choosing them.
+Skills opens the existing templates 短片分镜、产品广告、角色设定、镜头续写.
+Default model/preferences allows configured text model presets and planning preferences.
+Send begins the Agent planning conversation; later results require user review. Do not imply automatic video generation, automatic adoption or one-click final film.
+Do not draw open dropdowns in this default-state screenshot.
+
+STYLE:
+The edited input must feel naturally grouped, light, quiet, and intentional. Small consistent line icons. Soft matte charcoal-blue material. No separator lattice, decorative attachment, giant primary button, repeated chip rows, aggressive borders, bright color wash, metallic highlights, double outlines or shiny decorative glass. Preserve our black/deep-blue identity, not the pale pastel controls from the references. The broad input area can be softer and slightly more neutral than the main page while maintaining harmony.
+
+Everything outside this localized conversation region stays as in reference 1, including exact “羊番TV” branding, italic headline “继续你的故事”, all four movie posters and their handwritten titles, 3D coverflow, selected EP03 with short blue marker, and the two blue task progress bars. No watermarks. Return the single complete edited homepage.

@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "status": "generated_and_visually_reviewed",
+  "scope": "仅重做首页Agent输入区；主体布局、黑底深蓝方向、羊番TV品牌、画廊与分集沿用V2。未修改产品源码。",
+  "referenceBasis": "本轮对照用户提供的即梦界面截图与此前提供的小云雀输入框截图；未声称验证了两站当前线上交互。",
+  "sources": [
+    "D:/movieAgent/output/yangfan-home-2026-11-06/yangfan-home-v2-deep-blue.png",
+    "C:/Users/1266/AppData/Local/Temp/codex-clipboard-9bc64c50-af0f-4ec4-b991-09739631c06e.png",
+    "C:/Users/1266/AppData/Local/Temp/codex-clipboard-9a3d2888-0125-40cc-ae4b-d37df3c48164.png"
+  ],
+  "diagnosis": [
+    "内部横线与工具项竖线把输入区切割成表单",
+    "未添加附件却展示装饰性参考卡",
+    "引用胶囊、技能胶囊与参数同时竞争注意",
+    "大型开始规划按钮使对话入口像宣传操作区"
+  ],
+  "changes": [
+    "保持连续、柔和的深灰蓝写作面",
+    "清理内部切割线与默认附件占位",
+    "底部按功能分成添加、模式、技能、模型与偏好、发送",
+    "技能模板通过菜单按需展开，默认只留两个轻量起步建议",
+    "改为紧凑箭头发送入口，空草稿状态应禁用并提供可访问名称"
+  ],
+  "state": "空草稿默认态；不是已添加参考的状态",
+  "interactionDesign": {
+    "plus": "打开已有/导入参考素材选择；添加后显示真实缩略图，支持替换和删除",
+    "skills": "现有四类模板：短片分镜、产品广告、角色设定、镜头续写",
+    "modelPreferences": "配置的文本预设与规划偏好",
+    "send": "可访问名称：发送并开始规划。空草稿且无可用输入时禁用；进入Agent规划、用户审阅与采纳流程",
+    "status": "以上为设计意图，未实现或测试"
+  },
+  "generation": "Built-in image_gen; screenshot edit",
+  "output": "D:/movieAgent/output/yangfan-home-2026-11-06/yangfan-home-v3-composer.png",
+  "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-d0b1de60-ca5e-4a5e-894e-ec8637e2f694.png",
+  "review": "已确认输入区取消分割横线与默认倾斜附件卡、引用标签；工具分组收敛；主发送入口缩为箭头；默认建议改为轻量文本。主要布局与黑底深蓝方向延续V2。此为生成式效果图，图像细节不保证与V2逐像素一致。",
+  "stateCoverage": "本次只展示默认态；未单独出图验证空输入禁用、菜单展开、附件加入、加载和错误状态。"
+}

@@ -1,0 +1,11 @@
+
+> libtv-studio-workspace@0.1.0 typecheck
+> tsc --noEmit -p tsconfig.base.json
+
+packages/engine/src/content-scope.ts(16,188): error TS6133: 'kind' is declared but its value is never read.
+tests/integration/subproject-hardening.test.ts(10,44): error TS2345: Argument of type '{ referenceImages?: unknown[] | undefined; projectId: any; profileRef: { libraryId: string; id: string; revision: number; }; prompt: string; inputVersion: string; executionOwner: string; runId: `${string}-${string}-${string}-${string}-${string}`; }' is not assignable to parameter of type 'PrepareGenerationInput'.
+  Type '{ referenceImages?: unknown[] | undefined; projectId: any; profileRef: { libraryId: string; id: string; revision: number; }; prompt: string; inputVersion: string; executionOwner: string; runId: `${string}-${string}-${string}-${string}-${string}`; }' is not assignable to type 'PrepareInlineGenerationInput'.
+    Types of property 'referenceImages' are incompatible.
+      Type 'unknown[] | undefined' is not assignable to type 'ReferenceImageInput[] | undefined'.
+        Type 'unknown[]' is not assignable to type 'ReferenceImageInput[]'.
+          Type 'unknown' is not assignable to type 'ReferenceImageInput'.

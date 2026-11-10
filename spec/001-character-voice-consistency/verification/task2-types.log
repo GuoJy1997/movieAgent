@@ -1,0 +1,1 @@
+tests/integration/voice-resolution.test.ts(27,21): error TS2532: Object is possibly 'undefined'.

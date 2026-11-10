@@ -1,0 +1,1 @@
+apps/desktop/src/main/voice-export.ts(105,50): error TS2339: Property 'hash' does not exist on type 'FileHandle'.

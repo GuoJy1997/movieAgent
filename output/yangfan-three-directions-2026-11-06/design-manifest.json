@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-06",
+  "status": "three_images_generated_and_visually_reviewed",
+  "workflowPreference": "用户要求后续每轮一组三种独立完整UI参考图，变化配色、组件样式和图标，组件来源限定UI参考.md列出的网站。选定方向后再做融合精修。",
+  "product": "羊番TV",
+  "scope": "首页视觉探索；未修改产品代码。",
+  "groundingImage": "D:/movieAgent/output/yangfan-home-2026-11-06/yangfan-home-v5-filled-icons.png",
+  "sourceIndex": "D:/movieAgent/UI参考.md",
+  "dimensions": "1536x1024",
+  "generation": "Built-in image_gen, three independent calls launched concurrently.",
+  "directions": {
+    "indigo": {
+      "name": "靛蓝圆润",
+      "url": "https://ui.aceternity.com/components/sidebar",
+      "screenshot": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/references/aceternity-sidebar.png",
+      "promptFile": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/indigo-prompt.txt"
+    },
+    "violet": {
+      "name": "蓝紫通透",
+      "url": "https://reactbits.dev/components/glass-surface",
+      "screenshot": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/references/reactbits-glass-surface.png",
+      "promptFile": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/violet-prompt.txt"
+    },
+    "graphite": {
+      "name": "石墨电蓝",
+      "url": "https://ui.aceternity.com/components/tabs",
+      "screenshot": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/references/aceternity-tabs.png",
+      "promptFile": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/graphite-prompt.txt"
+    }
+  },
+  "sourceEvidence": "三个组件文档页预览均实际查看并截图；Sidebar独立全屏演示网络失败后使用可访问的文档内预览。未安装组件、未验证目标应用内动效。",
+  "iconEvidence": "图中图标为生成式视觉表达，风格参考Aceternity示例所用Tabler生态并遵循用户实心偏好；尚未绑定到逐枚真实SVG。双层与几何化处理属于方案设计，不声称对应已安装图标包。",
+  "selectionRule": "按三张生成图在当前对话的实际显示顺序编号；不得按提交或文件名顺序猜测用户选择。",
+  "displayOrder": [
+    {
+      "option": 1,
+      "key": "indigo",
+      "file": "01-indigo.png",
+      "output": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/01-indigo.png",
+      "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-742d1355-49e0-4926-afc0-ef989b1b7731.png"
+    },
+    {
+      "option": 2,
+      "key": "violet",
+      "file": "02-violet.png",
+      "output": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/02-violet.png",
+      "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-ad9661ca-61d0-4209-b8f7-a8c1b12e4cc3.png"
+    },
+    {
+      "option": 3,
+      "key": "graphite",
+      "file": "03-graphite.png",
+      "output": "D:/movieAgent/output/yangfan-three-directions-2026-11-06/03-graphite.png",
+      "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-2d541772-9929-4d48-9195-8e758ed4e2b7.png"
+    }
+  ],
+  "review": "已目视确认三张独立首页均完整展示，保留品牌/画廊/Agent输入/分集/任务，控件圆角、导航容器、主色与图标细节有所差异。仅静态概念图；没有代码构建或组件运行验证。"
+}

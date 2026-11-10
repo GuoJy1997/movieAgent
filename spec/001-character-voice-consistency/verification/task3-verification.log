@@ -1,0 +1,35 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:1568) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-management.test.ts [2m([22m[2m4 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 9131[2mms[22m[39m
+   [33m[2m✓[22m[39m fetches the real configured service catalog and retains cache without calling synthesis [33m 2420[2mms[22m[39m
+   [33m[2m✓[22m[39m persists upload and clone once with the original int64, leaving voice quality unverified [33m 2421[2mms[22m[39m
+   [33m[2m✓[22m[39m does not resubmit unknown clone steps after reopen [33m 2146[2mms[22m[39m
+[31m   [31m×[31m verifies a clone with one real speech request and leaves perceptual quality for manual review[39m[33m 2140[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-management.test.ts[2m > [22mverifies a clone with one real speech request and leaves perceptual quality for manual review
+[31m[1mAssertionError[22m: expected 'SUBMISSION_UNKNOWN' to be 'SUCCEEDED' // Object.is equality[39m
+
+Expected: [32m"SU[7mCCEEDED[27m"[39m
+Received: [31m"SU[7mBMISSION_UNKNOWN[27m"[39m
+
+[36m [2m❯[22m tests/integration/voice-management.test.ts:[2m56:73[22m[39m
+    [90m 54|[39m  [34mexpect[39m(verifying[33m.[39mstate)[33m.[39m[34mtoBe[39m([32m'verifying'[39m)[33m;[39m
+    [90m 55|[39m  const task=audioValue(s.engine.generation.read(verifying.verification…
+    [90m 56|[39m  expect(audioValue(await s.engine.scheduler.run(task.attemptId)).state…
+    [90m   |[39m                                                                         [31m^[39m
+    [90m 57|[39m  const ready=audioValue((s.engine as any).voiceManagement.get({project…
+    [90m 58|[39m  [34mexpect[39m(ready[33m.[39mstate)[33m.[39m[34mtoBe[39m([32m'ready'[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m3 passed[39m[22m[90m (4)[39m
+[2m   Start at [22m 11:33:50
+[2m   Duration [22m 14.42s[2m (transform 3.52s, setup 0ms, import 4.91s, tests 9.13s, environment 0ms)[22m
+

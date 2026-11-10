@@ -1,0 +1,51 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:13860) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28300) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-export.test.ts [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 10936[2mms[22m[39m
+[31m   [31m×[31m publishes a fixed voice snapshot without paths or credentials and never overwrites it[39m[33m 10931[2mms[22m[39m
+(node:12184) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-migration.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 9256[2mms[22m[39m
+   [33m[2m✓[22m[39m appends schema20 immutably and upgrades real schema14 and19 libraries with backups [33m 9248[2mms[22m[39m
+ [31m❯[39m tests/integration/voice-delivery.test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 51231[2mms[22m[39m
+[31m   [31m×[31m protects source, short reference and baseline in the snapshot and exports all media with exact identities[39m[33m 49558[2mms[22m[39m
+   [33m[2m✓[22m[39m exports a provider-only voice as an offline identity manifest without inventing reference audio [33m 1669[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-delivery.test.ts[2m > [22mprotects source, short reference and baseline in the snapshot and exports all media with exact identities
+[31m[1mError[22m: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m tests/integration/voice-delivery.test.ts:[2m5:1[22m[39m
+    [90m  3|[39m import {readFile} from 'node:fs/promises';import {join} from 'node:pat…
+    [90m  4|[39m import {voiceExporter} from '../../apps/desktop/src/main/voice-export.…
+    [90m  5|[39m it('protects source, short reference and baseline in the snapshot and …
+    [90m   |[39m [31m^[39m
+    [90m  6|[39m  const s=await audioFixture('openai-speech-v1',{native:true}),projectI…
+    [90m  7|[39m  v(await exec(s.engine,'creation.saveEntity',{projectId,id:'role',expe…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-export.test.ts[2m > [22mpublishes a fixed voice snapshot without paths or credentials and never overwrites it
+[31m[1mError[22m: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m tests/integration/voice-export.test.ts:[2m7:1[22m[39m
+    [90m  5|[39m [35mimport[39m { join } [35mfrom[39m [32m'node:path'[39m[33m;[39m
+    [90m  6|[39m
+    [90m  7|[39m it('publishes a fixed voice snapshot without paths or credentials and …
+    [90m   |[39m [31m^[39m
+    [90m  8|[39m   const s = await audioFixture('openai-speech-v1', { native: true }), …
+    [90m  9|[39m   audioValue(await audioExecute(s.engine, 'creation.saveEntity', { pro…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (4)[39m
+[2m   Start at [22m 12:15:14
+[2m   Duration [22m 72.57s[2m (transform 30.18s, setup 0ms, import 38.60s, tests 71.42s, environment 10ms)[22m
+

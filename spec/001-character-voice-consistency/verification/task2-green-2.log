@@ -1,0 +1,26 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:30148) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6980) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-resolution.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 5274[2mms[22m[39m
+   [33m[2m✓[22m[39m uses the fixed role voice in a real TTS request for dialogue requiring later lip sync [33m 2758[2mms[22m[39m
+   [33m[2m✓[22m[39m compiles voice instructions into the real video prompt and permits an explicitly pinned older voice [33m 2505[2mms[22m[39m
+(node:18456) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voiceover-route.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 11361[2mms[22m[39m
+   [33m[2m✓[22m[39m uses real public TTS, durable per-output review and independent audio adoption; stale source and latest needs-fix fail closed after reopen [33m 3510[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects all voiceover video production and forged dialogue-linked text before provider preparation [33m 2366[2mms[22m[39m
+   [33m[2m✓[22m[39m does not let a retained sibling authorize fresh insertion or restoration after review revocation [33m 2756[2mms[22m[39m
+   [33m[2m✓[22m[39m restores ordinary trashed historical audio while rejecting fresh insertion and replacement [33m 2725[2mms[22m[39m
+ [32m✓[39m tests/integration/h3-audio-reference.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 5641[2mms[22m[39m
+   [33m[2m✓[22m[39m submits verified H3 audio through the real adapter and reconciles the original task [33m 2642[2mms[22m[39m
+   [33m[2m✓[22m[39m publishes prepared voice references as durable selectable media [33m 2967[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m14 passed[39m[22m[90m (14)[39m
+[2m   Start at [22m 11:21:37
+[2m   Duration [22m 16.25s[2m (transform 4.92s, setup 0ms, import 8.55s, tests 22.28s, environment 1ms)[22m
+

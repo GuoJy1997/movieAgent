@@ -1,0 +1,45 @@
+{
+  "status": "real-unknown-slot-recovery-passed",
+  "at": "2026-10-31T11:56:52.533Z",
+  "projectRoot": "D:\\movieAgent\\projects\\连续创作真实验收-20261031-601872",
+  "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+  "concurrency": 1,
+  "oldTask": {
+    "taskId": "ddf98a18-42ef-4a42-9fd6-8cbd04b9ad6f",
+    "attemptId": "02084eae-1d2a-4d76-bc1e-8690ed64e8ec",
+    "state": "RECONCILE_REQUIRED",
+    "providerState": "unknown",
+    "concurrencyReleasedAt": 1793447314091,
+    "reservationMicros": 1000000,
+    "settlementStatus": "unknown"
+  },
+  "newTask": {
+    "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+    "taskId": "d64139d6-46e7-4f9f-aa64-bf9478ca7b16",
+    "attemptId": "d0b1c88f-7037-4c98-9bf5-8f4b13d1551a",
+    "state": "SUCCEEDED",
+    "providerState": "completed",
+    "collectionState": "durable",
+    "providerTaskId": "217a42e9-640b-4787-a5ca-3bc0ec81b7dc",
+    "clientRequestId": "217a42e9-640b-4787-a5ca-3bc0ec81b7dc",
+    "cancelRequested": false,
+    "cancelStatus": "none",
+    "reconcileStatus": "none",
+    "estimateMicros": null,
+    "reportedActualMicros": null,
+    "reservationMicros": 1000000,
+    "currency": "CNY",
+    "settlementStatus": "unknown",
+    "artifactRef": {
+      "kind": "artifact",
+      "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+      "artifactId": "dfe8aac7-7d83-43af-baf0-db233043a0c7"
+    },
+    "errorCode": null
+  },
+  "elapsedSeconds": 6,
+  "additionalTextRequests": 1,
+  "additionalVideoRequests": 0,
+  "actualBilling": "unknown",
+  "reopenVerified": true
+}

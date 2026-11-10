@@ -1,0 +1,22 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+ ✓ tests/renderer/voiceover.test.ts (4 tests) 23836ms
+   ✓ routes saved voiceover through fixed VoiceLines and per-voice TTS, never offers video generation  1238ms
+   ✓ ignores the fixed-line response after closing the voiceover panel  1058ms
+   ✓ preserves dialogue voiceover review draft on close, navigation and save-A/edit-B  1956ms
+   ✓ preserves audio voiceover review draft on close, navigation and save-A/edit-B  2022ms
+ ✓ tests/renderer/voice-identity.test.ts (6 tests) 21851ms
+   ✓ saves a provider voice without a sample or API call, preserving spaces and parentheses  3795ms
+   ✓ keeps a pinned historical voice available for dialogue speech preparation  496ms
+   ✓ clears an old derived video reference when choosing a replacement source sample  785ms
+   ✓ explicitly replaces the preferred video reference with the chosen audition output  521ms
+   ✓ changes only the explicitly checked dialogue scope from the usage preview  831ms
+   ✓ reopens an unknown clone and only checks its original operation without a new upload  731ms
+
+ Test Files  2 passed (2)
+      Tests  10 passed (10)
+   Start at  19:27:16
+   Duration  48.98s (transform 158ms, setup 0ms, import 2.32s, tests 45.69s, environment 0ms)
+
+JSON report written to D:/movieAgent/spec/001-character-voice-consistency/verification/renderer-complete.json

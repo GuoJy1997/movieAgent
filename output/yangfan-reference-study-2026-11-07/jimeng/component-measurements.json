@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "background": "rgba(255, 255, 255, 0.08) none repeat scroll 0% 0% / auto padding-box border-box",
+    "borderRadius": "8px",
+    "color": "rgb(255, 255, 255)",
+    "font": "14px",
+    "h": 36,
+    "w": 216,
+    "weight": "500"
+  },
+  "composer": {
+    "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+    "border": "0px none rgb(255, 255, 255)",
+    "borderRadius": "23px 23px 0px 0px",
+    "h": 156,
+    "w": 880.28125
+  },
+  "selectedTab": {
+    "background": "linear-gradient(rgb(250, 250, 250) 0%, rgba(250, 250, 250, 0.78) 6%, rgba(250, 250, 250, 0.65) 13%, rgba(250, 250, 250, 0.37) 25%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0) 58%, rgba(250, 250, 250, 0.37) 75%, rgba(250, 250, 250, 0.65) 87%, rgba(250, 250, 250, 0.78) 94%, rgb(250, 250, 250) 100%) repeat scroll 0% 0% / auto padding-box border-box, linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(247, 237, 227, 0.14) 3%, rgba(253, 233, 221, 0.73) 13%, rgba(255, 226, 206, 0.85) 22%, rgba(255, 221, 197, 0.85) 29%, rgba(245, 231, 209, 0.85) 35%, rgba(235, 234, 224, 0.85) 41%, rgba(196, 237, 240, 0.85) 48%, rgba(173, 238, 251, 0.85) 54%, rgba(150, 239, 255, 0.85) 61%, rgba(158, 235, 251, 0.84) 67%, rgba(173, 238, 251, 0.85) 73%, rgba(190, 243, 254, 0.85) 80%, rgba(204, 245, 255, 0.78) 86%, rgba(206, 243, 249, 0.4) 92%, rgba(218, 247, 249, 0.11) 97%, rgba(0, 0, 0, 0) 100%) repeat scroll 0% 0% / auto padding-box border-box, rgb(250, 250, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+    "borderRadius": "9999px",
+    "font": "13px",
+    "h": 36,
+    "w": 157
+  }
+}

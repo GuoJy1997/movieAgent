@@ -1,0 +1,57 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:18992) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-management.test.ts [2m([22m[2m3 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[33m 3787[2mms[22m[39m
+[31m   [31m×[31m fetches the real configured service catalog and retains cache without calling synthesis[39m[33m 1500[2mms[22m[39m
+[31m   [31m×[31m persists upload and clone once with the original int64, leaving voice quality unverified[39m[33m 1165[2mms[22m[39m
+[31m   [31m×[31m does not resubmit unknown clone steps after reopen[39m[33m 1121[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 3 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-management.test.ts[2m > [22mfetches the real configured service catalog and retains cache without calling synthesis
+[31m[1mError[22m: {"code":"UNKNOWN_COMMAND","message":"此命令尚未实现。"}[39m
+[36m [2m❯[22m audioValue tests/fixtures/audio-generation.ts:[2m15:25[22m[39m
+    [90m 13|[39m import type { ProviderContext } from '../../packages/providers/src/ima…
+    [90m 14|[39m [35mexport[39m [35mfunction[39m [34maudioValue[39m(result[33m:[39m any)[33m:[39m any {
+    [90m 15|[39m   [35mif[39m ([33m![39mresult[33m.[39mok) [35mthrow[39m [33mError[39m([33mJSON[39m[33m.[39m[34mstringify[39m(result[33m.[39merror))[33m;[39m
+    [90m   |[39m                         [31m^[39m
+    [90m 16|[39m   [34mexpect[39m(result)[33m.[39m[34mtoMatchObject[39m({ ok[33m:[39m [35mtrue[39m })[33m;[39m
+    [90m 17|[39m   [35mreturn[39m result[33m.[39mvalue[33m?.[39mresult [33m??[39m result[33m.[39mvalue[33m;[39m
+[90m [2m❯[22m tests/integration/voice-management.test.ts:[2m17:14[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-management.test.ts[2m > [22mpersists upload and clone once with the original int64, leaving voice quality unverified
+[31m[1mError[22m: {"code":"UNKNOWN_COMMAND","message":"此命令尚未实现。"}[39m
+[36m [2m❯[22m audioValue tests/fixtures/audio-generation.ts:[2m15:25[22m[39m
+    [90m 13|[39m import type { ProviderContext } from '../../packages/providers/src/ima…
+    [90m 14|[39m [35mexport[39m [35mfunction[39m [34maudioValue[39m(result[33m:[39m any)[33m:[39m any {
+    [90m 15|[39m   [35mif[39m ([33m![39mresult[33m.[39mok) [35mthrow[39m [33mError[39m([33mJSON[39m[33m.[39m[34mstringify[39m(result[33m.[39merror))[33m;[39m
+    [90m   |[39m                         [31m^[39m
+    [90m 16|[39m   [34mexpect[39m(result)[33m.[39m[34mtoMatchObject[39m({ ok[33m:[39m [35mtrue[39m })[33m;[39m
+    [90m 17|[39m   [35mreturn[39m result[33m.[39mvalue[33m?.[39mresult [33m??[39m result[33m.[39mvalue[33m;[39m
+[90m [2m❯[22m tests/integration/voice-management.test.ts:[2m25:35[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-management.test.ts[2m > [22mdoes not resubmit unknown clone steps after reopen
+[31m[1mError[22m: {"code":"UNKNOWN_COMMAND","message":"此命令尚未实现。"}[39m
+[36m [2m❯[22m audioValue tests/fixtures/audio-generation.ts:[2m15:25[22m[39m
+    [90m 13|[39m import type { ProviderContext } from '../../packages/providers/src/ima…
+    [90m 14|[39m [35mexport[39m [35mfunction[39m [34maudioValue[39m(result[33m:[39m any)[33m:[39m any {
+    [90m 15|[39m   [35mif[39m ([33m![39mresult[33m.[39mok) [35mthrow[39m [33mError[39m([33mJSON[39m[33m.[39m[34mstringify[39m(result[33m.[39merror))[33m;[39m
+    [90m   |[39m                         [31m^[39m
+    [90m 16|[39m   [34mexpect[39m(result)[33m.[39m[34mtoMatchObject[39m({ ok[33m:[39m [35mtrue[39m })[33m;[39m
+    [90m 17|[39m   [35mreturn[39m result[33m.[39mvalue[33m?.[39mresult [33m??[39m result[33m.[39mvalue[33m;[39m
+[90m [2m❯[22m tests/integration/voice-management.test.ts:[2m38:35[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[90m (3)[39m
+[2m   Start at [22m 11:28:12
+[2m   Duration [22m 8.06s[2m (transform 2.75s, setup 0ms, import 3.79s, tests 3.79s, environment 0ms)[22m
+

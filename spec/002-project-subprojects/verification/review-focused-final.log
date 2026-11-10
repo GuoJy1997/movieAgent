@@ -1,0 +1,42 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:15420) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18044) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18960) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23668) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/subproject-memory.test.ts (4 tests | 1 failed) 2540ms
+   × re-adopts a previously completed snapshot and its summary without another provider request 621ms
+(node:17960) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/subproject-memory.test.ts > re-adopts a previously completed snapshot and its summary without another provider request
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
++   "ok": false,
+  }
+
+ ❯ value tests/fixtures/native-generation.ts:10:58
+
+ ❯ tests/integration/subproject-memory.test.ts:77:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  1 failed | 9 passed (10)
+   Start at  09:24:04
+   Duration  7.45s (transform 6.80s, setup 0ms, import 11.23s, tests 8.20s, environment 1ms)
+

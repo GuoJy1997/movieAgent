@@ -1,0 +1,33 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+[90mstdout[2m | tests/renderer/voice-identity.test.ts
+[22m[39m[2m11:49:17[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+
+[90mstdout[2m | tests/renderer/voice-identity.test.ts
+[22m[39mPort 5173 is in use, trying another one...
+
+ [31m❯[39m tests/renderer/voice-identity.test.ts [2m([22m[2m1 test[22m[2m | [22m[33m1 skipped[39m[2m)[22m[33m 31761[2mms[22m[39m
+   [2m[90m↓[39m[22m saves a provider voice without a sample or API call, preserving spaces and parentheses
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Suites 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/renderer/voice-identity.test.ts[2m [ tests/renderer/voice-identity.test.ts ][22m
+[31m[1mError[22m: Hook timed out in 30000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".[39m
+[36m [2m❯[22m tests/renderer/voice-identity.test.ts:[2m3:43[22m[39m
+    [90m  1|[39m [35mimport[39m {beforeAll[33m,[39mafterAll[33m,[39mexpect[33m,[39mit} [35mfrom[39m [32m'vitest'[39m[33m;[39m
+    [90m  2|[39m [35mimport[39m {harness[33m,[39mmounted[33m,[39mqueries} [35mfrom[39m [32m'./p4-harness.ts'[39m[33m;[39m
+    [90m  3|[39m let h:Awaited<ReturnType<typeof harness>>;beforeAll(async()=>{h=await …
+    [90m   |[39m                                           [31m^[39m
+    [90m  4|[39m it('saves a provider voice without a sample or API call, preserving sp…
+    [90m  5|[39m  [35mconst[39m ref[33m=[39m{libraryId[33m:[39m[32m'library'[39m[33m,[39mid[33m:[39m[32m'speech'[39m[33m,[39mrevision[33m:[39m[34m1[39m}[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [33m1 skipped[39m[90m (1)[39m
+[2m   Start at [22m 11:49:14
+[2m   Duration [22m 35.26s[2m (transform 195ms, setup 0ms, import 2.38s, tests 31.76s, environment 0ms)[22m
+

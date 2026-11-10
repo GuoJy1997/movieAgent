@@ -1,0 +1,8 @@
+import fs from 'node:fs';import path from 'node:path';
+const root='D:/movieAgent',dir=path.join(root,'spec/002-project-subprojects'),ev=path.join(dir,'verification/unknown-slot');
+const docs=[path.join(root,'spec/README.md'),...['spec.md','implementation.md','progress.md','long-requests.md','real-text-acceptance.md','unknown-slot-recovery.md','unknown-slot-verification.md'].map(n=>path.join(dir,n))];
+const missing=[];for(const file of docs){const body=fs.readFileSync(file,'utf8');for(const match of body.matchAll(/\]\(([^)]+)\)/g)){const target=match[1].split('#')[0];if(!target||/^[a-z]+:\/\//i.test(target))continue;const resolved=path.resolve(path.dirname(file),target.replace(/^<|>$/g,''));if(!fs.existsSync(resolved))missing.push({file:path.relative(root,file),target});}}
+const config=JSON.parse(fs.readFileSync(path.join(root,'libtv-studio/config/models.json'),'utf8'));const secrets=(config.providers??[]).map(p=>p.apiKey).filter(k=>typeof k==='string'&&k.length>=8);
+const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?(e.name==='before'?[]:walk(path.join(d,e.name))):[path.join(d,e.name)]);
+const leaks=[];for(const f of [...docs,...walk(ev).filter(f=>/\.(md|json|log|mjs|txt)$/.test(f))]){const body=fs.readFileSync(f,'utf8');if(secrets.some(k=>body.includes(k)))leaks.push(path.relative(root,f));}
+const result={verified:missing.length===0&&leaks.length===0,documents:docs.length,missingLinks:missing,credentialLeakFiles:leaks,realReopenVerified:JSON.parse(fs.readFileSync(path.join(ev,'live-result.json'),'utf8')).reopenVerified};fs.writeFileSync(path.join(ev,'documentation-check.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));if(!result.verified)process.exitCode=1;

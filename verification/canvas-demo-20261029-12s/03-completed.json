@@ -1,0 +1,878 @@
+{
+  "canvas": {
+    "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+    "canvasId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+    "projectId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+    "revision": 9,
+    "nodes": [
+      {
+        "nodeId": "character",
+        "incarnation": "a2c380db-8349-4b48-bf22-28cffbbac468",
+        "semanticRevision": 1,
+        "layoutRevision": 2,
+        "selectionRevision": 1,
+        "content": {
+          "type": "text",
+          "text": "角色资产设定｜朱清\n清瘦少年，黑发束起，灰青交领长袍。\n人物身份与衣着跨镜头保持。\n本演示参考图取自用户提供的视频抽帧。"
+        },
+        "layout": {
+          "x": 0,
+          "y": 0
+        },
+        "selectedOutput": null,
+        "activeRunBindingId": null,
+        "shotBinding": null,
+        "freshness": null,
+        "activeTask": null
+      },
+      {
+        "nodeId": "scene",
+        "incarnation": "2c74d32b-42cf-4b88-aa87-36c6c12c385b",
+        "semanticRevision": 1,
+        "layoutRevision": 2,
+        "selectionRevision": 1,
+        "content": {
+          "type": "text",
+          "text": "场景资产设定｜宫墙梧桐道\n旧朱红墙、树影、自然日光，保留墙面磨损。\n本演示参考图取自用户提供的视频抽帧。"
+        },
+        "layout": {
+          "x": 0,
+          "y": 330
+        },
+        "selectedOutput": null,
+        "activeRunBindingId": null,
+        "shotBinding": null,
+        "freshness": null,
+        "activeTask": null
+      },
+      {
+        "nodeId": "director",
+        "incarnation": "e8ab6b65-34c2-41d9-8e70-27cc754ff2d1",
+        "semanticRevision": 1,
+        "layoutRevision": 2,
+        "selectionRevision": 1,
+        "content": {
+          "type": "text",
+          "text": "G01｜宫墙候讯｜12秒｜四个内部镜头\n用途：展示实际画布的依赖执行和产物收存。\n0–3秒：少年背靠梧桐，人物近景，抬眼望向墙外。\n3–6秒：切宫墙旁携物人物，侧身经过，机位稳定。\n6–8秒：切回少年近景，维持服装、发式和光线。\n8–12秒：切手中纸张特写，保留折痕与手部接触。\n参考：角色图负责面容服装，场景图负责宫墙与光线。\n声音：保留样例自带音轨；本次不测试配音或口型。\n本地模拟说明：图片是用户提供视频的抽帧；最终返回已有12.064秒样例视频。没有调用真实模型，不能证明提示词遵从度。"
+        },
+        "layout": {
+          "x": 0,
+          "y": 660
+        },
+        "selectedOutput": null,
+        "activeRunBindingId": null,
+        "shotBinding": null,
+        "freshness": null,
+        "activeTask": null
+      },
+      {
+        "nodeId": "character-image",
+        "incarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+        "semanticRevision": 2,
+        "layoutRevision": 2,
+        "selectionRevision": 2,
+        "content": {
+          "type": "generation",
+          "prompt": "朱清角色参考图：确认面容、发式和灰青服装。【本地模拟：返回已有样例抽帧】",
+          "profileRef": {
+            "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+            "id": "demo-character",
+            "revision": 1
+          },
+          "inputs": []
+        },
+        "layout": {
+          "x": 400,
+          "y": 0
+        },
+        "selectedOutput": {
+          "kind": "artifact",
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "artifactId": "25a4e4d7-7c63-4fb7-b433-85d613b102ed"
+        },
+        "activeRunBindingId": "0f75de3e-2ccc-4719-abbc-c80f1b41e6bc",
+        "shotBinding": null,
+        "freshness": "current",
+        "activeTask": {
+          "taskId": "ce2a4b62-2e2b-4952-ba6e-8e1026f0d1f2",
+          "state": "SUCCEEDED"
+        }
+      },
+      {
+        "nodeId": "scene-image",
+        "incarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+        "semanticRevision": 2,
+        "layoutRevision": 2,
+        "selectionRevision": 2,
+        "content": {
+          "type": "generation",
+          "prompt": "宫墙梧桐道场景参考：确认旧朱红墙、树影、自然光。【本地模拟：返回已有样例抽帧】",
+          "profileRef": {
+            "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+            "id": "demo-scene",
+            "revision": 1
+          },
+          "inputs": []
+        },
+        "layout": {
+          "x": 400,
+          "y": 390
+        },
+        "selectedOutput": {
+          "kind": "artifact",
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "artifactId": "2e8f0a88-f1bd-462b-b1c2-a0fc38543cd3"
+        },
+        "activeRunBindingId": "83b4d9a0-62a8-4775-982e-22e76b0988f3",
+        "shotBinding": null,
+        "freshness": "current",
+        "activeTask": {
+          "taskId": "ffad4fc6-f5d7-4465-ab41-703adf1338e8",
+          "state": "SUCCEEDED"
+        }
+      },
+      {
+        "nodeId": "video",
+        "incarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+        "semanticRevision": 2,
+        "layoutRevision": 2,
+        "selectionRevision": 2,
+        "content": {
+          "type": "generation",
+          "prompt": "G01｜12秒｜四个内部镜头。严格按连接的导演稿和角色、场景参考组织。【本地模拟：返回用户已有样例，不验证模型画质】",
+          "profileRef": {
+            "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+            "id": "demo-video",
+            "revision": 1
+          },
+          "inputs": []
+        },
+        "layout": {
+          "x": 850,
+          "y": 200
+        },
+        "selectedOutput": {
+          "kind": "artifact",
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "artifactId": "ef82fa74-9884-4f7a-ac74-863483088ec3"
+        },
+        "activeRunBindingId": "7d0831b8-6513-497c-bf98-eac7516f07c1",
+        "shotBinding": null,
+        "freshness": "current",
+        "activeTask": {
+          "taskId": "27112589-5f72-4a09-ab1a-999df631effc",
+          "state": "SUCCEEDED"
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "runBindingId": "0f75de3e-2ccc-4719-abbc-c80f1b41e6bc",
+        "taskId": "ce2a4b62-2e2b-4952-ba6e-8e1026f0d1f2",
+        "nodeId": "character-image",
+        "incarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+        "semanticRevision": 2,
+        "artifactRef": {
+          "kind": "artifact",
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "artifactId": "25a4e4d7-7c63-4fb7-b433-85d613b102ed"
+        },
+        "selection": "selected",
+        "reason": "current"
+      },
+      {
+        "runBindingId": "83b4d9a0-62a8-4775-982e-22e76b0988f3",
+        "taskId": "ffad4fc6-f5d7-4465-ab41-703adf1338e8",
+        "nodeId": "scene-image",
+        "incarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+        "semanticRevision": 2,
+        "artifactRef": {
+          "kind": "artifact",
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "artifactId": "2e8f0a88-f1bd-462b-b1c2-a0fc38543cd3"
+        },
+        "selection": "selected",
+        "reason": "current"
+      },
+      {
+        "runBindingId": "7d0831b8-6513-497c-bf98-eac7516f07c1",
+        "taskId": "27112589-5f72-4a09-ab1a-999df631effc",
+        "nodeId": "video",
+        "incarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+        "semanticRevision": 2,
+        "artifactRef": {
+          "kind": "artifact",
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "artifactId": "ef82fa74-9884-4f7a-ac74-863483088ec3"
+        },
+        "selection": "selected",
+        "reason": "current"
+      }
+    ],
+    "edges": [
+      {
+        "id": "demo-edge-0",
+        "sourceNodeId": "character",
+        "sourceIncarnation": "a2c380db-8349-4b48-bf22-28cffbbac468",
+        "targetNodeId": "character-image",
+        "targetIncarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+        "sourcePort": "output",
+        "targetPort": "prompt"
+      },
+      {
+        "id": "demo-edge-1",
+        "sourceNodeId": "scene",
+        "sourceIncarnation": "2c74d32b-42cf-4b88-aa87-36c6c12c385b",
+        "targetNodeId": "scene-image",
+        "targetIncarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+        "sourcePort": "output",
+        "targetPort": "prompt"
+      },
+      {
+        "id": "demo-edge-2",
+        "sourceNodeId": "director",
+        "sourceIncarnation": "e8ab6b65-34c2-41d9-8e70-27cc754ff2d1",
+        "targetNodeId": "video",
+        "targetIncarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+        "sourcePort": "output",
+        "targetPort": "prompt"
+      },
+      {
+        "id": "demo-edge-3",
+        "sourceNodeId": "character-image",
+        "sourceIncarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+        "targetNodeId": "video",
+        "targetIncarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+        "sourcePort": "output",
+        "targetPort": "reference"
+      },
+      {
+        "id": "demo-edge-4",
+        "sourceNodeId": "scene-image",
+        "sourceIncarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+        "targetNodeId": "video",
+        "targetIncarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+        "sourcePort": "output",
+        "targetPort": "reference"
+      }
+    ],
+    "snapshotSeq": 41,
+    "streamId": "0675b451-0250-4880-b982-ea3b668f75a7"
+  },
+  "workflow": {
+    "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+    "workflowId": "4f7d344c-ab38-4fc8-bda5-e7e24ab6f54c",
+    "canvasId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+    "state": "succeeded",
+    "plan": {
+      "canvasId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+      "mode": "upstream",
+      "nodeIds": [
+        "video"
+      ],
+      "executionOwner": "human",
+      "runId": "a1676960-8389-4a38-9ac2-3a563ff3372f",
+      "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+      "planId": "4f7d344c-ab38-4fc8-bda5-e7e24ab6f54c",
+      "projectId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+      "observedRevision": 3,
+      "expiresAt": 1793258919838,
+      "observations": [
+        {
+          "nodeId": "character-image",
+          "incarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+          "semanticRevision": 2,
+          "selectionRevision": 1
+        },
+        {
+          "nodeId": "character",
+          "incarnation": "a2c380db-8349-4b48-bf22-28cffbbac468",
+          "semanticRevision": 1,
+          "selectionRevision": 1
+        },
+        {
+          "nodeId": "scene-image",
+          "incarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+          "semanticRevision": 2,
+          "selectionRevision": 1
+        },
+        {
+          "nodeId": "scene",
+          "incarnation": "2c74d32b-42cf-4b88-aa87-36c6c12c385b",
+          "semanticRevision": 1,
+          "selectionRevision": 1
+        },
+        {
+          "nodeId": "video",
+          "incarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+          "semanticRevision": 2,
+          "selectionRevision": 1
+        },
+        {
+          "nodeId": "director",
+          "incarnation": "e8ab6b65-34c2-41d9-8e70-27cc754ff2d1",
+          "semanticRevision": 1,
+          "selectionRevision": 1
+        }
+      ],
+      "externalInputs": [],
+      "steps": [
+        {
+          "stepId": "character-image",
+          "nodeId": "character-image",
+          "incarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+          "semanticRevision": 2,
+          "selectionRevision": 1,
+          "template": {
+            "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+            "preparedId": "wf-9243aa9dd3c3e9b3b6e86476991ef36524e1a787d68b92da56a5600ea3664eca",
+            "projectId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+            "inputVersion": "e66edf71-44a0-485e-8356-ab04b2671e68_2",
+            "executionOwner": "human",
+            "runId": "a1676960-8389-4a38-9ac2-3a563ff3372f",
+            "prompt": "朱清角色参考图：确认面容、发式和灰青服装。【本地模拟：返回已有样例抽帧】",
+            "expiresAt": 1793258919838,
+            "config": {
+              "schemaVersion": 1,
+              "connection": {
+                "id": "demo-character",
+                "name": "仅本机模拟服务",
+                "adapterType": "openai-image-v1",
+                "baseUrl": "http://127.0.0.1:58557/v1",
+                "networkPolicy": {
+                  "privateEndpoint": {
+                    "hostname": "127.0.0.1",
+                    "port": 58557,
+                    "purpose": "model-api"
+                  }
+                },
+                "credentialRef": null,
+                "headers": {},
+                "timeoutMs": 10000,
+                "concurrency": 2,
+                "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                "revision": 1,
+                "createdAt": "2026-10-29T07:22:21.377Z"
+              },
+              "model": {
+                "id": "demo-character",
+                "name": "角色参考图【样例返回】",
+                "modelId": "local-sample-image",
+                "connectionRef": {
+                  "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                  "id": "demo-character",
+                  "revision": 1
+                },
+                "capabilities": {
+                  "taskTypes": [
+                    "text_to_image"
+                  ],
+                  "inputKinds": [
+                    "text"
+                  ],
+                  "outputKinds": [
+                    "image"
+                  ],
+                  "maxBatch": 1
+                },
+                "parameters": {},
+                "pricing": {
+                  "status": "unknown"
+                },
+                "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                "revision": 1,
+                "createdAt": "2026-10-29T07:22:21.391Z"
+              },
+              "profile": {
+                "id": "demo-character",
+                "name": "角色参考图【样例返回】",
+                "modelRef": {
+                  "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                  "id": "demo-character",
+                  "revision": 1
+                },
+                "parameters": {},
+                "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                "revision": 1,
+                "createdAt": "2026-10-29T07:22:21.402Z"
+              },
+              "parameters": {},
+              "pricing": {
+                "status": "unknown"
+              }
+            },
+            "adapterId": "openai-image-v1",
+            "estimateMicros": null,
+            "currency": null,
+            "referenceImages": [],
+            "canvasInput": {
+              "canvasId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+              "nodeId": "character-image",
+              "incarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+              "semanticRevision": 2
+            },
+            "planHash": "73d7a435facb7affceb2730f87dfec1cdd6ec7e985213ca7f6935020407ddea2"
+          },
+          "graphInputs": {
+            "edges": [
+              {
+                "id": "demo-edge-0",
+                "sourceNodeId": "character",
+                "sourceIncarnation": "a2c380db-8349-4b48-bf22-28cffbbac468",
+                "targetNodeId": "character-image",
+                "targetIncarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+                "sourcePort": "output",
+                "targetPort": "prompt"
+              }
+            ],
+            "nodes": [
+              {
+                "nodeId": "character",
+                "incarnation": "a2c380db-8349-4b48-bf22-28cffbbac468",
+                "semanticRevision": 1,
+                "selectionRevision": 1,
+                "selectedOutput": null
+              }
+            ]
+          },
+          "inputs": [
+            {
+              "kind": "text",
+              "targetPort": "prompt",
+              "text": "角色资产设定｜朱清\n清瘦少年，黑发束起，灰青交领长袍。\n人物身份与衣着跨镜头保持。\n本演示参考图取自用户提供的视频抽帧。"
+            }
+          ]
+        },
+        {
+          "stepId": "scene-image",
+          "nodeId": "scene-image",
+          "incarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+          "semanticRevision": 2,
+          "selectionRevision": 1,
+          "template": {
+            "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+            "preparedId": "wf-c629f6d400867943515c8ed769c68e4104460a5bc4fb194b4ab457eac0334e43",
+            "projectId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+            "inputVersion": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2_2",
+            "executionOwner": "human",
+            "runId": "a1676960-8389-4a38-9ac2-3a563ff3372f",
+            "prompt": "宫墙梧桐道场景参考：确认旧朱红墙、树影、自然光。【本地模拟：返回已有样例抽帧】",
+            "expiresAt": 1793258919838,
+            "config": {
+              "schemaVersion": 1,
+              "connection": {
+                "id": "demo-scene",
+                "name": "仅本机模拟服务",
+                "adapterType": "openai-image-v1",
+                "baseUrl": "http://127.0.0.1:58557/v1",
+                "networkPolicy": {
+                  "privateEndpoint": {
+                    "hostname": "127.0.0.1",
+                    "port": 58557,
+                    "purpose": "model-api"
+                  }
+                },
+                "credentialRef": null,
+                "headers": {},
+                "timeoutMs": 10000,
+                "concurrency": 2,
+                "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                "revision": 1,
+                "createdAt": "2026-10-29T07:22:21.412Z"
+              },
+              "model": {
+                "id": "demo-scene",
+                "name": "场景参考图【样例返回】",
+                "modelId": "local-sample-image",
+                "connectionRef": {
+                  "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                  "id": "demo-scene",
+                  "revision": 1
+                },
+                "capabilities": {
+                  "taskTypes": [
+                    "text_to_image"
+                  ],
+                  "inputKinds": [
+                    "text"
+                  ],
+                  "outputKinds": [
+                    "image"
+                  ],
+                  "maxBatch": 1
+                },
+                "parameters": {},
+                "pricing": {
+                  "status": "unknown"
+                },
+                "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                "revision": 1,
+                "createdAt": "2026-10-29T07:22:21.421Z"
+              },
+              "profile": {
+                "id": "demo-scene",
+                "name": "场景参考图【样例返回】",
+                "modelRef": {
+                  "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                  "id": "demo-scene",
+                  "revision": 1
+                },
+                "parameters": {},
+                "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                "revision": 1,
+                "createdAt": "2026-10-29T07:22:21.429Z"
+              },
+              "parameters": {},
+              "pricing": {
+                "status": "unknown"
+              }
+            },
+            "adapterId": "openai-image-v1",
+            "estimateMicros": null,
+            "currency": null,
+            "referenceImages": [],
+            "canvasInput": {
+              "canvasId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+              "nodeId": "scene-image",
+              "incarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+              "semanticRevision": 2
+            },
+            "planHash": "8e744ba75007fe9e68f647c64c41eafbc9bb0bae6614dfd61e63995657d366fa"
+          },
+          "graphInputs": {
+            "edges": [
+              {
+                "id": "demo-edge-1",
+                "sourceNodeId": "scene",
+                "sourceIncarnation": "2c74d32b-42cf-4b88-aa87-36c6c12c385b",
+                "targetNodeId": "scene-image",
+                "targetIncarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+                "sourcePort": "output",
+                "targetPort": "prompt"
+              }
+            ],
+            "nodes": [
+              {
+                "nodeId": "scene",
+                "incarnation": "2c74d32b-42cf-4b88-aa87-36c6c12c385b",
+                "semanticRevision": 1,
+                "selectionRevision": 1,
+                "selectedOutput": null
+              }
+            ]
+          },
+          "inputs": [
+            {
+              "kind": "text",
+              "targetPort": "prompt",
+              "text": "场景资产设定｜宫墙梧桐道\n旧朱红墙、树影、自然日光，保留墙面磨损。\n本演示参考图取自用户提供的视频抽帧。"
+            }
+          ]
+        },
+        {
+          "stepId": "video",
+          "nodeId": "video",
+          "incarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+          "semanticRevision": 2,
+          "selectionRevision": 1,
+          "template": {
+            "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+            "preparedId": "wf-78d3bbc762a3c5e1624ec74d7168bda6c74b9374a289c1f1534ea8963ec719b3",
+            "projectId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+            "inputVersion": "99ad4f3d-99be-4305-ae59-bdf583890d3c_2",
+            "executionOwner": "human",
+            "runId": "a1676960-8389-4a38-9ac2-3a563ff3372f",
+            "prompt": "G01｜12秒｜四个内部镜头。严格按连接的导演稿和角色、场景参考组织。【本地模拟：返回用户已有样例，不验证模型画质】",
+            "expiresAt": 1793258919838,
+            "config": {
+              "schemaVersion": 1,
+              "connection": {
+                "id": "demo-video",
+                "name": "仅本机模拟服务",
+                "adapterType": "minimax-video-v2",
+                "baseUrl": "http://127.0.0.1:58557/v1",
+                "networkPolicy": {
+                  "privateEndpoint": {
+                    "hostname": "127.0.0.1",
+                    "port": 58557,
+                    "purpose": "model-api"
+                  }
+                },
+                "credentialRef": null,
+                "headers": {},
+                "timeoutMs": 10000,
+                "concurrency": 2,
+                "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                "revision": 1,
+                "createdAt": "2026-10-29T07:22:21.437Z"
+              },
+              "model": {
+                "id": "demo-video",
+                "name": "G01 · 12秒视频【本地模拟】",
+                "modelId": "MiniMax-H3-Highspeed",
+                "connectionRef": {
+                  "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                  "id": "demo-video",
+                  "revision": 1
+                },
+                "capabilities": {
+                  "taskTypes": [
+                    "text_to_video",
+                    "image_to_video"
+                  ],
+                  "inputKinds": [
+                    "text",
+                    "image"
+                  ],
+                  "outputKinds": [
+                    "video"
+                  ],
+                  "maxBatch": 1
+                },
+                "parameters": {
+                  "duration": {
+                    "type": "integer",
+                    "min": 4,
+                    "max": 15,
+                    "default": 12
+                  },
+                  "ratio": {
+                    "type": "enum",
+                    "values": [
+                      "adaptive",
+                      "16:9"
+                    ],
+                    "default": "adaptive"
+                  },
+                  "resolution": {
+                    "type": "enum",
+                    "values": [
+                      "768P"
+                    ],
+                    "default": "768P"
+                  }
+                },
+                "pricing": {
+                  "status": "unknown"
+                },
+                "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                "revision": 1,
+                "createdAt": "2026-10-29T07:22:21.452Z"
+              },
+              "profile": {
+                "id": "demo-video",
+                "name": "G01 · 12秒视频【本地模拟】",
+                "modelRef": {
+                  "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                  "id": "demo-video",
+                  "revision": 1
+                },
+                "parameters": {
+                  "duration": 12,
+                  "ratio": "adaptive",
+                  "resolution": "768P"
+                },
+                "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+                "revision": 1,
+                "createdAt": "2026-10-29T07:22:21.462Z"
+              },
+              "parameters": {
+                "duration": 12,
+                "ratio": "adaptive",
+                "resolution": "768P"
+              },
+              "pricing": {
+                "status": "unknown"
+              }
+            },
+            "adapterId": "minimax-video-v2",
+            "estimateMicros": null,
+            "currency": null,
+            "referenceImages": [],
+            "canvasInput": {
+              "canvasId": "ae164b73-7f4f-4bab-8a9b-cf4c730a84e6",
+              "nodeId": "video",
+              "incarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+              "semanticRevision": 2
+            },
+            "planHash": "cef47454ec0081ad8173557189070ca283c4313a5ad75c4701b868ce74757baf"
+          },
+          "graphInputs": {
+            "edges": [
+              {
+                "id": "demo-edge-0",
+                "sourceNodeId": "character",
+                "sourceIncarnation": "a2c380db-8349-4b48-bf22-28cffbbac468",
+                "targetNodeId": "character-image",
+                "targetIncarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+                "sourcePort": "output",
+                "targetPort": "prompt"
+              },
+              {
+                "id": "demo-edge-1",
+                "sourceNodeId": "scene",
+                "sourceIncarnation": "2c74d32b-42cf-4b88-aa87-36c6c12c385b",
+                "targetNodeId": "scene-image",
+                "targetIncarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+                "sourcePort": "output",
+                "targetPort": "prompt"
+              },
+              {
+                "id": "demo-edge-2",
+                "sourceNodeId": "director",
+                "sourceIncarnation": "e8ab6b65-34c2-41d9-8e70-27cc754ff2d1",
+                "targetNodeId": "video",
+                "targetIncarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+                "sourcePort": "output",
+                "targetPort": "prompt"
+              },
+              {
+                "id": "demo-edge-3",
+                "sourceNodeId": "character-image",
+                "sourceIncarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+                "targetNodeId": "video",
+                "targetIncarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+                "sourcePort": "output",
+                "targetPort": "reference"
+              },
+              {
+                "id": "demo-edge-4",
+                "sourceNodeId": "scene-image",
+                "sourceIncarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+                "targetNodeId": "video",
+                "targetIncarnation": "99ad4f3d-99be-4305-ae59-bdf583890d3c",
+                "sourcePort": "output",
+                "targetPort": "reference"
+              }
+            ],
+            "nodes": [
+              {
+                "nodeId": "character",
+                "incarnation": "a2c380db-8349-4b48-bf22-28cffbbac468",
+                "semanticRevision": 1,
+                "selectionRevision": 1,
+                "selectedOutput": null
+              },
+              {
+                "nodeId": "character-image",
+                "incarnation": "e66edf71-44a0-485e-8356-ab04b2671e68",
+                "semanticRevision": 2,
+                "selectionRevision": 1,
+                "selectedOutput": null
+              },
+              {
+                "nodeId": "director",
+                "incarnation": "e8ab6b65-34c2-41d9-8e70-27cc754ff2d1",
+                "semanticRevision": 1,
+                "selectionRevision": 1,
+                "selectedOutput": null
+              },
+              {
+                "nodeId": "scene",
+                "incarnation": "2c74d32b-42cf-4b88-aa87-36c6c12c385b",
+                "semanticRevision": 1,
+                "selectionRevision": 1,
+                "selectedOutput": null
+              },
+              {
+                "nodeId": "scene-image",
+                "incarnation": "6443ee26-03e7-4d42-a9e9-c1b31c0fd3d2",
+                "semanticRevision": 2,
+                "selectionRevision": 1,
+                "selectedOutput": null
+              }
+            ]
+          },
+          "inputs": [
+            {
+              "kind": "text",
+              "targetPort": "prompt",
+              "text": "G01｜宫墙候讯｜12秒｜四个内部镜头\n用途：展示实际画布的依赖执行和产物收存。\n0–3秒：少年背靠梧桐，人物近景，抬眼望向墙外。\n3–6秒：切宫墙旁携物人物，侧身经过，机位稳定。\n6–8秒：切回少年近景，维持服装、发式和光线。\n8–12秒：切手中纸张特写，保留折痕与手部接触。\n参考：角色图负责面容服装，场景图负责宫墙与光线。\n声音：保留样例自带音轨；本次不测试配音或口型。\n本地模拟说明：图片是用户提供视频的抽帧；最终返回已有12.064秒样例视频。没有调用真实模型，不能证明提示词遵从度。"
+            },
+            {
+              "kind": "stepOutput",
+              "targetPort": "reference",
+              "stepId": "character-image"
+            },
+            {
+              "kind": "stepOutput",
+              "targetPort": "reference",
+              "stepId": "scene-image"
+            }
+          ]
+        }
+      ],
+      "currency": null,
+      "estimateMicros": null,
+      "limits": {
+        "steps": 32,
+        "dependencies": 128
+      },
+      "planHash": "1c7ff75cbd2949434f3532e1a9885a934ee376ede32e650b6fcd64b77bbe3011"
+    },
+    "steps": [
+      {
+        "stepId": "character-image",
+        "nodeId": "character-image",
+        "state": "succeeded",
+        "task": {
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "taskId": "ce2a4b62-2e2b-4952-ba6e-8e1026f0d1f2",
+          "attemptId": "94f85ce4-cef5-4532-965e-1d265c1e5611"
+        },
+        "reservationMicros": 1000000,
+        "errorCode": null
+      },
+      {
+        "stepId": "scene-image",
+        "nodeId": "scene-image",
+        "state": "succeeded",
+        "task": {
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "taskId": "ffad4fc6-f5d7-4465-ab41-703adf1338e8",
+          "attemptId": "78339cad-6bf1-42fc-8c99-31123fe167f3"
+        },
+        "reservationMicros": 1000000,
+        "errorCode": null
+      },
+      {
+        "stepId": "video",
+        "nodeId": "video",
+        "state": "succeeded",
+        "task": {
+          "libraryId": "f341bc25-6a01-46f8-84b7-2dbf44d20700",
+          "taskId": "27112589-5f72-4a09-ab1a-999df631effc",
+          "attemptId": "08dcb7b8-5c2c-4594-a739-cbc114942472"
+        },
+        "reservationMicros": 1000000,
+        "errorCode": null
+      }
+    ],
+    "reservationMicros": 3000000
+  },
+  "videoCheck": {
+    "duration": 12.064,
+    "width": 854,
+    "height": 480,
+    "source": true,
+    "paused": false
+  },
+  "requests": [
+    {
+      "kind": "image",
+      "name": "character",
+      "at": 1793258643747
+    },
+    {
+      "kind": "image",
+      "name": "scene",
+      "at": 1793258644194
+    },
+    {
+      "kind": "video",
+      "taskId": "demo-1",
+      "at": 1793258645412,
+      "duration": 12
+    }
+  ]
+}

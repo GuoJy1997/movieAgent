@@ -1,0 +1,67 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:27012) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-management.test.ts [2m([22m[2m6 tests[22m[2m | [22m[31m4 failed[39m[2m)[22m[33m 170351[2mms[22m[39m
+   [33m[2m✓[22m[39m fetches the real configured service catalog and retains cache without calling synthesis [33m 22512[2mms[22m[39m
+   [33m[2m✓[22m[39m persists upload and clone once with the original int64, leaving voice quality unverified [33m 25020[2mms[22m[39m
+[31m   [31m×[31m does not resubmit unknown clone steps after reopen[39m[33m 31618[2mms[22m[39m
+[31m   [31m×[31m verifies a clone with one real speech request and leaves perceptual quality for manual review[39m[33m 30063[2mms[22m[39m
+[31m   [31m×[31m retains an ambiguous accepted clone and refreshes approval after explicit reconciliation without reuploading[39m[33m 30515[2mms[22m[39m
+[31m   [31m×[31m retains a late successful clone under the original character snapshot without changing its default[39m[33m 30619[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 4 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-management.test.ts[2m > [22mdoes not resubmit unknown clone steps after reopen
+[31m[1mError[22m: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m tests/integration/voice-management.test.ts:[2m38:1[22m[39m
+    [90m 36|[39m   expect(audioValue(s.engine.voices.read({projectId:s.projectId,voiceR…
+    [90m 37|[39m }[33m,[39m[34m30000[39m)[33m;[39m
+    [90m 38|[39m [34mit[39m([32m'does not resubmit unknown clone steps after reopen'[39m[33m,[39m[35masync[39m()[33m=>[39m{
+    [90m   |[39m [31m^[39m
+    [90m 39|[39m   const s=await setup();const job=audioValue(await audioExecute(s.engi…
+    [90m 40|[39m   s[33m.[39m[34mcut[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-management.test.ts[2m > [22mverifies a clone with one real speech request and leaves perceptual quality for manual review
+[31m[1mError[22m: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m tests/integration/voice-management.test.ts:[2m50:1[22m[39m
+    [90m 48|[39m }[33m,[39m[34m30000[39m)[33m;[39m
+    [90m 49|[39m
+    [90m 50|[39m it('verifies a clone with one real speech request and leaves perceptua…
+    [90m   |[39m [31m^[39m
+    [90m 51|[39m  const s=await setup();const job=audioValue(await audioExecute(s.engin…
+    [90m 52|[39m  const request={projectId:s.projectId,jobId:job.jobId,planHash:job.pla…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-management.test.ts[2m > [22mretains an ambiguous accepted clone and refreshes approval after explicit reconciliation without reuploading
+[31m[1mAssertionError[22m: expected '8c200324fca8af1953a419c3f0858e4a0fc37…' not to be '8c200324fca8af1953a419c3f0858e4a0fc37…' // Object.is equality[39m
+[36m [2m❯[22m tests/integration/voice-management.test.ts:[2m71:157[22m[39m
+
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-management.test.ts[2m > [22mretains a late successful clone under the original character snapshot without changing its default
+[31m[1mError[22m: {"code":"REVISION_CONFLICT","message":"角色不存在或已有新修订。"}[39m
+[36m [2m❯[22m audioValue tests/fixtures/audio-generation.ts:[2m15:25[22m[39m
+    [90m 13|[39m import type { ProviderContext } from '../../packages/providers/src/ima…
+    [90m 14|[39m [35mexport[39m [35mfunction[39m [34maudioValue[39m(result[33m:[39m any)[33m:[39m any {
+    [90m 15|[39m   [35mif[39m ([33m![39mresult[33m.[39mok) [35mthrow[39m [33mError[39m([33mJSON[39m[33m.[39m[34mstringify[39m(result[33m.[39merror))[33m;[39m
+    [90m   |[39m                         [31m^[39m
+    [90m 16|[39m   [34mexpect[39m(result)[33m.[39m[34mtoMatchObject[39m({ ok[33m:[39m [35mtrue[39m })[33m;[39m
+    [90m 17|[39m   [35mreturn[39m result[33m.[39mvalue[33m?.[39mresult [33m??[39m result[33m.[39mvalue[33m;[39m
+[90m [2m❯[22m tests/integration/voice-management.test.ts:[2m80:13[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m4 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (6)[39m
+[2m   Start at [22m 16:04:41
+[2m   Duration [22m 581.72s[2m (transform 405.30s, setup 0ms, import 408.79s, tests 170.35s, environment 0ms)[22m
+

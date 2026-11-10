@@ -1,0 +1,53 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:14128) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5220) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-identity.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 1897[2mms[22m[39m
+   [33m[2m✓[22m[39m saves a provider voice without an uploaded sample and keeps technical and quality states distinct [33m 688[2mms[22m[39m
+   [33m[2m✓[22m[39m pins a default to an exact revision, guards CAS, and retains all voice history [33m 585[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects a default voice belonging to another character without writing a binding [33m 621[2mms[22m[39m
+(node:26120) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-migration.test.ts [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 1109[2mms[22m[39m
+[31m   [31m×[31m appends schema20 immutably and upgrades real schema14 and19 libraries with backups[39m[33m 1105[2mms[22m[39m
+ [32m✓[39m tests/integration/character-voice.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 9921[2mms[22m[39m
+   [33m[2m✓[22m[39m twoCharactersKeepDistinctVoiceRefs and stale saves write nothing [33m 3733[2mms[22m[39m
+   [33m[2m✓[22m[39m rejectCrossProjectVoice and protectReferencedVoiceMedia while retaining fixed history [33m 3037[2mms[22m[39m
+   [33m[2m✓[22m[39m legacyDialogueIsNotAutoAssigned and unprobed references remain non-production drafts [33m 3147[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-migration.test.ts[2m > [22mappends schema20 immutably and upgrades real schema14 and19 libraries with backups
+[31m[1mAssertionError[22m: expected { ok: false, error: { …(2) } } to match object { ok: true, …(1) }
+(3 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[32m-   "ok": true,[39m
+[32m-   "value": {[39m
+[32m-     "schemaVersion": 24,[39m
+[32m-   },[39m
+[31m+   "ok": false,[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/integration/voice-migration.test.ts:[2m32:24[22m[39m
+    [90m 30|[39m       db[33m.[39m[34mclose[39m()[33m;[39m
+    [90m 31|[39m       [35mconst[39m upgraded [33m=[39m [35mawait[39m [34mopenLibrary[39m({ root })[33m;[39m
+    [90m 32|[39m       expect(upgraded).toMatchObject({ ok: true, value: { schemaVersio…
+    [90m   |[39m                        [31m^[39m
+    [90m 33|[39m       [35mif[39m (upgraded[33m.[39mok) [35mawait[39m upgraded[33m.[39mvalue[33m.[39m[34mclose[39m()[33m;[39m
+    [90m 34|[39m       expect((await readdir(join(root, 'backups'))).some(name => name.…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m6 passed[39m[22m[90m (7)[39m
+[2m   Start at [22m 11:10:41
+[2m   Duration [22m 16.65s[2m (transform 8.00s, setup 0ms, import 11.97s, tests 12.93s, environment 1ms)[22m
+

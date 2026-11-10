@@ -1,0 +1,1 @@
+apps/desktop/src/main/voice-export.ts(104,40): error TS18047: 'voice.reference' is possibly 'null'.

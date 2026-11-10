@@ -1,0 +1,41 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:29316) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-legacy-binding.test.ts [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 3687[2mms[22m[39m
+[31m   [31m×[31m migrates a resolvable legacy TTS preset without changing voice identity or manufacturing quality approval[39m[33m 3683[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-legacy-binding.test.ts[2m > [22mmigrates a resolvable legacy TTS preset without changing voice identity or manufacturing quality approval
+[31m[1mAssertionError[22m: expected { …(12) } to match object { id: 'voice', revision: 1, …(1) }
+(22 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[2m    "id": "voice",[22m
+[2m    "revision": 1,[22m
+[32m-   "ttsBinding": {[39m
+[32m-     "profileRef": {[39m
+[32m-       "id": "audio",[39m
+[32m-       "libraryId": "7a86a7c5-55c9-438c-9592-e68e9c4f5f37",[39m
+[32m-       "revision": 1,[39m
+[32m-     },[39m
+[32m-     "providerVoiceId": "Legacy (A)",[39m
+[32m-   },[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/integration/voice-legacy-binding.test.ts:[2m9:98[22m[39m
+
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m   Start at [22m 12:18:52
+[2m   Duration [22m 12.75s[2m (transform 5.89s, setup 0ms, import 8.37s, tests 3.69s, environment 1ms)[22m
+

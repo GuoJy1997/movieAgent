@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "providers": [
+    {
+      "id": "image-default",
+      "name": "默认图像服务",
+      "kind": "image",
+      "baseURL": "",
+      "apiKey": "",
+      "modelId": "",
+      "allowPrivateEndpoint": false
+    }
+  ]
+}

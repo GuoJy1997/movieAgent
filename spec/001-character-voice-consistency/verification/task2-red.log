@@ -1,0 +1,51 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:25320) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-resolution.test.ts [2m([22m[2m3 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[33m 936[2mms[22m[39m
+[31m   [31m×[31m preserves provider voice IDs and dialogue text for minimax-speech-v1[39m[32m 8[2mms[22m[39m
+[31m   [31m×[31m preserves provider voice IDs and dialogue text for openai-speech-v1[39m[32m 1[2mms[22m[39m
+[31m   [31m×[31m uses the fixed role voice in a real TTS request for dialogue requiring later lip sync[39m[33m 926[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 3 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-resolution.test.ts[2m > [22mpreserves provider voice IDs and dialogue text for minimax-speech-v1
+[41m[1m FAIL [22m[49m tests/integration/voice-resolution.test.ts[2m > [22mpreserves provider voice IDs and dialogue text for openai-speech-v1
+[31m[1mAssertionError[22m: expected false to be true // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- true[39m
+[31m+ false[39m
+
+[36m [2m❯[22m tests/integration/voice-resolution.test.ts:[2m6:21[22m[39m
+    [90m  4|[39m it.each(['minimax-speech-v1','openai-speech-v1'])('preserves provider …
+    [90m  5|[39m   const result=encodeSpeechRequest(adapter,'manual-audio','我在这儿。',{voi…
+    [90m  6|[39m   [34mexpect[39m(result[33m.[39mok)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m[35mif[39m([33m![39mresult[33m.[39mok)[35mreturn[39m[33m;[39m
+    [90m   |[39m                     [31m^[39m
+    [90m  7|[39m   [35mconst[39m body[33m=[39m[33mJSON[39m[33m.[39m[34mparse[39m(result[33m.[39mvalue[33m.[39m[34mtoString[39m())[33m;[39m
+    [90m  8|[39m   expect(adapter==='minimax-speech-v1'?body.voice_setting.voice_id:bod…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-resolution.test.ts[2m > [22muses the fixed role voice in a real TTS request for dialogue requiring later lip sync
+[31m[1mError[22m: {"code":"INPUT_CHANGED","message":"旁白台词与固定对白来源不符。"}[39m
+[36m [2m❯[22m audioValue tests/fixtures/audio-generation.ts:[2m15:25[22m[39m
+    [90m 13|[39m import type { ProviderContext } from '../../packages/providers/src/ima…
+    [90m 14|[39m [35mexport[39m [35mfunction[39m [34maudioValue[39m(result[33m:[39m any)[33m:[39m any {
+    [90m 15|[39m   [35mif[39m ([33m![39mresult[33m.[39mok) [35mthrow[39m [33mError[39m([33mJSON[39m[33m.[39m[34mstringify[39m(result[33m.[39merror))[33m;[39m
+    [90m   |[39m                         [31m^[39m
+    [90m 16|[39m   [34mexpect[39m(result)[33m.[39m[34mtoMatchObject[39m({ ok[33m:[39m [35mtrue[39m })[33m;[39m
+    [90m 17|[39m   [35mreturn[39m result[33m.[39mvalue[33m?.[39mresult [33m??[39m result[33m.[39mvalue[33m;[39m
+[90m [2m❯[22m tests/integration/voice-resolution.test.ts:[2m20:3[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[90m (3)[39m
+[2m   Start at [22m 11:16:59
+[2m   Duration [22m 3.79s[2m (transform 1.74s, setup 0ms, import 2.60s, tests 936ms, environment 0ms)[22m
+

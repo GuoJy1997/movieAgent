@@ -1,0 +1,47 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:30764) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/voice-delivery.test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[33m 21418[2mms[22m[39m
+[31m   [31m×[31m protects source, short reference and baseline in the snapshot and exports all media with exact identities[39m[33m 19635[2mms[22m[39m
+[31m   [31m×[31m exports a provider-only voice as an offline identity manifest without inventing reference audio[39m[33m 1779[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-delivery.test.ts[2m > [22mprotects source, short reference and baseline in the snapshot and exports all media with exact identities
+[31m[1mAssertionError[22m: expected Set{ 'e294409b36a8ac1893b23336eeab52…' } to deeply equal Set{ …(3) }[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  Set {[22m
+[32m-   "5cffdd4793d2c7986a33d893ef9f6e29f84420b47f145c3669ecc971581941e7",[39m
+[32m-   "d85c8af3ff68fa7dec3d39d1b430293752de59f30da354b7ab30ea2be6c1c5f5",[39m
+[2m    "e294409b36a8ac1893b23336eeab5202d3e84ce4f66c7572aa1589c43d43c1ff",[22m
+[2m  }[22m
+
+[36m [2m❯[22m tests/integration/voice-delivery.test.ts:[2m11:68[22m[39m
+
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/voice-delivery.test.ts[2m > [22mexports a provider-only voice as an offline identity manifest without inventing reference audio
+[31m[1mError[22m: {"code":"VOICE_REFERENCE_MISSING","message":"此声音没有可导出的音频参考。"}[39m
+[36m [2m❯[22m audioValue tests/fixtures/audio-generation.ts:[2m15:25[22m[39m
+    [90m 13|[39m import type { ProviderContext } from '../../packages/providers/src/ima…
+    [90m 14|[39m [35mexport[39m [35mfunction[39m [34maudioValue[39m(result[33m:[39m any)[33m:[39m any {
+    [90m 15|[39m   [35mif[39m ([33m![39mresult[33m.[39mok) [35mthrow[39m [33mError[39m([33mJSON[39m[33m.[39m[34mstringify[39m(result[33m.[39merror))[33m;[39m
+    [90m   |[39m                         [31m^[39m
+    [90m 16|[39m   [34mexpect[39m(result)[33m.[39m[34mtoMatchObject[39m({ ok[33m:[39m [35mtrue[39m })[33m;[39m
+    [90m 17|[39m   [35mreturn[39m result[33m.[39mvalue[33m?.[39mresult [33m??[39m result[33m.[39mvalue[33m;[39m
+[90m [2m❯[22m tests/integration/voice-delivery.test.ts:[2m22:15[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[90m (2)[39m
+[2m   Start at [22m 12:09:59
+[2m   Duration [22m 45.76s[2m (transform 18.19s, setup 0ms, import 21.53s, tests 21.42s, environment 0ms)[22m
+

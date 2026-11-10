@@ -1,0 +1,111 @@
+
+> libtv-studio-workspace@0.1.0 test
+> vitest run tests/integration/unknown-task-release.test.ts --maxWorkers=1 --testTimeout=30000
+
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:15008) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/unknown-task-release.test.ts (5 tests | 5 failed) 1986ms
+   × releases only the local slot, retains risk and original intent, lets new work run at concurrency one, and survives reopen 452ms
+   × rejects a different attempt and non-unknown or actively leased tasks 486ms
+   × counts a released unknown again when a late fact establishes that the provider accepted it 332ms
+   × rejects release from a sibling subproject scope 339ms
+   × migrates a schema26 unknown task without rewriting its frozen plan or current task JSON 375ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/unknown-task-release.test.ts > releases only the local slot, retains risk and original intent, lets new work run at concurrency one, and survives reopen
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
++   "ok": false,
+  }
+
+ ❯ value tests/fixtures/native-generation.ts:10:58
+
+ ❯ tests/integration/unknown-task-release.test.ts:13:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  tests/integration/unknown-task-release.test.ts > rejects a different attempt and non-unknown or actively leased tasks
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: false, …(1) }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "error": {
+-     "code": "TASK_ATTEMPT_CHANGED",
++     "code": "UNKNOWN_COMMAND",
+    },
+    "ok": false,
+  }
+
+ ❯ tests/integration/unknown-task-release.test.ts:24:86
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  tests/integration/unknown-task-release.test.ts > counts a released unknown again when a late fact establishes that the provider accepted it
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
++   "ok": false,
+  }
+
+ ❯ value tests/fixtures/native-generation.ts:10:58
+
+ ❯ tests/integration/unknown-task-release.test.ts:30:32
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  tests/integration/unknown-task-release.test.ts > rejects release from a sibling subproject scope
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: false, …(1) }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "error": {
+-     "code": "WRONG_SUBPROJECT",
++     "code": "UNKNOWN_COMMAND",
+    },
+    "ok": false,
+  }
+
+ ❯ tests/integration/unknown-task-release.test.ts:37:296
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  tests/integration/unknown-task-release.test.ts > migrates a schema26 unknown task without rewriting its frozen plan or current task JSON
+Error: no such table: unknown_task_release
+ ❯ tests/integration/unknown-task-release.test.ts:44:192
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  tests/integration/unknown-task-release.test.ts > migrates a schema26 unknown task without rewriting its frozen plan or current task JSON
+Error: EBUSY: resource busy or locked, unlink 'C:\Users\1266\AppData\Local\Temp\p2-native-2XdD3u\library.sqlite-shm'
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed (5)
+   Start at  19:39:16
+   Duration  5.51s (transform 2.18s, setup 0ms, import 3.15s, tests 1.99s, environment 0ms)
+

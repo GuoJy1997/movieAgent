@@ -1,0 +1,31 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:23628) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6924) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/character-voice.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 4841[2mms[22m[39m
+   [33m[2m✓[22m[39m twoCharactersKeepDistinctVoiceRefs and stale saves write nothing [33m 1720[2mms[22m[39m
+   [33m[2m✓[22m[39m rejectCrossProjectVoice and protectReferencedVoiceMedia while retaining fixed history [33m 1609[2mms[22m[39m
+   [33m[2m✓[22m[39m legacyDialogueIsNotAutoAssigned and unprobed references remain non-production drafts [33m 1510[2mms[22m[39m
+(node:17000) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/audio-generation.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 6752[2mms[22m[39m
+   [33m[2m✓[22m[39m collects generated PCM WAV using the same pinned native decoder as imported audio [33m 1628[2mms[22m[39m
+   [33m[2m✓[22m[39m freezes configured weighted-character pricing and reserves the total finite batch amount [33m 361[2mms[22m[39m
+   [33m[2m✓[22m[39m collects generated mp3/libmp3lame audio with verified native decoding [33m 1556[2mms[22m[39m
+   [33m[2m✓[22m[39m collects generated m4a/aac audio with verified native decoding [33m 1478[2mms[22m[39m
+   [33m[2m✓[22m[39m collects generated wav/pcm_s24le audio with verified native decoding [33m 1722[2mms[22m[39m
+(node:31604) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/shot-dialogue.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 2116[2mms[22m[39m
+   [33m[2m✓[22m[39m changingVoicePreservesOldDialogue and never rewrites the legacy shot string [33m 2108[2mms[22m[39m
+ [32m✓[39m tests/integration/voice-migration.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1439[2mms[22m[39m
+   [33m[2m✓[22m[39m appends schema20 immutably and upgrades real schema14 and19 libraries with backups [33m 1435[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+[2m      Tests [22m [1m[32m14 passed[39m[22m[90m (14)[39m
+[2m   Start at [22m 11:09:03
+[2m   Duration [22m 12.60s[2m (transform 4.97s, setup 0ms, import 7.57s, tests 15.15s, environment 1ms)[22m
+

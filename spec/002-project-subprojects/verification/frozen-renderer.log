@@ -1,0 +1,17 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+stdout | tests/renderer/timeline-editor.test.ts
+09:37:04 [vite] (client) page reload apps/desktop/release-spec002/win-unpacked.tmp/LICENSES.chromium.html
+
+stdout | tests/renderer/timeline-editor.test.ts
+09:37:05 [vite] (client) page reload apps/desktop/release-spec002/win-unpacked.tmp/LICENSES.chromium.html
+
+ ❯ tests/renderer/timeline-editor.test.ts (8 tests | 1 failed) 78362ms
+   × retains exactly 50 session undo steps and keeps all workbench controls reachable at 1100px 10010ms
+ ❯ tests/renderer/draft-navigation.test.ts (10 tests | 1 failed) 74010ms
+   × clears the actual main dirty token after final-owner save 10636ms
+stdout | tests/renderer/p3-acknowledgement.test.ts
+09:39:24 [vite] (client) Re-optimizing dependencies because vite config has changed
+
+ ❯ tests/renderer/p3-acknowledgement.test.ts (11 tests | 11 skipped) 35366ms

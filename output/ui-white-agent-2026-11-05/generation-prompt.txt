@@ -1,0 +1,46 @@
+Use case: ui-mockup. Create ONE complete, polished desktop UI image for MovieAgent's WHITE-THEME short-drama creative workspace. The user explicitly corrected that the whole product is white, and wants to see the integrated Agent composer in a full-screen UI. This is a refinement of the attached design, not another visual direction.
+
+INPUT ROLES:
+Image 1 is the existing full MovieAgent workspace. Keep its young confident graphic character, MovieAgent identity, white app shell, cobalt active navigation, restrained coral detail, project/episode context, colorful coastal film still and shot contact sheet. Completely replace the poorly designed little textarea on the left.
+Image 2 is the Xiaoyunque composer STRUCTURE reference ONLY: a wide, generous freeform writing surface, capsule mode switch, integrated bottom toolbar with plus/materials, template selector, model/preferences, and send. Translate that structure into WHITE AND PALE NEUTRAL GRAY. DO NOT carry over its charcoal background, purple color, marketing tabs or login button.
+
+NON-NEGOTIABLE COLOR:
+The entire app chrome, Agent conversation column, composer, menus, player controls, header, footer and canvas surfaces are pure white #FFFFFF or neutral pale gray #F5F5F7 / #EEEEF1. NO charcoal input area. NO dark sidebar. NO beige, yellowish white, cream, tan or warm paper. Near-black text #222228. Accent cobalt #315BFA for selected navigation and send; one small coral #FF655C film-frame brand detail. Media photography can naturally contain dark tones, but no large BLACK UI frame around it. No colored gradient fills, no glow, no glass blur.
+
+FORMAT:
+One high-resolution landscape desktop screenshot, approximately 1600x1050, perfectly front-on, all four application edges visible, no device frame, no outside canvas, no extra alternative, no annotation board. Clean crisp legible Chinese UI. Contemporary sans serif, thoughtful medium weights, realistic product density, consistent thin line icons. Main panels are aligned on one grid with generous breathing space.
+
+COMPLETE APP COMPOSITION:
+1. Top 64px white application bar: red film-frame brand mark and MovieAgent on left; horizontal navigation 项目 / 创作 / 制作 / 素材 / 成片, with 创作 selected in cobalt; right small 任务 2, 设置 and Windows window controls. No account/avatar clutter.
+2. Beneath it, quiet slim pale-gray scope row: 项目：周末出逃 > 分集：EP03 出发前夜 > 画布：主画布. All readable and correctly separated.
+3. Main area: LEFT about 42% is a capable WHITE Agent conversation workspace; RIGHT about 58% is the current film preview and shots. Neither panel should be enclosed in a heavy dashboard card. Use a very fine vertical divider. NO giant slogan. The Agent column is sufficiently wide that its composer footer controls fit comfortably.
+
+LEFT AGENT WORKSPACE:
+Top small title 创作对话, tiny subtitle 当前会话 · 导演分镜, and subtle 新对话 action.
+Above composer, show a believable ongoing conversation, not an empty marketing hero:
+- small right-aligned very-light-neutral user bubble: “沿着镜头07继续写3个镜头，让出发更有动感。”
+- assistant wordmark icon and short direct text on WHITE: “可以。保留当前角色关系，接着设计三个镜头。”
+- elegant compact proposal strip on near-white, NOT a large nested card: heading “镜头续写提案”, status “待审阅”; three thin rows “08  滑板穿过街角”, “09  同伴回头招手”, “10  跟随队伍前行”; small action “查看提案” and secondary “继续修改”. It must be obvious these changes are proposals, not already applied or generated videos.
+- Tiny context note “结合本集剧本与已选镜头” beneath assistant response, unobtrusive.
+
+THE COMPOSER IS THE KEY DESIGN:
+Anchor a broad integrated WHITE/light-gray composer in the lower portion of the left conversation column, about 580px wide and 205–235px high in this image, with 28px corners, hairline neutral edge and an extremely subtle neutral contact shadow. This must feel like a premium Agent conversation surface from a mature creative app, not an HTML form.
+Just above it centered compact mode capsule: 全能创作 / 剧本创编 / 导演分镜. Director selected with a white inset capsule and small dark text; other modes quiet gray. These belong to the current session, visually calm.
+Inside the composer top, generous borderless writing area, no inner rectangle, NO visible textarea borders, NO 0/300 counter, NO separate giant rectangular submit button below. Placeholder in readable medium gray: “继续聊聊你的想法，或补充这次创作的要求…”. Show a discreet text caret to imply active input.
+Below writing area inside same surface, small removable context tokens with consistent icon + label + x: “EP03 剧本”, “镜头07”, “小夏”. Delicate pale-gray fills, no blue segmented filter buttons.
+At bottom INSIDE the SAME composer, align one elegant integrated action rail:
+left circular plus button;
+middle compact pale-gray pill “创作模板” with chevron;
+next pale-gray pill “模型与偏好” with chevron;
+right a small strong COBALT circular send button with a crisp upward arrow, NOT huge rectangle.
+Above the 模型与偏好 pill, show ONE small WHITE floating popover opening upward over the writing area, occupying only the lower-right 35% of composer. Slim border, neutral tiny shadow, proper z-layer. Two concise lines: “默认文本预设” with small check, “输出预算  沿用预设”; footer subtle “偏好设置 >”. This illustrates that the controls open interactively and remain part of the white UI. Keep typed/placeholder text and surrounding controls visible, no huge dropdown.
+Outside composer below, tiny muted “Enter 发送 · Shift + Enter 换行”. No fake microphone, no file upload claims, no skill store, no model brand invention, no API key. No dark input panels anywhere.
+
+RIGHT CONTENT WORKSPACE:
+Heading “镜头07 · 海边出发” on white, small “预览” indicator and frame tools at right. Large full-bleed beautifully lit coastal-road film still matching Image1: four young adult friends, teal scooter, red vending machine, rich blue sky, bright natural photographic color. Image corners 18px, no heavy black surround. A small restrained coral TAKE 07 tag at outer edge, not giant vertical billboard. Under image a WHITE player control row: play icon, 00:12 / 00:16, thin pale-neutral playback track, volume/fullscreen.
+Next a six-frame horizontal shot contact sheet, shots 06,07,08,09,10,11; selected07 uses cobalt fine border and discreet blue label. Since08–10 are currently proposed, mark these three thumbnails “草案” in a tiny pale badge, to avoid confusing draft and produced assets.
+Below, thin flat selected-shot detail row: 16:9 · 跟拍 · 4.5s and concise “打开镜头制作” action. Do not invent a 300-character limit.
+BOTTOM app status/footer: subtle flat WHITE bar, 18个镜头 / 6待审核 / 2进行中 at left, contextual text links 创作Agent / 剧本分镜 / 角色场景 / 资产 and small “剪辑成片” action at right. No redundant statistics tiles.
+
+FINAL QUALITY:
+This is ONE coherent WHITE MovieAgent UI, with the new Agent conversation integrated into the existing youthful aesthetic. The composition must immediately look cleaner, more spacious and more interactive than reference1. White and neutral gray surfaces dominate the app; imagery supplies rich color. Exact restrained component hierarchy, integrated toolbar, selective proposal workflow, legible interface. No annotations explaining the design, no logo from Xiaoyunque, no warm background, no childish toy decorations, no newly invented features.

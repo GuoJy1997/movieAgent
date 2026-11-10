@@ -1,0 +1,14 @@
+import {expect,it} from 'vitest';
+import {DatabaseSync} from 'node:sqlite';
+import {mkdtemp,rm,readdir} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {openLibrary} from '../../packages/storage/src/database.ts';
+import { CURRENT_SCHEMA_VERSION } from '../../packages/contracts/src/schema.ts';
+import { removeLocalMediaSchema } from './local-media-migration-fixture.ts';
+it('appends schema16 from15 and preserves old JSON while remaining idempotent',async()=>{
+ const mod=await import('../../packages/storage/src/migrations/0016-timeline.ts').catch(()=>null);expect(mod).not.toBeNull();if(!mod)return;const db=new DatabaseSync(':memory:');try{db.exec("CREATE TABLE library(schema_version INTEGER); INSERT INTO library VALUES(15); CREATE TABLE migration_log(version INTEGER,applied_at TEXT); CREATE TABLE old_data(data TEXT); INSERT INTO old_data VALUES('legacy'); PRAGMA user_version=15");mod.migrateTimeline(db);expect(db.prepare('PRAGMA user_version').get()?.user_version).toBe(16);expect(db.prepare('SELECT data FROM old_data').get()?.data).toBe('legacy');expect(db.prepare('SELECT count(*) n FROM timeline_revision').get()?.n).toBe(0);mod.migrateTimeline(db);expect(db.prepare('SELECT count(*) n FROM migration_log').get()?.n).toBe(1);}finally{db.close();}
+});
+it.each([14,15])('upgrades a real schema %i library with a backup and no original scan',async(version)=>{
+ const root=await mkdtemp(join(tmpdir(),'timeline-migration-'));try{const first=await openLibrary({root});if(!first.ok)throw Error(first.error.code);await first.value.close();const db=new DatabaseSync(join(root,'library.sqlite'));removeLocalMediaSchema(db);for(const t of ['dialogue_selection','dialogue_review','voice_audition','dialogue_production_item','dialogue_take','dialogue_production_plan','character_voice_media','shot_dialogue_current','shot_dialogue_revision','character_voice_current','character_voice_revision','finish_action','finish_message','finish_run','audio_publication','transcript_revision','audio_take','audio_batch_item','audio_batch','voice_line_revision','timeline_source_reference','timeline_assembly_receipt','timeline_assembly_plan','timeline_revision','timeline'])db.exec('DROP TABLE IF EXISTS '+t);if(version===14)for(const t of ['media_probe','media_cache','media_verification'])db.exec('DROP TABLE '+t);db.exec('DELETE FROM migration_log WHERE version>'+version+'; UPDATE library SET schema_version='+version+'; PRAGMA user_version='+version);db.close();const opened=await openLibrary({root});try{expect(opened).toMatchObject({ok:true,value:{schemaVersion:CURRENT_SCHEMA_VERSION}});if(opened.ok)expect(opened.value.db.prepare('SELECT count(*) n FROM timeline').get()?.n).toBe(0);}finally{if(opened.ok)await opened.value.close();}expect((await readdir(join(root,'backups'))).some(n=>n.startsWith('schema-'+version+'-'))).toBe(true);}finally{await rm(root,{recursive:true,force:true});}
+});

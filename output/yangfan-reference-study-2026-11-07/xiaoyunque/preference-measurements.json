@@ -1,0 +1,12 @@
+{
+  "backdropFilter": "blur(40px)",
+  "background": "rgba(255, 255, 255, 0.08) none repeat scroll 0% 0% / auto padding-box border-box",
+  "border": "0.666667px solid rgba(255, 255, 255, 0.12)",
+  "borderRadius": "24px",
+  "boxShadow": "rgba(0, 0, 0, 0.28) 0px 18px 48px 0px",
+  "fontFamily": "\"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Noto Sans SC\", sans-serif",
+  "fontSize": "16px",
+  "height": 320,
+  "role": "dialog",
+  "width": 400
+}

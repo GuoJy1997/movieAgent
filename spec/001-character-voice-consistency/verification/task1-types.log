@@ -1,0 +1,31 @@
+apps/desktop/src/main/voice-export.ts(75,47): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(75,68): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(78,51): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(79,347): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(79,387): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(79,433): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(80,283): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(81,72): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(86,24): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(94,71): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(96,69): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(103,40): error TS18047: 'voice.reference' is possibly 'null'.
+apps/desktop/src/main/voice-export.ts(106,80): error TS18047: 'voice.reference' is possibly 'null'.
+packages/contracts/src/events.ts(1,10): error TS6133: 'parseBindCharacterVoice' is declared but its value is never read.
+packages/contracts/src/events.ts(1,65): error TS6133: 'BindCharacterVoiceInput' is declared but its value is never read.
+packages/engine/src/dialogue-production-service.ts(52,111): error TS2322: Type 'VoiceReference | null' is not assignable to type 'Pick<VoiceReference, "sourceInTicks" | "durationTicks" | "hash" | "probeId">'.
+  Type 'null' is not assignable to type 'Pick<VoiceReference, "sourceInTicks" | "durationTicks" | "hash" | "probeId">'.
+packages/engine/src/dialogue-production-service.ts(79,234): error TS18047: 'voice.value.reference' is possibly 'null'.
+packages/engine/src/dialogue-production-service.ts(206,253): error TS2531: Object is possibly 'null'.
+packages/engine/src/dialogue-production-service.ts(206,332): error TS2531: Object is possibly 'null'.
+packages/engine/src/voiceover-authority.ts(28,44): error TS18047: 'voice.reference' is possibly 'null'.
+packages/engine/src/voiceover-authority.ts(29,34): error TS18047: 'voice.reference' is possibly 'null'.
+packages/storage/src/migrations/0024-voice-identity.ts(9,268): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type 'SQLOutputValue | undefined' is not assignable to parameter of type 'SQLInputValue'.
+      Type 'undefined' is not assignable to type 'SQLInputValue'.
+  Overload 2 of 2, '(namedParameters: Record<string, SQLInputValue>, ...anonymousParameters: SQLInputValue[]): StatementResultingChanges', gave the following error.
+    Argument of type 'SQLOutputValue | undefined' is not assignable to parameter of type 'Record<string, SQLInputValue>'.
+      Type 'undefined' is not assignable to type 'Record<string, SQLInputValue>'.
+tests/integration/voice-identity.test.ts(28,72): error TS2339: Property 'value' does not exist on type 'Result<CharacterVoiceSnapshot>'.
+  Property 'value' does not exist on type '{ ok: false; error: AppError; }'.

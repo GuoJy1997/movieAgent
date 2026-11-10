@@ -1,0 +1,28 @@
+{
+  "summaryId": "summary-1805640b2c63b4713995ecf120e65d6d",
+  "summaryRevision": 1,
+  "summaryBody": "已完成并登记《第一集 · 邸报》，交付名为《第一集 · 邸报 · 最短视频验收》。连续状态：午后，旧朱红宫墙外的梧桐道，朱清穿灰青长袍，仍站在梧桐下，右手始终捏着半张皱邸报；微风吹动衣袖，他轻轻抬眼望向宫墙上方殿檐，全段无对白。镜头提示词另载其为19岁少年，着灰青交领右衽长袍与素色冠巾。已讲内容以“邸报”、旧宫墙和静默凝望为核心意象，采用中景、极缓推近、自然斜阳、低饱和电影实拍感，画幅9:16，未展开具体事件。未解决伏笔：邸报的内容与来历、为何只剩半张且被捏皱、朱清望向殿檐的原因及其后续行动均未交代。技术与交付记忆：episode1-cut rev.1为1080×1920、30fps、timebase 48000的镜头粗剪，仅一段视频，无字幕cue；验收交付已登记为assetVersion local-ae24c573-f2e8-4aef-a74d-5c98f5210512 v1。资料来源：完成备注、episode1-script rev.1、shot-one rev.1、episode1-cut rev.1及交付记录e33f045312587cc974cedc1f61ebc6d1f2d6c6b1f36182a9b219d8d6c2abb075。",
+  "sources": [
+    {
+      "completionId": "8163e674-04d0-4d4b-b648-8abc3f3e84f4",
+      "completionRevision": 1,
+      "sourceHash": "2f441902aa12eb619a1cafc109890e133d1b61b2ba70bd906f4e681f830144dd",
+      "artifactRef": {
+        "kind": "artifact",
+        "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+        "artifactId": "54198fd0-4cb4-4d02-8a62-f15fa36b51a8"
+      },
+      "factStatus": "model_summary_unverified",
+      "inputBasis": "adopted",
+      "conflicts": [
+        "shot-one设计时长为4秒，但粗剪视频段durationTicks=179200；按timebase=48000折算约3.73秒，需核对实际成片时长及是否有意缩短。",
+        "shot-one规划“蝉鸣、树叶声，无配乐”，但episode1-cut中视频mute=true且audioClips为空；从时间线数据看粗剪无声，需核对验收成片声音及是否仍待补环境音。",
+        "朱清19岁、素色冠巾等细节仅见于镜头提示词，验收备注只明确灰青长袍、右手持报等状态；若要将全部提示词细节作为后续固定造型，需先与成片核对。",
+        "项目规则为空，暂无法进一步比对项目设定；完成备注又称“Kimi 创作请求未知”，原始创作请求及验收依据仍待核对。"
+      ]
+    }
+  ],
+  "nextRunId": "b7749a72-7162-406c-8bbc-bd59e234b835",
+  "nextTurnSubmitted": false,
+  "fixedMemoryIncluded": true
+}

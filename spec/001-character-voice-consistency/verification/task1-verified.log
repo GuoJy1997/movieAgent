@@ -1,0 +1,25 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:30172) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-migration.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 969[2mms[22m[39m
+   [33m[2m✓[22m[39m appends schema20 immutably and upgrades real schema14 and19 libraries with backups [33m 967[2mms[22m[39m
+(node:25424) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23680) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-identity.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 975[2mms[22m[39m
+   [33m[2m✓[22m[39m saves a provider voice without an uploaded sample and keeps technical and quality states distinct [33m 363[2mms[22m[39m
+   [33m[2m✓[22m[39m pins a default to an exact revision, guards CAS, and retains all voice history [33m 302[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects a default voice belonging to another character without writing a binding [33m 309[2mms[22m[39m
+ [32m✓[39m tests/integration/character-voice.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 3691[2mms[22m[39m
+   [33m[2m✓[22m[39m twoCharactersKeepDistinctVoiceRefs and stale saves write nothing [33m 1338[2mms[22m[39m
+   [33m[2m✓[22m[39m rejectCrossProjectVoice and protectReferencedVoiceMedia while retaining fixed history [33m 1202[2mms[22m[39m
+   [33m[2m✓[22m[39m legacyDialogueIsNotAutoAssigned and unprobed references remain non-production drafts [33m 1150[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m7 passed[39m[22m[90m (7)[39m
+[2m   Start at [22m 11:14:58
+[2m   Duration [22m 6.29s[2m (transform 2.21s, setup 0ms, import 3.45s, tests 5.64s, environment 0ms)[22m
+

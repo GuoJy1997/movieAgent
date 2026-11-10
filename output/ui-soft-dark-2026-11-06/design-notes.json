@@ -1,0 +1,25 @@
+{
+  "status": "image_generated_and_visually_reviewed",
+  "date": "2026-11-06",
+  "deliverable": "One revised MovieAgent project-page image; design concept only, no product code changes.",
+  "direction": "Near-black matte canvas, quiet charcoal layers, restrained gradients and lightweight controls.",
+  "sources": [
+    {
+      "url": "https://www.xiaoyunque.com/",
+      "role": "Public page visually inspected this turn; generation uses saved Nov 5 capture."
+    },
+    {
+      "url": "https://jimeng.jianying.com/ai-tool/home/",
+      "role": "Public page visually inspected this turn; generation uses saved Nov 5 capture."
+    }
+  ],
+  "references": [
+    "D:/movieAgent/output/ui-airy-refinement-2026-11-05/movieagent-airy-projects.png",
+    "D:/movieAgent/output/ui-cyber-tabs-2026-11-05/references/jimeng-home.png",
+    "D:/movieAgent/output/ui-youth-2026-11-05/references/xiaoyunque-home.png"
+  ],
+  "scope": "Preserve approved composition and product/episode/task content. No new page coverage claim.",
+  "output": "D:/movieAgent/output/ui-soft-dark-2026-11-06/movieagent-soft-dark-projects.png",
+  "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-241b9d45-3349-44ec-88d2-8906821951f3.png",
+  "review": "Confirmed continuous near-black background, matte flat controls, no chrome or clapperboard, preserved poster/episode/task layout. Static concept image only."
+}

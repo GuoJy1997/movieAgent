@@ -1,0 +1,40 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+ ❯ tests/renderer/unknown-task-release.test.ts (3 tests | 1 failed) 17758ms
+   × shows restored capacity occupancy when an accepted fact arrives after manual release 1530ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/renderer/unknown-task-release.test.ts > shows restored capacity occupancy when an accepted fact arrives after manual release
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ data tests/renderer/unknown-task-release.test.ts:23:89
+     21| it('shows restored capacity occupancy when an accepted fact arrives af…
+     22|  await mounted(h,async page=>{
+     23|   await expect.poll(()=>page.getByText('原请求已获进展，重新计入并发；此前解除记录保留',{exac…
+       |                                                                                         ^
+     24|  },data({...task,providerState:'accepted',state:'RUNNING',concurrencyR…
+     25| });
+ ❯ mounted tests/renderer/p4-harness.ts:31:153
+ ❯ tests/renderer/unknown-task-release.test.ts:22:2
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ data tests/renderer/unknown-task-release.test.ts:23:3
+ ❯ mounted tests/renderer/p4-harness.ts:31:147
+ ❯ tests/renderer/unknown-task-release.test.ts:22:2
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  19:46:18
+   Duration  18.93s (transform 73ms, setup 0ms, import 836ms, tests 17.76s, environment 0ms)
+

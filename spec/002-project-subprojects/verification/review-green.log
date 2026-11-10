@@ -1,0 +1,36 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:23220) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18084) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/subproject-review.test.ts (3 tests | 1 failed) 1479ms
+   × allows explicit adoption of unclassified legacy imports in a multi-project library 568ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/subproject-review.test.ts > allows explicit adoption of unclassified legacy imports in a multi-project library
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
++   "ok": false,
+  }
+
+ ❯ value tests/fixtures/native-generation.ts:10:58
+
+ ❯ tests/integration/subproject-review.test.ts:42:2
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 5 passed (6)
+   Start at  09:21:09
+   Duration  5.37s (transform 4.37s, setup 0ms, import 6.54s, tests 3.29s, environment 0ms)
+

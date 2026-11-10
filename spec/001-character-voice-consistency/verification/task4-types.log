@@ -1,0 +1,31 @@
+tests/integration/dialogue-audio-assembly.test.ts(12,49): error TS2322: Type '{ turnId: string; characterRef: { id: string; revision: number; }; voiceRef: { id: string; revision: number; }; ref: { kind: string; libraryId: string; artifactId: string; }; hash: string; probeId: string; durationTicks: number; sourceKind: string; takeId: string; reviewRevision: number; }' is not assignable to type 'DialogueAudioSource'.
+  Types of property 'ref' are incompatible.
+    Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'MediaReference'.
+      Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'ArtifactRef'.
+        Types of property 'kind' are incompatible.
+          Type 'string' is not assignable to type '"artifact"'.
+tests/integration/dialogue-audio-assembly.test.ts(12,61): error TS2322: Type '{ turnId: string; characterRef: { id: string; revision: number; }; voiceRef: { id: string; revision: number; }; ref: { kind: string; libraryId: string; artifactId: string; }; hash: string; probeId: string; durationTicks: number; sourceKind: string; takeId: string; reviewRevision: number; }' is not assignable to type 'DialogueAudioSource'.
+  Types of property 'ref' are incompatible.
+    Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'MediaReference'.
+      Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'ArtifactRef'.
+        Types of property 'kind' are incompatible.
+          Type 'string' is not assignable to type '"artifact"'.
+tests/integration/dialogue-audio-assembly.test.ts(16,224): error TS2345: Argument of type '{ turnId: string; characterRef: { id: string; revision: number; }; voiceRef: { id: string; revision: number; }; ref: { kind: string; libraryId: string; artifactId: string; }; hash: string; probeId: string; durationTicks: number; sourceKind: string; takeId: string; reviewRevision: number; }[]' is not assignable to parameter of type 'readonly DialogueAudioSource[]'.
+  Type '{ turnId: string; characterRef: { id: string; revision: number; }; voiceRef: { id: string; revision: number; }; ref: { kind: string; libraryId: string; artifactId: string; }; hash: string; probeId: string; durationTicks: number; sourceKind: string; takeId: string; reviewRevision: number; }' is not assignable to type 'DialogueAudioSource'.
+    Types of property 'ref' are incompatible.
+      Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'MediaReference'.
+        Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'ArtifactRef'.
+          Types of property 'kind' are incompatible.
+            Type 'string' is not assignable to type '"artifact"'.
+tests/integration/dialogue-audio-assembly.test.ts(18,44): error TS2322: Type '{ turnId: string; characterRef: { id: string; revision: number; }; voiceRef: { id: string; revision: number; }; ref: { kind: string; libraryId: string; artifactId: string; }; hash: string; probeId: string; durationTicks: number; sourceKind: string; takeId: string; reviewRevision: number; }' is not assignable to type 'DialogueAudioSource'.
+  Types of property 'ref' are incompatible.
+    Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'MediaReference'.
+      Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'ArtifactRef'.
+        Types of property 'kind' are incompatible.
+          Type 'string' is not assignable to type '"artifact"'.
+tests/integration/dialogue-audio-assembly.test.ts(18,56): error TS2322: Type '{ turnId: string; characterRef: { id: string; revision: number; }; voiceRef: { id: string; revision: number; }; ref: { kind: string; libraryId: string; artifactId: string; }; hash: string; probeId: string; durationTicks: number; sourceKind: string; takeId: string; reviewRevision: number; }' is not assignable to type 'DialogueAudioSource'.
+  Types of property 'ref' are incompatible.
+    Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'MediaReference'.
+      Type '{ kind: string; libraryId: string; artifactId: string; }' is not assignable to type 'ArtifactRef'.
+        Types of property 'kind' are incompatible.
+          Type 'string' is not assignable to type '"artifact"'.

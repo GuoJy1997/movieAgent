@@ -1,0 +1,30 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:23168) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/subproject-memory.test.ts (4 tests | 1 failed | 3 skipped) 1442ms
+   × keeps prior memory when reopening, records explicit rules and pins a previous summary revision 1437ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/subproject-memory.test.ts > keeps prior memory when reopening, records explicit rules and pins a previous summary revision
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/integration/subproject-memory.test.ts:45:336
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 skipped (4)
+   Start at  09:30:38
+   Duration  9.71s (transform 5.33s, setup 0ms, import 7.61s, tests 1.44s, environment 0ms)
+

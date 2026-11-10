@@ -1,0 +1,217 @@
+{
+  "pages": [
+    {
+      "file": "authenticated/xyq-01-home.jpg",
+      "title": "小云雀 · 登录后首页",
+      "focus": "导航、输入、快捷工具与推荐",
+      "status": "captured",
+      "note": "已登录；未发起生成",
+      "url": "https://www.xiaoyunque.com/home?from_page=xiaoyunque_landing_page&tab_name=home",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-02-conversation.jpg",
+      "title": "小云雀 · 历史对话与视频结果",
+      "focus": "长提示词、完成视频与结果动作",
+      "status": "captured",
+      "note": "账户已有历史结果；本轮未生成",
+      "url": "https://www.xiaoyunque.com/home?tab_name=integrated-agent&thread_id=6abc2925-4c21-401c-b6fa-47d86e37576c&agent_name=pippit_video_part_agent&entrance_from=history_entrance",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-03-result-detail.jpg",
+      "title": "小云雀 · 历史请求文本展开",
+      "focus": "用户长文本与结果的层级",
+      "status": "captured",
+      "note": "查看详情实际展开了请求文本；不是独立详情模态",
+      "url": "https://www.xiaoyunque.com/home?tab_name=integrated-agent&thread_id=6abc2925-4c21-401c-b6fa-47d86e37576c&agent_name=pippit_video_part_agent&entrance_from=history_entrance",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-05-projects.jpg",
+      "title": "小云雀 · 项目资源列表",
+      "focus": "项目卡片、类型标签、搜索与页签",
+      "status": "captured",
+      "note": "只读观察；未发起生成",
+      "url": "https://www.xiaoyunque.com/asset?tab=allProjects",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-06-media-library.jpg",
+      "title": "小云雀 · 素材库",
+      "focus": "媒体网格、项目视图切换与筛选",
+      "status": "captured",
+      "note": "已有素材；界面引导提示保留",
+      "url": "https://www.xiaoyunque.com/asset?tab=myMaterials",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-07-media-filter.jpg",
+      "title": "小云雀 · 素材筛选菜单",
+      "focus": "简短分类菜单与多选状态",
+      "status": "captured",
+      "note": "只读观察；未发起生成",
+      "url": "https://www.xiaoyunque.com/asset?tab=myMaterials",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-08-media-actions.jpg",
+      "title": "小云雀 · 素材操作菜单",
+      "focus": "下载、选择、入库、更多操作",
+      "status": "captured",
+      "note": "仅展开菜单；没有下载、入库或删除",
+      "url": "https://www.xiaoyunque.com/asset?tab=myMaterials",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-09-media-preview.jpg",
+      "title": "小云雀 · 素材详情预览",
+      "focus": "大预览、侧边元信息与底部动作",
+      "status": "captured",
+      "note": "现有素材详情；未重命名或下载",
+      "url": "https://www.xiaoyunque.com/asset?tab=myMaterials",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-10-character-library.jpg",
+      "title": "小云雀 · 角色资产库",
+      "focus": "分类页签、角色卡、添加与引用",
+      "status": "captured",
+      "note": "只读观察；未发起生成",
+      "url": "https://www.xiaoyunque.com/asset?tab=character",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-11-character-detail.jpg",
+      "title": "小云雀 · 角色详情面板",
+      "focus": "图片版本、描述、名称与音色",
+      "status": "captured",
+      "note": "仅查看已有角色；未更改可见范围、未保存",
+      "url": "https://www.xiaoyunque.com/asset?tab=character",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-12-short-drama.jpg",
+      "title": "小云雀 · 短剧 Agent 入口",
+      "focus": "剧本入口、工具与示例项目",
+      "status": "captured",
+      "note": "只读观察；未发起生成",
+      "url": "https://www.xiaoyunque.com/novel/list?enter_from=small_tool",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-13-episodes.jpg",
+      "title": "小云雀 · 短剧示例项目列表",
+      "focus": "示例项目卡片与精选作品",
+      "status": "captured",
+      "note": "入口页向下滚动状态；不是分集内部页",
+      "url": "https://www.xiaoyunque.com/novel/list?enter_from=small_tool",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-14-drama-script.jpg",
+      "title": "小云雀 · 短剧剧本",
+      "focus": "原始创意、摘要、分集正文与窄导航",
+      "status": "captured",
+      "note": "官方只读示例",
+      "url": "https://www.xiaoyunque.com/novel/detail/script?thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-15-drama-assets.jpg",
+      "title": "小云雀 · 短剧角色资源库",
+      "focus": "角色卡、视图切换、分集筛选",
+      "status": "captured",
+      "note": "官方只读示例",
+      "url": "https://www.xiaoyunque.com/novel/detail/scenes?thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-16-canvas.jpg",
+      "title": "小云雀 · 短剧画布",
+      "focus": "角色场景节点、连线与浮动工具",
+      "status": "partial",
+      "note": "官方示例画布；未拖动或修改节点；存在引导/悬浮预览遮挡，不证明完整编辑工具",
+      "url": "https://www.xiaoyunque.com/novel/detail/canvas?entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&canvasId=1424149881612&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-17-node-selected.jpg",
+      "title": "小云雀 · 画布节点选中",
+      "focus": "节点边界、上下文工具与提示词输入",
+      "status": "partial",
+      "note": "官方示例；仅选中节点，未修改或生成；存在引导/悬浮预览遮挡，不证明完整编辑工具",
+      "url": "https://www.xiaoyunque.com/novel/detail/canvas?entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&canvasId=1424149881612&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-18-episodes-verified.jpg",
+      "title": "小云雀 · 分集视频列表",
+      "focus": "已完成状态、时长、分镜数量和编辑入口",
+      "status": "captured",
+      "note": "官方只读示例；未导出",
+      "url": "https://www.xiaoyunque.com/novel/detail/video?entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&canvasId=1424149881612&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-19-storyboard-detail.jpg",
+      "title": "小云雀 · 分镜工作台",
+      "focus": "资产列、镜头文本、预览与镜头条",
+      "status": "captured",
+      "note": "官方只读示例，未修改、生成或导出",
+      "url": "https://www.xiaoyunque.com/novel/edit?entrance_from=novel_page_novel_project&showcase=1&page_from=%2Fnovel%2Flist&canvasId=1424149881612&storyboard_asset_id=1424531310092&thread_id=b9e8d023-4bba-4ec7-8b24-e9d3503e8a09&overviewPippitAssetId=1424032507916",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-20-agent-canvas.jpg",
+      "title": "小云雀 · 画布与 Agent 同屏",
+      "focus": "窄导航、资产抽屉、画布和右侧对话",
+      "status": "captured",
+      "note": "打开账户已有未命名会话；空画布，未新增节点",
+      "url": "https://www.xiaoyunque.com/project?projectId=13764252665868&entrance_from=history_entrance&page_from=novel&canvasId=13767826721036&agent_thread_id=3ab47138-20ef-418b-aa12-d1da71c1da05",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-21-agent-preferences.jpg",
+      "title": "小云雀 · Agent 偏好面板",
+      "focus": "模型与比例、分辨率、时长的分组",
+      "status": "captured",
+      "note": "仅打开面板；未改变已选模型或生成模式",
+      "url": "https://www.xiaoyunque.com/project?projectId=13764252665868&entrance_from=history_entrance&page_from=novel&canvasId=13767826721036&agent_thread_id=3ab47138-20ef-418b-aa12-d1da71c1da05",
+      "site": "xyq",
+      "phase": "authenticated"
+    },
+    {
+      "file": "authenticated/xyq-22-agent-skills.jpg",
+      "title": "小云雀 · Agent 技能面板",
+      "focus": "搜索、类别、收藏与技能说明",
+      "status": "captured",
+      "note": "仅浏览技能选择器，未创建或调用技能",
+      "url": "https://www.xiaoyunque.com/project?projectId=13764252665868&entrance_from=history_entrance&page_from=novel&canvasId=13767826721036&agent_thread_id=3ab47138-20ef-418b-aa12-d1da71c1da05",
+      "site": "xyq",
+      "phase": "authenticated"
+    }
+  ],
+  "excluded": [
+    "authenticated/xyq-04-conversation-assets.jpg"
+  ]
+}

@@ -1,0 +1,17 @@
+Use case: precise-object-edit.
+Edit reference image 1, the complete 羊番TV homepage. Reference image 2 is the user's close-up of the LEFT SIDEBAR and identifies the exact area they want changed.
+
+Make ONE small localized change: lighten the left navigation background with a refined BLUE-VIOLET TO BLACK gradient. Return a single full homepage screenshot, same 1536x1024 framing as image 1.
+
+EDIT REGION:
+Only the background of the left sidebar, approximately x=0 to 263 and y=43 to 1023, below the global blue announcement ribbon.
+Keep the sheep logo, the “羊番TV” wordmark, all sidebar icons and text, positions, selected 项目 row, task badge 2, Settings and 本机工作区 intact.
+Preserve the rest of the homepage: all movie photography and coverflow, main title, project metadata, refined conversational composer, episode navigation and task sections. Do not redesign anything else.
+
+NEW SIDEBAR BACKGROUND:
+At the very top behind the logo use a beautiful muted luminous INK VIOLET / indigo-blue atmosphere, around #303558 with a softly blended #293D61 blue near the top-left. It should visibly feel lighter and more dimensional than the current almost-black strip, while remaining a sophisticated DARK sidebar.
+The broad smooth vertical gradient gradually shifts through smoky blue-purple #242D48 behind the upper navigation, then deep desaturated navy #172239 around the middle, and reaches a soft near-black #0C1421 near the bottom. Add subtle overlapping blue-violet diffused light fields near the top, with no visible circles or edges; organic tonal blending rather than flat bands.
+Keep this background continuous and quiet. No saturated purple wall, no neon, no bright pink, no rainbow, no white glow, no chrome, no glitter or texture, no sharp gradient stripes. The gradient must fade smoothly downwards and fit the existing ink-blue main page. Make the distinction visible enough for the user to notice.
+The selected 项目 surface remains a restrained translucent slate-blue rounded row with clean off-white text; no pale fill, glow or added outline. Existing sidebar labels and icons stay clear. Do not fade the text with the background.
+
+Quality: precise localized visual refinement, natural soft blue-violet ambience fading into black. All other parts of the app stay as close to the supplied screenshot as possible. No captions, no watermark, no inset or before-after collage. Output only the complete edited homepage.

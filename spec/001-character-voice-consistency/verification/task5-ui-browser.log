@@ -1,0 +1,23 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+[90mstdout[2m | tests/renderer/voice-identity.test.ts
+[22m[39mPort 5173 is in use, trying another one...
+
+ [32m✓[39m tests/renderer/voice-identity.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 15375[2mms[22m[39m
+   [33m[2m✓[22m[39m saves a provider voice without a sample or API call, preserving spaces and parentheses [33m 785[2mms[22m[39m
+[90mstdout[2m | tests/renderer/character-voice.test.ts
+[22m[39mPort 5173 is in use, trying another one...
+
+ [32m✓[39m tests/renderer/character-voice.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 16248[2mms[22m[39m
+   [33m[2m✓[22m[39m opens an empty character voice panel without paid calls and disables saving without fixed audio [33m 2703[2mms[22m[39m
+   [33m[2m✓[22m[39m preserves voice edit B across query refresh and the delayed save A acknowledgement [33m 676[2mms[22m[39m
+   [33m[2m✓[22m[39m distinguishes same-name audio by fixed asset/version and auditions only local media [33m 1091[2mms[22m[39m
+   [33m[2m✓[22m[39m auditions the selected crop and clamps native audio seeking to its start/end [33m 716[2mms[22m[39m
+   [33m[2m✓[22m[39m prepares a standard reference locally then explicitly saves the derived fixed audio as a new voice revision [33m 684[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+[2m   Start at [22m 11:56:38
+[2m   Duration [22m 34.28s[2m (transform 152ms, setup 0ms, import 1.88s, tests 31.62s, environment 0ms)[22m
+

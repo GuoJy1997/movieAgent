@@ -1,0 +1,146 @@
+[
+  {
+    "Name": "01-launcher.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 2056276,
+    "SampleRGB": "251,251,254",
+    "WarmShift": -3
+  },
+  {
+    "Name": "02-projects.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1715387,
+    "SampleRGB": "254,254,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "03-episodes.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1690861,
+    "SampleRGB": "254,254,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "04-canvas.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1489304,
+    "SampleRGB": "255,255,255",
+    "WarmShift": 0
+  },
+  {
+    "Name": "05-agent.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1581098,
+    "SampleRGB": "254,254,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "06-storyboard.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1778960,
+    "SampleRGB": "254,254,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "07-production.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1726660,
+    "SampleRGB": "254,254,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "08-dialogue.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1615488,
+    "SampleRGB": "254,254,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "09-entities.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1668655,
+    "SampleRGB": "254,254,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "10-voice.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1614388,
+    "SampleRGB": "254,254,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "11-assets.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1792910,
+    "SampleRGB": "255,254,254",
+    "WarmShift": 1
+  },
+  {
+    "Name": "12-timeline.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1766689,
+    "SampleRGB": "253,253,254",
+    "WarmShift": -1
+  },
+  {
+    "Name": "13-audio-subtitles.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1503048,
+    "SampleRGB": "254,254,255",
+    "WarmShift": -1
+  },
+  {
+    "Name": "14-export.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1579160,
+    "SampleRGB": "254,254,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "15-tasks.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1782709,
+    "SampleRGB": "254,254,253",
+    "WarmShift": 1
+  },
+  {
+    "Name": "16-models.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1556166,
+    "SampleRGB": "255,255,254",
+    "WarmShift": 1
+  },
+  {
+    "Name": "17-mcp.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1387984,
+    "SampleRGB": "254,255,254",
+    "WarmShift": 0
+  },
+  {
+    "Name": "18-global-config.png",
+    "Width": 1568,
+    "Height": 1003,
+    "Bytes": 1227403,
+    "SampleRGB": "255,255,255",
+    "WarmShift": 0
+  }
+]

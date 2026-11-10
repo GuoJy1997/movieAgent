@@ -1,0 +1,35 @@
+[
+  {
+    "File": "01-direction.png",
+    "Width": 1568,
+    "Height": 1003,
+    "CornerRGB": [
+      253,
+      253,
+      253
+    ],
+    "Bytes": 1828360
+  },
+  {
+    "File": "02-direction.png",
+    "Width": 1568,
+    "Height": 1003,
+    "CornerRGB": [
+      249,
+      250,
+      250
+    ],
+    "Bytes": 1694955
+  },
+  {
+    "File": "03-direction.png",
+    "Width": 1567,
+    "Height": 1004,
+    "CornerRGB": [
+      250,
+      251,
+      251
+    ],
+    "Bytes": 1864509
+  }
+]

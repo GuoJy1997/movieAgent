@@ -1,0 +1,17 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+stdout | tests/renderer/voiceover.test.ts
+09:06:07 [vite] (client) page reload apps/desktop/out/renderer/credentials/index.html
+
+stdout | tests/renderer/voiceover.test.ts
+09:06:07 [vite] (client) page reload apps/desktop/out/renderer/launcher/index.html
+
+stdout | tests/renderer/voiceover.test.ts
+09:06:07 [vite] (client) page reload apps/desktop/out/renderer/model-config/index.html
+
+stdout | tests/renderer/voiceover.test.ts
+09:06:07 [vite] (client) page reload apps/desktop/out/renderer/renderer/index.html
+
+ ❯ tests/renderer/voiceover.test.ts (4 tests | 4 skipped) 30197ms
+ ❯ tests/renderer/voice-audition.test.ts (5 tests | 5 skipped) 30327ms

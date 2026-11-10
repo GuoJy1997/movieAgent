@@ -1,0 +1,46 @@
+{
+  "productDisplayName": "羊番TV",
+  "status": "concept_images_generated_and_visually_reviewed",
+  "date": "2026-11-06",
+  "scope": "品牌吉祥物概念与黑底首页参考图；未改产品源码、应用包名或已有创作数据。",
+  "visualLanguage": {
+    "canvas": "近黑与低对比炭灰",
+    "selected": "乳白半透明底上的柔焦多色渐变，视觉接近虹彩磨砂玻璃；未声称参考图实际使用backdrop-filter",
+    "ribbon": "深靛蓝/钴蓝底上的不规则多点弥散渐变，少量紫与暖桃色",
+    "controls": "轻量一致的线性图标；避免金属倒角与厚重描边",
+    "layout": "窄侧栏、立体画廊、Agent创作框、分集、继续工作与任务"
+  },
+  "mascot": "D:/movieAgent/output/yangfan-home-2026-11-06/yangfan-sheep-robot-v1.png",
+  "gallery": {
+    "proposed": true,
+    "manual": "箭头、拖拽、位置圆点和键盘左右键",
+    "automatic": "建议每7秒轮换；悬停、聚焦、拖拽和页面不可见时暂停；显式暂停按钮",
+    "afterManual": "结束手动操作后重新计时",
+    "reducedMotion": "关闭自动播放和大幅3D运动，保留直接选择",
+    "contextSafety": "自动轮播仅改变海报预览；点击继续制作或进入项目才切换工作上下文。编辑中的Agent输入不随轮播变更。",
+    "notImplemented": "本次仅在静态效果图中表现操作入口，未实现或测试轮播。"
+  },
+  "agent": {
+    "entry": "全能创作、技能、默认文本模型、创作偏好、参考资产与上下文引用",
+    "submission": "开始规划；不是一键自动成片",
+    "referenceScope": "沿用已有导入资产与固定版本约束，新增交互外观属于设计建议",
+    "followup": "后续生成Agent对话展开与画布状态，保持当前品牌和材质"
+  },
+  "references": [
+    "C:/Users/1266/AppData/Local/Temp/codex-clipboard-9bc64c50-af0f-4ec4-b991-09739631c06e.png",
+    "C:/Users/1266/AppData/Local/Temp/codex-clipboard-80c82ae5-ee45-4b96-a90d-2e57f3b42c21.png",
+    "C:/Users/1266/AppData/Local/Temp/codex-clipboard-59fe49a5-6eab-47dd-9ce9-47527d65a2cc.png",
+    "C:/Users/1266/AppData/Local/Temp/codex-clipboard-7a01d4fb-59b4-40a2-ad5a-311bd2ef3701.png",
+    "C:/Users/1266/AppData/Local/Temp/codex-clipboard-365ac085-931d-4ec5-a97b-c177976e903a.png"
+  ],
+  "generation": "Built-in image_gen, no CLI fallback",
+  "mascotOriginal": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-b877bd22-a91c-453f-bac0-37979231b4da.png",
+  "homepage": "D:/movieAgent/output/yangfan-home-2026-11-06/yangfan-home-v1.png",
+  "homepageOriginal": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-11c79f8c-f47a-4bbd-9674-fae1645a6501.png",
+  "mascotTransparency": "PNG corner alpha verified as 0",
+  "review": "首页中文品牌、羊羊头标、轻量侧栏、立体画廊、乳白弥散选中态、Agent工具栏及底部工作区域均已目视检查。自动轮播是交互设计建议，静态图片不能验证其行为。",
+  "promptFiles": [
+    "D:/movieAgent/output/yangfan-home-2026-11-06/mascot-prompt.txt",
+    "D:/movieAgent/output/yangfan-home-2026-11-06/homepage-prompt.txt"
+  ]
+}

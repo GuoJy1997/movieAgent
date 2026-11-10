@@ -1,0 +1,103 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:15080) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9836) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ tests/integration/model-config-file.test.ts (16 tests | 1 failed | 15 skipped) 387ms
+   × imports and upgrades text connections to a five-minute timeout without rewriting older snapshots 385ms
+ ❯ tests/integration/generation-recovery.test.ts (41 tests | 3 failed | 37 skipped) 1758ms
+   × keeps a ten-minute lease alive across a long submit without duplicate POSTs 473ms
+   × keeps the original accepted job lease alive across a long reconcile GET 464ms
+   × grants ten minutes initially but never revives an expired worker lease 365ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/generation-recovery.test.ts > keeps a ten-minute lease alive across a long submit without duplicate POSTs
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true, value: { …(2) } }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
+-   "value": {
+-     "collectionState": "durable",
+-     "state": "SUCCEEDED",
+-   },
++   "ok": false,
+  }
+
+ ❯ tests/integration/generation-recovery.test.ts:262:17
+    260|   for(let elapsed=30000;elapsed<=720000;elapsed+=30000){s.setNow(start…
+    261|  }finally{s.server.release();result=await pending;vi.useRealTimers();}
+    262|  expect(result).toMatchObject({ok:true,value:{state:'SUCCEEDED',collec…
+       |                 ^
+    263|  expect(s.server.posts).toBe(1);
+    264| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/integration/generation-recovery.test.ts > keeps the original accepted job lease alive across a long reconcile GET
+AssertionError: expected { ok: false, error: { …(2) } } to match object { ok: true, …(1) }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "ok": true,
+-   "value": {
+-     "state": "SUCCEEDED",
+-   },
++   "ok": false,
+  }
+
+ ❯ tests/integration/generation-recovery.test.ts:271:17
+    269|  try{await expect.poll(()=>s.server.gets).toBe(1);for(let elapsed=3000…
+    270|  finally{s.server.release();result=await pending;vi.useRealTimers();}
+    271|  expect(result).toMatchObject({ok:true,value:{state:'SUCCEEDED'}});exp…
+       |                 ^
+    272| });
+    273| it('does not renew or publish after a different worker fences a long s…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/integration/generation-recovery.test.ts > grants ten minutes initially but never revives an expired worker lease
+AssertionError: expected { expires_at: 1793420569664 } to match object { expires_at: 1793421139664 }
+
+- Expected
++ Received
+
+  {
+-   "expires_at": 1793421139664,
++   "expires_at": 1793420569664,
+  }
+
+ ❯ tests/integration/generation-recovery.test.ts:282:158
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/integration/model-config-file.test.ts > imports and upgrades text connections to a five-minute timeout without rewriting older snapshots
+AssertionError: expected 60000 to be 300000 // Object.is equality
+
+- Expected
++ Received
+
+- 300000
++ 60000
+
+ ❯ tests/integration/model-config-file.test.ts:241:62
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 1 passed | 52 skipped (57)
+   Start at  12:22:14
+   Duration  5.15s (transform 3.91s, setup 0ms, import 5.97s, tests 2.14s, environment 0ms)
+

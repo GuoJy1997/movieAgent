@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "status": "generated_and_visually_reviewed",
+  "scope": "仅对首页左侧导航背景提出蓝紫到近黑的渐变修订；未改产品代码。",
+  "input": [
+    "D:/movieAgent/output/yangfan-home-2026-11-06/yangfan-home-v3-composer.png",
+    "C:/Users/1266/AppData/Local/Temp/codex-clipboard-7b310c5d-892c-499f-a84d-07056d22e02b.png"
+  ],
+  "output": "D:/movieAgent/output/yangfan-home-2026-11-06/yangfan-home-v4-sidebar-gradient.png",
+  "original": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-4f3dfd4b-db54-444e-a28e-61a69fb4074d.png",
+  "palette": [
+    "#303558",
+    "#293D61",
+    "#242D48",
+    "#172239",
+    "#0C1421"
+  ],
+  "review": "已目视确认顶部蓝紫光感更加明显，向底部平滑过渡至深色，导航文字保持清晰。生成式效果图不保证其他区域逐像素不变。",
+  "generation": "Built-in image_gen"
+}

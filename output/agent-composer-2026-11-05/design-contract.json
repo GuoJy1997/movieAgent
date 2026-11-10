@@ -1,0 +1,13 @@
+{
+  "status": "Interactive design prototype only; product source unchanged",
+  "reference": "User supplied Xiaoyunque composer screenshot, 2026-11-05",
+  "design": "A conversational creative surface: wide borderless writing area, one integrated tool rail, contextual material chips and an unfolding conversation.",
+  "palette": {"page":"#FFFFFF","neutral":"#F4F4F6","composer":"#29292D","text":"#F7F7F8","accent":"#FF675F"},
+  "geometry": {"previewWidth":736,"minimumWidth":320,"composerRadius":28,"padding":22,"minimumInputHeight":100,"toolbarTargetHeight":40},
+  "interaction": ["Three existing session modes selectable before a conversation", "Existing asset versions and target context in a local picker", "Four existing templates", "Configured text preset selection and inherited/custom budget", "Growing input with IME-safe Enter and Shift+Enter", "Prepare, explicitly approve, simulate progress, stop, inspect proposal and selectively adopt", "Follow-up messages and a new conversation"],
+  "motion": "120ms press feedback, 180ms menu reveal and 220ms conversation entry; no decorative loop; reduced-motion removes transitions.",
+  "assetPlan": "No raster hero needed for a composer. Use one consistent Lucide icon family, typography and functional state feedback.",
+  "constraints": ["4000 character prompt maximum", "At most 8 imported asset versions", "Mode belongs to conversation", "Budget 1–8192 or inherit preset", "Image/video material contributes metadata only", "Main canvas summary is not full visual understanding", "No file upload, web search, voice input or skill store invented", "No provider request or project mutation"],
+  "source": ["libtv-studio/apps/desktop/src/renderer/features/agent/AgentWorkspace.tsx", "libtv-studio/packages/domain/src/agent-templates.ts", "libtv-studio/packages/contracts/src/agent.ts", "libtv-studio/packages/engine/src/agent-context.ts"],
+  "verificationScope": "Local DOM interactions and script syntax; no real model or application integration acceptance"
+}

@@ -1,0 +1,39 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:22648) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23168) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/dialogue-assembly-workflow.test.ts [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 4233[2mms[22m[39m
+[31m   [31m×[31m assembles all reviewed turns, persists provenance and prevents a single take from confirming multiple turns[39m[33m 4230[2mms[22m[39m
+(node:29132) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/dialogue-audio-assembly.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 2373[2mms[22m[39m
+   [33m[2m✓[22m[39m renders verified PCM with silence between two exact audio slots without changing their speed [33m 2344[2mms[22m[39m
+ [32m✓[39m tests/integration/voiceover-route.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 11225[2mms[22m[39m
+   [33m[2m✓[22m[39m uses real public TTS, durable per-output review and independent audio adoption; stale source and latest needs-fix fail closed after reopen [33m 3964[2mms[22m[39m
+   [33m[2m✓[22m[39m rejects all voiceover video production and forged dialogue-linked text before provider preparation [33m 2393[2mms[22m[39m
+   [33m[2m✓[22m[39m does not let a retained sibling authorize fresh insertion or restoration after review revocation [33m 2515[2mms[22m[39m
+   [33m[2m✓[22m[39m restores ordinary trashed historical audio while rejecting fresh insertion and replacement [33m 2350[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/dialogue-assembly-workflow.test.ts[2m > [22massembles all reviewed turns, persists provenance and prevents a single take from confirming multiple turns
+[31m[1mTypeError[22m: s.engine.renderScheduler.run is not a function[39m
+[36m [2m❯[22m tests/integration/dialogue-assembly-workflow.test.ts:[2m36:39[22m[39m
+    [90m 34|[39m  const plan=value(await execute(s.engine,'dialogue.prepareAssembly',in…
+    [90m 35|[39m  const job=value(await execute(s.engine,'media.enqueueDerived',{planId…
+    [90m 36|[39m  [34mvalue[39m([35mawait[39m s[33m.[39mengine[33m.[39mrenderScheduler[33m.[39m[34mrun[39m(job[33m.[39mjobId))[33m;[39m
+    [90m   |[39m                                       [31m^[39m
+    [90m 37|[39m  const result=value(s.engine.renders.read({projectId,jobId:job.jobId})…
+    [90m 38|[39m  const confirmed=value(await execute(s.engine,'dialogue.confirmAudio',…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m7 passed[39m[22m[90m (8)[39m
+[2m   Start at [22m 11:44:54
+[2m   Duration [22m 15.91s[2m (transform 5.57s, setup 0ms, import 9.00s, tests 17.83s, environment 1ms)[22m
+

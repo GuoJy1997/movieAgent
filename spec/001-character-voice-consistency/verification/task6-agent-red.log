@@ -1,0 +1,35 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+(node:28620) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/integration/agent-voice-context.test.ts [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 902[2mms[22m[39m
+[31m   [31m×[31m gives the Agent only the selected role fixed voice and instructions without calling a media service[39m[33m 898[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/agent-voice-context.test.ts[2m > [22mgives the Agent only the selected role fixed voice and instructions without calling a media service
+[31m[1mAssertionError[22m: expected { ok: false, error: { …(2) } } to match object { ok: true }
+(3 matching properties omitted from actual)[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  {[22m
+[32m-   "ok": true,[39m
+[31m+   "ok": false,[39m
+[2m  }[22m
+
+[36m [2m❯[22m value tests/fixtures/native-generation.ts:[2m10:58[22m[39m
+
+[90m [2m❯[22m nativeFixture tests/fixtures/native-generation.ts:[2m26:21[22m[39m
+[90m [2m❯[22m tests/integration/agent-voice-context.test.ts:[2m6:10[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m   Start at [22m 12:02:58
+[2m   Duration [22m 9.51s[2m (transform 5.47s, setup 0ms, import 7.66s, tests 902ms, environment 0ms)[22m
+

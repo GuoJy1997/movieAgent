@@ -1,0 +1,32 @@
+{
+  "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+  "projectId": "974bde64-b8ca-4e0c-a81b-4fd1b42e521f",
+  "profileRef": {
+    "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+    "id": "file-03c7684d-58c6-419b-953f-ee5f0b0de7b7-profile",
+    "revision": 3
+  },
+  "currentCompletions": [
+    {
+      "subprojectId": "25396ab0-62e9-40f2-8a2c-a98939055e2f",
+      "id": "8163e674-04d0-4d4b-b648-8abc3f3e84f4"
+    }
+  ],
+  "continuity": [],
+  "history": [],
+  "entries": [],
+  "completions": [
+    {
+      "libraryId": "6929ceec-0d16-4a3f-9d0e-b381cc12895e",
+      "projectId": "974bde64-b8ca-4e0c-a81b-4fd1b42e521f",
+      "subprojectId": "25396ab0-62e9-40f2-8a2c-a98939055e2f",
+      "id": "8163e674-04d0-4d4b-b648-8abc3f3e84f4",
+      "revision": 1,
+      "sourceHash": "2f441902aa12eb619a1cafc109890e133d1b61b2ba70bd906f4e681f830144dd",
+      "state": "failed",
+      "taskId": "4656bb05-25b4-43c8-85f6-880a1ed0ef35",
+      "errorCode": "INVALID_MEMORY_OUTPUT",
+      "createdAt": "2026-10-31T04:12:03.978Z"
+    }
+  ]
+}

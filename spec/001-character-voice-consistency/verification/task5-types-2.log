@@ -1,0 +1,2 @@
+packages/engine/src/voice-management-service.ts(124,181): error TS2322: Type 'CreationRef | null' is not assignable to type 'CreationRef | undefined'.
+  Type 'null' is not assignable to type 'CreationRef | undefined'.

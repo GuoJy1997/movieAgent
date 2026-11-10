@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-07",
+  "brand": "羊番TV",
+  "type": "ImageGen visual reference adaptation; not implemented or approved production design",
+  "tool": "Built-in image_gen",
+  "referenceStudy": "../yangfan-reference-study-2026-11-07/index.html",
+  "displayOrder": [
+    {
+      "key": "Conversation",
+      "file": "01-agent-conversation",
+      "title": "创作：Agent 对话结果",
+      "note": "结果直接排在页面上，采用操作统一放在结果栏。",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-200a96bb-ff67-4c1f-9223-97acb07ad85f.png",
+      "references": [
+        "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/03-precision.png",
+        "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/jimeng-05-agent-conversation.jpg",
+        "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/xyq-01-home.jpg",
+        "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/xyq-20-agent-canvas.jpg"
+      ],
+      "promptFile": "01-agent-conversation-prompt.txt",
+      "imageFile": "01-agent-conversation.png"
+    },
+    {
+      "key": "Asset",
+      "file": "02-asset-version-detail",
+      "title": "资产：固定版本详情",
+      "note": "大预览为主，引用信息和使用动作在右侧。",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-5912616d-84e5-46c0-ae74-36e90006dd13.png",
+      "references": [
+        "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/03-precision.png",
+        "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/jimeng-04-asset-detail.jpg",
+        "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/xyq-09-media-preview.jpg",
+        "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/jimeng-19-shot-history-loaded.jpg"
+      ],
+      "promptFile": "02-asset-version-detail-prompt.txt",
+      "imageFile": "02-asset-version-detail.png"
+    },
+    {
+      "key": "Production",
+      "file": "03-shot-production",
+      "title": "制作：镜头工作台",
+      "note": "收窄全局导航，按资产、描述、预览、镜头条分工。",
+      "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-eb88bd70-1000-4a85-92aa-db320dab3d01.png",
+      "references": [
+        "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/03-precision.png",
+        "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/jimeng-17-storyboard-detail.jpg",
+        "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/xyq-19-storyboard-detail.jpg",
+        "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/xyq-20-agent-canvas.jpg"
+      ],
+      "promptFile": "03-shot-production-prompt.txt",
+      "imageFile": "03-shot-production.png"
+    }
+  ],
+  "review": {
+    "hardConstraints": "Brand spelling, black/blue palette, solid main navigation, dark selected states checked visually.",
+    "remaining": [
+      "三张的字号、侧栏尺寸需在实际组件中统一。",
+      "资产详情标题重复，版本选中提示可再精简。",
+      "制作图左侧“角色”已选却包含混合资产；落地前改为“全部”或真正筛选。",
+      "制作图的画面/运镜需要明确可编辑状态。",
+      "图片仅展示静态视觉，不证明画布、任务执行或保存行为。"
+    ]
+  },
+  "homeSupplement": {
+    "title": "首页：继续你的故事",
+    "imageFile": "00-home.png",
+    "promptFile": "00-home-prompt.txt",
+    "source": "C:\\Users\\1266\\.codex\\generated_images\\01a16f36-bd2d-7c31-ac08-df752d7f1002\\exec-0eb0eeb6-da9b-43e9-8ab3-fe054d7246ee.png",
+    "references": [
+      "D:/movieAgent/output/yangfan-selected-refinements-2026-11-07/03-precision.png",
+      "D:/movieAgent/output/yangfan-reference-study-2026-11-07/authenticated/xyq-01-home.jpg",
+      "D:/movieAgent/output/yangfan-reference-study-2026-11-07/jimeng/13-create-clean.jpg"
+    ],
+    "note": "补齐缺失首页。保留用户选定立体画廊与品牌，简化 Composer 独立按钮底面；静态概念图，不证明轮播和输入已实现。",
+    "remaining": [
+      "底部标题仍采用斜体强调，后续可与工作页常规字重进一步统一。",
+      "图稿字号和控件尺寸不是像素规格；交互尚未实现。"
+    ]
+  }
+}

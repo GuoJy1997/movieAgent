@@ -1,0 +1,17 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mD:/movieAgent/libtv-studio[39m
+
+ [32m✓[39m tests/integration/voice-management-protocol.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+(node:17000) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/integration/voice-management.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 13155[2mms[22m[39m
+   [33m[2m✓[22m[39m fetches the real configured service catalog and retains cache without calling synthesis [33m 3680[2mms[22m[39m
+   [33m[2m✓[22m[39m persists upload and clone once with the original int64, leaving voice quality unverified [33m 3064[2mms[22m[39m
+   [33m[2m✓[22m[39m does not resubmit unknown clone steps after reopen [33m 3318[2mms[22m[39m
+   [33m[2m✓[22m[39m verifies a clone with one real speech request and leaves perceptual quality for manual review [33m 3089[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m9 passed[39m[22m[90m (9)[39m
+[2m   Start at [22m 11:35:09
+[2m   Duration [22m 21.76s[2m (transform 5.67s, setup 0ms, import 7.85s, tests 13.17s, environment 1ms)[22m
+

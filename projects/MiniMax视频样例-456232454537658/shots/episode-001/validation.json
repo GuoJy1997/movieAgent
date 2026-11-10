@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-25T22:19:14.2913345+08:00",
+  "videoCodec": "h264",
+  "audioCodec": "aac",
+  "width": 768,
+  "height": 1344,
+  "requestedSeconds": 4,
+  "actualContainerSeconds": 4.48,
+  "frameRate": 24,
+  "bytes": 5817120,
+  "fullDecode": "passed",
+  "preview": "visually-reviewed",
+  "apiTaskId": "456232454537658",
+  "model": "MiniMax-H3-Highspeed",
+  "submissionCount": 1,
+  "estimatedListCostCNY": 1.6,
+  "actualBillVerified": false,
+  "appVideoIntegration": false
+}

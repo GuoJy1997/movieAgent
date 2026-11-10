@@ -1,0 +1,2 @@
+git diff --check -- <changed-files.json paths>
+exit: 0

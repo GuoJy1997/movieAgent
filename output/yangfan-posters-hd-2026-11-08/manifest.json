@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-08",
+  "method": "built-in image_gen",
+  "requested_resolution": [
+    2048,
+    1024
+  ],
+  "higher_resolution_retry": [
+    3072,
+    1536
+  ],
+  "retry_actual_resolution": [
+    1774,
+    887
+  ],
+  "native_2k_achieved": false,
+  "upscaled": false,
+  "prompt_file": "prompts-v2.md",
+  "images": [
+    {
+      "title": "周末出逃",
+      "file": "poster-weekend-v2.png",
+      "width": 1774,
+      "height": 887,
+      "aspect_ratio": "2:1"
+    },
+    {
+      "title": "向晚的海",
+      "file": "poster-sea-v2.png",
+      "width": 1774,
+      "height": 887,
+      "aspect_ratio": "2:1"
+    },
+    {
+      "title": "城市留声",
+      "file": "poster-city-v2.png",
+      "width": 1774,
+      "height": 887,
+      "aspect_ratio": "2:1"
+    },
+    {
+      "title": "逆风而行",
+      "file": "poster-wind.png",
+      "width": 1774,
+      "height": 887,
+      "aspect_ratio": "2:1"
+    }
+  ],
+  "revision": "v2-live-action-drama"
+}
