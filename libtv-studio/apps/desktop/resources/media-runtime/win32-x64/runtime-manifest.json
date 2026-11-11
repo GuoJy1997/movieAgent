@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "version": "9.0.2",
+  "platform": "win32-x64",
+  "sources": {
+    "archive": "https://github.com/GyanD/codexffmpeg/releases/download/9.0.2/ffmpeg-9.0.2-essentials_build.zip",
+    "font": "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+    "fontLicense": "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/LICENSE"
+  },
+  "archiveSha256": "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba",
+  "files": {
+    "ffmpeg.exe": "3256173f3f8bffd7df12227c68adf68025edb1832273a9530688a7bb1ed8edec",
+    "ffprobe.exe": "f0d36ecbbdd3bcfac3efa078c96c7271c2e68b3810595552ac3b7f17e9a65c52",
+    "NotoSansCJKsc-Regular.otf": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "FFmpeg-LICENSE.txt": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "FONT-OFL.txt": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+    "FFmpeg-README.txt": "0342de6bb39dd421cbec2c00d89ad274b640d75ad3f2cab09ffd647ce2d8f949"
+  },
+  "evidence": {
+    "ffmpeg-version.txt": "711056f2bc922237113d5defe7da4dbd97beaab41098e5f8d425753dbfea99ff",
+    "ffmpeg-buildconf.txt": "8b508a29ede5ba7e1f53f9f983c9aadcfb9a3988ab6bdafec9b114ed0aa5cdf4",
+    "ffmpeg-L.txt": "fa6404b0ec69a95bdd56a10b58a987b89d6e58cf50376f9b38e7f2e8ea58d850",
+    "ffmpeg-encoders.txt": "207e612b47b3e63b06a9648feaa75476b1e5333c7682052d2329b378f12d30e8",
+    "ffmpeg-muxers.txt": "e9addecf9df676f80864667f7791f3012e6213a9038f4b54736c29bd9039a0d0",
+    "ffmpeg-filters.txt": "8b5848338e8cad80e44e495a8752045143fb980399e5ba94ae3b8696c3142cf5"
+  },
+  "fontManifest": {
+    "file": "NotoSansCJKsc-Regular.otf",
+    "family": "Noto Sans CJK SC",
+    "version": "Sans2.004",
+    "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b"
+  },
+  "license": {
+    "binary": "GPL-3.0-or-later",
+    "font": "OFL-1.1",
+    "publicDistributionReady": false,
+    "sourceMaterials": "https://github.com/GyanD/codexffmpeg/releases/tag/9.0.2",
+    "limitations": "Full corresponding FFmpeg and all statically linked dependencies source/build materials have not been assembled. Public distribution requires a separate license/source-material review; no exemption is inferred from subprocess use."
+  },
+  "runtimeHash": "50c3f76c0610c5c4a97bd9e8e6620f39f548a45637b16de3733a5fde10ec6539"
+}

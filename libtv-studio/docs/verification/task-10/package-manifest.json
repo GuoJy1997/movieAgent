@@ -1,0 +1,92 @@
+{
+  "measuredAt": "2026-10-25T00:22:27.763Z",
+  "product": "MovieAgent",
+  "version": "0.1.0",
+  "platform": "win32-x64",
+  "release": "unsigned local-test beta; real API and clean OS installation unverified",
+  "files": [
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release\\MovieAgent-0.1.0-local-test-Setup.exe",
+      "bytes": 129459987,
+      "sha256": "22f732eaa4848bf77ebdbf99199049aa670e5b39db6c8af227d93e4742e6e5ec"
+    },
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release\\win-unpacked\\MovieAgent.exe",
+      "bytes": 249797632,
+      "sha256": "02550f72731883597899e66f184b907af39a9949b6610f1e7df3e9ffae6d5b57"
+    },
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release\\win-unpacked\\resources\\app.asar",
+      "bytes": 17373423,
+      "sha256": "9724a68a430f5a3f4a56111d449655fd7bf2afc9bd43fafc1a5a10eabbd1e4c9"
+    }
+  ],
+  "bundledSources": [
+    {
+      "entry": "out/main/engine-process.js",
+      "sha256": "081aeada7a77c202b55fb4f60e09bf9b5b047891492fca4e019f70a080c7f41f",
+      "bytes": 129622,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/main/index.js",
+      "sha256": "10a956735c679eb84d52e902ae6b2a7eb55295a6b6ae2a4c0a4c9b8894baf369",
+      "bytes": 58157,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/preload/credentials.js",
+      "sha256": "031a53856d7e27b736cb85ca115237fb264033d906df39def60c5308bf373229",
+      "bytes": 357,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/preload/index.js",
+      "sha256": "2576c209a91b02f2725e45ede772a28df58fde32c0a08e62787d50acef6a8a0d",
+      "bytes": 872,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/main/chunks/shutdown-BakWCJbb.js",
+      "sha256": "b251706d145d6e14091398b535d812c2945769fb5e66be78eef0ff62c6c1a267",
+      "bytes": 52046,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/renderer/assets/credentials-CMI9Z90l.js",
+      "sha256": "8d733ed72d7b33dd596ed424d71c6ee474e0b62a37bc94af3d0077deaa8a66f5",
+      "bytes": 1720,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/renderer/assets/credentials-i1XZGmup.css",
+      "sha256": "1833777aa2fee8af65176c1b24d96f8d6e5d3e62759e3e535a12dc9453d90b9e",
+      "bytes": 582,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/renderer/assets/index-DdRxKZx6.css",
+      "sha256": "2cd78776cf2b6f05a71024ad7ed7a7fea63e60a02c792deff657704710ac38e2",
+      "bytes": 43071,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/renderer/assets/index-mGfYoVG9.js",
+      "sha256": "5c3e187c1ebdb378a516a1c8fecab080becab74023a0865482cb71bbb5a9b1a9",
+      "bytes": 1258177,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/renderer/credentials/index.html",
+      "sha256": "44f3f0fca4e06addf0842fb2268619fc978ad0ba221b099dab3ae223dfe74e02",
+      "bytes": 1231,
+      "matchesFinalBuild": true
+    },
+    {
+      "entry": "out/renderer/renderer/index.html",
+      "sha256": "981546c6061288318ff27e458236653d136fcb2c018c854f66c5f97fdb90746f",
+      "bytes": 689,
+      "matchesFinalBuild": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+.yangfan-pill-nav{min-width:0;max-width:100%;overflow-x:auto;scrollbar-width:none;flex-shrink:0}
+.yangfan-pill-nav::-webkit-scrollbar{display:none}
+.yangfan-pill-nav__track{position:relative;isolation:isolate;display:flex;align-items:center;gap:8px;width:max-content;padding:4px 0}
+.yangfan-pill-nav__glide{position:absolute;z-index:-1;left:0;top:4px;height:44px;border-radius:999px;background:#22252d;opacity:0;pointer-events:none}
+.yangfan-pill-nav .yangfan-pill-nav__item{position:relative;display:flex;align-items:center;height:44px;padding:0 52px 0 20px;border:0;border-radius:999px;background:transparent;box-shadow:none;color:#a4a8b3;font:inherit;font-size:15px;font-weight:500;line-height:1.2;white-space:nowrap;overflow:hidden;cursor:pointer;transition:color 160ms ease,background-color 160ms ease}
+.yangfan-pill-nav .yangfan-pill-nav__item::after{display:none}
+.yangfan-pill-nav .yangfan-pill-nav__item[data-active=true]{color:#f5f6fa;font-weight:500}
+.yangfan-pill-nav .yangfan-pill-nav__item:hover{color:#f5f6fa;background:rgb(255 255 255 / 3%)}
+.yangfan-pill-nav .yangfan-pill-nav__item:focus-visible{outline:2px solid #6d96ff;outline-offset:-3px}
+.yangfan-pill-nav .yangfan-pill-nav__item:disabled{opacity:.4;cursor:not-allowed;background:transparent}
+.yangfan-pill-nav__label{position:relative;z-index:1}
+.yangfan-pill-nav__art{position:absolute;right:-9px;top:-8px;width:62px;height:62px;object-fit:contain;pointer-events:none;opacity:0;transform:translateX(10px) rotate(8deg);transition:opacity 160ms ease,transform 280ms cubic-bezier(.2,.7,.2,1)}
+.yangfan-pill-nav__item[data-active=true] .yangfan-pill-nav__art{opacity:1;transform:translateX(0) rotate(0)}
+@media(prefers-reduced-motion:reduce){.yangfan-pill-nav .yangfan-pill-nav__item,.yangfan-pill-nav__art{transition:none}}

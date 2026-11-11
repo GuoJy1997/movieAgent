@@ -1,0 +1,1 @@
+{ "name": "@libtv/engine", "version": "0.1.0", "private": true, "type": "module", "exports": "./src/bootstrap.ts", "license": "UNLICENSED", "dependencies": { "@libtv/contracts": "0.1.0", "@libtv/storage": "0.1.0", "@libtv/domain": "0.1.0", "@libtv/providers": "0.1.0" } }

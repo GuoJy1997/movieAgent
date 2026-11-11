@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "providers": [
+    {
+      "id": "text-default",
+      "name": "文本服务",
+      "kind": "text",
+      "baseURL": "",
+      "apiKey": "",
+      "modelId": "",
+      "allowPrivateEndpoint": false,
+      "adapterType": "openai-chat-v1",
+      "parameters": {
+        "max_tokens": 1024
+      },
+      "pricing": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "image-default",
+      "name": "图片服务",
+      "kind": "image",
+      "baseURL": "",
+      "apiKey": "",
+      "modelId": "",
+      "allowPrivateEndpoint": false,
+      "adapterType": "openai-image-v1",
+      "parameters": {},
+      "pricing": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "edit-default",
+      "name": "参考图服务",
+      "kind": "image",
+      "baseURL": "",
+      "apiKey": "",
+      "modelId": "",
+      "allowPrivateEndpoint": false,
+      "adapterType": "openai-image-edit-v1",
+      "parameters": {},
+      "pricing": {
+        "status": "unknown"
+      }
+    },
+    {
+      "id": "video-default",
+      "name": "视频服务",
+      "kind": "video",
+      "baseURL": "",
+      "apiKey": "",
+      "modelId": "",
+      "allowPrivateEndpoint": false,
+      "adapterType": "minimax-video-v2",
+      "parameters": {
+        "duration": 4,
+        "resolution": "768P",
+        "ratio": "9:16"
+      },
+      "pricing": {
+        "status": "unknown"
+      }
+    }
+  ]
+}

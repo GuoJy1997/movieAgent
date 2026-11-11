@@ -1,0 +1,48 @@
+{
+  "verified": true,
+  "directory": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release\\win-unpacked",
+  "executable": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release\\win-unpacked\\MovieAgent.exe",
+  "runtime": {
+    "electron": "45.0.0",
+    "modules": "150",
+    "node": "24.22.0",
+    "arch": "x64",
+    "platform": "win32"
+  },
+  "native": {
+    "sqlite": {
+      "version": "3.53.4",
+      "value": 42
+    },
+    "sharp": {
+      "format": "png",
+      "width": 2,
+      "height": 3,
+      "bytes": 96,
+      "hash": "783cf58b9994058840e4c0ff7200389329302b6694e2392e3287fafa40655c26"
+    }
+  },
+  "entries": [
+    "package.json",
+    "out/main/index.js",
+    "out/main/engine-process.js",
+    "out/preload/index.js",
+    "out/preload/credentials.js",
+    "out/renderer/renderer/index.html",
+    "out/renderer/credentials/index.html"
+  ],
+  "boundaries": "two isolated preloads and CSP HTML entries; runtime IPC covered by test:electron",
+  "evidenceCapturedAt": "2026-10-25T00:22:27.763Z",
+  "packageIdentity": [
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release\\win-unpacked\\MovieAgent.exe",
+      "bytes": 249797632,
+      "sha256": "02550f72731883597899e66f184b907af39a9949b6610f1e7df3e9ffae6d5b57"
+    },
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release\\win-unpacked\\resources\\app.asar",
+      "bytes": 17373423,
+      "sha256": "9724a68a430f5a3f4a56111d449655fd7bf2afc9bd43fafc1a5a10eabbd1e4c9"
+    }
+  ]
+}

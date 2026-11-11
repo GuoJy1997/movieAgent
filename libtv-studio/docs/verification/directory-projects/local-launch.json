@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-10-25T14:04:47.5539076+08:00",
+  "executable": "D:/movieAgent/libtv-studio/apps/desktop/release/win-unpacked/MovieAgent.exe",
+  "pid": 24232,
+  "title": "MovieAgent · 项目启动器",
+  "windowHandle": 3017422,
+  "visible": true,
+  "engineChildren": 0,
+  "configPath": "D:/movieAgent/config/models.json",
+  "launcherPath": "D:/movieAgent/启动MovieAgent.cmd",
+  "mode": "project-launcher",
+  "userData": "C:\\Users\\1266\\AppData\\Roaming\\MovieAgent\\launcher",
+  "profileLibraryExists": false
+}

@@ -1,0 +1,187 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts (10 tests | 10 failed) 17873ms
+   × 保存实体: preserves edits made after submission and advances revision for the next actual save 1999ms
+   × 保存剧本: preserves edits made after submission and advances revision for the next actual save 1513ms
+   × 保存镜头: preserves edits made after submission and advances revision for the next actual save 1518ms
+   × entity: ignores the old save callback after selecting another editor/script 4465ms
+   × script: ignores the old save callback after selecting another editor/script 491ms
+   × shot: ignores the old save callback after selecting another editor/script 4535ms
+   × Agent preserves the next request typed while preparing, but clears an unchanged submitted request 421ms
+   × Agent ignores preparation acknowledgement after switching sessions 498ms
+   × Agent request accepts the contract maximum and prevents an overlong form request 319ms
+   × renders persisted normal, stopped-late and proposal replies once per matching run, including reopen with no command/POST 1262ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > 保存实体: preserves edits made after submission and advances revision for the next actual save
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > 保存剧本: preserves edits made after submission and advances revision for the next actual save
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > 保存镜头: preserves edits made after submission and advances revision for the next actual save
+AssertionError: expected '提交 A' to be '后续 B' // Object.is equality
+
+Expected: "后续 B"
+Received: "提交 A"
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:85:85
+     83|       await page.getByLabel(label, { exact: true }).fill('后续 B');
+     84|       await ackSaved(page);
+     85|       await expect.poll(() => page.getByLabel(label, { exact: true }).…
+       |                                                                                     ^
+     86|       expect(await page.getByText(saved, { exact: true }).count()).toB…
+     87|       expect(await page.getByText('有未保存的修改', { exact: true }).count())…
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:78:5
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:85:7
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:78:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > entity: ignores the old save callback after selecting another editor/script
+TimeoutError: locator.click: Timeout 4000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: '放弃草稿并读取最新实体' })
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:119:65
+    117|         refreshed.entities[1] = { ...entity, id: 'entity-b', name: 'B …
+    118|         await page.evaluate(snapshot => window.p3Fixture.update({ 'cre…
+    119|         await page.getByRole('button', { name: '放弃草稿并读取最新实体' }).click(…
+       |                                                                 ^
+    120|         expect(await page.getByLabel('实体名称', { exact: true }).inputVal…
+    121|         await page.getByLabel('实体名称', { exact: true }).fill('B 草稿');
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:100:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > script: ignores the old save callback after selecting another editor/script
+AssertionError: expected 'script-a' to be 'script-b' // Object.is equality
+
+Expected: "script-b"
+Received: "script-a"
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:123:100
+    121|         await page.getByLabel('实体名称', { exact: true }).fill('B 草稿');
+    122|       }
+    123|       if (target !== 'entity') expect(await page.getByLabel('当前剧本', { …
+       |                                                                                                    ^
+    124|       await page.getByRole('button', { name: target === 'entity' ? '保存…
+    125|       await waitCalls(page, 2);
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:100:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > shot: ignores the old save callback after selecting another editor/script
+TimeoutError: locator.click: Timeout 4000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: '保存镜头', exact: true })
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:124:131
+    122|       }
+    123|       if (target !== 'entity') expect(await page.getByLabel('当前剧本', { …
+    124|       await page.getByRole('button', { name: target === 'entity' ? '保存…
+       |                                                                                                                                   ^
+    125|       await waitCalls(page, 2);
+    126|       const payload = await page.evaluate(() => window.p3Fixture.calls…
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:100:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > Agent preserves the next request typed while preparing, but clears an unchanged submitted request
+AssertionError: expected '' to be '请求 B' // Object.is equality
+
+- Expected
++ Received
+
+- 请求 B
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:141:38
+    139|     await page.evaluate(prepared => window.p3Fixture.resolve(prepared)…
+    140|     await page.getByRole('button', { name: '暂不生成' }).waitFor();
+    141|     expect(await field.inputValue()).toBe('请求 B');
+       |                                      ^
+    142|     await page.getByRole('button', { name: '暂不生成' }).click();
+    143|     await page.getByRole('button', { name: '准备这一轮规划' }).click();
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:133:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > Agent ignores preparation acknowledgement after switching sessions
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:159:52
+    157|     await page.evaluate(prepared => window.p3Fixture.resolve(prepared)…
+    158|     await page.evaluate(() => new Promise(requestAnimationFrame));
+    159|     expect(await page.getByRole('dialog').count()).toBe(0);
+       |                                                    ^
+    160|     expect(await page.getByLabel('创作需求', { exact: true }).inputValue()…
+    161|   });
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:151:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > Agent request accepts the contract maximum and prevents an overlong form request
+AssertionError: expected 4001 to be 4000 // Object.is equality
+
+- Expected
++ Received
+
+- 4000
++ 4001
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:168:47
+    166|     const field = page.getByLabel('创作需求', { exact: true });
+    167|     await field.fill('字'.repeat(4001));
+    168|     expect((await field.inputValue()).length).toBe(4000);
+       |                                               ^
+    169|     await page.getByRole('button', { name: '准备这一轮规划' }).click();
+    170|     await waitCalls(page, 1);
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:165:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > renders persisted normal, stopped-late and proposal replies once per matching run, including reopen with no command/POST
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:184:82
+    182|       for (const [index, answer] of ['普通答复', '停止后的迟到答复', '提案答复'].entri…
+    183|         const card = page.locator('.agent-run').nth(index);
+    184|         await expect.poll(() => card.getByText(answer, { exact: true }…
+       |                                                                                  ^
+    185|       }
+    186|       expect(await page.locator('.agent-run').nth(1).getByText('已停止', …
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:11
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:179:3
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:184:9
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:179:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 failed (10)
+   Start at  01:42:36
+   Duration  18.99s (transform 64ms, setup 0ms, import 814ms, tests 17.87s, environment 0ms)

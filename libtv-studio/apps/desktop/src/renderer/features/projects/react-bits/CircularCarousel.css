@@ -1,0 +1,21 @@
+/* React Bits CircularCarousel adaptation — see LICENSE.md. */
+.project-gallery .circular-carousel{
+ position:relative;width:100%;height:var(--cc-height,270px);isolation:isolate;
+ touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;
+ overflow:clip;overflow-clip-margin:12px;
+}
+.project-gallery .circular-carousel[data-dragging]{cursor:grabbing}
+.project-gallery .circular-carousel__poster{
+ position:absolute;left:50%;top:47%;width:var(--cc-card-width,38%);height:auto;aspect-ratio:2/1;
+ display:block;margin:0;padding:0;overflow:hidden;border:1px solid #ffffff2b;border-radius:14px;
+ background:#111724;color:#fff;cursor:inherit;transform-origin:center;transition:none;
+ box-shadow:0 12px 25px -16px #000c;backface-visibility:hidden;
+ -webkit-box-reflect:below 6px linear-gradient(#ffffff0d,transparent 18%);
+}
+.project-gallery .circular-carousel__poster[aria-pressed=true]{border-color:#ffffff60}
+.project-gallery .circular-carousel__poster:focus-visible{outline:2px solid #6ea0ff;outline-offset:4px}
+.project-gallery .circular-carousel__poster .gallery-artwork img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none}
+.project-gallery .circular-carousel__shade{position:absolute;inset:0;background:#080d18;opacity:var(--cc-depth,0);pointer-events:none}
+.project-gallery .circular-carousel__poster .gallery-artwork.is-default strong{position:absolute;left:7%;bottom:10%;font-size:clamp(18px,2vw,30px);font-style:italic}
+.yangfan-shell .project-gallery .gallery-arrow{top:calc((100% - 22px)*.47 - 18px)}
+@media(prefers-reduced-motion:reduce){.project-gallery .circular-carousel__poster{-webkit-box-reflect:none}}

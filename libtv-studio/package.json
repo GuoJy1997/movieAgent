@@ -1,0 +1,39 @@
+{
+  "name": "libtv-studio-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "packageManager": "npm@11.6.2",
+  "engines": {
+    "node": ">=24.12.0 <25",
+    "npm": ">=11.6.2 <12"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @libtv/desktop",
+    "build": "npm run build --workspace @libtv/desktop",
+    "typecheck": "tsc --noEmit -p tsconfig.base.json",
+    "test": "vitest run",
+    "test:electron": "vitest run --config vitest.electron.config.ts",
+    "verify:package": "node scripts/verify-package.mjs",
+    "check:live-image": "node scripts/run-live-image-check.mjs",
+    "package:win": "npm run package:win --workspace @libtv/desktop --"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.2.0",
+    "electron": "45.0.0",
+    "electron-builder": "26.18.0",
+    "electron-vite": "5.0.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "4.1.12"
+  }
+}

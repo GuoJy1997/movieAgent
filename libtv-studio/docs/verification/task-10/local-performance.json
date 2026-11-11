@@ -1,0 +1,224 @@
+{
+  "status": "passed",
+  "packageIdentity": [
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release\\win-unpacked\\MovieAgent.exe",
+      "sha256": "02550f72731883597899e66f184b907af39a9949b6610f1e7df3e9ffae6d5b57"
+    },
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release\\win-unpacked\\resources\\app.asar",
+      "sha256": "9724a68a430f5a3f4a56111d449655fd7bf2afc9bd43fafc1a5a10eabbd1e4c9"
+    }
+  ],
+  "measuredAt": "2026-10-25T00:21:23.705Z",
+  "startupMs": 1091.4589,
+  "readiness": "launch to firstWindow + studio bridge + DOMContentLoaded; fresh fixture, one project, developer machine",
+  "os": {
+    "release": "10.0.19044",
+    "cpu": "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz",
+    "logicalProcessors": 8,
+    "totalMemoryBytes": 16958754816
+  },
+  "display": {
+    "scaleFactor": 1.5,
+    "bounds": {
+      "x": 50,
+      "y": 0,
+      "width": 1180,
+      "height": 680
+    }
+  },
+  "renderer": {
+    "width": 1166,
+    "height": 643,
+    "devicePixelRatio": 1.5
+  },
+  "samples": [
+    [
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.864159,
+          "percentCPUUsage": 0,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 1824,
+        "type": "Browser",
+        "creationTime": 1792887682172.33,
+        "memory": {
+          "workingSetSize": 137044,
+          "peakWorkingSetSize": 137280,
+          "privateBytes": 106848
+        },
+        "integrityLevel": "medium",
+        "sandboxed": false
+      },
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.224979,
+          "percentCPUUsage": 0,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 22664,
+        "type": "GPU",
+        "creationTime": 1792887682561.523,
+        "serviceName": "GPU",
+        "memory": {
+          "workingSetSize": 68796,
+          "peakWorkingSetSize": 78780,
+          "privateBytes": 29520
+        },
+        "integrityLevel": "low",
+        "sandboxed": true
+      },
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.11788,
+          "percentCPUUsage": 0,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 17272,
+        "type": "Utility",
+        "creationTime": 1792887682564.274,
+        "serviceName": "network.mojom.NetworkService",
+        "name": "Network Service",
+        "memory": {
+          "workingSetSize": 45264,
+          "peakWorkingSetSize": 45268,
+          "privateBytes": 11900
+        },
+        "integrityLevel": "medium",
+        "sandboxed": false
+      },
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.221678,
+          "percentCPUUsage": 0,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 22784,
+        "type": "Utility",
+        "creationTime": 1792887682581.699,
+        "serviceName": "node.mojom.NodeService",
+        "name": "MovieAgent Library Engine",
+        "memory": {
+          "workingSetSize": 62328,
+          "peakWorkingSetSize": 62960,
+          "privateBytes": 67880
+        },
+        "integrityLevel": "medium",
+        "sandboxed": false
+      },
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.248945,
+          "percentCPUUsage": 0,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 23608,
+        "type": "Tab",
+        "creationTime": 1792887682972.926,
+        "memory": {
+          "workingSetSize": 78964,
+          "peakWorkingSetSize": 83832,
+          "privateBytes": 28856
+        },
+        "integrityLevel": "untrusted",
+        "sandboxed": true
+      }
+    ],
+    [
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.943242,
+          "percentCPUUsage": 2.116614957701424,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 1824,
+        "type": "Browser",
+        "creationTime": 1792887682172.33,
+        "memory": {
+          "workingSetSize": 138608,
+          "peakWorkingSetSize": 138612,
+          "privateBytes": 107276
+        },
+        "integrityLevel": "medium",
+        "sandboxed": false
+      },
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.590875,
+          "percentCPUUsage": 9.793244915700624,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 22664,
+        "type": "GPU",
+        "creationTime": 1792887682561.523,
+        "serviceName": "GPU",
+        "memory": {
+          "workingSetSize": 124004,
+          "peakWorkingSetSize": 124416,
+          "privateBytes": 83376
+        },
+        "integrityLevel": "low",
+        "sandboxed": true
+      },
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.121471,
+          "percentCPUUsage": 0.0961147274206672,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 17272,
+        "type": "Utility",
+        "creationTime": 1792887682564.274,
+        "serviceName": "network.mojom.NetworkService",
+        "name": "Network Service",
+        "memory": {
+          "workingSetSize": 46068,
+          "peakWorkingSetSize": 46072,
+          "privateBytes": 11948
+        },
+        "integrityLevel": "medium",
+        "sandboxed": false
+      },
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.232128,
+          "percentCPUUsage": 0.27970313460224877,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 22784,
+        "type": "Utility",
+        "creationTime": 1792887682581.699,
+        "serviceName": "node.mojom.NodeService",
+        "name": "MovieAgent Library Engine",
+        "memory": {
+          "workingSetSize": 62676,
+          "peakWorkingSetSize": 62960,
+          "privateBytes": 68272
+        },
+        "integrityLevel": "medium",
+        "sandboxed": false
+      },
+      {
+        "cpu": {
+          "cumulativeCPUUsage": 0.519763,
+          "percentCPUUsage": 7.248689541168107,
+          "idleWakeupsPerSecond": 0
+        },
+        "pid": 23608,
+        "type": "Tab",
+        "creationTime": 1792887682972.926,
+        "memory": {
+          "workingSetSize": 99772,
+          "peakWorkingSetSize": 99776,
+          "privateBytes": 41644
+        },
+        "integrityLevel": "untrusted",
+        "sandboxed": true
+      }
+    ]
+  ],
+  "units": "Electron CPU percentCPUUsage and cumulativeCPUUsage seconds; memory workingSetSize/peakWorkingSetSize KiB. Two event-bound snapshots only, excludes processes Electron does not report; process lifetime peaks are not simultaneous family peak.",
+  "limitations": "Not cold OS boot or installed/clean-machine measurement; no 500-node workload, OS-wide peak/continuous sampling/other DPI claim."
+}

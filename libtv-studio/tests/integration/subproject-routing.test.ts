@@ -1,0 +1,20 @@
+import {expect,it} from 'vitest';
+import {nativeFixture,value} from '../fixtures/native-generation.ts';
+const script=(projectId:string,id:string)=>({projectId,id,expectedRevision:0,title:id,synopsis:'',body:'story',scenes:[]});
+it('routes independently scoped script/timeline work and rejects another episode targets and approvals',async()=>{
+ const s=await nativeFixture(),e=s.engine,p=s.prepareInput().projectId;
+ const cmd=async(kind:string,payload:unknown,scope?:{projectId:string;subprojectId:string})=>e.commands.execute({schemaVersion:1,libraryId:e.identity.libraryId,connectionEpoch:'test',commandId:crypto.randomUUID(),kind,payload,...(scope?{scope}:{})});
+ const made=await cmd('subproject.create',{projectId:p,title:'A'});expect(made).toMatchObject({ok:true});if(!made.ok)return;
+ const a=made.value.result as any,b=value(await cmd('subproject.create',{projectId:p,title:'B'})) as any;
+ const sa={projectId:p,subprojectId:a.id},sb={projectId:p,subprojectId:b.id};
+ expect(await cmd('creation.saveScript',script(p,'script-a'),sa)).toMatchObject({ok:true});
+ expect(await cmd('creation.saveScript',script(p,'script-b'),sb)).toMatchObject({ok:true});
+ const query=(scope:any)=>e.commands.query({schemaVersion:1,libraryId:e.identity.libraryId,connectionEpoch:'test',queryId:crypto.randomUUID(),kind:'creation.read',payload:{projectId:p},scope});
+ expect(query(sa)).toMatchObject({ok:true,value:{scripts:[{id:'script-a'}]}});
+ expect((query(sb) as any).value.scripts.map((x:any)=>x.id)).toEqual(['script-b']);
+ expect(await cmd('creation.saveScript',{...script(p,'script-a'),expectedRevision:1},sb)).toMatchObject({ok:false,error:{code:'WRONG_SUBPROJECT'}});
+ const prepared=value(await cmd('generation.prepare',s.prepareInput(),sa)) as any;
+ expect(await cmd('generation.approveAndEnqueue',{preparedId:prepared.preparedId,planHash:prepared.planHash,runId:prepared.runId,executionOwner:'human'},sb)).toMatchObject({ok:false});
+ const bad={...sa,projectId:'not-parent'};
+ expect(query(bad)).toMatchObject({ok:false});
+},30000);

@@ -1,0 +1,66 @@
+{
+  "status": "verified",
+  "submittedCount": 1,
+  "startedAt": "2026-10-25T16:44:21.200Z",
+  "finishedAt": "2026-10-25T16:46:20.296Z",
+  "parameters": {
+    "duration": 4,
+    "resolution": "768P",
+    "ratio": "9:16"
+  },
+  "estimateMicros": 1600000,
+  "currency": "CNY",
+  "taskId": "eff971d4-4b99-4da1-b225-d08a3ee55422",
+  "providerTaskId": "456268409471408",
+  "state": "SUCCEEDED",
+  "collectionState": "durable",
+  "player": {
+    "width": 768,
+    "height": 1344,
+    "duration": 3.75,
+    "currentTime": 0.816551,
+    "readyState": 4,
+    "controls": true
+  },
+  "reopened": true,
+  "reopenedPlayer": {
+    "width": 768,
+    "height": 1344,
+    "duration": 3.75,
+    "currentTime": 0.899277,
+    "readyState": 4,
+    "controls": true
+  },
+  "sha256": "0415d8d08a6f08619eb7050b9ca06901f06b4dde9003c52a01fafd6903c4bcad",
+  "bytes": 1707766,
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 768,
+        "height": 1344,
+        "duration": "3.750000"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "duration": "3.750000"
+      }
+    ],
+    "format": {
+      "duration": "3.750000",
+      "size": "1707766"
+    }
+  },
+  "ffmpegFullDecodeExit": 0,
+  "counts": {
+    "tasks": 1,
+    "attempts": 1,
+    "assets": 1,
+    "artifacts": 1
+  },
+  "reportedActualMicros": null
+}

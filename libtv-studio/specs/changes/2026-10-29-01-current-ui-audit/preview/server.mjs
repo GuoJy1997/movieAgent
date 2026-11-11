@@ -1,0 +1,14 @@
+import { createServer } from 'vite';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { writeFileSync } from 'node:fs';
+const dir = dirname(fileURLToPath(import.meta.url));
+const root = resolve(dir, '../../../..');
+const entry = '/specs/changes/2026-10-29-01-current-ui-audit/preview/main.tsx';
+const server = await createServer({configFile:false,root,esbuild:{jsx:'automatic'},server:{host:'127.0.0.1',port:0},optimizeDeps:{include:['react','react-dom/client','react/jsx-dev-runtime','@tanstack/react-query','@xyflow/react','zustand'],entries:[entry.slice(1)]},plugins:[{name:'audit-readonly-preview',enforce:'pre',resolveId(id){if(id.endsWith('/services/runtime.tsx'))return resolve(dir,'runtime.tsx');},configureServer(vite){vite.middlewares.use((req,res,next)=>{if(req.method!=='GET'&&req.method!=='HEAD'){res.statusCode=405;res.end('AUDIT_READ_ONLY');return;} if(req.url==='/'||req.url?.startsWith('/?')){res.setHeader('Content-Type','text/html; charset=utf-8');res.setHeader('Content-Security-Policy',"default-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' ws://127.0.0.1:*; img-src 'self' data: blob:; media-src 'self' blob:; object-src 'none'");res.end(`<html><head><meta charset="UTF-8"><title>MovieAgent · 只读 UI 审查</title></head><body><div id="root"></div><script type="module" src="${entry}"></script></body></html>`);return;}next();});}}]});
+await server.listen();
+const address=server.httpServer.address();
+const info={pid:process.pid,url:`http://127.0.0.1:${address.port}/`,startedAt:new Date().toISOString(),scope:'read-only in-memory current App UI audit'};
+writeFileSync(resolve(dir,'server-info.json'),JSON.stringify(info,null,2));
+console.log(JSON.stringify(info));
+process.on('SIGTERM',()=>server.close().then(()=>process.exit()));

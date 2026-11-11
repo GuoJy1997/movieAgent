@@ -1,0 +1,362 @@
+/* 羊番TV · SPEC-005 unified desktop tokens */
+:root {
+  color-scheme: dark;
+  --canvas: #0b0e14;
+  --shell: #111722;
+  --panel: #151a23;
+  --raised: #1d2531;
+  --border: #ffffff29;
+  --separator: #ffffff14;
+  --text: #f3f5fa;
+  --secondary: #b8c1d1;
+  --muted: #8995ab;
+  --accent: #2860e8;
+  --accent-ink: #ffffff;
+  --success: #7bc6b1;
+  --warning: #e6b978;
+  --error: #f18e9d;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', 'PingFang SC', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--text);
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+button,
+input,
+textarea,
+select {
+  transition:
+    border-color 100ms,
+    background 100ms,
+    box-shadow 100ms;
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #81a8ff;
+  outline-offset: 3px;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+}
+h2 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+h3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+small {
+  font-size: 12px;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  background: var(--canvas);
+  color: var(--text);
+}
+input::placeholder,
+textarea::placeholder {
+  color: #8995ab;
+}
+textarea {
+  resize: vertical;
+  min-height: 72px;
+  line-height: 1.8;
+}
+input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  flex: 0 0 auto;
+}
+.button {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 13px;
+  min-height: 36px;
+  background: var(--raised);
+  color: var(--text);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.button:hover:not(:disabled) {
+  background: #252f40;
+  border-color: #52637c;
+}
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.button.primary:hover:not(:disabled) {
+  background: #3472ff;
+}
+.button.quiet {
+  border-color: transparent;
+  background: transparent;
+  color: var(--secondary);
+}
+.button.danger {
+  color: var(--error);
+  background: transparent;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--secondary);
+  min-width: 0;
+}
+.field > span {
+  font-size: 12px;
+  font-weight: 500;
+}
+.field small,
+.hint,
+.footnote {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--secondary);
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.badge.warning {
+  color: var(--warning);
+  border-color: #5e533c;
+}
+.empty {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--muted);
+}
+.empty-mark {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 36px;
+  color: #8995ab;
+  font-weight: 300;
+}
+.empty h3 {
+  color: var(--secondary);
+  margin-bottom: 8px;
+}
+.empty p {
+  font-size: 12px;
+  max-width: 360px;
+  margin: auto;
+  line-height: 1.9;
+}
+.loading {
+  padding: 24px;
+  color: var(--muted);
+}
+.alert {
+  background: #322623;
+  border: 1px solid #63453d;
+  border-radius: 8px;
+  padding: 12px;
+  color: #f0bbb4;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.alert p + p {
+  margin-top: 8px;
+}
+.warning-text {
+  color: var(--warning);
+  font-size: 12px;
+  line-height: 1.9;
+}
+.success-note {
+  color: var(--success);
+  padding: 12px 0;
+}
+.dialog {
+  background: var(--panel);
+  border: 1px solid #ffffff29;
+  color: var(--text);
+  border-radius: 16px;
+  width: min(560px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  padding: 0;
+  box-shadow:
+    0 28px 100px #0009,
+    0 1px 0 #ffffff0b inset;
+  overflow: auto;
+  animation: dialog-enter 180ms var(--ease);
+}
+.dialog.wide {
+  width: min(960px, calc(100vw - 48px));
+}
+.dialog::backdrop {
+  background: #080b0bb8;
+  backdrop-filter: blur(4px);
+}
+.dialog-head {
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--separator);
+  position: sticky;
+  top: 0;
+  background: var(--panel);
+  z-index: 1;
+}
+.dialog-head h2 {
+  font-size: 16px;
+  max-width: 90%;
+  overflow-wrap: anywhere;
+}
+.dialog-head .button {
+  font-size: 22px;
+  width: 32px;
+  padding: 0;
+}
+.dialog-body {
+  padding: 24px;
+}
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.check {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  color: var(--secondary);
+  line-height: 1.8;
+  font-size: 12px;
+}
+.check input {
+  margin: 4px 0 0;
+}
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding-top: 18px;
+  border-top: 1px solid var(--separator);
+  margin-top: 4px;
+}
+.dialog-actions > p {
+  margin-right: auto;
+  color: var(--muted);
+  font-size: 12px;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #424e65;
+  border: 2px solid var(--panel);
+  border-radius: 6px;
+}
+@keyframes dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes result-enter {
+  from {
+    opacity: 0.3;
+    filter: saturate(0.3);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .dialog::backdrop {
+    backdrop-filter: none;
+  }
+}

@@ -1,0 +1,45 @@
+import {afterEach,expect,it,vi} from 'vitest';
+import {mkdtemp,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {Client} from '@modelcontextprotocol/sdk/client/index.js';
+import {InMemoryTransport} from '@modelcontextprotocol/sdk/inMemory.js';
+import {createMcpServer} from '../../apps/desktop/src/main/mcp/server';
+import {listenMcpBridge,PipeMcpClient,discoverInstances} from '../../apps/desktop/src/main/mcp/transport';
+import {ok} from '../../packages/contracts/src/result';
+const cleanup:(()=>Promise<unknown>)[]=[];
+afterEach(async()=>{for(const f of cleanup.splice(0).reverse())await f();});
+it('handshakes with the official SDK, advertises explicit schemas, and rejects unrecognized write fields',async()=>{
+ const handler=vi.fn(async()=>ok({ready:true})),server=createMcpServer(handler),client=new Client({name:'acceptance',version:'1'});
+ const [a,b]=InMemoryTransport.createLinkedPair();await server.connect(a);await client.connect(b);cleanup.push(()=>client.close(),()=>server.close());
+ expect(client.getServerVersion()?.name).toBe('movieagent');
+ const tools=await client.listTools(),imp=tools.tools.find(t=>t.name==='assets_import')!;
+ expect(imp.inputSchema.required).toEqual(expect.arrayContaining(['instanceId','requestId','scope','name','source']));
+ expect(imp.annotations?.readOnlyHint).toBe(false);expect(tools.tools.some(t=>/execute_raw|shell|sql/.test(t.name))).toBe(false);
+ const bad=await client.callTool({name:'production_execute',arguments:{instanceId:'one',requestId:'call',scope:{libraryId:'lib',projectId:'project',subprojectId:'sub'},productionId:'prod',budgetLimitMicros:100,stepAllowanceMicros:100,approved:true}});
+ expect(bad.isError).toBe(true);expect(handler).not.toHaveBeenCalled();
+ const good=await client.callTool({name:'system_doctor',arguments:{instanceId:'one'}});expect(good.isError).toBe(false);expect(handler).toHaveBeenCalledTimes(1);
+});
+it('uses an authenticated local pipe, hides the token in public discovery, and invalidates old epochs',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'movieagent-mcp-'));cleanup.push(()=>rm(root,{recursive:true,force:true}));
+ let epoch='epoch1';const handler=vi.fn(async(name:string)=>ok({name}));
+ const bridge=await listenMcpBridge({directory:root,instanceId:'instance1',libraryId:'lib',name:'Project',workspacePath:root,getEpoch:()=>epoch,handle:handler});
+ cleanup.push(()=>bridge.close());
+ const instances=await discoverInstances(root);expect(instances).toHaveLength(1);expect(JSON.stringify(instances)).not.toContain(bridge.descriptor.token);
+ const client=new PipeMcpClient(bridge.descriptor,'fixture');cleanup.push(()=>client.close());
+ expect(await client.call('system_doctor',{})).toMatchObject({ok:true,value:{name:'system_doctor'}});expect(bridge.clients()).toHaveLength(1);
+ const denied=new PipeMcpClient({...bridge.descriptor,token:'0'.repeat(64)},'denied');cleanup.push(()=>denied.close());
+ expect(await denied.call('system_doctor',{})).toMatchObject({ok:false});
+ epoch='epoch2';expect(await client.call('system_doctor',{})).toMatchObject({ok:false,error:{code:'STALE_CONNECTION'}});
+ expect(handler).toHaveBeenCalledTimes(1);
+});
+it('rejects an oversized message before dispatch and stops calls after client revocation',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'movieagent-mcp-'));cleanup.push(()=>rm(root,{recursive:true,force:true}));
+ const handler=vi.fn(async()=>ok({done:true}));
+ const bridge=await listenMcpBridge({directory:root,instanceId:'instance2',libraryId:'lib',name:'Project',workspacePath:root,getEpoch:()=> 'epoch',handle:handler});cleanup.push(()=>bridge.close());
+ const client=new PipeMcpClient(bridge.descriptor,'fixture');cleanup.push(()=>client.close());
+ expect(await client.call('assets_import',{huge:'x'.repeat(12*1024*1024)})).toMatchObject({ok:false,error:{code:'MCP_MESSAGE_TOO_LARGE'}});
+ expect(handler).not.toHaveBeenCalled();
+ expect(await client.call('system_doctor',{})).toMatchObject({ok:true});
+ bridge.revoke(bridge.clients()[0]!.id);expect(await client.call('system_doctor',{})).toMatchObject({ok:false});
+});

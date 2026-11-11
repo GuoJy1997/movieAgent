@@ -1,0 +1,39 @@
+{
+  "verified": true,
+  "directory": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release-p3\\win-unpacked",
+  "executable": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release-p3\\win-unpacked\\MovieAgent.exe",
+  "runtime": {
+    "electron": "45.0.0",
+    "modules": "150",
+    "node": "24.22.0",
+    "arch": "x64",
+    "platform": "win32"
+  },
+  "native": {
+    "sqlite": {
+      "version": "3.53.4",
+      "value": 42
+    },
+    "sharp": {
+      "format": "png",
+      "width": 2,
+      "height": 3,
+      "bytes": 96,
+      "hash": "783cf58b9994058840e4c0ff7200389329302b6694e2392e3287fafa40655c26"
+    }
+  },
+  "entries": [
+    "package.json",
+    "out/main/index.js",
+    "out/main/engine-process.js",
+    "out/preload/index.js",
+    "out/preload/credentials.js",
+    "out/preload/launcher.js",
+    "out/preload/model-config.js",
+    "out/renderer/model-config/index.html",
+    "out/renderer/launcher/index.html",
+    "out/renderer/renderer/index.html",
+    "out/renderer/credentials/index.html"
+  ],
+  "boundaries": "four isolated preloads and CSP HTML entries; runtime IPC covered by test:electron"
+}

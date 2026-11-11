@@ -1,0 +1,48 @@
+### Spec Compliance
+
+- ❌ Issues found: Task 4 is not yet fully compliant. Existing-object proposals show new values and a baseline revision label, but do not show the required content/version differences before adoption (`apps/desktop/src/renderer/features/agent/AgentWorkspace.tsx:21`; design section “Agent 会话、提案与审批”). Cross-script navigation can also retain a bound-shot editor from the previous script (`apps/desktop/src/renderer/features/creation/CreationWorkspace.tsx:10–13`).
+- ✅ Scope: one named `exportCreation` capability, shared typed queries, ordinary manual editors, Agent/production financial approvals, results/history, and isolated release-p3 packaging are present. No new generic filesystem/network capability, engine command, migration, dependency, or live-provider test is introduced in this diff (`packages/contracts/src/creation-export.ts:1–6`; `apps/desktop/src/main/ipc-policy.ts:19–24`; `apps/desktop/src/renderer/features/creation/ShotProductionPanel.tsx:22–23`).
+- ⚠️ Cannot verify from this task diff: earlier-task persistence, scheduler/recovery and schema14 implementation as a whole; this is not a P1/P2/P3 whole-branch audit. Real Kimi structured output, live media billing, signed/clean-machine installation remain explicitly unverified (`docs/verification/p3-creation-agent.md:36–43`).
+- ⚠️ Final GUI evidence uses app.asar 8219ef…; final rebuilt archive uses 98122e…. The later copy/provenance display changes have focused evidence and this distinction is correctly documented (`docs/verification/p3-creation-agent.md:25`, `:49–53`). Controller separately reports final hashes and all 21 compiled files match the archive; no new GUI run was performed by this reviewer.
+
+### Strengths
+
+- Export contents come from canonical engine reads rather than renderer bytes. It checks project/library ownership, exact script revision and historical fixed entity revisions; the selected output references remain fixed (`apps/desktop/src/main/creation-export.ts:12–35`). The unchanged snapshot/history validators also verify nested object ownership and revision identity (`packages/contracts/src/creation.ts:74–82`).
+- Export validates ordinary directory components, rejects existing aliases via lstat/realpath checks, uses an ID/revision/UUID filename with exclusive `wx`, and keeps errors retryable (`apps/desktop/src/main/creation-export.ts:37–46`). Tests cover historical entities, traversal/extra path fields, wrong ownership, legacy state, junctions, existing targets, hardlinks and Markdown (`tests/integration/creation-export.test.ts:12–28`). No arbitrary target path is exposed.
+- Query integration uses the shared per-kind validator instead of the obsolete P2 union (`apps/desktop/src/main/engine-host.ts:144`). Focused transport coverage exercises valid P3 output, wrong-type rejection, foreign-launch messages and invalid queries (`tests/integration/engine-host-query.test.ts:8–35`). Existing LocalConnection library/epoch checks and post-await checks remain in force (`apps/desktop/src/main/local-connection.ts:28–30`, `:49–68`).
+- Agent financial approval calls `agent.approveTurn`; default standalone generation retains its previous command. Media production prepares and attaches the matching workflow before presenting WorkflowApproval (`apps/desktop/src/renderer/features/agent/AgentWorkspace.tsx:17`; `apps/desktop/src/renderer/features/canvas/GenerationApproval.tsx:25–37`; `apps/desktop/src/renderer/features/creation/ShotProductionPanel.tsx:22`). Mount paths only query.
+- Editor drafts are initialized at explicit editor creation and retain expectedRevision through query updates; reload is explicit. Output provenance is resolved from exact media identity rather than the later choice revision (`apps/desktop/src/renderer/features/creation/CreationWorkspace.tsx:16–21`; `apps/desktop/src/renderer/features/entities/EntityWorkspace.tsx:12–13`; `apps/desktop/src/renderer/features/creation/shot-output-presentation.ts:3–10`).
+- Deferred Task 2 malicious-asset assertion now exercises actual harvesting, INVALID state, zero creation writes and one POST (`tests/integration/agent-recovery.test.ts:294–303`). Deferred Task 3 DTO guard now checks captured scene structure/ownership and discriminated operation endpoints, with real prepared-plan positive and malformed-plan negative cases (`packages/contracts/src/shot-production.ts:98–134`; `tests/integration/shot-production.test.ts:385–402`).
+- Packaged fixture scenario uses ordinary UI controls for manual saves, partial adoption, approvals, conflict, stop, output choice, export and reopen; the fixture video staging bypass is explicit and limited to ArtifactSource. Temporary configuration is supplied to launches (`tests/electron/p3-creation.test.ts:19–38`; `tests/electron/ipc-policy.test.ts:65–71`).
+
+### Issues
+
+#### Critical (Must Fix)
+
+- None found in this task scope.
+
+#### Important (Should Fix)
+
+1. **Dismiss the canvas shot focus when changing scripts.** `apps/desktop/src/renderer/features/creation/CreationWorkspace.tsx:10–13`: after Canvas → “编辑绑定镜头” opens a shot from script A, choosing script B calls `setShot(null)` but leaves `focusDismissed=false` and `focusShotId` unchanged. `focused` therefore immediately resolves A’s shot again, while ShotEditor receives B as its `script` prop. The old draft can remain visibly editable beneath B and its scene selector displays B’s scenes; saving unchanged fields edits A, while choosing B’s scene leads to an invalid-scene save. Clear/dismiss the focus on explicit script selection and ensure an editor is rendered only for its owning script. Add a focused regression for jump-to-shot → change script → no old editor; an isolated component/state test is sufficient and no whole suite is needed.
+
+2. **Show actual before/after proposal changes for existing targets.** `apps/desktop/src/renderer/features/agent/AgentWorkspace.tsx:21`: script/entity/shot cards render only proposed content and text such as “更新镜头 v1” or “更新固定目标 v1”. No baseline field values or changed-field comparison is rendered, despite captured originals already existing in `run.prepared.targets`. A user cannot review which existing dialogue, actions, constraints, scenes or references will be replaced before adopting the proposal. Add a readable changed-fields comparison (including removed/changed scenes and fixed references) for existing targets, while leaving new-object cards simple. This is the explicit Task 4 “提案差异” requirement, not a request for redesign or a JSON editor.
+
+#### Minor (Nice to Have)
+
+1. **Format and split the new large render functions.** `apps/desktop/src/renderer/features/agent/AgentWorkspace.tsx:17–21`, `apps/desktop/src/renderer/features/creation/CreationWorkspace.tsx:13–21`, `apps/desktop/src/renderer/features/creation/ShotProductionPanel.tsx:23–27`: complete forms, proposal cards and production history render paths occupy individual multi-thousand-character source lines. This makes state/identity bugs difficult to review and changes unnecessarily conflict-prone. Format into normal JSX blocks and extract a few cohesive cards/forms; no new framework or abstraction is needed.
+
+2. **Known validation output is not pristine.** `.superpowers/sdd/2026-10-26-p3-creation-agent/task-4-core.log:4` and `task-4-electron-final.log:4` contain Node SQLite ExperimentalWarning noise. The report additionally records duplicate-dependency/default-icon/unsigned builder warnings (`docs/verification/p3-creation-agent.md:42`). These are disclosed preexisting/toolchain limitations, not failed checks or a new runtime regression; keep them explicit in delivery and avoid claiming warning-free validation.
+
+### Checks and scope
+
+- Read the supplied 45938b0..52d81dc diff once in manageable sections; one initially truncated tool output was recovered by targeted diff ranges. Did not reread changed source files wholesale or run git commands.
+- Named outside-diff integration check — **nested export ownership**: checked only `packages/contracts/src/creation.ts:69–82`; confirms fixed revision validators and snapshot/history ownership.
+- Named outside-diff integration check — **shared-query identity and epoch regression**: checked only `packages/contracts/src/queries.ts:39–80` and `apps/desktop/src/main/local-connection.ts:28–68`; kind validation, library checks and post-await epoch gating remain.
+- Named outside-diff integration check — **directory registration/serialization boundary**: checked only `apps/desktop/src/main/workspace-bootstrap.ts:12–17` and `apps/desktop/src/main/project-directories.ts:19–32`; export’s caller revalidates directory/registry and helper path comparison is canonicalized. Static checks and existing alias tests support ordinary export boundaries; no concurrent external directory-replacement race was tested.
+- Read existing evidence: `task-4-core.log` confirms 36 files / 493 tests passed; `task-4-electron-final.log` confirms 2 files / 3 tests passed; `task-4-package-final.json` confirms Electron45/ABI150, SQLite, sharp, four preloads and CSP. Did not rerun these suites, the focused eight tests, package verifier, or any Electron session. No live APIs, user configuration, raw keys, libraries, processes, releases or D:/rea were accessed or changed.
+
+### Assessment
+
+**Task quality: Needs fixes.**
+
+**Reasoning:** The desktop/export implementation has good approval, persistence and capability boundaries with substantial existing fixture evidence. Two localized desktop issues remain: a cross-script editor ownership mismatch and missing required reviewable content differences for existing-target proposals. Address those with scoped checks; no repeated full suite or package-wide audit is warranted by this review.

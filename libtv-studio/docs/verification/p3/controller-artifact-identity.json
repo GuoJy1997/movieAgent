@@ -1,0 +1,25 @@
+{
+  "sourceCommit": "25513e9bb8fce30436036c9be82c153bb8f18272",
+  "checkedCompiledFiles": 21,
+  "compiledFileMismatches": [],
+  "artifacts": [
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release-p3\\MovieAgent-0.1.0-local-test-Setup.exe",
+      "bytes": 129628069,
+      "sha256": "82840a8c600fa372f2e0458c6550cf82f6a37907f4a101c115256df15e406bde",
+      "matchesReported": true
+    },
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release-p3\\win-unpacked\\MovieAgent.exe",
+      "bytes": 249798144,
+      "sha256": "b339ea9baedb388c51e6bdef2b43b2b6adec8434b573de150f105ee4bbfe53ea",
+      "matchesReported": true
+    },
+    {
+      "path": "D:\\movieAgent\\libtv-studio\\apps\\desktop\\release-p3\\win-unpacked\\resources\\app.asar",
+      "bytes": 17933813,
+      "sha256": "f9ece7b411147bc9f8f7deceeb690bb7e74c11f350596c701d2ccf3aac311728",
+      "matchesReported": true
+    }
+  ]
+}

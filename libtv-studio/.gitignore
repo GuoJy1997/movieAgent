@@ -1,0 +1,20 @@
+node_modules/
+dist/
+out/
+release/
+coverage/
+.cache/
+.superpowers/
+*.log
+.env
+.env.*
+!.env.example
+test-results/
+playwright-report/
+
+# Local application configuration may contain API credentials.
+/config/
+
+# Provisioned from pinned versioned sources by scripts/prepare-media-runtime.mjs.
+/apps/desktop/resources/media-runtime/win32-x64/*.exe
+/apps/desktop/resources/media-runtime/win32-x64/*.otf

@@ -1,0 +1,42 @@
+import { afterEach,expect,it } from 'vitest';
+import { mkdtemp,rm,writeFile,readFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join,resolve } from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
+import sharp from 'sharp';
+import { DEFAULT_SUBTITLE_STYLE,type TimelineRevision } from '../../packages/contracts/src/timeline.ts';
+import { parsePrepareRender,isRenderPlan } from '../../packages/contracts/src/render.ts';
+import { loadMediaRuntime } from '../../packages/engine/src/media/manifest.ts';
+import { compileRenderPlan,renderDigest } from '../../packages/domain/src/render-plan.ts';
+import { renderMedia } from '../../packages/engine/src/media/compile.ts';
+const roots:string[]=[];
+afterEach(async()=>{for(const r of roots.splice(0))await rm(r,{recursive:true,force:true});});
+const unwrap=<T>(r:import('../../packages/contracts/src/result.ts').Result<T>)=>{if(!r.ok)throw Error(r.error.code);return r.value;};
+it('freezes optional subtitle burning, preserves legacy default hashes, and changes actual cue pixels',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'burn-option-'));roots.push(root);
+ const runtime=unwrap(await loadMediaRuntime(resolve('apps/desktop/resources/media-runtime/win32-x64')));
+ const bytes=await sharp({create:{width:32,height:32,channels:3,background:'red'}}).png().toBuffer(),path=join(root,'image.png');await writeFile(path,bytes);
+ const hash=createHash('sha256').update(bytes).digest('hex'),ref={kind:'assetVersion' as const,libraryId:'library',assetId:'image',version:1};
+ const timeline:TimelineRevision={libraryId:'library',projectId:'project',id:'cut',revision:1,scriptRef:{id:'script',revision:1},title:'Burn',fps:{num:30,den:1},canvas:{width:1080,height:1080},timebase:48000,videoClips:[{id:'clip',kind:'image',media:ref,sourceHash:hash,sourceProbeId:null,sourceInTicks:0,startTicks:0,durationTicks:6400,fit:'contain',gainMilli:1000,mute:true}],audioClips:[],subtitleCues:[{id:'cue',startTicks:1600,endTicks:4800,text:'字幕测试'}],subtitleStyle:{...DEFAULT_SUBTITLE_STYLE,fontSize:80},createdAt:'2026-01-01'};
+ const manifest={runtimeHash:runtime.runtimeHash,fontHash:runtime.fontManifest.sha256,entries:[{ref,hash,mime:'image/png',byteLength:bytes.length,width:32,height:32,probe:null}]};
+ const input={timelineRef:{libraryId:'library',projectId:'project',id:'cut',revision:1},purpose:'mp4' as const,executionOwner:'user',runId:'run'};
+ expect(parsePrepareRender({...input,burnSubtitles:false}).ok).toBe(true);
+ expect(parsePrepareRender({...input,burnSubtitles:'false'}).ok).toBe(false);
+ expect(parsePrepareRender({...input,purpose:'wav',burnSubtitles:false}).ok).toBe(false);
+ const legacy=unwrap(compileRenderPlan(timeline,manifest,input));
+ expect(isRenderPlan(JSON.parse(JSON.stringify(legacy)))).toBe(true);
+ expect(legacy).not.toHaveProperty('burnSubtitles');
+ expect(legacy.planHash).toBe(renderDigest({compositionHash:legacy.compositionHash,purpose:legacy.purpose,maxOutputBytes:legacy.maxOutputBytes,policy:legacy.policy}));
+ const unburned=unwrap(compileRenderPlan(timeline,manifest,{...input,burnSubtitles:false}));
+ expect(unburned.compositionHash).toBe(legacy.compositionHash);expect(unburned.planHash).not.toBe(legacy.planHash);
+ expect(unburned).toHaveProperty('burnSubtitles',false);
+ const maxima:number[][]=[];
+ for(const [i,plan] of [legacy,unburned].entries()){
+  const output=join(root,`movie${i}.mp4`);unwrap(await renderMedia(plan,runtime,root,[path],output,new AbortController().signal));
+  const decoded=spawnSync(runtime.ffmpegPath,['-v','error','-i',output,'-vf','scale=108:108,format=gray','-f','rawvideo','-'],{shell:false,windowsHide:true,maxBuffer:1024**2});expect(decoded.status,String(decoded.stderr)).toBe(0);
+  maxima.push(Array.from({length:4},(_,n)=>Math.max(...decoded.stdout.subarray(n*108*108,(n+1)*108*108))));
+  if(i===1)expect(await readFile(join(root,'filters.txt'),'utf8')).not.toContain('ass=');
+ }
+ expect(maxima[0]![1]).toBeGreaterThan(150);expect(maxima[1]!.every(n=>n<150)).toBe(true);
+});

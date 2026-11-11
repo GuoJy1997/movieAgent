@@ -1,0 +1,17 @@
+  • electron-builder  version=26.18.0 os=10.0.19044
+  • loaded configuration  file=D:\movieAgent\libtv-studio\apps\desktop\electron-builder.yml
+  • packageManager not detected by file, falling back to environment detection  resolvedPackageManager=npm detected=D:\movieAgent\libtv-studio\apps\desktop
+  • detected workspace root for project using packageManager field  pm=npm config=npm@11.6.2 resolved=D:\movieAgent\libtv-studio projectDir=D:\movieAgent\libtv-studio\apps\desktop
+  • skipped dependencies rebuild  reason=npmRebuild is set to false
+  • packaging       platform=win32 arch=x64 electron=45.0.0 appOutDir=release-p3\win-unpacked
+  • using custom unpacked Electron distribution  electronDist=D:/movieAgent/libtv-studio/node_modules/electron/dist
+  • copying unpacked Electron  source=D:\movieAgent\libtv-studio\node_modules\electron\dist destination=D:\movieAgent\libtv-studio\apps\desktop\release-p3\win-unpacked
+  • searching for node modules  pm=npm searchDir=D:\movieAgent\libtv-studio\apps\desktop
+  • duplicate dependency references  dependencies=["@emnapi/runtime@1.11.3","@types/react@19.2.7","@types/react@19.2.7","@types/d3-interpolate@3.0.4","d3-drag@3.0.0","d3-interpolate@3.0.1","d3-interpolate@3.0.1","react-dom@19.3.1","@types/react@19.2.7","@types/react@19.2.7"]
+  • updating asar integrity executable resource  executablePath=release-p3\win-unpacked\MovieAgent.exe
+  • default Electron icon is used  reason=application icon is not set
+  • file signing skipped via signExecutable configuration  file=release-p3\win-unpacked\MovieAgent.exe
+  • building        target=nsis file=release-p3\MovieAgent-0.1.0-local-test-Setup.exe archs=x64 oneClick=false perMachine=false
+  • file signing skipped via signExecutable configuration  file=release-p3\MovieAgent-0.1.0-local-test-Setup.__uninstaller.exe
+  • file signing skipped via signExecutable configuration  file=release-p3\MovieAgent-0.1.0-local-test-Setup.exe
+  • building block map  blockMapFile=release-p3\MovieAgent-0.1.0-local-test-Setup.exe.blockmap

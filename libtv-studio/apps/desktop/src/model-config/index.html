@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'" />
+<meta name="viewport" content="width=device-width, initial-scale=1" /><title>软件模型配置</title><link rel="stylesheet" href="./form.css" /></head>
+<body><main><h1>添加或编辑模型</h1><p>文本模型测试通过后才能保存。Key 仅在此独立窗口输入，不会返回工作台。</p>
+<form autocomplete="off"><fieldset id="entry" disabled>
+<input id="id" type="hidden" />
+<label for="category">模型用途</label><select id="category"><option value="text">文本模型</option><option value="image">图片模型</option><option value="video">视频模型</option><option value="speech">台词配音</option><option value="transcription">音频转写</option></select>
+<label for="adapter">服务接口</label><select id="adapter"><option value="openai-chat-v1">OpenAI 兼容 · Chat Completions</option><option value="anthropic-messages-v1">Anthropic 兼容 · Messages</option><option value="openai-image-v1">OpenAI 兼容 · 文生图</option><option value="openai-image-edit-v1">OpenAI 兼容 · 参考图生成</option><option value="minimax-video-v2">MiniMax 原生 · 视频</option><option value="minimax-h3-v2">MiniMax 原生 · H3 参考声画</option><option value="openai-speech-v1">OpenAI 兼容 · 台词配音</option><option value="minimax-speech-v1">MiniMax 原生 · 台词配音</option><option value="openai-transcription-v1">OpenAI 兼容 · 音频转写</option><option value="minimax-transcription-v1">MiniMax 原生 · 音频转写</option></select>
+<p id="compatibility"></p>
+<label>Base URL<input id="baseURL" required maxlength="2048" placeholder="https://api.example/v1" /></label>
+<label>API Key<input id="key" type="password" autocomplete="off" spellcheck="false" maxlength="8192" placeholder="留空保留现有 Key" /></label>
+<label>模型 ID<input id="modelId" required maxlength="200" placeholder="服务提供的模型 ID" /></label>
+<div id="audio-voice"></div>
+<p id="key-state"></p>
+<section id="text-onboarding"><button id="list-models" type="button">获取模型列表</button><label for="models">选择模型</label><select id="models"><option value="">也可手动填写上方模型 ID</option></select><p id="list-result" role="status">列表不支持时，可直接手动填写模型 ID。</p><p id="test-budget" aria-live="polite">读取所选输出预算后可测试；请求可能产生费用，30 秒超时，不会自动重试。</p><button id="test-model" type="button">测试连接</button><p id="test-result" role="status">保存前请先测试当前配置。</p></section>
+<label id="audio-license" hidden><input id="audio-licensed" type="checkbox" />我拥有测试音频或已获得使用许可（最长5秒）</label>
+<section id="audio-test-approval" hidden>
+  <p id="audio-test-summary"></p>
+  <label>测试币种<input id="audio-currency" value="CNY" maxlength="3" /></label>
+  <label>此次测试风险额度<input id="audio-allowance" type="number" min="0.000001" max="1000000" step="0.000001" /></label>
+  <label><input id="audio-risk" type="checkbox" />确认有限风险额度；实际账单未知</label>
+  <button id="audio-run" type="button">批准并发送一次测试</button>
+</section>
+<details><summary>高级设置</summary>
+<label>名称（可选）<input id="name" maxlength="120" placeholder="留空使用模型 ID" /></label>
+
+<p id="capabilities"></p>
+<label class="check"><input id="private" type="checkbox" />明确授权该私有端点</label>
+<label class="check"><input id="clear" type="checkbox" />清除现有 Key，停止此连接的新任务使用</label>
+<fieldset><legend>全局默认参数</legend><div id="token-choice"><label for="token-parameter">输出长度参数</label><select id="token-parameter"><option value="max_completion_tokens">max_completion_tokens（新版 OpenAI）</option><option value="max_tokens">max_tokens（传统兼容接口）</option></select></div><div id="parameters"></div></fieldset>
+<label id="language-choice" hidden>语言字段（仅选择服务已支持的形式）<select id="language-field"><option value="none">服务默认，不发送</option><option value="language">单语言</option><option value="languages">语言列表</option></select></label>
+<label for="pricing">计价</label><select id="pricing"><option value="unknown">未知</option><option value="configured">已配置</option></select>
+<div id="price-fields" hidden><label>币种<input id="currency" maxlength="3" value="CNY" /></label><label><span id="rate-label">单价</span><input id="rate" type="number" min="0" max="1000000" step="any" value="0" /></label><label>价格版本<input id="price-version" maxlength="100" /></label></div>
+</details>
+<p id="message" role="alert"></p><p id="comparison" role="status"></p>
+<button id="refresh" type="button" hidden>读取最新文件以核对</button><button id="rebase" type="button" hidden>已核对，保留草稿并采用最新版本</button>
+<button id="save" type="submit" disabled>保存配置</button><button id="cancel" type="button">取消</button>
+</fieldset></form></main><script type="module" src="./form.ts"></script></body></html>

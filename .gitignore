@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+out/
+coverage/
+libtv-studio/apps/desktop/release/
+libtv-studio/apps/desktop/release-*/
+
+# Caches, test artifacts and tooling scratch
+.cache/
+.superpowers/
+test-results/
+playwright-report/
+*.log
+
+# Local environment and application configuration (may contain API credentials)
+.env
+.env.*
+!.env.example
+libtv-studio/config/
+
+# Media runtime binaries provisioned by libtv-studio/scripts/prepare-media-runtime.mjs
+libtv-studio/apps/desktop/resources/media-runtime/win32-x64/*.exe
+libtv-studio/apps/desktop/resources/media-runtime/win32-x64/*.otf
+
+# Local backup of the former nested repository history
+.git-backup/

@@ -1,0 +1,36 @@
+vite v7.3.7 building ssr environment for production...
+transforming...
+✓ 103 modules transformed.
+rendering chunks...
+out/main/chunks/shutdown-DkSSpf2p.js  129.03 kB
+out/main/index.js                     154.46 kB
+out/main/engine-process.js            290.59 kB
+✓ built in 891ms
+vite v7.3.7 building ssr environment for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+out/preload/credentials.js   0.36 kB
+out/preload/model-config.js  0.44 kB
+out/preload/launcher.js      0.76 kB
+out/preload/index.js         1.58 kB
+✓ built in 20ms
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 300 modules transformed.
+rendering chunks...
+../out/renderer/launcher/index.html                 0.69 kB
+../out/renderer/renderer/index.html                 0.96 kB
+../out/renderer/credentials/index.html              1.23 kB
+../out/renderer/model-config/index.html             4.21 kB
+../out/renderer/assets/credentials-i1XZGmup.css     0.58 kB
+../out/renderer/assets/model-config-BPs9NEDP.css    1.27 kB
+../out/renderer/assets/index-SxuD-EZ_.css          18.60 kB
+../out/renderer/assets/style-DUIsF93s.css          31.45 kB
+../out/renderer/assets/credentials-CMI9Z90l.js      1.72 kB
+../out/renderer/assets/model-config-OGXp2nPP.js     1.73 kB
+../out/renderer/assets/launcher-BQHnlMoa.js         6.59 kB
+../out/renderer/assets/model-config-CZrB1Qo7.js    12.50 kB
+../out/renderer/assets/style-CUOpUA5h.js          643.25 kB
+../out/renderer/assets/index-BXxh5uX3.js          802.26 kB
+✓ built in 2.10s

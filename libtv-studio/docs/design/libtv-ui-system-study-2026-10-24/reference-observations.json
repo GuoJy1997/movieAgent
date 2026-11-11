@@ -1,0 +1,110 @@
+[
+  {
+    "id": "R01",
+    "site": "ObsidianUI",
+    "file": "r01-obsidian-shell.jpg",
+    "url": "https://www.obsidianui.dev/docs/dashboard-shell",
+    "component": "Dashboard Shell",
+    "kind": "browser-observed",
+    "note": "实际全屏演示：侧栏、标题、tab、筛选栏、表格各自一层；未借助媒体图片。"
+  },
+  {
+    "id": "R02",
+    "site": "ObsidianUI",
+    "file": "r02-obsidian-filter.jpg",
+    "url": "https://www.obsidianui.dev/docs/dashboard-shell",
+    "component": "Category menu",
+    "kind": "browser-observed",
+    "note": "字段名/当前值分离的触发器，窄菜单、右侧勾与细边缘阴影；此菜单没有搜索输入。"
+  },
+  {
+    "id": "R03",
+    "site": "Space UI",
+    "file": "r03-space-number.jpg",
+    "url": "https://www.spaceui.one/primitives/number-field",
+    "component": "Number Field",
+    "kind": "browser-observed",
+    "note": "轻边界数值输入；减号、居中数值、加号同一高度；实际点击加号从0变1。"
+  },
+  {
+    "id": "R04",
+    "site": "Space UI",
+    "file": "r04-space-resizable.jpg",
+    "url": "https://www.spaceui.one/components/resizable",
+    "component": "Resizable",
+    "kind": "browser-observed",
+    "note": "纵向分隔的基础容器，边界极轻，内容面保持连续；三栏变体来自文档，未实测拖动。"
+  },
+  {
+    "id": "R05",
+    "site": "PaceUI",
+    "file": "r05-pace-model-selector.jpg",
+    "url": "https://paceui.com/components/motion/ai-model-selector",
+    "component": "Model Selector / composer",
+    "kind": "browser-observed",
+    "note": "模型和能力入口紧靠输入器底部，外层留白，边界很轻；不需要大面积品牌装饰。"
+  },
+  {
+    "id": "R06",
+    "site": "PaceUI",
+    "file": "r06-pace-model-open.jpg",
+    "url": "https://paceui.com/components/motion/ai-model-selector",
+    "component": "Model Selector / open",
+    "kind": "browser-observed",
+    "note": "实际展开模型菜单，图标/名称、短说明、能力区分层；只查看未发送。"
+  },
+  {
+    "id": "R07",
+    "site": "VantaUI",
+    "file": "r07-vanta-integrations.jpg",
+    "url": "https://www.vantaui.com/explore/components/integrations-dialog",
+    "component": "Integrations Dialog / detail",
+    "kind": "browser-observed",
+    "note": "公开页明确标 Plus/Pro；本轮只查看公开预览。"
+  },
+  {
+    "id": "R08",
+    "site": "VantaUI",
+    "file": "r08-vanta-dialog-open.jpg",
+    "url": "https://www.vantaui.com/explore/components/integrations-dialog",
+    "component": "Integrations Dialog / open",
+    "kind": "browser-observed",
+    "note": "实际打开弹层：配对图标、标题、用途、权限列表、地址和独立底部操作区；未点击最终 Connect。"
+  },
+  {
+    "id": "R09",
+    "site": "VantaUI",
+    "file": "r09-vanta-tabs.jpg",
+    "url": "https://vantaui-registry.vercel.app/components/dynamic-tabs",
+    "component": "Dynamic Tabs",
+    "kind": "browser-observed",
+    "note": "观察到 Free 主选项与 Premium 成组入口；点选 Premium Solo 后选中状态未改变，未据此确认切换动效。仅为默认态外观证据。"
+  },
+  {
+    "id": "R10",
+    "site": "Planes（.com 候选）",
+    "file": "r10-planes-knob.jpg",
+    "url": "https://useplanes.com/components/physical-knob",
+    "component": "Physical Knob",
+    "kind": "browser-observed",
+    "note": "公开预览是金属同心纹旋钮、刻度与橙色指示；可作为局部参数的材质参考，不建议套用整个工作台。尚未确认 .co 与 .com 的关系，未取 Pro 源码。"
+  },
+  {
+    "id": "R11",
+    "site": "Libraries.dev",
+    "file": "r11-libraries-voice.jpg",
+    "url": "https://libraries.dev/voice",
+    "component": "Voice",
+    "kind": "browser-observed",
+    "note": "实际页面展示底部局部彩色光带与输入器示例；Source 为 Demo voice，未选择 Microphone。播放按钮操作超时，未取得可靠的运行态对比。"
+  },
+  {
+    "id": "R12",
+    "site": "Libraries.dev",
+    "file": null,
+    "url": "https://libraries.dev/image",
+    "component": "Image FX / capture limitation",
+    "kind": "inconclusive",
+    "note": "Image FX 标签的浏览器操作与截图持续超时；文档可读，但不据此声称已实看其运行效果或已测性能。"
+  }
+]

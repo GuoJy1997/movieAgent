@@ -1,0 +1,22 @@
+import {expect,it} from 'vitest';
+import {nativeFixture,value,execute} from '../fixtures/native-generation.ts';
+import {fixtureWav} from '../fixtures/audio-generation.ts';
+it('compiles an explicit canvas voice reference through the shared native resolver and guards wrong identity',async()=>{
+ const s=await nativeFixture('minimax-h3-v2'),projectId=s.prepareInput().projectId,canvasId=projectId;
+ const profileRef=value(await execute(s.engine,'profile.save',{id:'native',expectedRevision:1,name:'H3',modelRef:s.prepareInput().profileRef,parameters:{ratio:'16:9'}}));
+ const media=await s.importFile(fixtureWav(2),'voice.wav'),probe=value(await s.engine.mediaInfo.ensure(media));
+ value(await execute(s.engine,'creation.saveEntity',{projectId,id:'role',expectedRevision:0,kind:'character',name:'A',description:'',constraints:'',references:[]}));
+ const draft={entityRef:{id:'role',revision:1},name:'Voice',dialect:'山东话',performanceNotes:'克制',reference:{ref:media,hash:probe.objectHash,probeId:probe.probeId,sourceInTicks:0,durationTicks:96000}};
+ value(await execute(s.engine,'voice.save',{projectId,id:'voice',expectedRevision:0,draft}));
+ const voiceBinding={characterRef:{id:'role',revision:1},voiceRef:{id:'voice',revision:1}};
+ const apply=(operations:any[])=>execute(s.engine,'canvas.applyCommand',{canvasId,baseRevision:value(s.engine.canvas.read(canvasId)).revision,operations});
+ value(await apply([{kind:'create',nodeId:'sample',layout:{x:0,y:0},content:{type:'media',media,voiceBinding}},{kind:'create',nodeId:'video',layout:{x:400,y:0},content:{type:'generation',prompt:'人物说话',profileRef,inputs:[]}}]));
+ const nodes=value(s.engine.canvas.read(canvasId)).nodes;const edge={id:'voice-edge',sourceNodeId:'sample',sourceIncarnation:nodes.find((n:any)=>n.nodeId==='sample').incarnation,targetNodeId:'video',targetIncarnation:nodes.find((n:any)=>n.nodeId==='video').incarnation,sourcePort:'output',targetPort:'voice_reference'};
+ value(await apply([{kind:'addEdge',edge}]));
+ const result=await execute(s.engine,'workflow.prepare',{canvasId,mode:'current',nodeIds:['video'],executionOwner:'human',runId:'voice'});if(!result.ok)throw Error(JSON.stringify(result.error));const plan=value(result);
+ expect(plan.steps[0].template.referenceAudio).toMatchObject([{...voiceBinding,ref:media}]);expect(plan.steps[0].template.prompt).toContain('山东话');expect(plan.steps[0].template.voiceBindings).toEqual([voiceBinding]);
+ const direct=value(await execute(s.engine,'generation.prepare',{projectId,canvasNode:{canvasId,nodeId:'video'},executionOwner:'human',runId:'direct'}));expect(direct.referenceAudio[0].voiceRef).toEqual(voiceBinding.voiceRef);
+ expect(await apply([{kind:'create',nodeId:'forged',layout:{x:0,y:400},content:{type:'media',media,voiceBinding:{...voiceBinding,voiceRef:{id:'missing',revision:1}}}}])).toMatchObject({ok:false});
+ expect(await apply([{kind:'setContent',nodeId:'sample',incarnation:edge.sourceIncarnation,expectedRevision:1,content:{type:'media',media}}])).toMatchObject({ok:false,error:{code:'VOICE_BINDING_REQUIRED'}});
+ expect(s.requests).toHaveLength(0);
+},30000);

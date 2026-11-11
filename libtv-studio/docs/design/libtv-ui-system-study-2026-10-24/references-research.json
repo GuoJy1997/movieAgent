@@ -1,0 +1,558 @@
+{
+  "title": "LibTV Studio：六站组件参考资料核实",
+  "researched_at": "2026-10-24",
+  "owner": "component_reference_research",
+  "scope": "公开官方页面的定位、组件目录、交互文档和许可/收费边界。没有购买、注册、安装依赖或修改原型。",
+  "evidence_policy": {
+    "acquisition": "agent-reach 通用网页/Jina Reader；curl 读取官方公开文档；一次 web 检索用于定位不可达域名的候选。",
+    "visual_observations": [],
+    "runtime_interactions_tested": false,
+    "interpretation": "组件行为来自官方文档或公开示例源码，不等于本次运行验证。适用点和不适用点是针对个人 Electron 影视工作台的设计判断。",
+    "domain_caveat": "用户指定 useplanes.co 未能访问；useplanes.com 是已读到的 Planes 官方候选来源，二者关系未验证，待用户确认。",
+    "raw_source_retention": "本文件保留出处与概括，不镜像整站或收费源码。"
+  },
+  "sites": [
+    {
+      "id": "libraries",
+      "name": "Libraries.dev",
+      "requested_url": "https://libraries.dev",
+      "inspected_url": "https://libraries.dev",
+      "status": "official_text_verified",
+      "positioning": "面向 AI 界面的独立交互动效库；提供 React 包、可调 playground 和可复制的代理提示词，付费 Studio 提供更深的配置。不是完整的编辑器组件体系。",
+      "stack": [
+        "React 18+",
+        "独立 npm 包",
+        "部分组件另有 SwiftUI / React Native 实现"
+      ],
+      "components": [
+        {
+          "name": "Image FX",
+          "url": "https://libraries.dev/image.html",
+          "behavior": "WebGL 像素马赛克加载器溶解为真实图片；公开参数含 images、autoReveal 和三种 preset；three 是 peer dependency。",
+          "application": "生成队列卡片由等待状态过渡到结果缩略图。",
+          "caution": "它只负责揭示动画；真实进度、失败、取消和图像解码完成需要业务状态控制，不能让自动播放伪造进度。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Voice",
+          "url": "https://libraries.dev/voice.html",
+          "behavior": "沿输入框底部显示随音频电平变化的光带；可以输入 MediaStream 或 0–1 电平，processing 切换为等待动画。",
+          "application": "语音输入和录音状态反馈，可借鉴输入与处理两种状态区分。",
+          "caution": "页面大量光效不是编辑区默认底纹；麦克风必须由明确的用户动作开启。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Bot avatars",
+          "url": "https://libraries.dev/bots.html",
+          "behavior": "Canvas 绘制代理头像；default / working / sleeping 状态，支持暂停、降低动态和离屏暂停；文档列出多种形状及材质。",
+          "application": "代理身份与忙闲状态可用一个小图形承载，保留可读文字。",
+          "caution": "玩具角色不等于专业工具质感；不需要把所有 Agent 都变成跳动角色。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Thinking orbs",
+          "url": "https://libraries.dev/orbs.html",
+          "behavior": "九种状态的加载指示器，包括 searching、listening、connecting、composing；不同尺寸单独调校，可暂停。",
+          "application": "借鉴状态的语义划分和 20px 行内版本。",
+          "caution": "不把持续旋转当作真实进度，也不在多个面板同时运行大动画。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Border beam",
+          "url": "https://libraries.dev/beam.html",
+          "behavior": "包裹卡片、按钮或输入框的边缘动效；active 可关闭动画，strength 调节强度，提供明暗主题。",
+          "application": "只在当前生成目标或一次短暂反馈中使用弱化的边界提示。",
+          "caution": "用户已经否定 dark neon；彩虹描边不应成为组件库的通用装饰。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        }
+      ],
+      "applicable": [
+        "把动效绑定到真实的录音、连接、处理、完成状态。",
+        "同一组件提供小尺寸、暂停和降低动态版本。"
+      ],
+      "avoid": [
+        "直接铺满彩虹描边、粒子和金属效果。",
+        "Magnetic UI 实际是手机磁力计及实体磁铁追踪模型，不是鼠标磁吸；不适用于当前 Electron 工作台。"
+      ],
+      "licensing": {
+        "summary": "官方 Terms 明确：七个公开 npm 效果库采用 MIT，可用于个人和商业项目；Studio、Pro skill、付费预设与配方另有许可，不能作为竞争组件库重新分发。",
+        "price_snapshot": "Pro 页面显示 $9/月、个人 Lifetime $149 一次；Business $29/月。这里只核实边界，不建议购买。",
+        "caveat": "首页 FAQ 仍写 five libraries，Terms 已写 seven；数量以当时页面为准，不能把首页摘要视为全部许可范围。Magnetic 模型未单独核实其许可证。",
+        "sources": [
+          "https://libraries.dev/terms.html",
+          "https://libraries.dev/pro.html"
+        ]
+      },
+      "sources": [
+        "https://libraries.dev/",
+        "https://libraries.dev/magnetic.html"
+      ],
+      "visual_notes": "未看截图；所有视觉形容词来自官方文字，不构成本次视觉观察。"
+    },
+    {
+      "id": "planes",
+      "name": "Planes（.com 候选；.co 未验证）",
+      "requested_url": "https://useplanes.co",
+      "inspected_url": "https://useplanes.com",
+      "status": "requested_domain_unreachable_candidate_pending_confirmation",
+      "positioning": "候选 .com 官方站自称 React 的交互层，提供 React / Tailwind / Motion 源码、shadcn registry、MCP 与 llms.txt；包含 UI 控件、AI、媒体和营销组件。",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Motion",
+        "shadcn registry"
+      ],
+      "components": [
+        {
+          "name": "Physical Knob",
+          "url": "https://useplanes.com/components/physical-knob",
+          "behavior": "受控数值旋钮，示例用 value / onChange；官方列出音量、gain、滤波器和亮度等用途。",
+          "application": "可作为音频或特效参数控件的触感参考。",
+          "caution": "仍需直接数值输入和键盘替代操作；公开文档未充分展示所有键盘行为。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Command Palette",
+          "url": "https://useplanes.com/components/command-palette",
+          "behavior": "Ctrl/Cmd+K 打开；命令可分组并链接或执行操作；无结果时可显示 Ask AI，把查询交给助手。",
+          "application": "项目、镜头、资产、命令和 Agent 的统一入口。",
+          "caution": "只有无匹配时才显示 AI 后备入口，不能把每次命令执行都变为推理请求。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Image Generation",
+          "url": "https://useplanes.com/components/image-generation",
+          "behavior": "生成图抵达时的揭示动画；公开文档明确提到可由真实 job progress 驱动多张卡片，并可用于 inpaint/upscale 后结果。",
+          "application": "图像生成队列与版本更新。",
+          "caution": "展示动效不能代替真实任务、取消与失败状态。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Photo Stack",
+          "url": "https://useplanes.com/components/photo-stack",
+          "behavior": "图片堆叠在悬停时展开；可配置图像和尺寸。",
+          "application": "一个镜头有多个候选 take 时，可参考覆盖图与数量提示。",
+          "caution": "大量资产管理仍需要可比较的平面网格或列表，不能仅靠悬停展开访问。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "AI Chat",
+          "url": "https://useplanes.com/components/ai-chat",
+          "behavior": "组合 prompt、推理与回复的聊天表面；官方也把无后端原型列为用途。",
+          "application": "画布右侧 Agent 面板的局部组成参考。",
+          "caution": "演示里的模型名称和消息不代表真实模型/后端已接入；避免让聊天占据整个影视工作台。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        }
+      ],
+      "applicable": [
+        "适合研究具体动作与响应的衔接，尤其命令入口、参数控件与生成结果。",
+        "组件源文件交付的结构比整体模板更符合自行维护组件库的目标。"
+      ],
+      "avoid": [
+        "用户尚未确认 .com 是否所指来源，不把 .com 作为 .co 的已验证重定向。",
+        "本次列出的五个组件均标 Pro；仅学习公开交互说明，不复制受限实现。"
+      ],
+      "licensing": {
+        "summary": "候选 .com 的 Terms：Pro 有效许可可修改并用于无限个自身/客户项目；不得原样发布、转售或作为竞争组件库/公共源码仓库分发 Pro 源码。免费组件公开，但本次未确认统一的免费源码许可证。",
+        "price_snapshot": ".com 首页显示 $99 一次、单开发者、长期更新；条款另有 seat/activation limit。",
+        "sources": [
+          "https://useplanes.com/terms",
+          "https://useplanes.com/#pricing"
+        ]
+      },
+      "access_evidence": [
+        "Jina Reader 对 useplanes.co 和 www.useplanes.co 均报域名无法解析。",
+        "直接 curl 请求 useplanes.co 返回 TLS 握手失败。",
+        "web open 对 useplanes.co 返回不可访问。",
+        ".com 官方首页及五个组件文档、Terms 可读；没有观察到 .co 到 .com 的官方跳转或声明。"
+      ],
+      "sources": [
+        "https://useplanes.com/"
+      ],
+      "visual_notes": "未看截图；.com 候选与请求域名的关系待确认。"
+    },
+    {
+      "id": "obsidian",
+      "name": "ObsidianUI",
+      "requested_url": "https://obsidianui.dev",
+      "inspected_url": "https://obsidianui.dev",
+      "status": "official_text_verified",
+      "positioning": "React / Tailwind / Motion 交互组件库，现有目录同时包括工作区外壳、设置列表、状态条和媒体动效；可查看与复制公开组件代码。",
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Motion",
+        "部分组件 GSAP / Three.js",
+        "Dashboard menu/popover 基于 Radix"
+      ],
+      "components": [
+        {
+          "name": "Dashboard Shell",
+          "url": "https://obsidianui.dev/docs/dashboard-shell",
+          "behavior": "分组侧栏可拖动调整，默认 200px、范围 180–400px，双击复位；内容独立滚动，标题/标签/工具栏固定；有筛选、行选择、撤销及键盘菜单。",
+          "application": "作为资产库、任务列表、设置页面的结构参考，面板尺寸变化也有真实行为。",
+          "caution": "照搬后台安装量、团队和邀请文案不适合个人影视工具；应换成项目/资产/执行状态。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Active Sessions",
+          "url": "https://obsidianui.dev/docs/active-sessions",
+          "behavior": "异步操作期间保留行；成功才折叠移除，失败原地显示错误；部分成功时失败项留下；完成后谨慎恢复焦点，慢于 150ms 才显示 spinner。",
+          "application": "可迁移到本机/远程引擎连接、任务取消和批量资产操作。",
+          "caution": "它原本是登录设备列表，不应把远程引擎语义伪装为登录会话。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Status Bars",
+          "url": "https://obsidianui.dev/docs/status-bars",
+          "behavior": "按日显示运行、降级、停机状态；鼠标、点击或方向键可看事件；窄容器自动缩小展示天数。",
+          "application": "远程服务历史或生成任务完成历史的紧凑概览。",
+          "caution": "官方 helper 会把缺失日期补成 operational；我们的未知状态必须保留未知，不可沿用这个默认语义。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Art Gallery",
+          "url": "https://obsidianui.dev/docs/art-gallery",
+          "behavior": "页面标题为可拖动照片网格；公开源码使用 Three.js、图像图集和 shader，含惯性式插值与降低动态 hook。",
+          "application": "参考以图像和简短元数据为主的资产墙。",
+          "caution": "这不是现成资产管理器；不能用 WebGL 展示替代可选中、可检索、键盘可达的文件集合。",
+          "evidence_kind": "official_example_source",
+          "visually_verified": false
+        },
+        {
+          "name": "Hover Image",
+          "url": "https://obsidianui.dev/docs/hover-img",
+          "behavior": "公开代码用 GSAP 让图片预览跟随鼠标，切换行时平移缩略图；contained 模式把预览限制在容器内。",
+          "application": "资产列表的可选快速预览。",
+          "caution": "公开代码以鼠标事件为主；我们仍需点击/键盘预览，不能让重要信息只在 hover 出现。",
+          "evidence_kind": "official_example_source",
+          "visually_verified": false
+        }
+      ],
+      "applicable": [
+        "最值得迁移的是异步状态、滚动归属、调整面板及焦点处理。",
+        "从一个真实外壳中统一按钮、菜单、筛选器与确认弹窗，比逐个添加特效更有价值。"
+      ],
+      "avoid": [
+        "将美术展示网格当成完整编辑器画布。",
+        "把演示数据或缺失状态默认值直接带入实际引擎管理。"
+      ],
+      "licensing": {
+        "summary": "官网链接的官方仓库 LICENSE 已读取，确认为 MIT；保留版权和许可声明。没有从免费开源组件推导示例图片、品牌或其他数字商品都可无限使用。",
+        "price_snapshot": "本次组件研究不需要购买；未核实其他商品的价格。",
+        "sources": [
+          "https://github.com/Atharvsinh-codez/ObsidianUI/blob/main/LICENSE",
+          "https://obsidianui.dev/components"
+        ]
+      },
+      "sources": [
+        "https://obsidianui.dev/",
+        "https://obsidianui.dev/components"
+      ],
+      "visual_notes": "未看截图；关于布局和外观的描述来自文档，媒体组件细节来自公开示例源码。"
+    },
+    {
+      "id": "pace",
+      "name": "PaceUI",
+      "requested_url": "https://paceui.com",
+      "inspected_url": "https://paceui.com",
+      "status": "official_text_verified",
+      "positioning": "基于 Motion / shadcn 的 React 组件、区块、模板和 starter，主要面向 Next.js 与 TanStack Start；公开目录把 Native AI / GSAP 系列标为 Legacy。",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Motion",
+        "shadcn",
+        "Next.js / TanStack Start"
+      ],
+      "components": [
+        {
+          "name": "Model Selector",
+          "url": "https://paceui.com/components/motion/ai-model-selector",
+          "behavior": "模型选择器带工具提示和能力提示；可控制 showCapabilities / showDescription；该页标 Free。",
+          "application": "自配模型选择时显示文字能力、供应方和局限。",
+          "caution": "能力必须来自已验证配置/元数据，不能仅凭模型名猜测支持项。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Model Ability Selector",
+          "url": "https://paceui.com/components/motion/ai-model-ability-selector",
+          "behavior": "紧凑能力开关；图标用 spring；maxVisible 默认 3，buttonVariant 可选；该页标 Free。",
+          "application": "把常用生成/理解能力收在输入器附近，避免完整参数表常驻。",
+          "caution": "模型选择与功能开关应区分，不要让用户以为点开图标就能赋予模型新能力。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Voice Record",
+          "url": "https://paceui.com/crafts/voice-record",
+          "behavior": "录音 pill 带频率条，停止操作与 loader 形态转换；标 Pro。",
+          "application": "录音、停止、等待识别三个阶段的局部连续反馈。",
+          "caution": "不复制收费实现；与 Libraries Voice 二选一形成一致的录音语言即可。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Chat App",
+          "url": "https://paceui.com/blocks/app/chats",
+          "behavior": "提供控制台/助手工作区；预览包括建议操作、输入字数和对话入口；当前 Chat 1 标 Pro。",
+          "application": "Agent 面板空状态和快捷任务的组织方式。",
+          "caution": "默认代码审查、数据库健康等任务不适合影视创作，应替换为分镜、资产、镜头操作。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Agent Dashboard",
+          "url": "https://paceui.com/templates/agent-console-template",
+          "behavior": "模板说明含流程构建、实时执行轨迹、supervisor、资源/token 分析和控制台日志；有官方 Live Preview。",
+          "application": "研究任务进度如何和日志、资源消耗关联；预览 https://paceui.com/preview/templates/agent-console 。",
+          "caution": "这是付费完整模板与编排仪表盘，不能当作个人影视主工作区，也不代表我们的引擎已有多代理编排。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        }
+      ],
+      "applicable": [
+        "模型能力的渐进披露，以及 Agent 执行状态和细节的层级。",
+        "优先看局部控件，减少把整套 SaaS 后台搬入桌面工具。"
+      ],
+      "avoid": [
+        "Native AI / GSAP 被目录标为 Legacy，不宜未经核实就当成当前推荐架构。",
+        "不要因为首页写 clean code you own 就认为全部代码是 MIT 或可自由再分发。"
+      ],
+      "licensing": {
+        "summary": "Free 与 Pro 混合。通用 Terms 明确各产品有各自许可证，单项条款优先；官网视觉/营销资料另受限制。没有核实 Model Selector 的单项再分发条款，不能因 Free 标签宣称 MIT。",
+        "price_snapshot": "首页显示 Free $0；Pro $179 一次，单开发者、无限商业项目。Voice Record / Chat 1 / Agent Dashboard 为 Pro。",
+        "sources": [
+          "https://paceui.com/terms-of-service",
+          "https://paceui.com/pricing",
+          "https://paceui.com/components"
+        ]
+      },
+      "sources": [
+        "https://paceui.com/"
+      ],
+      "visual_notes": "未看截图；行为文档比 DOM 演示文本更可靠，未测试交互。"
+    },
+    {
+      "id": "vanta",
+      "name": "VantaUI",
+      "requested_url": "https://vantaui.com",
+      "inspected_url": "https://vantaui.com",
+      "status": "official_text_verified",
+      "positioning": "以实际产品界面为参照的 React / Next.js 组件、区块、模板与 Figma 资源库，提供公开预览和分级付费获取。",
+      "stack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "components": [
+        {
+          "name": "Frequencii Sidebar",
+          "url": "https://vantaui.com/explore/components/frequencii-sidebar",
+          "behavior": "支持展开/折叠，默认宽度 256/48px，可持久化；主导航、连接分区、用户底部；条目含 badge 与明确 active 状态。",
+          "application": "研究紧凑导航、服务连接分区和展开/折叠信息层级。",
+          "caution": "原始社交渠道、用户套餐语义与个人影视工具不同；不要照搬。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Focal Select",
+          "url": "https://vantaui.com/explore/components/focal-select",
+          "behavior": "行内选择器展开为竖向文字 reel，中心选项清晰；可受控、禁用和表单提交。",
+          "application": "可用于短且有限的非关键选择，研究触发器和选中态。",
+          "caution": "周围文字模糊会妨碍快速比较，不适合有多个长名称与能力差异的模型列表。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Dynamic Tabs",
+          "url": "https://vantaui.com/explore/components/dynamic-tabs",
+          "behavior": "一个主选项加一个可展开的成组选项；选中 indicator 滑动，提供受控值和禁用态。",
+          "application": "少量模式之间的切换与分组关系。",
+          "caution": "不要把会持续工作的画布/时间线/资产区域藏成难以发现的嵌套标签。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Integrations Dialog",
+          "url": "https://vantaui.com/explore/components/integrations-dialog",
+          "behavior": "组合源/目标服务图标、说明、权限列表、可复制链接、文档及连接操作；支持 open 状态与可关闭结构。",
+          "application": "为自部署远程服务配置提供清楚的连接对象与操作反馈。",
+          "caution": "装饰性的翻转与 dither 可舍弃；本产品本地/远程服务的权限与认证需要自己的真实契约。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Hold Button",
+          "url": "https://vantaui.com/explore/components/hold-button",
+          "behavior": "持续按住后完成删除，默认 1200ms；支持按键长按、完成标签与撤销回调。",
+          "application": "高成本破坏性动作的确认和撤回反馈参考。",
+          "caution": "不能让所有删除都强制长按；编辑器快捷键冲突和可访问替代操作要单独设计。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        }
+      ],
+      "applicable": [
+        "具体操作控件的完整状态，以及连接对话框的信息结构。",
+        "侧栏保持主要导航和服务连接的可区分性。"
+      ],
+      "avoid": [
+        "五个已读组件均显示 Pro/Plus 门槛；公开预览不等于获得源码许可。",
+        "Focal Select 的模糊 reel、Dynamic Tabs 的形变只是局部手法，不能替代信息架构。"
+      ],
+      "licensing": {
+        "summary": "价格页：免费层有限组件，标 Personal use only；Plus/Pro 是一次性付费，商业使用属于付费层。Terms 限制转载/再分发、竞争资源库和未经许可的自动化获取及 AI 派生用途；本次不复制收费代码。",
+        "price_snapshot": "Jina 价格文本把三个层级都抽取成 $0，疑似动态价格未加载。实际 Plus/Pro 金额未核实，不能报告免费。",
+        "sources": [
+          "https://vantaui.com/pricing",
+          "https://vantaui.com/terms"
+        ]
+      },
+      "preview_links": [
+        "https://vantaui-registry.vercel.app/components/focal-select",
+        "https://vantaui-registry.vercel.app/components/dynamic-tabs",
+        "https://vantaui-registry.vercel.app/components/hold-button"
+      ],
+      "sources": [
+        "https://vantaui.com/",
+        "https://vantaui.com/explore"
+      ],
+      "visual_notes": "未看截图；仅描述官方文档中的结构和动作。"
+    },
+    {
+      "id": "space",
+      "name": "Space UI",
+      "requested_url": "https://spaceui.one",
+      "inspected_url": "https://spaceui.one",
+      "status": "official_text_verified",
+      "positioning": "Base UI + Tailwind 的基础控件与交互组件体系，另有区块、模板、hooks、创意工具与付费访问；既有工作台基础控件，也有大量 shader/装饰组件。",
+      "stack": [
+        "React",
+        "Base UI",
+        "Tailwind CSS",
+        "Motion",
+        "部分组件 WebGL / WebGPU"
+      ],
+      "components": [
+        {
+          "name": "Resizable",
+          "url": "https://spaceui.one/components/resizable",
+          "behavior": "拖拽分隔线调整面板；有横向、纵向、嵌套、三栏 Files/Editor/Preview 示例，以及拖动时的 handle 反馈。",
+          "application": "资产/画布/检查器与底部时间线的空间分配。",
+          "caution": "展示组件不负责我们的尺寸持久化、最小可用区和编辑器焦点规则。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Number Field",
+          "url": "https://spaceui.one/primitives/number-field",
+          "behavior": "直接输入、增减按钮、方向键和可拖动 scrub 区；有范围、步长、格式化值和尺寸变体。",
+          "application": "镜头时长、音量、缩放、强度等精确参数。",
+          "caution": "范围与单位要由业务定义，拖动不能替代精确输入。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Command",
+          "url": "https://spaceui.one/primitives/command",
+          "behavior": "基于 Base UI Autocomplete 和 Dialog 的搜索命令菜单；支持分组、空结果、快捷键说明和上下键/Enter/Escape。",
+          "application": "全局命令、资产定位和面板切换。",
+          "caution": "需要结合 Electron 系统快捷键，避免抢占文本输入或原生菜单。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Toolbar",
+          "url": "https://spaceui.one/primitives/toolbar",
+          "behavior": "Base UI toolbar 包装：组、分隔线、按钮、toggle、链接、输入可在同一紧凑工具条组合。",
+          "application": "画布工具、选中对象的上下文操作和时间线工具。",
+          "caution": "不把所有参数常驻在工具条；保持核心高频操作的空间稳定。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        },
+        {
+          "name": "Loading Orb / BuildingLoader",
+          "url": "https://spaceui.one/components/loading",
+          "behavior": "4×4 像素矩阵状态图形；可调 pattern、速度和 motion preset；BuildingLoader 把状态主标签、详情文字和 shimmer 放在一张卡片。",
+          "application": "Agent 执行摘要，文字承担状态，图形辅助识别。",
+          "caution": "矩阵与 shimmer 不能暗示数值进度；本地和远程连接失败应有明确文字。",
+          "evidence_kind": "official_documentation",
+          "visually_verified": false
+        }
+      ],
+      "applicable": [
+        "基础控件的可访问行为、尺寸和受控状态，比装饰层更适合作为组件系统底座。",
+        "精确参数输入和可调整面板直接对应影视工作台。"
+      ],
+      "avoid": [
+        "Timeline 是活动记录/里程碑，不是音视频剪辑时间线；只能参考生成任务历史。",
+        "Handle Reel 是带动量的名字滚轮，不是时间线拖拽把手。",
+        "不要把 shader、plush、sound 等工具默认铺进工作区。"
+      ],
+      "licensing": {
+        "summary": "Terms 明确组件、primitives、blocks、hooks 和 utilities 源码为 MIT，可个人/商业使用；同时存在 Pro registry、模板与数字资产的付费访问。MIT 不等于无需获得访问权限；品牌和原始插画另受保护。",
+        "price_snapshot": "价格页显示 Community 免费、Pro $99/年（页面促销划线 $169）、Lifetime $129 一次；价格会变，未购入。",
+        "sources": [
+          "https://spaceui.one/terms",
+          "https://spaceui.one/pricing"
+        ]
+      },
+      "additional_verified_links": [
+        {
+          "url": "https://spaceui.one/components/timeline",
+          "meaning": "纵向或横向事件/里程碑展示，可显示运行与待执行步骤。"
+        },
+        {
+          "url": "https://spaceui.one/components/handle-reel",
+          "meaning": "名字槽轮，围绕 prefix 滚动候选 name 并减速到 finalName。"
+        }
+      ],
+      "sources": [
+        "https://spaceui.one/",
+        "https://spaceui.one/primitives",
+        "https://spaceui.one/components"
+      ],
+      "visual_notes": "未看截图；不对颜色、空间比例或动效质感作视觉结论。"
+    }
+  ],
+  "cross_site_recommendation": {
+    "status": "design_inference",
+    "priority": [
+      "先研究 Obsidian Dashboard Shell 的区域与状态职责，以及 Space UI 的 Resizable / Number Field / Command / Toolbar。",
+      "再研究 PaceUI 的模型选择与能力渐进披露；Planes 候选的生成结果、命令面板和参数控件待域名确认后纳入。",
+      "Vanta 用作局部状态与信息组织参考；Libraries 用作少量真实状态的动效参考。",
+      "资产、Agent、画布和时间线需有自己的统一 token、状态与输入规则，不按站点拼凑整页。"
+    ],
+    "key_constraints": [
+      "个人使用；内置本机引擎",
+      "支持连接自部署远程服务",
+      "用户自配模型",
+      "媒体内容为主",
+      "避免默认 dark neon 与大量无意义动画"
+    ],
+    "verification_gaps": [
+      "未进行浏览器视觉或交互测试，父代理负责截图观察。",
+      "useplanes.co 无法访问，useplanes.com 候选待用户确认。",
+      "Vanta 动态价格未核实。",
+      "PaceUI 各单项许可证和免费内容再分发范围未核实。",
+      "未安装任何库，未测 Electron 兼容性、CPU/GPU 开销或可访问性实测。"
+    ]
+  }
+}

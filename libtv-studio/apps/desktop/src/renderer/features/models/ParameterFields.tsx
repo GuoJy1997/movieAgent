@@ -1,0 +1,6 @@
+import type { ModelDefinition, ParameterValue } from '../../../../../../packages/contracts/src/models.ts';
+import { Field } from '../../../../../../packages/ui/src/controls.tsx';
+const labels:Record<string,string>={max_completion_tokens:'最大输出长度（max_completion_tokens）',max_tokens:'最大文本长度（max_tokens）',duration:'时长（秒）',resolution:'分辨率',ratio:'画面比例',size:'尺寸参数',quality:'质量（quality）',style:'风格（style）',seed:'随机种子（seed）'};
+export function ParameterFields({model,parameters,onChange}:{model:ModelDefinition;parameters:Record<string,ParameterValue>;onChange(p:Record<string,ParameterValue>):void}) {
+ return <>{Object.entries(model.parameters).map(([key,p])=><Field key={key} label={labels[key]??key}>{p.type==='enum'?<select value={String(parameters[key]??p.default)} onChange={e=>onChange({...parameters,[key]:e.target.value})}>{p.values.map(v=><option key={v}>{v}</option>)}</select>:p.type==='integer'?<input type="number" min={p.min} max={p.max} step="1" value={Number(parameters[key]??p.default)} onChange={e=>onChange({...parameters,[key]:Number(e.target.value)})} required/>:<input type="checkbox" checked={Boolean(parameters[key]??p.default)} onChange={e=>onChange({...parameters,[key]:e.target.checked})}/>}</Field>)}{model.capabilities.outputKinds[0]==='video'&&<p className="hint">文生视频使用六种固定画幅；首帧/首尾帧需选择 adaptive 项目预设。参考图模式与首尾帧互斥。</p>}</>;
+}

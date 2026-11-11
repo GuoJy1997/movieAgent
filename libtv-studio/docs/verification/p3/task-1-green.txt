@@ -1,0 +1,35 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+(node:4496) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15516) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+·x······················
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/creation.test.ts > persists immutable revisions, fixed entity refs, monotonic receipts/events and reopen history
+AssertionError: expected [] to have a length of 4 but got +0
+
+- Expected
++ Received
+
+- 4
++ 0
+
+ ❯ tests/integration/creation.test.ts:42:122
+     40|   expect(history(e, projectId, 'entity', 'hero')).toMatchObject({ ok: …
+     41|   const events = e.events.read({ libraryId: e.identity.libraryId, conn…
+     42|   expect(events.ok).toBe(true); if (events.ok) { expect(events.value.e…
+       |                                                                                                                          ^
+     43|   await e.close(); const reopened = await startEngine({ root }); if (!…
+     44|   expect(read(reopened.value, projectId)).toEqual(snapshot);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 23 passed (24)
+   Start at  20:46:53
+   Duration  5.32s (transform 968ms, setup 0ms, import 1.58s, tests 4.08s, environment 0ms)

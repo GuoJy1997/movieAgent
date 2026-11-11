@@ -1,0 +1,15 @@
+{
+  "exe": {
+    "productName": "MovieAgent",
+    "observedSignatureStatus": "NotSigned",
+    "productVersion": "0.1.0.0",
+    "fileDescription": "MovieAgent"
+  },
+  "installer": {
+    "productName": "MovieAgent",
+    "observedSignatureStatus": "NotSigned",
+    "productVersion": "0.1.0",
+    "fileDescription": "MovieAgent unsigned local-test image workflow beta"
+  },
+  "method": "VersionInfo and Get-AuthenticodeSignature on the final combined-fix build; no installer execution"
+}

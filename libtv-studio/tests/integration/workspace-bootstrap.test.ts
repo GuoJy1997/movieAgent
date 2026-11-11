@@ -1,0 +1,38 @@
+import { afterEach, expect, it } from 'vitest';
+import { mkdtemp, rm, readFile, writeFile, rename } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { startEngine, type EngineHandle } from '../../packages/engine/src/bootstrap.ts';
+import { createDirectoryProject, inspectDirectoryProject } from '../../apps/desktop/src/main/project-directories.ts';
+import { bootstrapWorkspace, validateWorkspace } from '../../apps/desktop/src/main/workspace-bootstrap.ts';
+import { RecentProjects } from '../../apps/desktop/src/main/recent-projects.ts';
+const roots: string[] = [], engines: EngineHandle[] = [];
+afterEach(async () => { for (const engine of engines.splice(0)) await engine.close(); for (const root of roots.splice(0)) await rm(root, { recursive: true, force: true }); });
+it('recovers a committed initialization receipt before manifest binding and rejects missing bound DB and foreign identity', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'workspace-bootstrap-')); roots.push(root);
+  const created = await createDirectoryProject({ mode: 'new', directory: root, name: 'Interrupted' }); if (!created.ok) throw Error('fixture');
+  const project = created.value, started = await startEngine({ root: project.libraryRoot }); if (!started.ok) throw Error('engine'); const engine = started.value; engines.push(engine);
+  const host = { identity: engine.identity, execute: async (input: unknown) => engine.commands.execute(input), query: async (input: unknown) => engine.commands.query(input) };
+  const base = { schemaVersion: 1, libraryId: engine.identity.libraryId, connectionEpoch: 'fixture' };
+  expect(await host.execute({ ...base, kind: 'project.create', commandId: `directory-init-${project.manifest.workspaceId}`, payload: { name: project.manifest.name } })).toMatchObject({ ok: true });
+  const bound = await bootstrapWorkspace(project, host); expect(bound).toMatchObject({ ok: true });
+  expect(await bootstrapWorkspace(project, host)).toEqual(bound);
+  const listed = await host.query({ ...base, kind: 'project.list', queryId: 'list', payload: {} }); expect(listed).toMatchObject({ ok: true, value: { projects: [expect.objectContaining({ name: 'Interrupted' })] } });
+  expect(JSON.stringify(listed).match(/"name":"Interrupted"/g)).toHaveLength(1);
+  if (!bound.ok) throw Error('binding');
+  expect(await bootstrapWorkspace(bound.value, { ...host, identity: { ...engine.identity, libraryId: 'foreign' } })).toMatchObject({ ok: false, error: { code: 'WORKSPACE_BINDING_MISMATCH' } });
+  await engine.close(); engines.splice(engines.indexOf(engine), 1);
+  await rename(join(project.libraryRoot, 'library.sqlite'), join(project.libraryRoot, 'saved.sqlite'));
+  expect(await inspectDirectoryProject(project.root)).toMatchObject({ ok: false, error: { code: 'BOUND_LIBRARY_MISSING' } });
+});
+it('child admission reads retained identities beyond the 50 displayed recent cards', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'workspace-registry-')); roots.push(root);
+  const created = await createDirectoryProject({ mode: 'new', directory: root, name: 'Retained' }); if (!created.ok) throw Error('fixture');
+  const path = join(root, 'recent-projects.json'), registry = await RecentProjects.open(path); if (!registry.ok) throw Error('registry');
+  await registry.value.remember(created.value);
+  const source = JSON.parse(await readFile(path, 'utf8')); const first = source.projects[0];
+  for (let i = 0; i < 51; i++) source.projects.unshift({ ...first, workspaceId: `00000000-0000-0000-0000-${String(i).padStart(12, '0')}`, root: join(root, `other${i}`), pathCanonical: join(root, `other${i}`).toLowerCase() });
+  await writeFile(path, JSON.stringify(source));
+  expect(await validateWorkspace(created.value.root, root)).toMatchObject({ ok: true });
+  expect((await registry.value.list()).ok).toBe(true);
+});

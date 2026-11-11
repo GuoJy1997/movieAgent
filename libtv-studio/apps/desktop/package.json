@@ -1,0 +1,24 @@
+{
+  "name": "@libtv/desktop",
+  "version": "0.2.0",
+  "private": true,
+  "description": "MovieAgent private local desktop audio timeline and dialogue preview",
+  "author": "MovieAgent",
+  "license": "UNLICENSED",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "package:win": "electron-builder --win --x64"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@tanstack/react-query": "5.104.5",
+    "@xyflow/react": "12.12.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sharp": "0.35.5",
+    "zod": "4.6.7",
+    "zustand": "5.0.16"
+  }
+}

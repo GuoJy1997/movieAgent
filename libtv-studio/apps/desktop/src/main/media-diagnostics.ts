@@ -1,0 +1,19 @@
+import{channel}from'node:diagnostics_channel';
+import{closeSync,lstatSync,openSync,realpathSync,writeSync}from'node:fs';import{isAbsolute,join,resolve}from'node:path';import{randomUUID}from'node:crypto';
+import type{ReadPoolStats}from'../../../../packages/storage/src/read-observation.ts';
+/** Optional local operational diagnostics. Callers enable this only for isolated fixture launches. */
+export function startMediaDiagnostics(directory:string,role:'main'|'engine'):()=>void{
+ let fd:number;try{const normalized=resolve(directory);if(!isAbsolute(directory)||!lstatSync(normalized).isDirectory()||lstatSync(normalized).isSymbolicLink()||realpathSync(normalized).toLowerCase()!==normalized.toLowerCase())return()=>{};fd=openSync(join(normalized,role+'-'+process.pid+'-'+randomUUID()+'.jsonl'),'wx',0o600);}catch{return()=>{};}
+ const pools=new Map<string,ReadPoolStats>(),protocols=new Map<string,{capabilities:number;activeLeases:number;streams:number}>();let events=0,invalidEvents=0,bytes=0,closed=false;
+ const readers=()=>{const total={originalHeld:0,derivedHeld:0,activeRanges:0,opening:0,closing:0,closeFailures:0};for(const p of pools.values()){total[p.kind==='original'?'originalHeld':'derivedHeld']+=p.held;total.activeRanges+=p.activeRanges;total.opening+=p.opening;total.closing+=p.closing;total.closeFailures+=p.closeFailures;}return total;};
+ const peakReaders=readers(),peakProtocol={capabilities:0,activeLeases:0,streams:0};
+ const protocol=()=>{const total={capabilities:0,activeLeases:0,streams:0};for(const p of protocols.values())for(const k of Object.keys(total)as(keyof typeof total)[])total[k]+=p[k];return total;};
+ const updatePeaks=()=>{const r=readers(),p=protocol();for(const k of Object.keys(r)as(keyof typeof r)[])peakReaders[k]=Math.max(peakReaders[k],r[k]);for(const k of Object.keys(p)as(keyof typeof p)[])peakProtocol[k]=Math.max(peakProtocol[k],p[k]);};
+ const finite=(x:unknown)=>Number.isSafeInteger(x)&&Number(x)>=0;
+ const onReaders=(value:unknown)=>{if(!value||typeof value!=='object'){invalidEvents++;return;}const v=value as ReadPoolStats;if(typeof v.poolId!=='string'||!/^\d{1,12}$/.test(v.poolId)||!['original','derived'].includes(v.kind)||![v.held,v.activeRanges,v.opening,v.closing,v.closeFailures].every(finite)){invalidEvents++;return;}pools.set(v.poolId,{poolId:v.poolId,kind:v.kind,held:v.held,activeRanges:v.activeRanges,opening:v.opening,closing:v.closing,closeFailures:v.closeFailures});events++;updatePeaks();};
+ const onProtocol=(value:unknown)=>{if(!value||typeof value!=='object'){invalidEvents++;return;}const v=value as {protocolId:string;capabilities:number;activeLeases:number;streams:number};if(typeof v.protocolId!=='string'||!/^\d{1,12}$/.test(v.protocolId)||![v.capabilities,v.activeLeases,v.streams].every(finite)){invalidEvents++;return;}protocols.set(v.protocolId,{capabilities:v.capabilities,activeLeases:v.activeLeases,streams:v.streams});events++;updatePeaks();};
+ const readChannel=channel('movieagent.media.readers'),protocolChannel=channel('movieagent.media.protocol');readChannel.subscribe(onReaders);protocolChannel.subscribe(onProtocol);
+ const flush=(final=false)=>{if(closed)return;try{const line=JSON.stringify({at:Date.now(),monotonicMs:performance.now(),role,pid:process.pid,events,invalidEvents,readers:readers(),peakReaders,protocol:protocol(),peakProtocol,pools:[...pools.values()],rss:process.memoryUsage().rss,final})+'\n';if(bytes+Buffer.byteLength(line)>8*1024**2)return;writeSync(fd,line);bytes+=Buffer.byteLength(line);}catch{/* Diagnostic failure cannot stop media operations. */}};
+ const timer=setInterval(()=>flush(),1000);timer.unref();
+ const stop=()=>{if(closed)return;clearInterval(timer);readChannel.unsubscribe(onReaders);protocolChannel.unsubscribe(onProtocol);flush(true);closed=true;try{closeSync(fd);}catch{}process.removeListener('exit',stop);};process.once('exit',stop);flush();return stop;
+}

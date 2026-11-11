@@ -1,0 +1,22 @@
+import {expect,it,vi,afterEach} from 'vitest';
+const {handlers}=vi.hoisted(()=>({handlers:new Map<string,(event:unknown,input:unknown)=>Promise<unknown>>()}));
+vi.mock('electron',()=>({ipcMain:{handle:(name:string,fn:(event:unknown,input:unknown)=>Promise<unknown>)=>handlers.set(name,fn),removeHandler:(name:string)=>handlers.delete(name)}}));
+import {installWorkspaceIpc} from '../../apps/desktop/src/main/ipc-policy';
+import type {BrowserWindow,IpcMainInvokeEvent} from 'electron';
+import type {LocalConnection} from '../../apps/desktop/src/main/local-connection';
+import {ok} from '../../packages/contracts/src/result';
+afterEach(()=>handlers.clear());
+it('allows only the exact main frame to configure MCP and keeps filesystem choices out of renderer input',async()=>{
+ const frame={url:'file:///trusted'},wc={mainFrame:null as unknown};wc.mainFrame=frame;
+ const window={isDestroyed:()=>false,webContents:wc} as unknown as BrowserWindow;
+ const status=vi.fn(async()=>ok({enabled:false})),configure=vi.fn(async()=>ok({enabled:true})),selectDirectory=vi.fn(async()=>ok({enabled:false}));
+ const remove=installWorkspaceIpc(window,'file:///trusted',{} as LocalConnection,undefined,undefined,undefined,undefined,{status,configure,selectDirectory} as never);
+ const handler=handlers.get('studio:mcp:configure');expect(handler).toBeDefined();
+ const trusted={sender:wc,senderFrame:frame} as unknown as IpcMainInvokeEvent;
+ expect(await handler!(trusted,{action:'enable'})).toMatchObject({ok:true});
+ expect(await handler!({...trusted,senderFrame:{url:'file:///trusted'}},{action:'enable'})).toMatchObject({ok:false,error:{code:'FORBIDDEN'}});
+ expect(await handler!(trusted,{action:'enable',allowedRoot:'C:/'})).toMatchObject({ok:false});
+ expect(configure).toHaveBeenCalledTimes(1);
+ expect(await handlers.get('studio:mcp:select-directory')!(trusted,{path:'C:/'})).toMatchObject({ok:false});expect(selectDirectory).not.toHaveBeenCalled();
+ remove();expect(handlers.size).toBe(0);
+});

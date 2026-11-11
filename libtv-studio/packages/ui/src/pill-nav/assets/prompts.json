@@ -1,0 +1,19 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-08",
+  "transparent_background": true,
+  "prompts": [
+    {
+      "name": "sail",
+      "prompt": "Create one original tiny UI tab decoration, isolated with true transparent background. A single sculptural object, close-up filling 85% of a square composition. Sophisticated lightweight satin material, softly translucent edges, restrained powder-blue, periwinkle and cobalt iridescence, no chrome, no neon glow, no text, no logo, no border, no badge, no UI. Designed to peek from the right edge of a 44px dark pill navigation tab and remain recognizable at 48px. Soft studio lighting, clean silhouette, premium consumer creative app aesthetic. Subject: an asymmetric folded ribbon sail, flowing upward, cyan tips and deep cobalt fold."
+    },
+    {
+      "name": "film",
+      "prompt": "Create one original tiny UI tab decoration, isolated with true transparent background. A single sculptural object, close-up filling 85% of a square composition. Sophisticated lightweight satin material, softly translucent edges, restrained powder-blue, periwinkle and cobalt iridescence, no chrome, no neon glow, no text, no logo, no border, no badge, no UI. Designed to peek from the right edge of a 44px dark pill navigation tab and remain recognizable at 48px. Soft studio lighting, clean silhouette, premium consumer creative app aesthetic. Subject: a gently curling small strip of blue cinematic film with two broad inset frames, periwinkle top edge, simple strong silhouette."
+    },
+    {
+      "name": "orbit",
+      "prompt": "Create one original tiny UI tab decoration, isolated with true transparent background. A single sculptural object, close-up filling 85% of a square composition. Sophisticated lightweight satin material, softly translucent edges, restrained powder-blue, periwinkle and cobalt iridescence, no chrome, no neon glow, no text, no logo, no border, no badge, no UI. Designed to peek from the right edge of a 44px dark pill navigation tab and remain recognizable at 48px. Soft studio lighting, clean silhouette, premium consumer creative app aesthetic. Subject: a softly twisted lavender and blue orbital loop, an elegant open ribbon ring with a small cyan inner rim, simple strong silhouette."
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+tests/integration/creation.test.ts(87,43): error TS2551: Property 'registerFileGrant' does not exist on type '{ metadata: (reference: MediaReference) => Result<MediaMetadata>; readFixedOriginal: (reference: MediaReference, expected?: MediaMetadata | undefined) => Promise<...>; ... 13 more ...; drain(): Promise<...>; }'. Did you mean 'registerGrant'?

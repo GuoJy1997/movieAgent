@@ -1,0 +1,24 @@
+import {isRecord,fail,ok,type Result} from './result.ts';
+export interface WorkScope {projectId:string;subprojectId:string}
+export interface Subproject {libraryId:string;projectId:string;id:string;title:string;number:string;order:number;status:'preparing'|'producing'|'completed'|'archived';revision:number;primaryCanvasId:string|null;primaryTimelineId:string|null;createdAt:string;updatedAt:string}
+export interface CanvasInfo {libraryId:string;projectId:string;subprojectId:string;id:string;title:string;revision:number}
+export interface SubprojectList {libraryId:string;projectId:string;items:Subproject[]}
+export interface CanvasList {libraryId:string;projectId:string;subprojectId:string;items:CanvasInfo[]}
+export interface CreateSubproject {projectId:string;title:string;number?:string}
+export interface UpdateSubproject {projectId:string;id:string;expectedRevision:number;title?:string;number?:string;order?:number;status?:Subproject['status'];primaryCanvasId?:string|null;primaryTimelineId?:string|null}
+export interface CreateCanvas extends WorkScope {title:string}
+export function parseScope(x:unknown):Result<WorkScope>{return isWorkScope(x)?ok(x):fail('INVALID_INPUT','子项目作用域无效。');}
+export function parseCreateCanvas(x:unknown):Result<CreateCanvas>{return isRecord(x)&&scopeId(x.projectId)&&scopeId(x.subprojectId)&&text(x.title)&&Object.keys(x).length===3?ok(x as unknown as CreateCanvas):fail('INVALID_INPUT','画布字段无效。');}
+export const scopeId=(x:unknown):x is string=>typeof x==='string'&&/^[a-zA-Z0-9_-]{1,128}$/.test(x);
+export const isWorkScope=(x:unknown):x is WorkScope=>isRecord(x)&&Object.keys(x).length===2&&scopeId(x.projectId)&&scopeId(x.subprojectId);
+const text=(x:unknown,n=200):x is string=>typeof x==='string'&&x.trim().length>0&&x.length<=n&&!/[\u0000-\u001f]/.test(x);
+export function parseSubprojectCreate(x:unknown):Result<CreateSubproject>{return isRecord(x)&&Object.keys(x).every(k=>['projectId','title','number'].includes(k))&&scopeId(x.projectId)&&text(x.title)&&(x.number===undefined||typeof x.number==='string'&&x.number.length<=40)?ok(x as unknown as CreateSubproject):fail('INVALID_INPUT','请填写有效的子项目名称。');}
+export function parseSubprojectUpdate(x:unknown):Result<UpdateSubproject>{return isRecord(x)&&scopeId(x.projectId)&&scopeId(x.id)&&Number.isSafeInteger(x.expectedRevision)&&Number(x.expectedRevision)>0&&Object.keys(x).every(k=>['projectId','id','expectedRevision','title','number','order','status','primaryCanvasId','primaryTimelineId'].includes(k))&&(x.title===undefined||text(x.title))&&(x.number===undefined||typeof x.number==='string'&&x.number.length<=40)&&(x.order===undefined||Number.isSafeInteger(x.order)&&Number(x.order)>=0)&&(x.status===undefined||['preparing','producing','completed','archived'].includes(String(x.status)))&&['primaryCanvasId','primaryTimelineId'].every(k=>x[k]===undefined||x[k]===null||scopeId(x[k]))?ok(x as unknown as UpdateSubproject):fail('INVALID_INPUT','子项目字段或版本无效。');}
+export const isSubproject=(x:unknown):x is Subproject=>isRecord(x)&&scopeId(x.libraryId)&&scopeId(x.projectId)&&scopeId(x.id)&&text(x.title)&&typeof x.number==='string'&&Number.isSafeInteger(x.revision)&&Number(x.revision)>0&&Number.isSafeInteger(x.order)&&['preparing','producing','completed','archived'].includes(String(x.status))&&(x.primaryCanvasId===null||scopeId(x.primaryCanvasId))&&(x.primaryTimelineId===null||scopeId(x.primaryTimelineId))&&typeof x.createdAt==='string'&&typeof x.updatedAt==='string';
+export const isSubprojectList=(x:unknown):x is SubprojectList=>isRecord(x)&&scopeId(x.libraryId)&&scopeId(x.projectId)&&Array.isArray(x.items)&&x.items.every(v=>isSubproject(v)&&v.projectId===x.projectId);
+export const isCanvasInfo=(x:unknown):x is CanvasInfo=>isRecord(x)&&scopeId(x.libraryId)&&scopeId(x.projectId)&&scopeId(x.subprojectId)&&scopeId(x.id)&&text(x.title)&&Number.isSafeInteger(x.revision);
+export const isCanvasList=(x:unknown):x is CanvasList=>isRecord(x)&&isWorkScope({projectId:x.projectId,subprojectId:x.subprojectId})&&scopeId(x.libraryId)&&Array.isArray(x.items)&&x.items.every(v=>isCanvasInfo(v)&&v.projectId===x.projectId&&v.subprojectId===x.subprojectId);
+
+import {isTaskView,type TaskView} from './generation.ts';
+export interface ProjectTasks {libraryId:string;projectId:string;items:{task:TaskView;subprojectId:string|null;canvasId:string|null}[]}
+export const isProjectTasks=(x:unknown):x is ProjectTasks=>isRecord(x)&&scopeId(x.libraryId)&&scopeId(x.projectId)&&Array.isArray(x.items)&&x.items.every(v=>isRecord(v)&&isTaskView(v.task)&&(v.subprojectId===null||scopeId(v.subprojectId))&&(v.canvasId===null||scopeId(v.canvasId)));

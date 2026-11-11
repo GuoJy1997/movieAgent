@@ -1,0 +1,19 @@
+# Task 3 fix round 1 re-review — 0c7c1ec..389fdfb
+
+## Finding verdicts
+
+- **I1 — Collection failures have no observable failure path — NOT ADDRESSED for existing schema 13 libraries.** `packages/engine/src/shot-production-service.ts:394-407,477-518` now returns per-item failures, persists them when the table exists, continues other items, and clears a successful artifact's matching issue at `:464-470`. `packages/engine/src/bootstrap.ts:80` starts the base scheduler regardless of the collector's per-item result. The focused failure-injection test at `tests/integration/shot-production.test.ts:267-328` covers isolation, durable issue visibility, reopen, and duplicate-free artifact retry on a fresh database. However, the new table is inside migration 13 (`packages/storage/src/migrations/0013-shot-production.ts:28-34`), which returns immediately for an already-v13 library (`:4`). Such a library cannot persist a diagnostic; `read()` and the new public issues query both fail when they query the absent table (`packages/engine/src/shot-production-service.ts:30-31,47,60`). The background collector ignores its report at `:523`, leaving this previously created library without a durable observable collection path.
+- **I2 — Integrated acceptance chain and repeated-apply evidence are missing — ADDRESSED.** `tests/integration/shot-production.test.ts:110-167` runs the local fixture text response through `agent.acceptProposal`, uses returned script/scene/shot revisions in production preparation, applies the same plan with a fresh command ID, and asserts stable canvas revision, nodes/bindings, edges, derived profiles, and one production link. It then approves the workflow, runs local image/video fixtures across reopen, and verifies fixed-revision history, both selected outputs, and the exact request sequence. `tests/fixtures/native-generation.ts:12` confirms `execute()` generates a fresh command ID. The fix report at `.superpowers/sdd/2026-10-26-p3-creation-agent/task-3-report.md:78-92` names the covering test and records 15 passing focused tests plus typecheck; those runs were not repeated in this read-only re-review.
+
+## New breakage in the fix diff
+
+- **Important — Existing schema 13 libraries do not receive the diagnostics table.** `packages/storage/src/migrations/0013-shot-production.ts:4,28-34` adds the table to a migration already marked complete by `PRAGMA user_version=13`; `packages/contracts/src/schema.ts:2` still declares version 13 and `packages/storage/src/database.ts:71-85` migrates only older versions. Opening a library created by the previous Task 3 commit therefore skips the DDL, while the new production/history/issues reads require the table (`packages/engine/src/shot-production-service.ts:30-31,47,79-81`). Use a new migration version or a safe upgrade path, and cover reopen from the original schema 13 shape.
+- **Important — Recovered production/workflow reads leave permanent stale issues.** `packages/engine/src/shot-production-service.ts:490,498-502` records those failures with `(nodeId, taskId)=(null,null)`. After the read succeeds, no branch removes that issue; the only delete is keyed to a concrete output node/task at `:466-467`. The public `shots.collectionIssues` and production view will keep reporting a repaired or transient read failure indefinitely. Clear the production-level issue when its corresponding read succeeds, preserving any active per-item issues.
+
+## Out-of-scope observations
+
+- None. The unchanged P2 paths and unrelated Task 3 code were not re-reviewed.
+
+## Verdict
+
+**Fix round: Findings remain open.** I1 remains open for preexisting schema 13 libraries; I2 is addressed. New breakage: 0 Critical, 2 Important. Checks: read the supplied fix diff once, inspected only the cited migration/startup/fixture context, and confirmed the fix report names focused tests and their reported output. No tests or typecheck were rerun.

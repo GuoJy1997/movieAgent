@@ -1,0 +1,41 @@
+import { afterEach, expect, it } from 'vitest';
+import { _electron, expect as uiExpect, type ElectronApplication } from '@playwright/test';
+import { createServer, type Server } from 'node:http';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { join, resolve } from 'node:path';
+import { tmpdir } from 'node:os';
+const apps:ElectronApplication[]=[],roots:string[]=[],servers:Server[]=[];
+afterEach(async()=>{for(const app of apps.splice(0))await app.close();for(const server of servers.splice(0)){server.closeAllConnections();await new Promise<void>(r=>server.close(()=>r()));}for(const root of roots.splice(0))await rm(root,{recursive:true,force:true});});
+it('enforces Anthropic test receipts in packaged IPC, discards late UI success and saves only the tested draft',async()=>{
+  const requests:{url:string;headers:any;body:any}[]=[];let hold=false,release:()=>void=()=>{};
+  const server=createServer((req,res)=>{const chunks:Buffer[]=[];req.on('data',c=>chunks.push(c));req.on('end',()=>{requests.push({url:req.url!,headers:req.headers,body:chunks.length?JSON.parse(Buffer.concat(chunks).toString()):null});
+    if(req.method==='GET'){res.writeHead(404);res.end('unsupported fixture-onboarding-key');return;}
+    if(req.headers['x-api-key']!=='fixture-onboarding-key'){res.writeHead(401);res.end('raw wrong key: '+req.headers['x-api-key']);return;}
+    const send=()=>res.end(JSON.stringify({type:'message',role:'assistant',stop_reason:'end_turn',content:[{type:'thinking',thinking:'private fixture reasoning',signature:'fixture-signature'},{type:'text',text:'OK'}]}));if(hold)release=send;else send();
+  });});servers.push(server);await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));const addr=server.address();if(!addr||typeof addr==='string')throw Error('port');
+  const root=await mkdtemp(join(tmpdir(),'packaged-text-onboarding-'));roots.push(root);const config=join(root,'models.json');await writeFile(config,JSON.stringify({schemaVersion:2,providers:[]}));
+  const app=await _electron.launch({executablePath:resolve(process.env.MOVIEAGENT_TEST_PACKAGE??'apps/desktop/release-text-models/win-unpacked','MovieAgent.exe'),args:[`--library-root=${join(root,'library')}`,`--user-data-dir=${join(root,'profile')}`,`--model-config=${config}`]});apps.push(app);
+  const page=await app.firstWindow();await page.waitForFunction(()=>!!window.studio);const configRead=await page.evaluate(()=>window.studio.readModelConfig());if(!configRead.ok)throw Error('read');const ready=app.waitForEvent('window');
+  await page.evaluate(version=>{void window.studio.openModelConfigEditor({expectedVersion:version}).then(r=>(globalThis as any).onboardingOutcome=r);},configRead.value.version);const editor=await ready;
+  await uiExpect(editor.getByRole('button',{name:'保存配置',exact:true})).toBeDisabled();
+  await uiExpect(editor.locator('#test-budget')).toContainText('1024 token（max_completion_tokens）');
+  await editor.getByText('高级设置',{exact:true}).click();await editor.getByLabel('输出长度参数',{exact:true}).selectOption('max_tokens');await uiExpect(editor.locator('#test-budget')).toContainText('1024 token（max_tokens）');
+  await editor.getByLabel('max_tokens',{exact:true}).fill('2048');await uiExpect(editor.locator('#test-budget')).toContainText('2048 token（max_tokens）');
+  await editor.getByLabel('兼容协议',{exact:true}).selectOption('anthropic-messages-v1');await uiExpect(editor.locator('#test-budget')).toContainText('1024 token（max_tokens）');await editor.getByText('高级设置',{exact:true}).click();
+  await editor.getByLabel('Base URL',{exact:true}).fill(`http://127.0.0.1:${addr.port}`);await editor.getByLabel('API Key',{exact:true}).fill('wrong-fixture-key');await editor.getByLabel('模型 ID',{exact:true}).fill('fixture-claude');
+  await editor.getByText('高级设置',{exact:true}).click();await editor.getByLabel('明确授权该私有端点',{exact:true}).check();await editor.getByLabel('max_tokens',{exact:true}).fill('2048');await editor.getByText('高级设置',{exact:true}).click();await uiExpect(editor.locator('#test-budget')).toContainText('2048 token（max_tokens）');
+  await editor.getByRole('button',{name:'测试连接',exact:true}).click();await uiExpect(editor.locator('#test-result')).toContainText('认证失败');expect(await editor.locator('body').innerText()).not.toContain('wrong-fixture-key');
+  await editor.getByLabel('API Key',{exact:true}).fill('fixture-onboarding-key');await editor.getByRole('button',{name:'获取模型列表',exact:true}).click();await uiExpect(editor.locator('#list-result')).toContainText('手动填写');
+  const bypass=await editor.evaluate(async()=>{const info=await window.modelConfigEntry.info();if(!info.ok)throw Error('info');return window.modelConfigEntry.submit({expectedVersion:info.value.config.version,provider:{id:(document.getElementById('id') as HTMLInputElement).value,name:'fixture-claude',kind:'text',baseURL:(document.getElementById('baseURL') as HTMLInputElement).value,apiKey:'fixture-onboarding-key',modelId:'fixture-claude',allowPrivateEndpoint:true,adapterType:'anthropic-messages-v1',parameters:{max_tokens:1024},pricing:{status:'unknown'},clearKey:false}});});
+  expect(bypass).toMatchObject({ok:false,error:{code:'MODEL_TEST_REQUIRED'}});
+  hold=true;const before=requests.length;await editor.getByRole('button',{name:'测试连接',exact:true}).click();await expect.poll(()=>requests.length).toBe(before+1);await editor.getByLabel('模型 ID',{exact:true}).fill('fixture-claude-updated');release();await uiExpect(editor.getByRole('button',{name:'测试连接',exact:true})).toBeEnabled();await uiExpect(editor.getByRole('button',{name:'保存配置',exact:true})).toBeDisabled();
+  hold=false;await editor.getByRole('button',{name:'测试连接',exact:true}).click();await uiExpect(editor.locator('#test-result')).toContainText('测试通过');await uiExpect(editor.getByRole('button',{name:'保存配置',exact:true})).toBeEnabled();
+  await editor.getByText('高级设置',{exact:true}).click();await editor.getByLabel('max_tokens',{exact:true}).fill('4096');await editor.getByText('高级设置',{exact:true}).click();await uiExpect(editor.locator('#test-budget')).toContainText('4096 token（max_tokens）');await uiExpect(editor.getByRole('button',{name:'保存配置',exact:true})).toBeDisabled();
+  await editor.getByRole('button',{name:'测试连接',exact:true}).click();await uiExpect(editor.locator('#test-result')).toContainText('测试通过');expect(await editor.locator('body').innerText()).not.toContain('private fixture reasoning');
+  await editor.screenshot({path:resolve('.superpowers/sdd/2026-10-26-text-model-onboarding/text-setup-reviewed.png'),fullPage:true});
+  expect(requests.at(-1)).toMatchObject({url:'/v1/messages',headers:{'x-api-key':'fixture-onboarding-key','anthropic-version':'2023-06-01'},body:{model:'fixture-claude-updated',max_tokens:4096}});expect(requests.at(-1)!.headers.authorization).toBeUndefined();
+  await editor.getByRole('button',{name:'保存配置',exact:true}).click();await expect.poll(()=>page.evaluate(()=>(globalThis as any).onboardingOutcome)).toMatchObject({ok:true,value:{status:'saved',synchronization:'imported'}});
+  expect(JSON.parse(await readFile(config,'utf8'))).toMatchObject({schemaVersion:2,providers:[{adapterType:'anthropic-messages-v1',modelId:'fixture-claude-updated',parameters:{max_tokens:4096}}]});
+  const profiles=await page.evaluate(async()=>{const identity=await window.studio.describe();if(!identity.ok)throw Error('identity');return window.studio.query({schemaVersion:1,libraryId:identity.value.libraryId,connectionEpoch:identity.value.connectionEpoch,queryId:crypto.randomUUID(),kind:'profile.list',payload:{}});});expect(profiles).toMatchObject({ok:true,value:{profiles:[{parameters:{max_tokens:4096}}]}});
+  expect(JSON.stringify(await page.evaluate(()=>window.studio.readModelConfig()))).not.toContain('fixture-onboarding-key');
+});

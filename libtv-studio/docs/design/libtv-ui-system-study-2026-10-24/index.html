@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="graphite">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><title>LibTV Studio · 组件与界面研究</title><link rel="stylesheet" href="studio.css"></head>
+<body>
+<a class="skip" href="#main">跳到内容</a>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="#components"><span class="brand-mark"><i></i><i></i></span><div>Studio<span>界面与组件研究</span></div><span class="version">0.1</span></a>
+    <button class="search-trigger" data-action="command"><span data-icon="search"></span><span>查找组件与页面</span><kbd>Ctrl K</kbd></button>
+    <div class="nav-caption">设计系统</div>
+    <nav aria-label="设计样板">
+      <a href="#components" data-page="components"><span data-icon="layers"></span>组件与动效<span class="nav-count">28</span></a>
+      <a href="#foundations" data-page="foundations"><span data-icon="sliders"></span>基础规则</a>
+    </nav>
+    <div class="nav-caption">页面组合<span class="tiny">演示</span></div>
+    <nav aria-label="页面样板">
+      <a href="#home" data-page="home"><span data-icon="home"></span>首页</a>
+      <a href="#assets" data-page="assets"><span data-icon="grid"></span>资产库<span class="nav-count">6</span></a>
+      <a href="#agent" data-page="agent"><span data-icon="spark"></span>Agent</a>
+      <a href="#workspace" data-page="workspace"><span data-icon="nodes"></span>项目工作区</a>
+      <a href="#settings" data-page="settings"><span data-icon="settings"></span>模型与引擎</a>
+    </nav>
+    <div class="nav-caption">研究依据</div>
+    <nav aria-label="研究文件">
+      <a href="#research" data-page="research"><span data-icon="book"></span>LibTV 实看记录<span class="nav-count">56</span></a>
+      <a href="#references" data-page="references"><span data-icon="link"></span>六站参考与取舍</a>
+    </nav>
+    <div class="sidebar-foot"><div class="status-line"><span class="status-dot muted-dot"></span><b>设计样板</b><span>本地</span></div><p>可交互的视觉提案<br>未接入模型或生成引擎</p><a href="design-system.md" target="_blank">阅读完整设计规范 <span>↗</span></a></div>
+  </aside>
+  <div class="body-shell">
+    <header class="topbar"><div class="crumb">LibTV Studio<span>/</span><strong id="page-crumb">组件与动效</strong></div><div class="top-actions"><span class="proposal-tag">设计提案 · 非产品截图</span><button class="icon-button" data-action="command" aria-label="打开命令面板"><span data-icon="command"></span></button></div></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="statusbar"><span><i class="status-dot"></i>内容图片不参与界面材质</span><span id="motion-status">动效遵循系统偏好</span><span>2026.10.24</span></footer>
+  </div>
+</div>
+<div id="popover-root"></div>
+<dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+<dialog id="drawer" aria-labelledby="drawer-title" class="drawer"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="research-data.js"></script><script src="studio.js"></script>
+</body></html>

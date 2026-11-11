@@ -1,0 +1,30 @@
+
+ RUN  v4.1.12 D:/movieAgent/libtv-studio
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts (11 tests | 1 failed | 10 skipped) 5724ms
+   × Agent does not navigate away from a newer session when an old create-session acknowledgement arrives 4964ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/p3-renderer-acknowledgement.test.ts > Agent does not navigate away from a newer session when an old create-session acknowledgement arrives
+TimeoutError: locator.inputValue: Timeout 4000ms exceeded.
+Call log:
+  - waiting for getByLabel('创作需求', { exact: true })
+
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:172:59
+    170|     await page.evaluate(result => window.p3Fixture.resolve(result), { …
+    171|     await page.evaluate(() => new Promise(requestAnimationFrame));
+    172|     expect(await page.getByLabel('创作需求', { exact: true }).inputValue()…
+       |                                                           ^
+    173|     expect(await page.getByRole('heading', { name: '会话 B 全能创作' }).coun…
+    174|   });
+ ❯ withPage tests/integration/p3-renderer-acknowledgement.test.ts:55:5
+ ❯ tests/integration/p3-renderer-acknowledgement.test.ts:165:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 skipped (11)
+   Start at  01:47:39
+   Duration  6.71s (transform 65ms, setup 0ms, import 739ms, tests 5.72s, environment 0ms)

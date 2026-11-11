@@ -1,0 +1,75 @@
+import { afterEach, expect, it } from 'vitest';
+import { _electron, expect as uiExpect, type ElectronApplication } from '@playwright/test';
+import { mkdtemp, mkdir, rm, writeFile, readFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
+import sharp from 'sharp';
+import { nativeFixture, value } from '../fixtures/native-generation.ts';
+const apps: ElectronApplication[] = [], roots: string[] = [];
+const executablePath = resolve(process.env.MOVIEAGENT_TEST_PACKAGE ?? 'apps/desktop/release/win-unpacked', 'MovieAgent.exe');
+afterEach(async () => { for (const app of apps.splice(0)) await app.close(); for (const root of roots.splice(0)) await rm(root, { recursive: true, force: true }); });
+
+it('manages actual packaged originals, fixed history, safe text, replacements and recycle/restore across reopening', async () => {
+  const root = await mkdtemp(join(tmpdir(), 'packaged-assets-')); roots.push(root);
+  const config = join(root, 'models.json'); await writeFile(config, '{"schemaVersion":1,"providers":[]}');
+  const text = join(root, 'story.md'), image = join(root, 'replacement.png'), video = join(root, 'clip.mp4');
+  await writeFile(text, '<script>window.assetExecuted=true</script>\n故事原件');
+  await writeFile(image, await sharp({ create: { width: 24, height: 12, channels: 3, background: '#ad2345' } }).png().toBuffer());
+  await writeFile(video, await readFile(new URL('../fixtures/video-sample.mp4', import.meta.url)));
+  const launch = async () => { const app = await _electron.launch({ executablePath, args: [`--library-root=${join(root, 'library')}`, `--user-data-dir=${join(root, 'profile')}`, `--model-config=${config}`] }); apps.push(app); const page = await app.firstWindow(); await page.waitForFunction(() => !!window.studio); return { app, page }; };
+  const { app, page } = await launch();
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const pick = async (path: string) => app.evaluate(({ dialog }, path) => { dialog.showOpenDialog = (async () => ({ canceled: false, filePaths: [path] })) as typeof dialog.showOpenDialog; }, path);
+  await page.getByRole('button', { name: '资产', exact: true }).click();
+  await pick(text); await page.getByRole('button', { name: '导入素材', exact: true }).click();
+  await page.getByRole('button', { name: '预览 story.md', exact: true }).click();
+  await uiExpect(page.getByRole('button', { name: '选择固定版本 v1' })).toBeVisible();
+  await uiExpect(page.getByLabel('固定版本文本预览').last()).toContainText('<script>window.assetExecuted=true</script>');
+  expect(await page.evaluate(() => (window as any).assetExecuted)).toBeUndefined();
+  await page.getByLabel('资产名称', { exact: true }).fill('故事'); await page.getByLabel('标签（逗号分隔）').fill('草稿, 草稿, 人物');
+  await page.getByRole('button', { name: '保存名称和标签' }).click(); await uiExpect(page.getByRole('heading', { name: '故事', exact: true })).toBeVisible();
+  await pick(image); await page.getByRole('button', { name: '导入为新版本（基于 v1）' }).click();
+  await uiExpect(page.getByRole('button', { name: '选择固定版本 v2' })).toBeVisible();
+  await page.getByRole('button', { name: '选择固定版本 v2' }).click();
+  await uiExpect(page.locator('.large-preview img')).toBeVisible();
+  await uiExpect(page.locator('.large-preview img')).toHaveJSProperty('naturalWidth', 24);
+  await mkdir('test-results/p2-assets', { recursive: true }); await page.screenshot({ path: 'test-results/p2-assets/image-version.png' });
+  await page.getByRole('button', { name: '选择固定版本 v1' }).click(); await uiExpect(page.getByLabel('固定版本文本预览').last()).toContainText('故事原件');
+  await page.screenshot({ path: 'test-results/p2-assets/text-version.png' });
+  await page.getByRole('button', { name: '移入回收站', exact: true }).click();
+  await uiExpect(page.getByRole('button', { name: '预览 故事', exact: true })).toHaveCount(0);
+  await page.getByLabel('资产状态').selectOption('trash'); await page.getByRole('button', { name: '预览 故事', exact: true }).click();
+  await uiExpect(page.getByRole('button', { name: '放入当前画布', exact: true })).toBeDisabled();
+  await page.getByRole('button', { name: '选择固定版本 v1' }).click(); await uiExpect(page.getByLabel('固定版本文本预览').last()).toContainText('故事原件');
+  await page.getByRole('button', { name: '恢复资产', exact: true }).click(); await page.getByLabel('资产状态').selectOption('active');
+  await pick(video); await page.getByRole('button', { name: '导入素材', exact: true }).click(); await page.getByRole('button', { name: '预览 clip.mp4', exact: true }).click();
+  await uiExpect(page.getByLabel('固定版本视频预览')).toBeVisible();
+  await expect.poll(() => page.getByLabel('固定版本视频预览').evaluate(video => (video as HTMLVideoElement).readyState)).toBeGreaterThanOrEqual(1);
+  await page.screenshot({ path: 'test-results/p2-assets/video-preview.png' });
+  await app.close(); apps.splice(apps.indexOf(app), 1);
+  const reopened = await launch(); await reopened.page.getByRole('button', { name: '资产', exact: true }).click();
+  await reopened.page.getByLabel('搜索资产').fill('故事'); await reopened.page.getByLabel('筛选标签').fill('人物');
+  await reopened.page.getByRole('button', { name: '预览 故事', exact: true }).click();
+  await uiExpect(reopened.page.getByRole('button', { name: '选择固定版本 v1' })).toBeVisible();
+  await uiExpect(reopened.page.getByRole('button', { name: '选择固定版本 v2' })).toBeVisible();
+});
+
+it('saves a real collected text generation as an explicitly selected asset version in the packaged task UI', async () => {
+  const s = await nativeFixture(), ref = await s.importFile(Buffer.from('first version'), 'base.txt');
+  const { task } = await s.enqueue(), done = value(await s.engine.scheduler.run(task.attemptId)); expect(done.state).toBe('SUCCEEDED');
+  await s.engine.close();
+  const config = join(s.root, 'models.json'); await writeFile(config, '{"schemaVersion":1,"providers":[]}');
+  const app = await _electron.launch({ executablePath, args: [`--library-root=${s.root}`, `--user-data-dir=${join(s.root, 'profile')}`, `--model-config=${config}`] }); apps.push(app);
+  try {
+    const page = await app.firstWindow(); await page.waitForFunction(() => !!window.studio);
+    await page.getByRole('button', { name: '任务', exact: true }).click(); await page.getByRole('button', { name: '查看任务', exact: true }).click();
+    await page.getByRole('button', { name: '加入资产库', exact: true }).click();
+    await page.getByLabel('保存位置', { exact: true }).selectOption(`${ref.assetId}:1`);
+    await page.getByRole('button', { name: '保存资产', exact: true }).click(); await uiExpect(page.locator('.success-note')).toContainText('已加入资产库');
+    await page.getByLabel('关闭对话框').click(); await page.getByRole('button', { name: '资产', exact: true }).click();
+    await page.getByRole('button', { name: '预览 base.txt', exact: true }).click();
+    await page.getByRole('button', { name: '选择固定版本 v1' }).click(); await uiExpect(page.getByLabel('固定版本文本预览').last()).toHaveText('first version');
+    await page.getByRole('button', { name: '选择固定版本 v2' }).click(); await uiExpect(page.getByLabel('固定版本文本预览').last()).toContainText('Hello 世界');
+    expect(s.requests).toHaveLength(1);
+  } finally { await app.close(); apps.splice(apps.indexOf(app), 1); }
+});

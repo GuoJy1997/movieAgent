@@ -1,0 +1,17 @@
+import { createRoot } from 'react-dom/client';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { App } from '../../../../apps/desktop/src/renderer/App.tsx';
+import { Launcher } from '../../../../apps/desktop/src/launcher/Launcher.tsx';
+import '../../../../packages/ui/src/tokens.css';
+import '../../../../apps/desktop/src/renderer/style.css';
+import { project,queryData } from './data.ts';
+const ok=(value:any)=>({ok:true,value});
+const fail=(name:string)=>({ok:false,error:{code:'AUDIT_READ_ONLY',message:`只读审查：${name} 未执行，不会写入文件或调用生成服务。`}});
+const modelConfig={source:'只读内存审查样例',state:'missing',managedIds:{connections:[],models:[],profiles:[]}};
+const workspace={project:{root:'审查内存目录',manifest:{name:project.name,binding:{libraryId:'library',projectId:'project'}}},modelConfig};
+window.auditPreview={calls:[],readOnly:true,fixture:'雨夜来信',queryData};
+const bridge:any={workspaceInfo:async()=>ok(workspace),listProjects:async()=>ok([project]),describe:async()=>ok({libraryId:'library',connectionEpoch:'audit-preview'}),query:async(input:any)=>ok(queryData(input.kind,input.payload)),readModelConfig:async()=>ok({version:'audit-1',providers:[]}),setTimelineDraftState:async(input:any)=>{window.auditPreview.draftState=input;return ok(undefined);},mediaUrl:async(input:any)=>{const id=input.ref.assetId??input.ref.artifactId;return ok(id==='video-a'?'/tests/fixtures/video-sample.mp4':id==='audio-a'?'/specs/changes/2026-10-29-01-current-ui-audit/preview/silence.wav':'/prototypes/motion-v2/assets/portal.png');},derivedMediaUrl:async()=>fail('派生媒体读取')};
+window.studio=new Proxy(bridge,{get(target,name:string){return target[name]??(async(...args:any[])=>{window.auditPreview.calls.push({kind:name,payload:args});return fail(name);});}});
+const launcher:any={listRecent:async()=>ok([{workspaceId:'audit-project',name:project.name,root:'只读内存样例 / 雨夜来信',availability:'available'}]),configInfo:async()=>ok(modelConfig),maintenanceInfo:async()=>ok({appVersion:'0.1.0',databaseSchema:23,backupFormat:1})};
+window.projectLauncher=new Proxy(launcher,{get(target,name:string){return target[name]??(async(...args:any[])=>{window.auditPreview.calls.push({kind:`launcher.${name}`,payload:args});return fail(name);});}});
+createRoot(document.getElementById('root')!).render(<QueryClientProvider client={new QueryClient({defaultOptions:{queries:{retry:false}}})}>{new URLSearchParams(location.search).has('launcher')?<Launcher/>:<App/>}</QueryClientProvider>);
