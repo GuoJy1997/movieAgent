@@ -80,7 +80,7 @@ npm run check:live-image -- --validate-only --config D:/验收资料/check.json
 
 每个短剧的资料库固定在 `.movieagent/library`，由 manifest 绑定一个 project。独立 profile 位于启动器 userData 的 `directory-workspaces/<workspaceId>`，含 outbox 和受保护 vault。只允许启动器写全局最近索引；子工作台只读校验全部保留身份。相同短剧重复打开聚焦原窗口，不启动第二个引擎；关闭启动器不会退出项目工作台。
 
-实际本机启动器为 `D:/movieAgent/启动MovieAgent.cmd`，模型文件为软件项目内的 `D:/movieAgent/libtv-studio/config/models.json`，默认短剧项目父目录为 `D:/movieAgent/projects`。模型配置属于软件全局设置，各短剧共用，不放进短剧素材目录。交付准备命令 `node scripts/start-local.cjs --prepare-only` 优先保留项目内已有配置；若不存在则逐字节复制旧位置的配置，旧文件仅保留为备份，不再由更新后的启动脚本引用。只有完全匹配程序原先生成内容的旧启动脚本会更新路径，自定义脚本保持原样；省略参数会启动可见应用。实际 `config/` 配置已排除 Git，可提交的空值模板位于 `configs/models.example.json`。配置填写 baseURL/apiKey/modelId，支持文本、文生图、参考图生成与 MiniMax 视频的明确协议子集。空白可编辑项目；非法配置显示固定错误码，可修正文件后在模型设置重新载入。“已载入”不代表服务验证通过；载入不自动发测试请求。Key 留在 main 与受保护 vault，界面只收到路径/条目ID/状态/错误码。
+实际本机启动器为 `D:/movieAgent/启动MovieAgent.cmd`，模型文件为软件项目内的 `D:/movieAgent/yangfan/config/models.json`，默认短剧项目父目录为 `D:/movieAgent/projects`。模型配置属于软件全局设置，各短剧共用，不放进短剧素材目录。交付准备命令 `node scripts/start-local.cjs --prepare-only` 优先保留项目内已有配置；若不存在则逐字节复制旧位置的配置，旧文件仅保留为备份，不再由更新后的启动脚本引用。只有完全匹配程序原先生成内容的旧启动脚本会更新路径，自定义脚本保持原样；省略参数会启动可见应用。实际 `config/` 配置已排除 Git，可提交的空值模板位于 `configs/models.example.json`。配置填写 baseURL/apiKey/modelId，支持文本、文生图、参考图生成与 MiniMax 视频的明确协议子集。空白可编辑项目；非法配置显示固定错误码，可修正文件后在模型设置重新载入。“已载入”不代表服务验证通过；载入不自动发测试请求。Key 留在 main 与受保护 vault，界面只收到路径/条目ID/状态/错误码。
 
 P2 页面现已通过独立受限窗口管理同一全局 JSON：新增文本/图片/视频、Base URL、API Key、模型 ID；高级设置保留准确协议、参数和价格。保存后明确显示文件写入/项目载入两个结果。Key 不回显，留空保留；并发文件冲突保留草稿。已有项目可重新载入，新项目继承全局配置；独立项目预设保留不可变版本。
 

@@ -5,8 +5,8 @@ node_modules/
 dist/
 out/
 coverage/
-libtv-studio/apps/desktop/release/
-libtv-studio/apps/desktop/release-*/
+yangfan/apps/desktop/release/
+yangfan/apps/desktop/release-*/
 
 # Caches, test artifacts and tooling scratch
 .cache/
@@ -19,11 +19,11 @@ playwright-report/
 .env
 .env.*
 !.env.example
-libtv-studio/config/
+yangfan/config/
 
-# Media runtime binaries provisioned by libtv-studio/scripts/prepare-media-runtime.mjs
-libtv-studio/apps/desktop/resources/media-runtime/win32-x64/*.exe
-libtv-studio/apps/desktop/resources/media-runtime/win32-x64/*.otf
+# Media runtime binaries provisioned by yangfan/scripts/prepare-media-runtime.mjs
+yangfan/apps/desktop/resources/media-runtime/win32-x64/*.exe
+yangfan/apps/desktop/resources/media-runtime/win32-x64/*.otf
 
 # Local backup of the former nested repository history
 .git-backup/

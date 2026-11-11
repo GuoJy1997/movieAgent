@@ -1,6 +1,6 @@
 # MovieAgent 工作区约定
 
-本文件适用于 `D:/movieAgent` 的 MovieAgent 短剧桌面项目。产品源码在 `libtv-studio/`；上级目录中描述其他项目的专用业务与部署规则不应用到本项目。
+本文件适用于 `D:/movieAgent` 的 MovieAgent 短剧桌面项目。产品源码在 `yangfan/`；上级目录中描述其他项目的专用业务与部署规则不应用到本项目。
 
 ## 新需求规格
 
